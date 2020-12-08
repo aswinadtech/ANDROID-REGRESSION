@@ -683,7 +683,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter fdynght Verfication Started =========================");
 			
 			System.out.println("================= Custom Parameter fdynght Verfication End =========================");
-			
+		}
 		@Test(priority = 90)
 		@Title("Verify custom parameter wfxtg")
 		public void C333228_Verify_cust_param_wfxtg() throws Exception {
