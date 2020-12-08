@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Suite]" parallel="none">
+  <test name="Test(failed)" parallel="none">
+    <classes>
+      <class name="twc.Regression.TestCases.regressionTestCases">
+        <methods>
+          <include name="C333213_Verify_cust_param_adid"/>
+          <include name="C658712_Verify_cust_param_plat"/>
+          <include name="Smoke_Test_Verify_Weekendcard_iu"/>
+          <include name="C333221_Verify_cust_param_wind"/>
+          <include name="C333228_Verify_cust_param_wfxtg"/>
+          <include name="Smoke_Test_Verify_DailyDetails_Response_and_IM_ad_loading_on_screen"/>
+          <include name="C333205_Verify_cust_param_tile"/>
+          <include name="Smoke_Test_Verify_Size_WM_Flu_Card_adcall"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_bgAssetCall"/>
+          <include name="C333200_Verify_cust_param_ord"/>
+          <include name="C333224_Verify_cust_param_uv"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_bgAssetCall"/>
+          <include name="Smoke_Test_Verify_DailyDetails_Integratedadcall_iu"/>
+          <include name="Smoke_Test_Verify_Weekend_Card_iu"/>
+          <include name="Smoke_Test_Verify_DailyDetails_Integratedadcall_Size"/>
+          <include name="Smoke_Test_WM_Flu_pos_Custom_param"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_fgAssetCall"/>
+          <include name="C333208_Verify_cust_param_tmp"/>
+          <include name="C333217_Verify_cust_param_tmpr"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_response"/>
+          <include name="C628160_Verify_Parameter_DyNght"/>
+          <include name="C658711_Verify_cust_param_lang"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_Size"/>
+          <include name="Smoke_Test_Weekend_pos_Custom_param"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_response"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd"/>
+          <include name="Smoke_Test_WeekAhead_pos_Custom_param"/>
+          <include name="C333239_Verify_cust_param_tmpc"/>
+          <include name="C333232_Verify_cust_param_fltmpc"/>
+          <include name="Smoke_Test_Verify_response__WMFlu_adcall"/>
+          <include name="C333203_Verify_cust_param_dma"/>
+          <include name="C333213_Verify_cust_param_fdynght_day1_adCall"/>
+          <include name="Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_Size"/>
+          <include name="Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_Size"/>
+          <include name="Smoke_Test_Verify_DailyDetails_Response_and_IM_Videoad_loading_on_screen"/>
+          <include name="C333218_Verify_cust_param_pos"/>
+          <include name="Smoke_Test_Verify_response__Weekend_Card_adcall"/>
+          <include name="Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_iu"/>
+          <include name="Smoke_Test_Verify_Size_Weekend_Card_adcall"/>
+          <include name="Smoke_Test_Verify_watson_AllergyCard_iu"/>
+          <include name="beforeClass"/>
+          <include name="Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL"/>
+          <include name="C333209_Verify_cust_param_cc"/>
+          <include name="Smoke_Test_Verify_Size_WM_Allergy_Card_adcall"/>
+          <include name="Smoke_Test_WM_Allergy_pos_Custom_param"/>
+          <include name="C333216_Verify_cust_param_cnd"/>
+          <include name="C333213_Verify_cust_param_aid"/>
+          <include name="Smoke_Test_Verify_DailyIntegratedVideo_BG_Assest_URL"/>
+          <include name="Smoke_Test_Verify_response__WeekAhead_Card_adcall"/>
+          <include name="Smoke_Test_Verify_Size_WeekAhead_Card_adcall"/>
+          <include name="C333212_Verify_cust_param_ct"/>
+          <include name="C333219_Verify_cust_param_ver"/>
+          <include name="Smoke_Test_Verify_watson_FluCard_iu"/>
+          <include name="Smoke_Test_Verify_response_WM_Allergy_Card_adcall"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_fgAssetCall"/>
+          <include name="C333202_Verify_cust_param_zip"/>
+          <include name="Smoke_Test_Verify_DailyIntegratedVideo_FG_Assest_URL"/>
+          <include name="C658716_Verify_cust_param_tf"/>
+        </methods>
+      </class> <!-- twc.Regression.TestCases.regressionTestCases -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

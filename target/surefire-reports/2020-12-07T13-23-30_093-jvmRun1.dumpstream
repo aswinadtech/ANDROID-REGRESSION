@@ -1,0 +1,501 @@
+# Created at 2020-12-07T13:23:42.499
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2020-12-07T13:24:08.810
+Unexpected IOException with stream: Charles is still not running after 30 second(s)
+
+
+# Created at 2020-12-07T13:24:08.811
+Unexpected IOException with stream: Failed to launch charles server, Error: Charles is still not running after 30 second(s)
+
+
+# Created at 2020-12-07T13:24:08.811
+Unexpected IOException with stream: Charles is still not running after 30 second(s)
+
+
+# Created at 2020-12-07T13:24:08.830
+Unexpected IOException: 8,1,twc.Regression.TestCases.regressionTestCases,beforeClass(twc.Regression.TestCases.regressionTestCases),null,Charles is still not running after 30 second(s),null,Charles is still not running after 30 second(s),regressionTestCases.beforeClass:453 \00BB CharlesProxy Charles is still not runnin...,twc.Regression.HandleWithCharles.CharlesProxyException: Charles is still not running after 30 second(s)\000A\0009at twc.Regression.TestCases.regressionTestCases.beforeClass(regressionTestCases.java:453)\000A
+
+
+# Created at 2020-12-07T13:24:08.866
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_adid(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.868
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_adid(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.870
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_aid(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.871
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_aid(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.872
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333200_Verify_cust_param_ord(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.873
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333200_Verify_cust_param_ord(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.873
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333219_Verify_cust_param_ver(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.874
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333219_Verify_cust_param_ver(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.875
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_fdynght_day1_adCall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.876
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333213_Verify_cust_param_fdynght_day1_adCall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.877
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C658716_Verify_cust_param_tf(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.878
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C658716_Verify_cust_param_tf(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.879
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C658711_Verify_cust_param_lang(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.880
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C658711_Verify_cust_param_lang(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.881
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C658712_Verify_cust_param_plat(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.882
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C658712_Verify_cust_param_plat(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.882
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333218_Verify_cust_param_pos(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.883
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333218_Verify_cust_param_pos(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.884
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333205_Verify_cust_param_tile(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.885
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333205_Verify_cust_param_tile(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.886
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333216_Verify_cust_param_cnd(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.887
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333216_Verify_cust_param_cnd(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.888
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333212_Verify_cust_param_ct(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.888
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333212_Verify_cust_param_ct(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.889
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333203_Verify_cust_param_dma(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.890
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333203_Verify_cust_param_dma(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.891
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C628160_Verify_Parameter_DyNght(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.892
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C628160_Verify_Parameter_DyNght(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.893
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333209_Verify_cust_param_cc(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.893
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333209_Verify_cust_param_cc(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.894
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333208_Verify_cust_param_tmp(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.896
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333208_Verify_cust_param_tmp(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.897
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333217_Verify_cust_param_tmpr(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.897
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333217_Verify_cust_param_tmpr(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.898
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333239_Verify_cust_param_tmpc(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.899
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333239_Verify_cust_param_tmpc(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.900
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333202_Verify_cust_param_zip(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.901
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333202_Verify_cust_param_zip(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.902
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333221_Verify_cust_param_wind(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.903
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333221_Verify_cust_param_wind(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.904
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333224_Verify_cust_param_uv(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.905
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333224_Verify_cust_param_uv(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.906
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333232_Verify_cust_param_fltmpc(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.907
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333232_Verify_cust_param_fltmpc(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.907
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,C333228_Verify_cust_param_wfxtg(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.908
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,C333228_Verify_cust_param_wfxtg(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.909
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.910
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.911
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_response(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.912
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_response(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.913
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_bgAssetCall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.913
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_bgAssetCall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.914
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_fgAssetCall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.915
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_fgAssetCall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.916
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_Size(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.916
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_StaticAd_Size(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.917
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.918
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.919
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_response(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.920
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_response(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.920
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_bgAssetCall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.921
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_bgAssetCall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.922
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_fgAssetCall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.923
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_fgAssetCall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.924
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_Size(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.924
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Validate_Integrated_FeedCard_VideoAd_Size(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.925
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.926
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.927
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Integratedadcall_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.927
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Integratedadcall_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.928
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_Size(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.929
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_IntegratedVideoadcall_Size(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.930
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Integratedadcall_Size(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.931
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Integratedadcall_Size(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.931
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Response_and_IM_Videoad_loading_on_screen(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.932
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Response_and_IM_Videoad_loading_on_screen(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.933
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Response_and_IM_ad_loading_on_screen(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.934
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyDetails_Response_and_IM_ad_loading_on_screen(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.934
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.935
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.936
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedVideo_FG_Assest_URL(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.937
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedVideo_FG_Assest_URL(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.937
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.938
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.939
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedVideo_BG_Assest_URL(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.939
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_DailyIntegratedVideo_BG_Assest_URL(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.940
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_watson_FluCard_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.941
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_watson_FluCard_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.942
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_watson_AllergyCard_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.942
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_watson_AllergyCard_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.943
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Weekendcard_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.944
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Weekendcard_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.944
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Weekend_Card_iu(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.945
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Weekend_Card_iu(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.946
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_Weekend_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.946
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_Weekend_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.947
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WeekAhead_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.948
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WeekAhead_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.948
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WM_Allergy_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.949
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WM_Allergy_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.950
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WM_Flu_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.951
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_Size_WM_Flu_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.951
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response_WM_Allergy_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.952
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response_WM_Allergy_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.953
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__WMFlu_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.955
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__WMFlu_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.956
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__WeekAhead_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.957
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__WeekAhead_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.958
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__Weekend_Card_adcall(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.959
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Verify_response__Weekend_Card_adcall(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.960
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Weekend_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.961
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_Weekend_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.962
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WeekAhead_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.962
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WeekAhead_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.963
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WM_Allergy_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.964
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WM_Allergy_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:08.965
+Unexpected IOException: 5,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WM_Flu_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),twc.Regression.TestCases.regressionTestCases,null,null
+
+
+# Created at 2020-12-07T13:24:08.966
+Unexpected IOException: 9,1,twc.Regression.TestCases.regressionTestCases,Smoke_Test_WM_Flu_pos_Custom_param(twc.Regression.TestCases.regressionTestCases),null,null,null
+
+
+# Created at 2020-12-07T13:24:09.326
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+
