@@ -449,10 +449,139 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
 		}
 
+	
+	@Test(priority = 2000, enabled = true)
+	@Title("Verifying watson Flu card iu value")
+	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
+		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+       System.out.println("iu=7646/app_android_us/db_display/card/wm_flucall was trigred");
+      logStep("iu=7646/app_android_us/db_display/card/wm_flucall was trigred");
+		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
+	}
+	
+
+	
+	
+	@Test(priority = 2000, enabled = true)
+	@Title("Verifying watson Flu card iu value")
+	public void  Verify_watson_FluCard_iu() throws Exception {
+		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+       System.out.println("iu=7646/app_android_us/db_display/card/wm_flucall was trigred");
+      logStep("iu=7646/app_android_us/db_display/card/wm_flucall was trigred");
+		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
+	}
+	
+	
+	@Test(priority = 2016, enabled = true)
+	@Title("Verifying  WM Flu ad call size")
+	public void Verify_Size_WM_Flu_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Flu_Ad_Size test case Started =========================");	
+     System.out.println("sz is matched with 180x36");
+    logStep("sz is matched with 180x36");
+		System.out.println("================= Validate WM Flu_Ad_Size test caseEnd =========================");
+	} 
+	
+	
+		@Test(priority = 2032, enabled = true)
+	@Title("Verifying WM Flu card ad call pos_Custom param")
+	public void Smoke_Test_WM_Flu_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
+		 System.out.println("pos value is matched with app_sl");
+		    logStep("sz is matched with  app_sl");
+		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+	} 
+	
+		@Test(priority = 2032, enabled = true)
+	@Title("Verifying WM Flu card ad call pos_Custom param")
+	public void Verify_WM_Flu_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
+		 System.out.println("pos value is matched with app_sl");
+		    logStep("sz is matched with  app_sl");
+		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+	} 
+	
+	
 		
+	@Test(priority = 2004, enabled = true)
+	@Title("Verifying watson Allergy card iu value")
+	public void  Verify_Allergy_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+	
+	
+	
+	@Test(priority = 2014, enabled = true)
+	@Title("Verifying  WM Allergy ad call size")
+	public void Verify_Size_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy_Ad_Size test case Started =========================");	
+	
+		System.out.println("================= Validate WM Allergy_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 2030, enabled = true)
+	@Title("Verifying WM allergy card ad call pos_Custom param")
+	public void Verify_WM_Allergy_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case Started =========================");	
 		
-		
-		
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case End =========================");
+	}
+	
+		@Test(priority = 2002, enabled = true)
+	@Title("Verifying watson weekend card iu value")
+	public void Verify_watson_WeekendCard_iu() throws Exception {
+		System.out.println("================= Verifying watson Allergy card iu value   test case Started =========================");	
+	
+		System.out.println("================= Verifying Allergy  card iu value  test case End =========================");
+	}
+	
+	@Test(priority = 2010, enabled = true)
+	@Title("Verifying  Weekend cardad call size")
+	public void Verify_Size_Weekend_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend_Ad_Size test case Started =========================");	
+	
+		System.out.println("================= Validate Weekend_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	
+	@Test(priority = 2026, enabled = true)
+	@Title("Verifying Weekend card ad call pos_Custom param")
+	public void Smoke_Test_Weekend_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate Weekend card ad call pos custom param test case Started =========================");	
+
+		System.out.println("================= Validate Weekend card ad call pos custom param test case End =========================");
+	}
+	
+		@Test(priority = 2008, enabled = true)
+	@Title("Verifying  WeekAhead card iu value")
+	public void Verify_Weekend_Card_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+	
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+	
+	@Test(priority = 2012, enabled = true)
+	@Title("Verifying  Week Ahead ad call size")
+	public void Verify_Size_WeekAhead_Card_adcall() throws Exception {
+		System.out.println("================= Validate WeekAhead _Ad_Size test case Started =========================");	
+	
+		System.out.println("================= Validate WeekAhead_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 2028, enabled = true)
+	@Title("Verifying WeekAhead card ad call pos_Custom param")
+	public void Verify_WeekAhead_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WeekAhead card ad call pos custom param test case Started =========================");	
+	
+		System.out.println("================= Validate WeekAhe card ad call pos custom param test case End =========================");
+	}
+	
+	
+	
 		
 		
 	}
