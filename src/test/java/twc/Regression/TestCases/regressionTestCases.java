@@ -580,7 +580,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("================= Validate WeekAhe card ad call pos custom param test case End =========================");
 	}
 	
-	@Test(priority = 3000 enabled = true)
+	@Test(priority = 3000, enabled = true)
 	@Title("Verifying Allergy spot light ad call iu value")
 	public void Verify_allergy_spotlight_adcall_iu() throws Exception {
 		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
