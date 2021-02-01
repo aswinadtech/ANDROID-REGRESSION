@@ -693,7 +693,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case Started =========================");
 		//AppiumFunctions.gettingApkVersion();
 		logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
-		A
+		
 		System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case  End =========================");
 	}
 	
@@ -707,8 +707,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 		logStep(" Verifying amazon intertstitial Slot Id for maps details preroll ad cal");
 	
-		System.out
-				.println("================= Verifying amazon intertstitial Slot Id for maps details preroll ad cal test csase End =========================");
+		System.out.println("================= Verifying amazon intertstitial Slot Id for maps details preroll ad cal test csase End =========================");
 
 	}
 	
@@ -728,12 +727,10 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	@Test(priority = 326, enabled = true)
 	@Title("Verifying amazon intertstitial Slot Id for video details preroll ad call")
 	public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preroll_adcall() throws Exception {
-		System.out.println(
-				"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case Started =========================");
+		System.out.println("================= Verify amazon intertstitial slot id for Video details  preroll adcall test case Started =========================");
 		logStep("Verify amazon intertstitial slot id for Video details  preroll adcall");
 		
-		System.out.println(
-				"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
+		System.out.println("================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
 	}
 	
 	
