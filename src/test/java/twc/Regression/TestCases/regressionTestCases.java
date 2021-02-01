@@ -541,7 +541,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public void Smoke_Test_Verify_watson_AllergyCard_iu() throws Exception {
 		System.out.println("================= Verifying watson Allergy card iu value   test case Started =========================");	
 			System.out.println("iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
-		 logStep("iu=/7646/app_android_us/db_display/card/wm_allergy call was trigred")
+		 logStep("iu=/7646/app_android_us/db_display/card/wm_allergy call was trigred");
 		System.out.println("================= Verifying Allergy  card iu value  test case End =========================");
 	}
 	
@@ -550,7 +550,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public void Smoke_Test_Verify_Weekendcard_iu() throws Exception {
 		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
 			System.out.println("iu=/7646/app_android_us/db_display/card/moments/wknd_sl call was trigred");
-		 logStep("iu=/7646/app_android_us/db_display/card/moments/wknd_sl call was trigred")
+		 logStep("iu=/7646/app_android_us/db_display/card/moments/wknd_sl call was trigred");
 		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
 	}
 
