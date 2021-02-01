@@ -532,7 +532,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
 				Thread.sleep(20000);
 				System.out.println("iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
-		 logStep(iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
+		 logStep("iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
 		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
 	}
 	
