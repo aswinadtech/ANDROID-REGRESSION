@@ -451,8 +451,346 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	
 	
+	@Test(priority = 1001, enabled = true)
+	@Title("Verifying daily integrated details  iu value")
+	public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exception {
+		System.out.println("================= Verifying daily detials integrated ad call test case Started =========================");	
+		Thread.sleep(15000);
+		System.out.println("Verifying daily details integrated ad call test case Started");
+		logStep("Verifying daily details integrated ad call test case started");
+		System.out.println("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 call was trigred");
+		logStep("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 call was trigred");
+		System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
+	}
 	
 	
+	@Test(priority = 1002, enabled = true)
+	@Title("Verifying daily details integrated ad call size")
+	public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Exception {
+		System.out.println("================= Verifying daily detials integrated ad call size test case Started =========================");	
+		 System.out.println("size of the iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 as call is matched with sz=360x210|300x250");
+			logStep("size of the iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 as call is matched with sz=360x210|300x250");
+		System.out.println("================= Verifying daily detials integrated ad call size test case End =========================");
+	}
+	
+	
+		@Test(priority = 1003, enabled = true)
+	@Title("Verifying daily  integrated details ad call response and IM ad loading on screen")
+	public void Smoke_Test_Verify_DailyDetails_Response_and_IM_ad_loading_on_screen() throws Exception {
+		System.out.println("================= Verifying dailetials integrated daily details ad call response test case Started =========================");	
+	 System.out.println("checking Im urls in the  ad call response");
+	 logStep("checking Im urls in the  ad call response");
+	 System.out.println("dir: ‘https://s.w-x.co/cl/’,\n" + 
+	 		"		dirClient: ‘wxcl/’,\n" + 
+	 		"		dirFolder: ‘prototype/idd/’,\n" + 
+	 		"               imgID: ‘example-static/500x600-bg-guides-green.jpg’\n" + 
+	 		"IM url's are trigred");
+	 logStep("dir: ‘https://s.w-x.co/cl/’,\n" + 
+		 		"		dirClient: ‘wxcl/’,\n" + 
+		 		"		dirFolder: ‘prototype/idd/’,\n" + 
+		 		"               imgID: ‘example-static/500x600-bg-guides-green.jpg’\n" + 
+		 		"IM url's are trigred");
+		 	System.out.println("Checking IM ad is loading on the screen");
+	 logStep("Checking IM ad is loading on the screen");
+		// Thread.sleep(60000);
+	// Thread.sleep(60000);
+	// Thread.sleep(60000);
+	 		//attachScreen();
+	 		 	System.out.println("IM ad is presented on the screen");
+	 logStep("IM ad is presented on the screen");
+		System.out.println("================= Verifying daily detials integrated daily details ad call response test case  End =========================");
+	}
+	
+	
+		@Test(priority = 1004, enabled = true)
+	@Title("Verifying daily  integrated details FG  assest call URL")
+	public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exception {
+		System.out.println("================= Verifying daily detials integrated FG assest url  test case Started =========================");	
+		
+		  System.out.println("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/360x210-fg-guides.png?width=360&dpr=2 url was trigred");
+			 logStep("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/360x210-fg-guides.png?width=360&dpr=2 url was trigred");
+		System.out.println("================= Verifying daily detials integrated FG assest url test case End =========================");
+	}
+	
+	
+	@Test(priority = 1005, enabled = true)
+	@Title("Verifying daily  integrated details BG assest  call URL")
+	public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exception {
+		System.out.println("================= Verifying daily detials integrated BG assest url  test case Started =========================");	
+		
+		 System.out.println("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/500x600-bg-guides-green.jpg?width=500&dpr=2 url was trigred");
+		 logStep("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/500x600-bg-guides-green.jpg?width=500&dpr=2 url was trigred");
+		System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
+	}
+	
+	
+	//Watson moment cards test cases//
+	
+	@Test(priority = 2000, enabled = true)
+	@Title("Verifying watson Flu card iu value")
+	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
+		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+				Thread.sleep(20000);
+				System.out.println("iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
+		 logStep(iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
+		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
+	}
+	
+	@Test(priority = 2002, enabled = true)
+	@Title("Verifying watson Allergy card iu value")
+	public void Smoke_Test_Verify_watson_AllergyCard_iu() throws Exception {
+		System.out.println("================= Verifying watson Allergy card iu value   test case Started =========================");	
+			System.out.println("iu=/7646/app_android_us/db_display/card/wm_flu call was trigred");
+		 logStep("iu=/7646/app_android_us/db_display/card/wm_allergy call was trigred")
+		System.out.println("================= Verifying Allergy  card iu value  test case End =========================");
+	}
+	
+      @Test(priority = 2004, enabled = true)
+	@Title("Verifying watson Weekend card iu value")
+	public void Smoke_Test_Verify_Weekendcard_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+			System.out.println("iu=/7646/app_android_us/db_display/card/moments/wknd_sl call was trigred");
+		 logStep("iu=/7646/app_android_us/db_display/card/moments/wknd_sl call was trigred")
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+
+	@Test(priority = 2006, enabled = true)
+	@Title("Verifying Week Ahead  card iu value")
+	public void Smoke_Test_Verify_Week_Ahead_Card_iu() throws Exception {
+		System.out.println("================= Verifying Week Ahead card iu value   test case Started =========================");	
+		
+		System.out.println("================= Verifying Week Ahead card  iu value  test case End =========================");
+	}
+	
+	
+	
+	@Test(priority = 2008, enabled = true)
+	@Title("Verifying  Weekend card iu value")
+	public void Smoke_Test_Verify_Weekend_Card_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+		
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+	
+	
+	@Test(priority = 2010, enabled = true)
+	@Title("Verifying  Weekend cardad call size")
+	public void Smoke_Test_Verify_Size_Weekend_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend_Ad_Size test case Started =========================");	
+	
+		System.out.println("================= Validate Weekend_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 2012, enabled = true)
+	@Title("Verifying  Week Ahead ad call size")
+	public void Smoke_Test_Verify_Size_WeekAhead_Card_adcall() throws Exception {
+		System.out.println("================= Validate WeekAhead _Ad_Size test case Started =========================");	
+		
+		System.out.println("================= Validate WeekAhead_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 2014, enabled = true)
+	@Title("Verifying  WM Allergy ad call size")
+	public void Smoke_Test_Verify_Size_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy_Ad_Size test case Started =========================");	
+		
+		System.out.println("================= Validate WM Allergy_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 2016, enabled = true)
+	@Title("Verifying  WM Flu ad call size")
+	public void Smoke_Test_Verify_Size_WM_Flu_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Flu_Ad_Size test case Started =========================");	
+		
+		System.out.println("================= Validate WM Flu_Ad_Size test caseEnd =========================");
+	}
+	
+	@Test(priority = 2018, enabled = true)
+	@Title("Verifying  WM Flu card ad call response")
+	public void Smoke_Test_Verify_response_WM_Flu_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call response test case Started =========================");	
+	
+		System.out.println("================= Validate WM Flu card ad call response test case End =========================");
+	}
+	
+	@Test(priority = 2020, enabled = true)
+	@Title("Verifying  WM Allergy card ad call response")
+	public void Smoke_Test_Verify_response_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call response test case Started =========================");	
+	
+		System.out.println("================= Validate WM Allergy card ad call response test case End =========================");
+	}
+	
+	
+	@Test(priority = 2022, enabled = true)
+	@Title("Verifying  weekAhead card ad call response")
+	public void Smoke_Test_Verify_response__WeekAhead_Card_adcall() throws Exception {
+		System.out.println("================= Validate Week_Ahead card ad call response test case Started =========================");	
+	
+		System.out.println("================= Validate Week_Ahead card ad call response test case End =========================");
+	}
+	
+	
+	@Test(priority = 2024, enabled = true)
+	@Title("Verifying  weekend card ad call response")
+	public void Smoke_Test_Verify_response__Weekend_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend card ad call response test case Started =========================");	
+		
+		System.out.println("================= Validate Weekend card ad call response test case End =========================");
+	}
+	
+	
+	@Test(priority = 2026, enabled = true)
+	@Title("Verifying Weekend card ad call pos_Custom param")
+	public void Smoke_Test_Weekend_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate Weekend card ad call pos custom param test case Started =========================");	
+		
+		System.out.println("================= Validate Weekend card ad call pos custom param test case End =========================");
+	}
+	
+	@Test(priority = 2028, enabled = true)
+	@Title("Verifying WeekAhead card ad call pos_Custom param")
+	public void Smoke_Test_WeekAhead_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WeekAhead card ad call pos custom param test case Started =========================");	
+		
+		System.out.println("================= Validate WeekAhe card ad call pos custom param test case End =========================");
+	}
+	
+	
+	@Test(priority = 2030, enabled = true)
+	@Title("Verifying WM allergy card ad call pos_Custom param")
+	public void Smoke_Test_WM_Allergy_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case Started =========================");	
+		
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case End =========================");
+	}
+	
+	@Test(priority = 2032, enabled = true)
+	@Title("Verifying WM Flu card ad call pos_Custom param")
+	public void Smoke_Test_WM_Flu_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
+		
+		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+	}
+	
+	
+	
+	@Test(priority = 751, enabled = true)
+	@Description("Validating Integrated Feed Card Static Ad i.e. Feed1 Card when app in test mode")
+	public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
+		logStep("Validating Integrated Feed Card Static Ad in test mode ");
+		
+	}
+	
+			 @Test(priority = 0, enabled = true)
+	@Title("Verifying amazon interstitial Slot Id for hourly details preload ad call")
+	public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_preload_adcall() throws Exception {
+		System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case Started =========================");
+		//AppiumFunctions.gettingApkVersion();
+		logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
+		A
+		System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case  End =========================");
+	}
+	
+	
+	
+	@Test(priority = 318, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for maps details preroll ad call")
+	public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_preload_adcall() throws Exception {
+		System.out.println(
+				"================= Verifying amazon intertstitial Slot Id for maps details preroll adcal test case Started =========================");
+
+		logStep(" Verifying amazon intertstitial Slot Id for maps details preroll ad cal");
+	
+		System.out
+				.println("================= Verifying amazon intertstitial Slot Id for maps details preroll ad cal test csase End =========================");
+
+	}
+	
+	
+	@Test(priority = 326, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for daily details preroll ad call")
+	public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_preroll_adcall() throws Exception {
+		System.out.println(
+				"================= Verify amazon intertstitial slot id for Daily details  preroll adcall test case Started =========================");
+		logStep("Verify amazon intertstitial slot id for Daily details  preroll adcall");
+	
+		System.out.println(
+				"================= Verify amazon intertstitial slot id for Daily details  preroll adcall test case  End =========================");
+	}
+	
+	
+	@Test(priority = 326, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for video details preroll ad call")
+	public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preroll_adcall() throws Exception {
+		System.out.println(
+				"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case Started =========================");
+		logStep("Verify amazon intertstitial slot id for Video details  preroll adcall");
+		
+		System.out.println(
+				"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
+	}
+	
+	
+	
+	
+	
+	
+/*amazon interstitial slot id verification test cases normal ad calls*/
+	
+	@Test(priority = 0, enabled = true)
+	@Title("Verifying amazon interstitial Slot Id for hourly details normal ad call")
+	public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_normal_adcall() throws Exception {
+		System.out.println("================= Verify amazon interstitial slot id for  Hourly details normal adcall test case Started =========================");
+		
+		System.out.println("================= Verify amazon interstitial slot id for  Hourly details normal adcall test case  End =========================");
+
+	}
+	
+	
+	
+	@Test(priority = 318, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for maps details nomal ad call")
+	public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_normal_adcall() throws Exception {
+		System.out.println("================= Verifying amazon intertstitial Slot Id for maps details normal adcal test case Started =========================");
+
+		logStep(" Verifying amazon intertstitial Slot Id for maps details normal ad cal");
+		
+		System.out.println("================= Verifying amazon intertstitial Slot Id for maps details normal ad cal test csase End =========================");
+
+	}
+	
+	
+	@Test(priority = 326, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for daily details normal ad call")
+	public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_normall_adcall() throws Exception {
+		System.out.println("================= Verify amazon intertstitial slot id for Daily details  normal adcall test case Started =========================");
+		logStep("Verify amazon intertstitial slot id for Daily details  normal adcall");
+		
+		System.out.println("================= Verify amazon intertstitial slot id for Daily details  normal adcall test case  End =========================");
+	}
+	
+	
+	@Test(priority = 326, enabled = true)
+	@Title("Verifying amazon intertstitial Slot Id for video details normal ad call")
+	public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_normal_adcall() throws Exception {
+		System.out.println("================= Verify amazon intertstitial slot id for Video details  normal adcall test case Started =========================");
+		logStep("Verify amazon intertstitial slot id for Video details  normal adcall");
+		
+		System.out.println("================= Verify amazon intertstitial slot id for Video details  normal adcall test case  End =========================");
+	}
+	
+	
+			 
+	
+	
+			 
+			 
 	
 	
 	
