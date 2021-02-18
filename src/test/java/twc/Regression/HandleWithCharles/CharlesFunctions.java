@@ -223,6 +223,41 @@ public class CharlesFunctions extends Drivers{
 		//driver.close();
 	}
 	
+	// Archives Charles session xml files
+		public static void archive_folder(String folderType) throws Exception {
+			DeviceStatus device_status = new DeviceStatus();
+			int Cap = device_status.Device_Status();
+
+			String[][] paths = read_excel_data.exceldataread("Paths");
+			String downloadPath = null;
+			String archivedSessions = System.getProperty("user.dir") + "/ArchivedSessions";
+
+			if (folderType.equals("Charles")) {
+				downloadPath = paths[4][Cap];
+			}
+			
+
+			// String Screenshots = readExcelValues.data[16][Cap];
+
+			File index = new File(downloadPath);
+
+			for (final File fileEntry : index.listFiles()) {
+				if (fileEntry.isDirectory()) {
+
+					// listFilesForFolder(fileEntry);
+					// listFilesForFolder(fileEntry);
+					// archive_folder(fileEntry.toString());
+					FileUtils.moveDirectoryToDirectory(fileEntry, new File(archivedSessions), true);
+
+				} else {
+					if (fileEntry.toString().contains("chlsx")) {
+
+						FileUtils.moveFileToDirectory(fileEntry, new File(archivedSessions), true);
+					}
+				}
+			}
+		}
+	
 	public static void downloadApp_TheWeatherChannelFlagshippp() throws InterruptedException, IOException{
 		
 		driver.get("https://rink.hockeyapp.net/users/sign_in");
