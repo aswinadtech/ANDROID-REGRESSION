@@ -447,6 +447,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter Wfxtg Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("wfxtg");
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
+			CharlesFunctions.archive_folder("Charles");
 		}
 
 	
@@ -528,6 +529,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		 System.out.println("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/500x600-bg-guides-green.jpg?width=500&dpr=2 url was trigred");
 		 logStep("https://s.w-x.co/cl/wxcl/prototype/idd/example-static/500x600-bg-guides-green.jpg?width=500&dpr=2 url was trigred");
+		CharlesFunctions.archive_folder("Charles");
 		System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
 	}
 	
@@ -692,6 +694,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
 		
 		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+		CharlesFunctions.archive_folder("Charles");
 	}
 	
 	
