@@ -70,7 +70,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}
 		
 		// video ad call custum parameters
-		/*@Test(priority = 1)
+	@Test(priority = 1)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
@@ -124,7 +124,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Verify Content URL for video call Started =========================");
 			Custom_Parameters_Verification.verify_video_request("content_url");
 			System.out.println("================= Verify Content URL for video call  End =========================");
-		}*/
+		}
 
 		// Not null
 		@Test(priority = 21)
@@ -744,6 +744,139 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	
 	
 	
+	
+	
+		/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+	@Test(priority = 3601, enabled = false)
+	@Description("Validating NextGen IM Static Ad when app in test mode")
+	public void Validate_NextGenIM_StaticAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad in test mode");
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad response
+	 */
+	@Test(priority = 3602, enabled = false)
+	@Description("Validating NextGen IM Static Ad response when app in test mode")
+	public void Validate_NextGenIM_StaticAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
+		logStep("Validating NextGen IM Static Ad response in test mode ");
+
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3603, enabled = false)
+
+	@Description("Validating NextGen IM Static Ad BackGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
+		logStep("Validating NextGen IM Static Ad BG Asset Call ");
+
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3604, enabled = false)
+
+	@Description("Validating NextGen IM Static Ad ForeGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_fgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
+		logStep("Validating NextGen IM Static Ad FG Asset Call ");
+
+		
+
+	}
+
+	@Test(priority = 3605, enabled = false)
+	@Description("Validating NextGen IM Static Ad sz parameter")
+	public void Validate_NextGenIM_StaticAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
+		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
+
+		
+
+	}
+
+	@Test(priority = 3611, enabled = false)
+	@Description("Validating NextGen IM Video Ad and its Parameters when app in test mode")
+	public void Validate_NextGenIM_VideoAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad in test mode");
+		logStep("Validating NextGen IM Video Ad in test mode ");
+		
+
+	}
+
+	@Test(priority = 3612, enabled = false)
+	@Description("Validating NextGen IM Video Ad response when app in test mode")
+	public void Validate_NextGenIM_VideoAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad response in test mode");
+		logStep("Validating NextGen IM Video Ad response in test mode ");
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+	@Test(priority = 3613, enabled = false)
+
+	@Description("Validating NextGen IM Video Ad BackGround Asset Call")
+	public void Validate_NextGenIM_VideoAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad BG Asset Call");
+		logStep("Validating NextGen IM Video Ad BG Asset Call ");
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters Video
+	 *                   ad will not be having only fg asset call always, it has
+	 *                   only bg asset call hence commenting
+	 */
+	/*
+	 * @Test(priority = 614, enabled = false)
+	 * 
+	 * @Description("Validating NextGen IM Video Ad ForeGround Asset Call") public
+	 * void Validate_NextGenIM_VideoAd_fgAssetCall() throws Exception {
+	 * System.out.println("==============================================");
+	 * System.out.println("****** Validating NextGen IM Video Ad FG Asset Call");
+	 * logStep("Validating NextGen IM Video Ad FG Asset Call ");
+	 * 
+	 * Utils.verifyFGAd_byCallResponse("Smoke", "NextGenIM", "Video");
+	 * 
+	 * }
+	 */
+
+	@Test(priority = 3615, enabled = false)
+	@Description("Validating NextGen IM Video Ad sz parameter")
+	public void Validate_NextGenIM_VideoAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad sz parameter in charles");
+		logStep("Validating NextGen IM Video Ad sz parameter in charles ");
+		
+
+	}
+
 	
 	
 	
