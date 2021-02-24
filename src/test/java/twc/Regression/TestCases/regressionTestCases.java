@@ -449,6 +449,51 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
 			CharlesFunctions.archive_folder("Charles");
 		}
+	
+	
+		  @Test(priority =95, enabled = true) 
+	  @Title("Verifying IM Cust param value for home screen marquee ad all" )
+	  public void Smoke_Test_Verifying_IM_Cust_Param_homescreen_marquee_adCall() throws Exception {
+		 System.out.println("================= Verifying IM CUST_PARAM value for home screen marquee call  started =========================");
+		 Functions.validate_IM_Cust_param_homescreenmarquee();
+		 System.out.println("================= Verifying SOD CUST_PARAM value for home screen IM call  End =========================");
+		 }
+	  
+	  
+	  @Test(priority = 96, enabled = true) 
+	  @Title("Verifying SlotName Cust param value for home screen marquee ad all" )
+	  public void Smoke_Test_Verifying_SlotName_Cust_Param_homescreen_marquee_adCall() throws Exception {
+		 System.out.println("================= Verifying SlotName CUST_PARAM value for home screen marquee call  started =========================");
+		 Functions.validate_SlotName_Cust_param_homescreenmarquee();
+		 System.out.println("================= Verifying SlotName  CUST_PARAM value for home screen IM call  End =========================");
+		 }
+	  
+	  @Test(priority = 97, enabled = true) 
+	  @Title("Verifying SlotName Cust param value for home screen hourly ad all" )
+	  public void Smoke_Test_Verifying_SlotName_Cust_Param_homescreen_hourly_adCall() throws Exception {
+		 System.out.println("================= Verifying SlotName CUST_PARAM value for home screen hourly call  started =========================");
+		 Functions.validate_SlotName_Cust_param_homescreenhourly();
+		 System.out.println("================= Verifying SlotName  CUST_PARAM value for home screen hourly call  End =========================");
+		 }
+	
+	  @Test(priority = 98, enabled = true) 
+	  @Title("Verifying SlotName Cust param value for feed_1 ad all" )
+	  public void Smoke_Test_Verifying_SlotName_Cust_Param_feed_1_adCall() throws Exception {
+		 System.out.println("================= Verifying SlotName CUST_PARAM value for feed_1 ad call  started =========================");
+		 Functions.validate_SlotName_Cust_param_feed1();
+		 System.out.println("================= Verifying SlotName  CUST_PARAM value for feed_1 ad  call  End =========================");
+		 }
+	
+	  
+	  
+	  @Test(priority = 99, enabled = true) 
+	  @Title("Verifying SlotName Cust param value for hourly details  ad all" )
+	  public void Smoke_Test_Verifying_SlotName_Cust_Param_hourly_details_adCall() throws Exception {
+		 System.out.println("================= Verifying SlotName CUST_PARAM value for hourly details ad call  started =========================");
+		 Functions.validate_SlotName_Cust_param_hourlydetails();
+		 System.out.println("================= Verifying SlotName  CUST_PARAM value forhourly details ad  call  End =========================");
+		 }
+	
 
 	
 	
@@ -467,8 +512,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		this.proxy.getXml();
 		System.out.println("Verifying daily details integrated ad call test case Started");
 		logStep("Verifying daily details integrated ad call test case started");
-		System.out.println("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 call was trigred");
-		logStep("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_thu1 call was trigred");
+		System.out.println("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_wed1 call was trigred");
+		logStep("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day_wed1 call was trigred");
 		System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
 	}
 	
