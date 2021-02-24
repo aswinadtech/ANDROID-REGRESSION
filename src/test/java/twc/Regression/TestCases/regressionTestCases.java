@@ -879,7 +879,133 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	
 	
-	
+		@Test(priority = 751, enabled = false)
+	@Title("Validating Integrated Feed Card Static Ad i.e. Feed1 Card when app in test mode")
+	public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
+		logStep("Validating Integrated Feed Card Static Ad in test mode ");
+		
+	}
+
+	@Test(priority = 752, enabled = false)
+	@Title("Validating Integrated Feed Card Static Ad response")
+	public void Validate_Integrated_FeedCard_StaticAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad response");
+		logStep("Validating Integrated Feed Card Static Ad response");
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
+	 *                   parameters
+	 */
+
+	@Test(priority = 753, enabled = false)
+	@Title("Validating Integrated Feed Card Static Ad BackGround Asset Call")
+	public void Validate_Integrated_FeedCard_StaticAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad BG Asset Call");
+		logStep("Validating Integrated Feed Card Static Ad BG Asset Call ");
+		// Utils.verifyBGAd_byCallResponse("Smoke", "IntegratedFeedCard", "Static");
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
+	 *                   parameters
+	 */
+
+	@Test(priority = 754, enabled = false)
+	@Title("Validating Integrated Feed Card Static Ad ForeGround Asset Call")
+	public void Validate_Integrated_FeedCard_StaticAd_fgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad FG Asset Call");
+		logStep("Validating Integrated Feed Card Static Ad FG Asset Call ");
+		
+	}
+
+	@Test(priority = 755, enabled = false)
+	@Title("Validating Integrated Feed Card Static Ad sz parameter")
+	public void Validate_Integrated_FeedCard_StaticAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Static Ad sz parameter in charles");
+		logStep("Validating Integrated Feed Card Static Ad sz parameter in charles ");
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate Integrated Feed Card Video Ad Call and
+	 *                   its response
+	 */
+	@Test(priority = 761, enabled = false)
+	@Title("Validating Integrated Feed Card Video Ad i.e. Feed1 Card when app in test mode")
+	public void Validate_Integrated_FeedCard_VideoAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Video Ad in test mode");
+		logStep("Validating Integrated Feed Card Video Ad in test mode ");
+		
+
+	}
+
+	@Test(priority = 762, enabled = false)
+	@Title("Validating Integrated Feed Card Video Ad response")
+	public void Validate_Integrated_FeedCard_VideoAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Video Ad response");
+		logStep("Validating Integrated Feed Card Video Ad response");
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate Integrated Feed Card Video Ad and its
+	 *                   parameters
+	 */
+
+	@Test(priority = 763, enabled = false)
+
+	@Title("Validating Integrated Feed Card Video Ad BackGround Asset Call")
+	public void Validate_Integrated_FeedCard_VideoAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Video Ad BG Asset Call");
+		logStep("Validating Integrated Feed Card Video Ad BG Asset Call ");
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
+	 *                   parameters Since fg asset call is same for static and video
+	 *                   calls, once it displays in static mode it doesnt occur in
+	 *                   video mode as its get cached. hence below case is commented
+	 */
+
+	/*
+	 * @Test(priority = 764, enabled = false)
+	 * 
+	 * @Description("Validating Integrated Feed Card Video Ad ForeGround Asset Call"
+	 * ) public void Validate_Integrated_FeedCard_VideoAd_fgAssetCall() throws
+	 * Exception {
+	 * System.out.println("==============================================");
+	 * System.out.
+	 * println("****** Validating Integrated Feed Card Video Ad FG Asset Call");
+	 * logStep("Validating Integrated Feed Card Video Ad FG Asset Call ");
+	 * 
+	 * Utils.verifyFGAd_byCallResponse("Smoke", "IntegratedFeedCard", "Video"); }
+	 */
+
+	@Test(priority = 765, enabled = false)
+	@Title("Validating Integrated Feed Card Video Ad sz parameter")
+	public void Validate_Integrated_FeedCard_VideoAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Integrated Feed Card Video Ad sz parameter in charles");
+		logStep("Validating Integrated Feed Card Video Ad sz parameter in charles ");
+
+		
+
+	}
+
 		
 		
 	}
