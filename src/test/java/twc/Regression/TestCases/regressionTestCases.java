@@ -750,7 +750,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
 	 */
 	@Test(priority = 3601, enabled = false)
-	@Description("Validating NextGen IM Static Ad when app in test mode")
+	@Title("Validating NextGen IM Static Ad when app in test mode")
 	public void Validate_NextGenIM_StaticAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad in test mode");
@@ -761,7 +761,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	 * @throws Exception This Script Validate NextGen IM Ad response
 	 */
 	@Test(priority = 3602, enabled = false)
-	@Description("Validating NextGen IM Static Ad response when app in test mode")
+	@Title("Validating NextGen IM Static Ad response when app in test mode")
 	public void Validate_NextGenIM_StaticAd_response() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
@@ -777,7 +777,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	@Test(priority = 3603, enabled = false)
 
-	@Description("Validating NextGen IM Static Ad BackGround Asset Call")
+	@Title("Validating NextGen IM Static Ad BackGround Asset Call")
 	public void Validate_NextGenIM_StaticAd_bgAssetCall() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
@@ -793,7 +793,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	@Test(priority = 3604, enabled = false)
 
-	@Description("Validating NextGen IM Static Ad ForeGround Asset Call")
+	@Title("Validating NextGen IM Static Ad ForeGround Asset Call")
 	public void Validate_NextGenIM_StaticAd_fgAssetCall() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
@@ -804,7 +804,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	}
 
 	@Test(priority = 3605, enabled = false)
-	@Description("Validating NextGen IM Static Ad sz parameter")
+	@Title("Validating NextGen IM Static Ad sz parameter")
 	public void Validate_NextGenIM_StaticAd_Size() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
@@ -815,7 +815,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	}
 
 	@Test(priority = 3611, enabled = false)
-	@Description("Validating NextGen IM Video Ad and its Parameters when app in test mode")
+	@Title("Validating NextGen IM Video Ad and its Parameters when app in test mode")
 	public void Validate_NextGenIM_VideoAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Video Ad in test mode");
@@ -825,7 +825,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	}
 
 	@Test(priority = 3612, enabled = false)
-	@Description("Validating NextGen IM Video Ad response when app in test mode")
+	@Title("Validating NextGen IM Video Ad response when app in test mode")
 	public void Validate_NextGenIM_VideoAd_response() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Video Ad response in test mode");
@@ -839,7 +839,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	 */
 	@Test(priority = 3613, enabled = false)
 
-	@Description("Validating NextGen IM Video Ad BackGround Asset Call")
+	@Title("Validating NextGen IM Video Ad BackGround Asset Call")
 	public void Validate_NextGenIM_VideoAd_bgAssetCall() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Video Ad BG Asset Call");
@@ -868,7 +868,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	 */
 
 	@Test(priority = 3615, enabled = false)
-	@Description("Validating NextGen IM Video Ad sz parameter")
+	@Title("Validating NextGen IM Video Ad sz parameter")
 	public void Validate_NextGenIM_VideoAd_Size() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Video Ad sz parameter in charles");
