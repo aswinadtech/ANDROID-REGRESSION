@@ -3950,6 +3950,161 @@ public static void validating_aax_privacy_Optinmode_scenario() throws Exception{
 	
 
 }
+	
+	
+public static void validate_IM_Cust_param_homescreenmarquee() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying  IM  custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("im%3D"),required_info.indexOf("%26kw%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String im=expectedValues.replaceAll("%3D", "=");
+			
+			if(im.contains("y")) {
+				System.out.println("IM cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
+				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
+			}
+			else {
+				System.out.println("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+				Assert.fail("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+	
+	
+	public static void validate_SlotName_Cust_param_homescreenmarquee() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.next_gen_im")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+	
+	
+	
+	public static void validate_SlotName_Cust_param_homescreenhourly() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.feed1")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+	
+	
+	
+public static void validate_SlotName_Cust_param_feed1() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.feed2")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
+				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+	
+	
+	public static void validate_SlotName_Cust_param_hourlydetails() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("3%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.hourly")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
+				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
 public static void validate_SOD_Cust_param_homescreen_Optinmode() throws Exception {
 	
 	DeviceStatus device_status = new DeviceStatus();
