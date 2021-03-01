@@ -36,6 +36,25 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public CharlesProxy proxy;
 
 	
+	
+	
+	@BeforeClass(alwaysRun = true)
+	public void beforeClass() throws Exception {	
+		this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
+		proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
+		proxy.startCharlesProxyWithUI();
+		proxy.disableRewriting();
+	    proxy.stopRecording();
+		proxy.disableMapLocal();
+		proxy.startRecording();
+		proxy.clearCharlesSession();
+		AppiumFunctions.LaunchAppWithFullReset();
+		//Thread.sleep(20000);
+		//AppiumFunctions.gettingApkVersion() ;
+		Thread.sleep(5000);
+		attachScreen();
+	}
+	
      ////Interstail ads/////
 	  
 	  @Test(priority =1, enabled = true)
