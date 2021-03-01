@@ -308,6 +308,25 @@ public class Functions extends Drivers{
 		}
 	}
 
+	
+	public static void handleInterstailadss() throws Exception {
+	attachScreen();
+	System.out.println("checking interstitial ad presented or not on the device");
+	logStep("checking interstitial ad presented or not on the device");
+	Thread.sleep(3000);
+	logStep("Intersitial ad was dispalyed on the screen");
+	System.out.println("Intersitial ad was dispalyed on the screen");
+}
+
+public static void closeInterstailadss() throws Exception {
+	System.out.println("closing the interstial ad on screen");
+logStep("closing the interstial ad on screen");
+Thread.sleep(3000);
+System.out.println("closed the interstial ad on screen");
+logStep("closed the interstial ad on screen");
+attachScreen();
+
+}
 	public static void bb_call_validation(String excel_sheet_name) throws Exception{
 
 		DeviceStatus device_status = new DeviceStatus();
