@@ -151,7 +151,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 					"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
 		}
 		
-	@Test(priority = 6, enabled = true)
+	/*@Test(priority = 6, enabled = true)
 		@Title("Verifying amazon intertstitial Slot Id for maps details nomal ad call")
 		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_normal_adcall() throws Exception {
 			System.out.println(
@@ -165,7 +165,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out
 					.println("================= Verifying amazon intertstitial Slot Id for maps details normal ad cal test csase End =========================");
 
-		}
+		}*/
 		
 		
 	
