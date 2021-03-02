@@ -5078,6 +5078,27 @@ if(!sb.contains("652177e9-d888-45de-a3c8-4270316faf87")) {
 	Assert.fail("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred for daily details");
 	}
 }
+	
+	public static void settheTimerr() throws Exception {
+	logStep("current system time");
+	System.out.println("current system time");
+	long millis=System. currentTimeMillis();
+	java. util. Date date=new java. util. Date(millis);
+	//logStep(date);
+	System. out. println(date);
+	logStep("wait for 1 minute for getting agian interstitial ad call");
+	System.out.println("wait for 1 minute for getting again interstitial ad call");
+	Thread.sleep(60000);
+	logStep("completed the 1 minute need to go same details");
+	System.out.println("completed the 1 minute need to go same details");
+	long millis1=System. currentTimeMillis();
+	java. util. Date date1=new java. util. Date(millis1);
+	//logStep(date1);
+	System. out. println(date1);
+    logStep("current system time");
+	System.out.println("current system time");
+	logStep("current system time");
+}
 
 public static void validate_Size_integratedfeedCardad() throws Exception {
 	DeviceStatus device_status = new DeviceStatus();
