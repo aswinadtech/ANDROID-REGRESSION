@@ -151,20 +151,19 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 					"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
 		}
 		
-		
-		@Test(priority = 6, enabled = true)
-		@Title("Verifying amazon interstitial Slot Id for hourly details normal ad call")
-		public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_normal_adcall() throws Exception {
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details normal adcall test case Started =========================");
-			//AppiumFunctions.gettingApkVersion();
-			 Functions.click_home_element();
-			logStep(" Verifying normal amazon intertstitial slot id for  hourly details");	
-			AppiumFunctions.Kill_Launch_App();
+	@Test(priority = 6, enabled = true)
+		@Title("Verifying amazon intertstitial Slot Id for maps details nomal ad call")
+		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_normal_adcall() throws Exception {
+			System.out.println(
+					"================= Verifying amazon intertstitial Slot Id for maps details normal adcal test case Started =========================");
+
+			logStep(" Verifying amazon intertstitial Slot Id for maps details normal ad cal");
 			proxy.clearCharlesSession();
-			AppiumFunctions.click_hourly_element();
+			AppiumFunctions.clickOnMaps();
 			this.proxy.getXml();
-			Functions.get_Interstitial_aaxcal_Hourly();
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details normal adcall test case  End =========================");
+			Functions.get_Interstitial_aaxcal_map_details();
+			System.out
+					.println("================= Verifying amazon intertstitial Slot Id for maps details normal ad cal test csase End =========================");
 
 		}
 		
