@@ -98,9 +98,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	
 	
 	
-	/*amazon interstitial slot id verification test cases*/
-		
-		@Test(priority = 1, enabled = true)
+		@Test(priority = 2, enabled = true)
 		@Title("Verifying amazon interstitial Slot Id for hourly details preload ad call")
 		public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_preload_adcall() throws Exception {
 			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case Started =========================");
@@ -114,58 +112,43 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		
 		
-		@Test(priority = 2, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for maps details preroll ad call")
+		@Test(priority = 3, enabled = true)
+		@Title("Verifying amazon intertstitial Slot Id for maps details prerold ad call")
 		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_preload_adcall() throws Exception {
 			System.out.println(
-					"================= Verifying amazon intertstitial Slot Id for maps details preroll adcal test case Started =========================");
+					"================= Verifying amazon intertstitial Slot Id for maps details preload adcal test case Started =========================");
 
-			logStep(" Verifying amazon intertstitial Slot Id for maps details preroll ad cal");
+			logStep(" Verifying amazon intertstitial Slot Id for maps details preload ad cal");
 			Functions.get_Interstitial_aaxcal_map_details();
 			System.out
-					.println("================= Verifying amazon intertstitial Slot Id for maps details preroll ad cal test csase End =========================");
+					.println("================= Verifying amazon intertstitial Slot Id for maps details preload ad cal test csase End =========================");
 
-		}
-		
-		
-		@Test(priority = 3, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for daily details preroll ad call")
-		public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_preroll_adcall() throws Exception {
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Daily details  preroll adcall test case Started =========================");
-			logStep("Verify amazon intertstitial slot id for Daily details  preroll adcall");
-			Functions.get_Intertstitial_aaxcal_Daily1();
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Daily details  preroll adcall test case  End =========================");
 		}
 		
 		
 		@Test(priority = 4, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for video details preroll ad call")
-		public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preroll_adcall() throws Exception {
+		@Title("Verifying amazon intertstitial Slot Id for daily details preload ad call")
+		public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_preload_adcall() throws Exception {
 			System.out.println(
-					"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case Started =========================");
-			logStep("Verify amazon intertstitial slot id for Video details  preroll adcall");
-			Functions.get_Intertstitial_aaxcal_video_details() ;
+					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case Started =========================");
+			logStep("Verify amazon intertstitial slot id for Daily details  preload adcall");
+			Functions.get_Intertstitial_aaxcal_Daily1();
 			System.out.println(
-					"================= Verify amazon intertstitial slot id for Video details  preroll adcall test case  End =========================");
+					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case  End =========================");
 		}
 		
-	/*@Test(priority = 6, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for maps details nomal ad call")
-		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_normal_adcall() throws Exception {
+		
+		@Test(priority = 5, enabled = true)
+		@Title("Verifying amazon intertstitial Slot Id for video details preload ad call")
+		public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preload_adcall() throws Exception {
 			System.out.println(
-					"================= Verifying amazon intertstitial Slot Id for maps details normal adcal test case Started =========================");
-
-			logStep(" Verifying amazon intertstitial Slot Id for maps details normal ad cal");
-			proxy.clearCharlesSession();
-			AppiumFunctions.clickOnMaps();
-			this.proxy.getXml();
-			Functions.get_Interstitial_aaxcal_map_details();
-			System.out
-					.println("================= Verifying amazon intertstitial Slot Id for maps details normal ad cal test csase End =========================");
-
-		}*/
+					"================= Verify amazon intertstitial slot id for Video details  preload adcall test case Started =========================");
+			logStep("Verify amazon intertstitial slot id for Video details  preload adcall");
+			Functions.get_Intertstitial_aaxcal_video_details() ;
+			System.out.println(
+					"================= Verify amazon intertstitial slot id for Video details  preload adcall test case  End =========================");
+		}
+		
 		
 		
 	
