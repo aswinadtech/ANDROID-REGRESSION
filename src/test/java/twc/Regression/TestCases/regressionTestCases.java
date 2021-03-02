@@ -81,7 +81,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	//  Ad.runAppInBackground(10);
 	  Functions.handleInterstailadss();
 	  Functions.closeInterstailadss();
-	 Functions.settheTimer();
+	 Functions.settheTimerr();
 		proxy.clearCharlesSession();
 	 // CharlesFunctions.startSessionBrowserData();
 	  AppiumFunctions.click_hourly_element();
