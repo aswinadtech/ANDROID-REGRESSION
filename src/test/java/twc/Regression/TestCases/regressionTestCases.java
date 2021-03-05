@@ -48,8 +48,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			proxy.startRecording();
 			proxy.clearCharlesSession();
 			AppiumFunctions.LaunchAppWithFullReset();
-			Thread.sleep(20000);
-			Thread.sleep(25000);
+			//Thread.sleep(20000);
+			//Thread.sleep(25000);
 			AppiumFunctions. ClickonIUnderstand();
 			Thread.sleep(10000);
 			AppiumFunctions.gettingApkVersion();
@@ -67,7 +67,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}
 		
 		// video ad call custum parameters
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
@@ -121,7 +121,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Verify Content URL for video call Started =========================");
 			Custom_Parameters_Verification.verify_video_request("content_url");
 			System.out.println("================= Verify Content URL for video call  End =========================");
-		}
+		}*/
 
 		// Not null
 		@Test(priority = 21)
@@ -391,18 +391,18 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter mnth")
 		public void C333213_Verify_cust_param_mnth_day1_adCall() throws Exception {
 			System.out.println("================= Custom Parameter mnth Verfication Started =========================");
-			System.out.println("current system month is feb");
+			/*System.out.println("current system month is feb");
 			logStep("current system month is feb");
 			System.out.println("daily details ad call custum param mnth value is feb");
 		logStep("daily details ad call custum param mnth value is feb");
 		System.out.println("Expected is matched oct is matched with Actual data feb");
-		logStep("Expected is matched oct is matched with Actual data feb");
-			//Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
+		logStep("Expected is matched oct is matched with Actual data feb");*/
+			Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
 			System.out.println("================= Custom Parameter mnth Verfication End =========================");
 			
 		}
 		
-		@Test(priority = 31)
+		/*@Test(priority = 31)
 		@Title("Verify custom parameter fcnd")
 		public void C333213_Verify_cust_param_fcnd_day1_adCall() throws Exception {
 			System.out.println("================= Custom Parameter fcnd Verfication Started =========================");
@@ -429,15 +429,15 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		//	Custom_Parameters_Verification.verify_daily_custom_parameters("fdynght");
 			System.out.println("================= Custom Parameter fdynght Verfication End =========================");
 			
-		}
+		}*/
 		
-		@Test(priority = 32)
+		/*@Test(priority = 32)
 		@Title("Verify custom parameter dt")
 		public void C333213_Verify_cust_param_dt_day1__adCall() throws Exception {
 			System.out.println("================= Custom Parameter fdynght Verfication Started =========================");
 			
 			System.out.println("================= Custom Parameter fdynght Verfication End =========================");
-		}
+		}*/
 		@Test(priority = 90)
 		@Title("Verify custom parameter wfxtg")
 		public void C333228_Verify_cust_param_wfxtg() throws Exception {
