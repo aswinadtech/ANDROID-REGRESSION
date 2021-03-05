@@ -49,56 +49,15 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		proxy.startRecording();
 		proxy.clearCharlesSession();
 		AppiumFunctions.LaunchAppWithFullReset();
-		//Thread.sleep(20000);
-		//AppiumFunctions.gettingApkVersion() ;
+		Thread.sleep(20000);
+		AppiumFunctions.gettingApkVersion() ;
 		Thread.sleep(5000);
 		attachScreen();
 	}
 	
-     ////Interstail ads/////
-	  
-	  @Test(priority =1, enabled = true)
-	  @Title("Verifying Hourly  details Interstal ads") 
-	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
-	 //Functions.settheTimer(); // Functions.enable_QA_Usergroup(); //
-	//  AppiumFunctions.Kill_Launch_App(); //AppiumFunctions.Kill_launch();
-	 // Thread.sleep(20000);
-//	 Ad.resetApp();
-	 // Thread.sleep(20000);
-	/*  AppiumFunctions.clickONNext();
-	  AppiumFunctions. ClickonIUnderstand();
-	  AppiumFunctions.clickOnAllow();*/
-		proxy.clearCharlesSession();
-	//  Thread.sleep(250000);
-	  AppiumFunctions.click_hourly_element();
-		attachScreen();
-	  Functions.wiatfor5secindetails();
-       this.proxy.getXml(); 
-	  Functions.Verify_hourly_detailpage_interstitial_adcall();
-	  Functions.click_home_element();
-		attachScreen();
-	//  Ad.runAppInBackground(10);
-	  Functions.handleInterstailadss();
-	  Functions.closeInterstailadss();
-	 Functions.settheTimerr();
-		proxy.clearCharlesSession();
-	 // CharlesFunctions.startSessionBrowserData();
-	  AppiumFunctions.click_hourly_element();
-		attachScreen();
-	  Functions.wiatfor5secindetails();
-      this.proxy.getXml(); 
-	  Functions.Verify_hourly_detailpage_interstitial_adcall1();
-	/*  Functions.click_home_element(); 
-	  Functions.handleInterstailads();
-	 Functions.closeInterstailads();*/
-	  
-	  }
+     
 	
-	
-	
-	
-		@Test(priority = 2, enabled = true)
+		@Test(priority = 200, enabled = true)
 		@Title("Verifying amazon interstitial Slot Id for hourly details preload ad call")
 		public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_preload_adcall() throws Exception {
 			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case Started =========================");
@@ -112,7 +71,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		
 		
-		@Test(priority = 3, enabled = true)
+		@Test(priority = 201, enabled = true)
 		@Title("Verifying amazon intertstitial Slot Id for maps details prerold ad call")
 		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_preload_adcall() throws Exception {
 			System.out.println(
@@ -126,7 +85,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}
 		
 		
-		@Test(priority = 4, enabled = true)
+		@Test(priority = 202, enabled = true)
 		@Title("Verifying amazon intertstitial Slot Id for daily details preload ad call")
 		public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_preload_adcall() throws Exception {
 			System.out.println(
@@ -138,7 +97,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}
 		
 		
-		@Test(priority = 5, enabled = true)
+		@Test(priority = 203, enabled = true)
 		@Title("Verifying amazon intertstitial Slot Id for video details preload ad call")
 		public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preload_adcall() throws Exception {
 			System.out.println(
