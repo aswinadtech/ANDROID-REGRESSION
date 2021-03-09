@@ -1216,6 +1216,7 @@ Thread.sleep(15000);
 
 		System.out.println("****** Criteo SDK invapp v2 call size parameter with AlertCenter call validation Started");
 		logStep("****** Criteo SDK invapp v2 call size parameter with AlertCenter call validation Started");
+		 CharlesFunctions.archive_folder("Charles");
 		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("MyAlerts", "size", true);
 	}
 
