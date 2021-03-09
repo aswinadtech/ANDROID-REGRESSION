@@ -124,9 +124,9 @@ Thread.sleep(5000);
 	attachScreen();
 	Thread.sleep(5000);
 	AppiumFunctions.clickdailydetails();
-	AppiumFunctions.Kill_Launch_App();
+	//AppiumFunctions.Kill_Launch_App();
 	Thread.sleep(10000);
-	AppiumFunctions.clickdailydetails();
+	//AppiumFunctions.clickdailydetails();
 	Thread.sleep(5000);
 	attachScreen();
 	
@@ -490,9 +490,9 @@ Thread.sleep(15000);
 	    	attachScreen();
 	    	Thread.sleep(5000);
 	    	AppiumFunctions.clickdailydetails();
-	    	AppiumFunctions.Kill_Launch_App();
+	    	//AppiumFunctions.Kill_Launch_App();
 	    	Thread.sleep(10000);
-	    	AppiumFunctions.clickdailydetails();
+	    	//AppiumFunctions.clickdailydetails();
 	    	Thread.sleep(5000);
 	    	attachScreen();
 	    	
