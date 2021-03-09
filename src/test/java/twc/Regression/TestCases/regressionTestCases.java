@@ -1343,6 +1343,7 @@ AppiumFunctions.LaunchAppWithFullReset();
 		System.out.println("=========================== Criteo SDK config/app call for Non US====================");
 		System.out.println("****** Criteo SDK config/app call for Non US validation Started");
 		logStep("****** Criteo SDK config/app call for Non US validation Started");
+	        CharlesFunctions.archive_folder("Charles");
 		Functions.verifyCriteo_config_app_Call("Criteo", false);
 
 	
