@@ -2,7 +2,7 @@ package twc.Regression.General;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-
+import org.json.simple.parser.ParseException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -19,6 +19,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.naming.spi.ObjectFactoryBuilder;
 import javax.net.ssl.HostnameVerifier;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import junit.framework.ComparisonFailure;
 import ru.yandex.qatools.allure.annotations.Title;
@@ -43,25 +45,54 @@ import org.testng.annotations.Test;
 
 import twc.Regression.General.DeviceStatus;
 import twc.Regression.HandleWithAppium.AppiumFunctions;
+import twc.Regression.HandleWithCharles.CharlesFunctions;
 import twc.Regression.General.Functions;
 import twc.Regression.Driver.Drivers;
 import twc.Regression.ReadDataFromFile.read_excel_data;
 import twc.Regression.ReadDataFromFile.read_xml_data_into_buffer;
 import twc.Regression.ReadDataFromFile.write_excel_data;
 import twc.Regression.utils.ReadExcelData;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
+
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 public class Functions extends Drivers{
 
+	public static String currentday1="wed1";
+	public static List<String> listOf_b_Params = new ArrayList<String>();
+	public static int aaxcallsSize = 0;
+	public static int aaxbidErrorCount = 0;
+	public static boolean isaaxgampadcallexists = false;
+	public static boolean nextGenIMadDisplayed = false;
+	public static String videoIUValue = null;
+	public static int aaxcallsResponseSize = 0;
 	static int startY;
 	static int endY;
 	MobileElement skiModule=null;
 	MobileElement AllergyModule=null;
 	static WebElement coldFluModule =null;
 	public static ArrayList<String> aaxSlots = new ArrayList<String>();
+	
+	public static List<String> listOf_criteo_Params = new ArrayList<String>();
+	public static int criteoparamErrorCount = 0;
 	public static String[] homescreenfeedad;
 	public static String[] Deatailpagead;
 	public static String adType;
 	  public static final int maxTimeout = 60;
+	  public static int criteocallsSize = 0;
+
+		public static int criteocallsResponseSize = 0;
+		public static List<String> customParamsList = new ArrayList<String>();
+		public static int criteogampadcallcount = 0;
 	public static void validate_API_Call_With_PubAds_Call(String excel_sheet_name) throws Exception{
 
 		String apicall_results=null;
@@ -308,25 +339,6 @@ public class Functions extends Drivers{
 		}
 	}
 
-	
-	public static void handleInterstailadss() throws Exception {
-	attachScreen();
-	System.out.println("checking interstitial ad presented or not on the device");
-	logStep("checking interstitial ad presented or not on the device");
-	Thread.sleep(3000);
-	logStep("Intersitial ad was dispalyed on the screen");
-	System.out.println("Intersitial ad was dispalyed on the screen");
-}
-
-public static void closeInterstailadss() throws Exception {
-	System.out.println("closing the interstial ad on screen");
-logStep("closing the interstial ad on screen");
-Thread.sleep(3000);
-System.out.println("closed the interstial ad on screen");
-logStep("closed the interstial ad on screen");
-attachScreen();
-
-}
 	public static void bb_call_validation(String excel_sheet_name) throws Exception{
 
 		DeviceStatus device_status = new DeviceStatus();
@@ -485,8 +497,6 @@ attachScreen();
 		}
 	}
 
-	
-	
 	public static Map<String, String> get_wfxtriggers_call(String excel_sheet_name) throws Exception{
 
 		Map<String , String> wfxtriggers_values = new HashMap<String, String>();
@@ -2134,7 +2144,77 @@ Assert.fail("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fbreaking ad ca
 }
 
 
+public static void get_Interstitial_aaxcal_Hourly() throws Exception {
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	System.out.println("Verifying amazon \"slotId\": \"2adb145c-0f90-44e9-852a-fa757c870db1\"  for db_display/interstitial/hourly");
+	logStep("Verifying amazon \"slotId\": \"2adb145c-0f90-44e9-852a-fa757c870db1\"   for db_display/interstitial/hourly");
+	//System.out.println("Slot Name is  : "+slotID);
+	if(sb.contains("2adb145c-0f90-44e9-852a-fa757c870db1")) {
+	System.out.println("2adb145c-0f90-44e9-852a-fa757c870db1 is trigred for aax  call db_display/interstitial/hourly");
+	logStep("2adb145c-0f90-44e9-852a-fa757c870db1 is trigred for aax  call db_display/interstitial/hourly");
+	}
+	if(!sb.contains("2adb145c-0f90-44e9-852a-fa757c870db1")) {
+		System.out.println("slotID :: 2adb145c-0f90-44e9-852a-fa757c870db1 is not trigred for aax call db_display/interstitial/hourly");
+		logStep("slotID ::  2adb145c-0f90-44e9-852a-fa757c870db1is not trigred for aax call db_display/interstitial/hourly");
+		Assert.fail("slotID ::  2adb145c-0f90-44e9-852a-fa757c870db1 is not trigred for aax call db_display/interstitial/hourly");
+		
+		}
+}
 
+
+
+
+public static void get_Interstitial_aaxcal_map_details() throws Exception {
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	System.out.println("Verifying amazon \"slotId\": \"14c21e29-45dd-43e3-b1f4-60376e220445\"  for db_display/interstitial/maps");
+	logStep("Verifying amazon \"slot Id\": \"14c21e29-45dd-43e3-b1f4-60376e220445\"  for db_display/interstitial/maps");
+	//System.out.println("Slot Name is  : "+slotID);
+	if(sb.contains("14c21e29-45dd-43e3-b1f4-60376e220445")) {
+	System.out.println("14c21e29-45dd-43e3-b1f4-60376e220445 is trigred for aax  call db_display/interstitial/maps");
+	logStep("14c21e29-45dd-43e3-b1f4-60376e220445 is trigred for aax  call db_display/interstitial/maps");
+	}
+	if(!sb.contains("14c21e29-45dd-43e3-b1f4-60376e220445")) {
+		System.out.println("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
+		logStep("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
+		Assert.fail("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
+		}
+}
+
+public static void get_Intertstitial_aaxcal_video_details() throws Exception {
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	System.out.println("Verifying amazon \"slotId\": \"ed8162e5-450a-415f-86c4-76a9fd40208c\"  for app_android_us/interstitial/video");
+	logStep("Verifying amazon \"slotId\": \"ed8162e5-450a-415f-86c4-76a9fd40208c\"   for app_android_us/interstitial/video");
+	//System.out.println("Slot Name is  : "+slotID);
+	if(sb.contains("ed8162e5-450a-415f-86c4-76a9fd40208c")) {
+	System.out.println("ed8162e5-450a-415f-86c4-76a9fd40208c is trigred for aax  call  app_android_us/interstitial/video");
+	logStep("ed8162e5-450a-415f-86c4-76a9fd40208c is trigred for aax  call app_android_us/interstitial/video");
+	}
+	if(!sb.contains("ed8162e5-450a-415f-86c4-76a9fd40208c")) {
+		System.out.println("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
+		logStep("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
+		Assert.fail("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
+		}
+}
+
+
+public static void get_Intertstitial_aaxcal_Daily1() throws Exception {	
+read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+System.out.println("Verifying amazon \"slot Id\": \"652177e9-d888-45de-a3c8-4270316faf87\"  for daily details");
+logStep("Verifying amazon \"slot Id\": \"652177e9-d888-45de-a3c8-4270316faf87\"   for  daily details\"");
+if(sb.contains("652177e9-d888-45de-a3c8-4270316faf87")) {
+System.out.println("652177e9-d888-45de-a3c8-4270316faf87eace is trigred for aax  call for daily details");
+logStep("652177e9-d888-45de-a3c8-4270316faf87 is trigred for aax  call  for daily details");
+}
+if(!sb.contains("652177e9-d888-45de-a3c8-4270316faf87")) {
+	System.out.println("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred for for daily details");
+	logStep("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred  for daily details");
+	Assert.fail("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred for daily details");
+	}
+}
 
 public static void  VerifyBNAlert() throws Exception{
 	
@@ -2313,15 +2393,94 @@ public static void clickOntestmodesettings() throws Exception {
 	}
 }
 
-public static void get_daily_ad_call() throws Exception{
 
+
+	public static void verifyingdailydetailiu() throws Exception {
+		String expected_data = null;
+		String today=null;
+		String day1=null;
+		DeviceStatus device_status = new DeviceStatus();
+		int Cap = device_status.Device_Status();
+		read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+		String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+		//String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+//		logStep("Verifying  SOD custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fcard%2Fradar ad call");
+		
+		today=Ad.findElementById("com.weather.Weather:id/daily_details_day_title").getText();
+		String days=today.replace(today, today+1);
+		//System.out.println("day from the UI is  " +day);
+		//logStep("day from the UI is  " +day);
+		String currentday1=days.toLowerCase();
+		
+		System.out.println("Checking iu from charles data");
+		logStep("Checking iu from charles data");
+		logStep("iu value should not be null");
+		System.out.println("iu value should not be null");
+		
+		if(sb.toString().contains("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fdetails%2F10day_")) {
+			
+				try {			
+				String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fdetails%2F10day_"));
+		//		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("&amp"));
+				 expected_data = Read_API_Call_Data.toString().substring(Read_API_Call_Data.indexOf("iu"),Read_API_Call_Data.indexOf("&correlator"));
+				System.out.println("Charles data value is "+expected_data);
+				logStep("Charles data value is "+expected_data);			
+					}
+				catch(Exception e) {
+					
+				}
+			}
+		else {
+			System.out.println("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fdetails%2F10day_"+currentday1 +" was not trigered");
+			logStep("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fdetails%2F10day_"+currentday1 +" was not trigered");
+			Assert.fail("daily details ad call was not trigred");
+		}
+
+		System.out.println("retriving the day from the UI");
+		logStep("retriving the day from the UI");
+
+		System.out.println("day from the UI is " +currentday1);
+		logStep("day from the UI is " +currentday1);
+			
+			
+			System.out.println("Verifying the chales data is matched with UI");
+			logStep("Verifying the chales data is matched with UI");
+			try {
+				if(expected_data.contains(currentday1)) {
+					System.out.println(expected_data+" is matched with " +currentday1);
+					logStep(expected_data+" is matched with "+ currentday1);
+				}
+			}
+			catch(Exception e) {
+				System.out.println(expected_data+ " is not matched with " +currentday1);
+				logStep(expected_data+" is not matched with " +currentday1);
+				Assert.fail(expected_data+" is not matched with " +currentday1);
+			}
+		
+	}
+
+
+public static void validate_BG_adcall_IDD() throws Exception {
+	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
+	String wxtgValues="";
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-if(sb.contains("%2F7646%2Fapp_android_us%2Fdisplay%2Fdetails%2F10day")) {
-System.out.println("location.wfxtriggers.com was trigred");
-}
-}
+	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	if(sb.contains(exceldata[7][1])) {
+		System.out.println(exceldata[7][1]+" Background  call was generated for IDD");
+		logStep(exceldata[7][1]+" Background call was generated for IDD");
+	}	
+	
+	
 
+		if(!sb.contains(exceldata[7][1]))
+			System.out.println(exceldata[7][1]+" Background call is not  generated for IDD");
+		logStep(exceldata[7][1]+" Background call is not  generated for IDD");
+		Assert.fail(exceldata[7][1]+" Background call is not  generated for IDD");
+	}
+	
 public static void validate_BG_adcall_IntegratedIM() throws Exception {
 	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
 	String wxtgValues="";
@@ -2340,7 +2499,8 @@ public static void validate_BG_adcall_IntegratedIM() throws Exception {
 		logStep(exceldata[7][1]+" Background call is not generated for NextGen Im ad call");
 		Assert.fail(exceldata[7][1]+" Background call is not generated for NextGen Im ad call");
 	}
-	
+
+
 public static Map<String, String> Verify_watsonFlucard_iu() throws Exception{
 
 	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
@@ -2366,19 +2526,19 @@ public static void validate_Size_WMFlu() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
+	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentFlu");
 	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
 		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
 		String expectedValues = expected_data.toString();
-		String marqueeadsize=expectedValues.replaceAll(exceldata[4][1], "");
-		if(marqueeadsize.equalsIgnoreCase(exceldata[3][1])) {
-			System.out.println(" ad call size is:::"  + marqueeadsize);
+		String WMFLUCardsize=expectedValues.replaceAll(exceldata[4][1], "");
+		if(WMFLUCardsize.equalsIgnoreCase(exceldata[3][1])) {
+			System.out.println("WM Flu card ad call size is:::"  + WMFLUCardsize);
 		}
 		else {
-			System.out.println("ad call size is not matched with"     + exceldata[3][1]);
-			Assert.fail("ad call size is not matched with"+ exceldata[3][1]);
+			System.out.println("WM Flu card ad call size is not matched with"     + exceldata[3][1]);
+			Assert.fail("WM Flu card ad call size is not matched with"+ exceldata[3][1]);
 		}
 		System.out.println(expectedValues);
 		
@@ -2421,12 +2581,33 @@ public static void validate_FG_adcall_IntegratedIM() throws Exception {
 		Assert.fail(exceldata[6][1]+"Foreground cal is not  trigred");
 	}
 	}
+
+
+public static void validate_FG_adcall_IDD() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	if(sb.contains(exceldata[6][1])) {		
+		System.out.println(exceldata[6][1]+ " Foreground call was generated for IDD ad call");		
+		logStep(exceldata[6][1]+ " Foreground call was generated for IDD  ad call");
+	}
+	
+	if(!sb.contains(exceldata[6][1])) {
+		System.out.println(exceldata[6][1]+" Foreground call is not generated for IDD ad call");
+		Assert.fail(exceldata[6][1]+"Foreground call is not generated for IDD ad cal");
+	}
+	}
+
+
 public static void validate_Size_dailydetails_integratedad() throws Exception {
 	DeviceStatus device_status = new DeviceStatus();
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("dailydetails");
+	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
 	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
@@ -2434,16 +2615,14 @@ public static void validate_Size_dailydetails_integratedad() throws Exception {
 		String expectedValues = expected_data.toString();
 		String marqueeadsize=expectedValues.replaceAll(exceldata[4][1], "");
 		if(marqueeadsize.equalsIgnoreCase(exceldata[3][1])) {
-			System.out.println("daily details integrated ad call size is:::"  + marqueeadsize);
+			System.out.println("daily details integrated ad call size is matched with:::"  + marqueeadsize);
 		}
 		else {
-			System.out.println("daily details integrated  is not matched with"     + exceldata[3][1]);
+			System.out.println("daily details integrated ad call size is not matched with"     + exceldata[3][1]);
 			Assert.fail("daily details integrated  is not matched with"+ exceldata[3][1]);
 		}
-		System.out.println(expectedValues);
-		
 	}
-	}
+}
 public static void clickOnAlertNotificatons( String pushNotifications) throws Exception {
 	
 	//clicking on Airlock
@@ -2707,9 +2886,9 @@ public static void validate_pos_Cust_param_WM_Flu() throws Exception {
 				logStep("pos cust param value  is " +pos);
 			}
 			else {
-				System.out.println("pos cust param value is not matchged with"     + pos);
-				logStep("pos cust param value is not matchged with"     + pos);
-				Assert.fail("pos cust param value is not matchged withh"     + pos);
+				System.out.println("pos cust param value is not matched with"     + pos);
+				logStep("pos cust param value is not matched with"     + pos);
+				Assert.fail("pos cust param value is not matched withh"     + pos);
 			}
 			//System.out.println(expectedValues);
 			
@@ -2726,13 +2905,13 @@ public static Map<String, String> Verify_watsonAllergycard_iu() throws Exception
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
 	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
-	if(sb.toString().contains(exceldata[1][18])){
-		System.out.println(exceldata[1][18] + " call was  trigred");
+	if(sb.toString().contains(exceldata[1][1])){
+		System.out.println(exceldata[1][1] + " call was  trigred");
 }
-if(!sb.contains(exceldata[1][18])) {
-	System.out.println(exceldata[1][18] + " call was not   trigred");
- logStep(exceldata[1][18] + " call was not   trigred");
- Assert.fail(exceldata[1][18] + " call was not   trigred");
+if(!sb.contains(exceldata[1][1])) {
+	System.out.println(exceldata[1][1] + " call was not   trigred");
+ logStep(exceldata[1][1] + " call was not   trigred");
+ Assert.fail(exceldata[1][1] + " call was not   trigred");
 }
 return wfxtriggers_values;
 }
@@ -2783,15 +2962,15 @@ public static void validate_Size_WMAllergy() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-	if(sb.toString().contains(exceldata[1][18])){
+	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
+	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
 		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
 		String expectedValues = expected_data.toString();
-		String marqueeadsize=expectedValues.replaceAll(exceldata[4][1], "");
-		if(marqueeadsize.equalsIgnoreCase(exceldata[3][1])) {
-			System.out.println(" ad call size is:::"  + marqueeadsize);
+		String WMAllergySize=expectedValues.replaceAll(exceldata[4][1], "");
+		if(WMAllergySize.equalsIgnoreCase(exceldata[3][1])) {
+			System.out.println(" ad call size is:::"  + WMAllergySize);
 		}
 		else {
 			System.out.println("ad call size is not matched with"     + exceldata[3][1]);
@@ -2808,9 +2987,9 @@ public static void validate_pos_Cust_param_WM_Allergy() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-		if(sb.toString().contains(exceldata[1][18])){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][18]));
+	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
+		if(sb.toString().contains(exceldata[1][1])){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
 			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26tmp%3D"));
 			
@@ -2823,9 +3002,9 @@ public static void validate_pos_Cust_param_WM_Allergy() throws Exception {
 				logStep("pos cust param value  is " +pos);
 			}
 			else {
-				System.out.println("pos cust param value is not matchged with"     + pos);
-				logStep("pos cust param value is not matchged with"     + pos);
-				Assert.fail("pos cust param value is not matchged withh"     + pos);
+				System.out.println("pos cust param value is not matched with"     + pos);
+				logStep("pos cust param value is not matched with"     + pos);
+				Assert.fail("pos cust param value is not matched withh"     + pos);
 			}
 			//System.out.println(expectedValues);
 			
@@ -2977,13 +3156,13 @@ public static Map<String, String> Verify_weekend_iu() throws Exception{
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
 	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-	if(sb.toString().contains(exceldata[1][17])){
-		System.out.println(exceldata[1][17] + " call was  trigred");
+	if(sb.toString().contains(exceldata[1][1])){
+		System.out.println(exceldata[1][11] + " call was  trigred");
 }
-if(!sb.contains(exceldata[1][17])) {
-	System.out.println(exceldata[1][17] + " call was not   trigred");
- logStep(exceldata[1][17] + " call was not   trigred");
- Assert.fail(exceldata[1][17] + " call was not   trigred");
+if(!sb.contains(exceldata[1][1])) {
+	System.out.println(exceldata[1][1] + " call was not   trigred");
+ logStep(exceldata[1][1] + " call was not   trigred");
+ Assert.fail(exceldata[1][1] + " call was not   trigred");
 }
 return wfxtriggers_values;
 }
@@ -2993,8 +3172,8 @@ public static void validate_Size_weeekend() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-	if(sb.toString().contains(exceldata[1][19])){
+	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekend");
+	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
 		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
@@ -3021,13 +3200,13 @@ public static Map<String, String> Verify_Week_Ahead_card_iu() throws Exception{
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
 	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-	if(sb.toString().contains(exceldata[1][20])){
-		System.out.println(exceldata[1][20] + " call was  trigred");
+	if(sb.toString().contains(exceldata[1][1])){
+		System.out.println(exceldata[1][1] + " call was  trigred");
 }
-if(!sb.contains(exceldata[1][20])) {
-	System.out.println(exceldata[1][20] + " call was not   trigred");
- logStep(exceldata[1][20] + " call was not   trigred");
- Assert.fail(exceldata[1][20] + " call was not   trigred");
+if(!sb.contains(exceldata[1][1])) {
+	System.out.println(exceldata[1][1] + " call was not   trigred");
+ logStep(exceldata[1][1] + " call was not   trigred");
+ Assert.fail(exceldata[1][1] + " call was not   trigred");
 }
 return wfxtriggers_values;
 }
@@ -3036,8 +3215,8 @@ public static void validate_Size_weeekahead() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-	if(sb.toString().contains(exceldata[1][20])){
+	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekahead");
+	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
 		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
@@ -3060,7 +3239,7 @@ public static void validate_pos_Cust_param_WM_WeekAhead() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
+	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekahead");
 		if(sb.toString().contains(exceldata[1][20])){
 			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][20]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
@@ -3075,9 +3254,9 @@ public static void validate_pos_Cust_param_WM_WeekAhead() throws Exception {
 				logStep("pos cust param value  is " +pos);
 			}
 			else {
-				System.out.println("pos cust param value is not matchged with"     + pos);
-				logStep("pos cust param value is not matchged with"     + pos);
-				Assert.fail("pos cust param value is not matchged withh"     + pos);
+				System.out.println("pos cust param value is not matched with"     + pos);
+				logStep("pos cust param value is not matched with"     + pos);
+				Assert.fail("pos cust param value is not matched withh"     + pos);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3090,8 +3269,8 @@ public static void validate_pos_Cust_param_WM_Weekend() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
-		if(sb.toString().contains(exceldata[1][19])){
+	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekend");
+		if(sb.toString().contains(exceldata[1][1])){
 			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[8][1]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
 			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26tmp%3D"));
@@ -3105,9 +3284,9 @@ public static void validate_pos_Cust_param_WM_Weekend() throws Exception {
 				logStep("pos cust param value  is " +pos);
 			}
 			else {
-				System.out.println("pos cust param value is not matchged with"     + pos);
-				logStep("pos cust param value is not matchged with"     + pos);
-				Assert.fail("pos cust param value is not matchged withh"     + pos);
+				System.out.println("pos cust param value is not matched with"     + pos);
+				logStep("pos cust param value is not matched with"     + pos);
+				Assert.fail("pos cust param value is not matched withh"     + pos);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3512,9 +3691,9 @@ public static void validate_SOD_Cust_param_homescreenHourly_Optoutmode() throws 
 				logStep("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%%2Fhourly  is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly   is not matchged with"     +SOD);
-				logStep("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly  is not matchged with"     +SOD);
-				Assert.fail("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly  is not matchged with"     +SOD);
+				System.out.println("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly   is not matched with"     +SOD);
+				logStep("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly  is not matched with"     +SOD);
+				Assert.fail("SOD cust param value for   iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly  is not matched with"     +SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3544,9 +3723,9 @@ public static void validate_SOD_Cust_param_homescreen_Optoutmode() throws Except
 				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matchged with"     +SOD);
-				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matchged with"     +SOD);
-				Assert.fail("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matchged with"     +SOD);
+				System.out.println("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +SOD);
+				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +SOD);
+				Assert.fail("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3577,9 +3756,159 @@ public static void validate_SOD_Cust_param_homescreenmarquee_Optoutmode() throws
 				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matchged with"     +SOD);
-				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matchged with"     +SOD);
-				Assert.fail("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matchged with"     +SOD);
+				System.out.println("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +SOD);
+				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +SOD);
+				Assert.fail("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +SOD);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+public static void validate_IM_Cust_param_homescreenmarquee() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying  IM  custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("im%3D"),required_info.indexOf("%26kw%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String im=expectedValues.replaceAll("%3D", "=");
+			
+			if(im.contains("y")) {
+				System.out.println("IM cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
+				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
+			}
+			else {
+				System.out.println("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+				Assert.fail("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+
+public static void validate_SlotName_Cust_param_homescreenmarquee() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.next_gen_im")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+
+
+public static void validate_SlotName_Cust_param_homescreenhourly() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.feed1")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+
+public static void validate_SlotName_Cust_param_feed1() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.feed2")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
+				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
+			}
+			//System.out.println(expectedValues);
+			
+		}
+}
+
+public static void validate_SlotName_Cust_param_hourlydetails() throws Exception {	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  ad call");
+		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly")){
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly"));
+			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
+			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("3%26fdynght%3D"));
+			
+			//6sod%3Dno%
+			String expectedValues = expected_data.toString();
+			String slotName=expectedValues.replaceAll("%3D", "=");
+			
+			if(slotName.contains("weather.hourly")) {
+				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
+				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
+			}
+			else {
+				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
+				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
+				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly is not matched with"     +slotName);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3608,9 +3937,9 @@ public static void validate_SOD_Cust_param_feed_Optoutmode() throws Exception {
 				logStep("SOD cust param value for Feed call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for Feed call is not matchged with"     + SOD);
-				logStep("SOD cust param value for Feed call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for Feed call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for Feed call is not matched with"     + SOD);
+				logStep("SOD cust param value for Feed call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for Feed call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3639,9 +3968,9 @@ public static void validate_SOD_Cust_param_deatiledfeed_Optoutmode() throws Exce
 				logStep("SOD cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     + SOD);
-				logStep("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     + SOD);
+				logStep("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for deatiled  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3670,9 +3999,9 @@ public static void validate_SOD_Cust_param_video_Optoutmode() throws Exception {
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -3695,9 +4024,9 @@ public static void validate_RDP_homescreen_Optoutmode() throws Exception {
 			logStep("RDP value for feed_1 ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matchged with"     +"1");
-				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matchged with"     +"1");
-				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matchged with"     +"1");
+				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matched with"     +"1");
+				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matched with"     +"1");
+				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call is not matched with"     +"1");
 			}
 			
 		}
@@ -3719,9 +4048,9 @@ public static void validate_RDP_homescreenmarquee_Optoutmode() throws Exception 
 			logStep("RDP value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee  ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matchged with"     +"1");
-				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matchged with"     +"1");
-				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matchged with"     +"1");
+				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matched with"     +"1");
+				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matched with"     +"1");
+				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call is not matched with"     +"1");
 			}
 			
 		}
@@ -3744,9 +4073,9 @@ public static void validate_RDP_homescrenhourly_Optoutmode() throws Exception {
 			logStep("RDP value for feed_1 ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matchged with"     +"1");
-				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matchged with"     +"1");
-				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matchged with"     +"1");
+				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matched with"     +"1");
+				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matched with"     +"1");
+				Assert.fail("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call is not matched with"     +"1");
 			}
 			
 		}
@@ -3769,9 +4098,9 @@ public static void validate_RDP_feed_Optoutmode() throws Exception {
 			logStep("RDP value for feed ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for feed ad call is not matchged with"     +"1");
-				logStep("RDP  value for feed ad call is not matchged with"     +"1");
-				Assert.fail("RDP for feed ad call call  is not matchged with"     +"1");
+				System.out.println("RDP  value for feed ad call is not matched with"     +"1");
+				logStep("RDP  value for feed ad call is not matched with"     +"1");
+				Assert.fail("RDP for feed ad call call  is not matched with"     +"1");
 			}
 			
 		}
@@ -3793,8 +4122,8 @@ public static void validate_RDP_detailed_feed_Optoutmode() throws Exception {
 			logStep("RDP value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     +"1");
-				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     +"1");
+				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     +"1");
+				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     +"1");
 				Assert.fail("RDP for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call  is not matched with"     +"1");
 			}
 			
@@ -3817,9 +4146,9 @@ public static void validate_RDP_video_ad_Optoutmode() throws Exception {
 			logStep("RDP value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is " +"1");
 			}
 		else {
-				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     +"1");
-				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     +"1");
-				Assert.fail("RDP for iu=%2F7646%2Fapp_android_us%2Fvideo ad call  is not matchged with"     +"1");
+				System.out.println("RDP  value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     +"1");
+				logStep("RDP  value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     +"1");
+				Assert.fail("RDP for iu=%2F7646%2Fapp_android_us%2Fvideo ad call  is not matched with"     +"1");
 			}
 			
 		}
@@ -3971,161 +4300,6 @@ public static void validating_aax_privacy_Optinmode_scenario() throws Exception{
 	
 
 }
-	
-	
-public static void validate_IM_Cust_param_homescreenmarquee() throws Exception {
-	
-	DeviceStatus device_status = new DeviceStatus();
-	int Cap = device_status.Device_Status();
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	logStep("Verifying  IM  custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
-		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
-			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("im%3D"),required_info.indexOf("%26kw%3D"));
-			
-			//6sod%3Dno%
-			String expectedValues = expected_data.toString();
-			String im=expectedValues.replaceAll("%3D", "=");
-			
-			if(im.contains("y")) {
-				System.out.println("IM cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
-				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +im);
-			}
-			else {
-				System.out.println("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
-				logStep("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
-				Assert.fail("IM cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +im);
-			}
-			//System.out.println(expectedValues);
-			
-		}
-}
-
-	
-	
-	public static void validate_SlotName_Cust_param_homescreenmarquee() throws Exception {	
-	DeviceStatus device_status = new DeviceStatus();
-	int Cap = device_status.Device_Status();
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
-		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
-			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
-			
-			//6sod%3Dno%
-			String expectedValues = expected_data.toString();
-			String slotName=expectedValues.replaceAll("%3D", "=");
-			
-			if(slotName.contains("weather.next_gen_im")) {
-				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is " +slotName);
-			}
-			else {
-				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
-				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee is not matched with"     +slotName);
-			}
-			//System.out.println(expectedValues);
-			
-		}
-}
-	
-	
-	
-	public static void validate_SlotName_Cust_param_homescreenhourly() throws Exception {	
-	DeviceStatus device_status = new DeviceStatus();
-	int Cap = device_status.Device_Status();
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly ad call");
-		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly")){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly"));
-			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
-			
-			//6sod%3Dno%
-			String expectedValues = expected_data.toString();
-			String slotName=expectedValues.replaceAll("%3D", "=");
-			
-			if(slotName.contains("weather.feed1")) {
-				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is " +slotName);
-			}
-			else {
-				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
-				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly is not matched with"     +slotName);
-			}
-			//System.out.println(expectedValues);
-			
-		}
-}
-
-	
-	
-	
-public static void validate_SlotName_Cust_param_feed1() throws Exception {	
-	DeviceStatus device_status = new DeviceStatus();
-	int Cap = device_status.Device_Status();
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call");
-		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1")){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1"));
-			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("%26fdynght%3D"));
-			
-			//6sod%3Dno%
-			String expectedValues = expected_data.toString();
-			String slotName=expectedValues.replaceAll("%3D", "=");
-			
-			if(slotName.contains("weather.feed2")) {
-				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is " +slotName);
-			}
-			else {
-				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
-				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 is not matched with"     +slotName);
-				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1  is not matched with"     +slotName);
-			}
-			//System.out.println(expectedValues);
-			
-		}
-}
-	
-	
-	public static void validate_SlotName_Cust_param_hourlydetails() throws Exception {	
-	DeviceStatus device_status = new DeviceStatus();
-	int Cap = device_status.Device_Status();
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	logStep("Verifying SlotName custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  ad call");
-		if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly")){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly"));
-			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("slotName%3D"),required_info.indexOf("3%26fdynght%3D"));
-			
-			//6sod%3Dno%
-			String expectedValues = expected_data.toString();
-			String slotName=expectedValues.replaceAll("%3D", "=");
-			
-			if(slotName.contains("weather.hourly")) {
-				System.out.println("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
-				logStep("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is " +slotName);
-			}
-			else {
-				System.out.println("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
-				logStep("SlotName cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly  is not matched with"     +slotName);
-				Assert.fail("SlotName cust param value for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fhourly is not matched with"     +slotName);
-			}
-			//System.out.println(expectedValues);
-			
-		}
-}
 public static void validate_SOD_Cust_param_homescreen_Optinmode() throws Exception {
 	
 	DeviceStatus device_status = new DeviceStatus();
@@ -4148,9 +4322,9 @@ public static void validate_SOD_Cust_param_homescreen_Optinmode() throws Excepti
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matchged with"     +SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matchged with"     +SOD);
-				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matchged with"     +SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matched with"     +SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matched with"     +SOD);
+				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call is not matched with"     +SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -4179,9 +4353,9 @@ public static void validate_SOD_Cust_param_homescreenhourly_Optinmode() throws E
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matchged with"     +SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matchged with"     +SOD);
-				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matchged with"     +SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matched with"     +SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matched with"     +SOD);
+				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fhourly call is not matched with"     +SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -4210,9 +4384,9 @@ public static void validate_SOD_Cust_param_feed_Optinmode() throws Exception {
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matchged with"     + SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matched with"     + SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -4241,9 +4415,9 @@ public static void validate_SOD_Cust_param_deatiledfeed_Optinmode() throws Excep
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     + SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for deatiled iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     + SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps ad call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for deatiled iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fdetails%2Fmaps call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -4272,9 +4446,9 @@ public static void validate_SOD_Cust_param_video_Optinmode() throws Exception {
 				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is " +SOD);
 			}
 			else {
-				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
-				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
-				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matchged with"     + SOD);
+				System.out.println("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
+				logStep("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
+				Assert.fail("SOD cust param value for iu=%2F7646%2Fapp_android_us%2Fvideo ad call is not matched with"     + SOD);
 			}
 			//System.out.println(expectedValues);
 			
@@ -4506,6 +4680,27 @@ public static void handleInterstailads() throws Exception {
 
 	
 }
+
+public static void handleInterstailadss() throws Exception {
+	attachScreen();
+	System.out.println("checking interstitial ad presented or not on the device");
+	logStep("checking interstitial ad presented or not on the device");
+	Thread.sleep(3000);
+	logStep("Intersitial ad was dispalyed on the screen");
+	System.out.println("Intersitial ad was dispalyed on the screen");
+}
+
+public static void closeInterstailadss() throws Exception {
+	System.out.println("closing the interstial ad on screen");
+logStep("closing the interstial ad on screen");
+Thread.sleep(3000);
+System.out.println("closed the interstial ad on screen");
+logStep("closed the interstial ad on screen");
+attachScreen();
+
+}
+
+
 public static void closeInterstailads() throws Exception {
 	
 	  System.out.println("close the interstial ad on screen");
@@ -4603,6 +4798,27 @@ public static void settheTimer() throws Exception {
 	Thread.sleep(180000);
 	logStep("completed the 3 minutes need to go same details");
 	System.out.println("completed the 3 minutes need to go same details");
+	long millis1=System. currentTimeMillis();
+	java. util. Date date1=new java. util. Date(millis1);
+	//logStep(date1);
+	System. out. println(date1);
+    logStep("current system time");
+	System.out.println("current system time");
+	logStep("current system time");
+}
+
+public static void settheTimerr() throws Exception {
+	logStep("current system time");
+	System.out.println("current system time");
+	long millis=System. currentTimeMillis();
+	java. util. Date date=new java. util. Date(millis);
+	//logStep(date);
+	System. out. println(date);
+	logStep("wait for 1 minute for getting agian interstitial ad call");
+	System.out.println("wait for 1 minute for getting again interstitial ad call");
+	Thread.sleep(60000);
+	logStep("completed the 1 minute need to go same details");
+	System.out.println("completed the 1 minute need to go same details");
 	long millis1=System. currentTimeMillis();
 	java. util. Date date1=new java. util. Date(millis1);
 	//logStep(date1);
@@ -4810,22 +5026,24 @@ public static void dailydetailsintegrated_adcall_response() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Integratedfeedcard");
+	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
 	 
-	if(sb.contains(exceldata[8][1])) {
+	if(sb.contains(exceldata[8][1]) && sb.contains(exceldata[9][1]) && sb.contains(exceldata[10][1])) {
 		//bgEvent:'adBg'
-		System.out.println("got the response for daily details integrated  ad call");
+		System.out.println("got the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
+		logStep("got the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
 		Check_marquee_ad();
 	}
 	if(!sb.contains(exceldata[8][1]))	
 	 {
-		System.out.println("did't  get the response for daily details integrated  ad calll");
-
+		System.out.println("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
+		logStep("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
 		try {
 		Check_marquee_ad();
 		}
 		finally {
-	    Assert.fail("did't the response for marquee ad call");
+			System.out.println("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
+			logStep("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
 		}
 	}
 	 
@@ -4867,18 +5085,18 @@ public static void integratedfeed_adcall_response() throws Exception {
 	 
 	if(sb.contains(exceldata[8][1])) {
 		//bgEvent:'adBg'
-		System.out.println("got the response for integrated feed ad call");
+		System.out.println("got the response for integrated feed card ad call");
 		Check_integratedfeedad_ad();
 	}
 	if(!sb.contains(exceldata[8][1]))	
 	 {
-		System.out.println("did't  the response for integrated feed ad call");
+		System.out.println("did't  the response for integrated feed  card ad call");
 
 		try {
 			Check_integratedfeedad_ad();
 		}
 		finally {
-	    Assert.fail("did't the response for marquee ad call");
+	    Assert.fail("did't the response for  Integrated Feed Card  ad call");
 		}
 	}
 	 
@@ -4888,12 +5106,14 @@ public static void Check_integratedfeedad_ad() throws Exception
 {  
 WebElement feedad=null;
 try{
-System.out.println("Checking for Integrated feed card");
+System.out.println("Checking for Integrated feed card on UI");
+logStep("Checking for Integrated feed card on UI");
 feedad=Ad.findElementByClassName("android.webkit.WebView");
 Thread.sleep(5000);
 if(feedad.isDisplayed())
 {
-System.out.println("Integrated Feed Card ad present on the screen");
+System.out.println("Integrated Feed Card ad present on UI");
+logStep("Integrated Feed Card ad present on UI");
 AppiumFunctions.ScreenShot("IntegratedFeedCard ad","Passed");
 attachScreen();
 System.out.println("took the passed Integrated Feed Card ad screen shot");
@@ -4903,8 +5123,9 @@ catch(Exception e)
 {	
 AppiumFunctions.ScreenShot("IntegratedFeedCard ad","Failed");
 attachScreen();
-System.out.println("took the failed Integrated Feed Card ad  ad screen shot");
-Assert.fail("Integrated Feed Card ad is not present");
+System.out.println("took the failed Integrated Feed Card ad  screen shot");
+logStep("took the failed Integrated Feed Card ad  screen shot");
+Assert.fail("Integrated Feed Card ad is not presenon UI");
 }	
 } 
 
@@ -4912,28 +5133,29 @@ public static void Check_marquee_ad() throws Exception
 {  
 WebElement feedad=null;
 try{
-System.out.println("Checking for IM ad");
+System.out.println("Checking for IDD ad on UI");
+logStep("Checking for IDD ad on UI");
 feedad=Ad.findElementByClassName("android.webkit.WebView");
 Thread.sleep(5000);
 if(feedad.isDisplayed())
 {
-System.out.println("IM ad present");
+System.out.println("IDD ad diaplyed on the screen");
+logStep("IDD ad diaplyed on the screen");
 AppiumFunctions.ScreenShot("M ad","Passed");
 attachScreen();
-System.out.println("took the passed IM ad screen shot");
+System.out.println("took the passed IDD ad screen shot");
+logStep("took the passed IDD ad screen shot");
 }    
 }
 catch(Exception e)
 {	
-AppiumFunctions.ScreenShot("IM ad","Failed");
+AppiumFunctions.ScreenShot("IDD ad","Failed");
 attachScreen();
 System.out.println("took the failed IM ad screen shot");
 Assert.fail("IM` ad is not present");
 }	
 } 
 public static void validate_BG_adcall_Integratedfeedcard()throws Exception {
-	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
-	String wxtgValues="";
 	DeviceStatus device_status = new DeviceStatus();
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
@@ -4958,14 +5180,14 @@ public static void validate_BG_adcall_Integratedfeedcardvideo()throws Exception 
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	String[][] exceldata=read_excel_data.exceldataread("Integratedfeedcard");
 	if(sb.contains(exceldata[19][1])) {
-		System.out.println(exceldata[7][1]+" Background call was generated for Integrated Feed Card ad");
-		logStep(exceldata[19][1]+" Background call was generated for Integrated Feed Card ad ");
+		System.out.println(exceldata[7][1]+" Background call was generated for  Integrated Feed Card Video");
+		logStep(exceldata[19][1]+" Background call was generated for  Integrated Feed Card Video ");
 	}	
 
 		if(!sb.contains(exceldata[19][1]))
 			System.out.println(exceldata[19][1]+" Background call is not generated for Integrated Feed Card ad");
-		logStep(exceldata[19][1]+" Background call is not generated for  Integrated Feed Card ad");
-		Assert.fail(exceldata[19][1]+" Background call is not generated for  Integrated Feed Card ad");
+		logStep(exceldata[19][1]+" Background call is not generated for  Integrated Feed Card Video");
+		Assert.fail(exceldata[19][1]+" Background call is not generated for   Integrated Feed Card Video");
 	}
 public static void validate_FG_adcall_Integratedfeedcard() throws Exception {
 	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
@@ -4995,110 +5217,40 @@ public static void validate_FG_adcall_Integratedfeedcardvideo() throws Exception
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	String[][] exceldata=read_excel_data.exceldataread("Integratedfeedcard");
 	if(sb.contains(exceldata[20][1])) {		
-		System.out.println(exceldata[20][1]+ " Foreground call was generated for Integrated Feed Card  ad");		
-		logStep(exceldata[20][1]+ " Foreground call was generated for Integrated Feed Card  ad");
+		System.out.println(exceldata[20][1]+ " Foreground call was generated for  Integrated Feed Card Video");		
+		logStep(exceldata[20][1]+ " Foreground call was generated for Integrated Feed Card Video");
 	}
 	
 	if(!sb.contains(exceldata[20][1])) {
-		System.out.println(exceldata[20][1]+" Foreground call is not generated for Integrated Feed Card ad");
-		Assert.fail(exceldata[20][1]+" Foreground call is not generated for Integrated Feed Card ad");
+		System.out.println(exceldata[20][1]+" Foreground call is not generated for Integrated Feed Card Video");
+		Assert.fail(exceldata[20][1]+" Foreground call is not generated for Integrated Feed Card Video");
 	}
 	}
 
-	
-	
-	public static void get_Interstitial_aaxcal_Hourly() throws Exception {
+/*public static void validate_a3p_marquee() throws Exception {
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	System.out.println("Verifying amazon \"slotId\": \"2adb145c-0f90-44e9-852a-fa757c870db1\"  for db_display/interstitial/hourly");
-	logStep("Verifying amazon \"slotId\": \"2adb145c-0f90-44e9-852a-fa757c870db1\"   for db_display/interstitial/hourly");
-	//System.out.println("Slot Name is  : "+slotID);
-	if(sb.contains("2adb145c-0f90-44e9-852a-fa757c870db1")) {
-	System.out.println("2adb145c-0f90-44e9-852a-fa757c870db1 is trigred for aax  call db_display/interstitial/hourly");
-	logStep("2adb145c-0f90-44e9-852a-fa757c870db1 is trigred for aax  call db_display/interstitial/hourly");
-	}
-	if(!sb.contains("9be28769-4207-4d51-8063-dc8e645383b2")) {
-		System.out.println("slotID :: 9be28769-4207-4d51-8063-dc8e645383b2 is not trigred for aax call db_display/interstitial/hourly");
-		logStep("slotID ::  9be28769-4207-4d51-8063-dc8e645383b2 is not trigred for aax call db_display/interstitial/hourly");
-		Assert.fail("slotID ::  9be28769-4207-4d51-8063-dc8e645383b2 is not trigred for aax call db_display/interstitial/hourly");
+	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekahead");
+	if(sb.toString().contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")){
+		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarquee"));
+		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("a3p"));
+		//String expected_data = required_info.toString().substring(required_info.indexOf("a3p"),required_info.indexOf());
+		//String expectedValues = expected_data.toString();
+		//String marqueeadsize=expectedValues.replaceAll(exceldata[4][1], "");
+		if(marqueeadsize.equalsIgnoreCase(exceldata[3][1])) {
+			System.out.println(" ad call size is:::"  + marqueeadsize);
+		}
+		else {
+			System.out.println("ad call size is not matched with"     + exceldata[3][1]);
+			Assert.fail("ad call size is not matched with"+ exceldata[3][1]);
+		}
+		System.out.println(expectedValues);
 		
-		}
-}
-
-
-
-
-public static void get_Interstitial_aaxcal_map_details() throws Exception {
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	System.out.println("Verifying amazon \"slotId\": \"14c21e29-45dd-43e3-b1f4-60376e220445\"  for db_display/interstitial/maps");
-	logStep("Verifying amazon \"slot Id\": \"14c21e29-45dd-43e3-b1f4-60376e220445\"  for db_display/interstitial/maps");
-	//System.out.println("Slot Name is  : "+slotID);
-	if(sb.contains("14c21e29-45dd-43e3-b1f4-60376e220445")) {
-	System.out.println("14c21e29-45dd-43e3-b1f4-60376e220445 is trigred for aax  call db_display/interstitial/maps");
-	logStep("14c21e29-45dd-43e3-b1f4-60376e220445 is trigred for aax  call db_display/interstitial/maps");
 	}
-	if(!sb.contains("14c21e29-45dd-43e3-b1f4-60376e220445")) {
-		System.out.println("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
-		logStep("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
-		Assert.fail("slotId 14c21e29-45dd-43e3-b1f4-60376e220445 is not trigred for aax call db_display/interstitial/maps");
-		}
-}
+	}*/
 
-public static void get_Intertstitial_aaxcal_video_details() throws Exception {
-	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	System.out.println("Verifying amazon \"slotId\": \"ed8162e5-450a-415f-86c4-76a9fd40208c\"  for app_android_us/interstitial/video");
-	logStep("Verifying amazon \"slotId\": \"ed8162e5-450a-415f-86c4-76a9fd40208c\"   for app_android_us/interstitial/video");
-	//System.out.println("Slot Name is  : "+slotID);
-	if(sb.contains("ed8162e5-450a-415f-86c4-76a9fd40208c")) {
-	System.out.println("ed8162e5-450a-415f-86c4-76a9fd40208c is trigred for aax  call  app_android_us/interstitial/video");
-	logStep("ed8162e5-450a-415f-86c4-76a9fd40208c is trigred for aax  call app_android_us/interstitial/video");
-	}
-	if(!sb.contains("ed8162e5-450a-415f-86c4-76a9fd40208c")) {
-		System.out.println("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
-		logStep("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
-		Assert.fail("slotId ed8162e5-450a-415f-86c4-76a9fd40208c is not trigred for aax call app_android_us/interstitial/video");
-		}
-}
-
-
-public static void get_Intertstitial_aaxcal_Daily1() throws Exception {	
-read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
-String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-System.out.println("Verifying amazon \"slot Id\": \"652177e9-d888-45de-a3c8-4270316faf87\"  for daily details");
-logStep("Verifying amazon \"slot Id\": \"652177e9-d888-45de-a3c8-4270316faf87\"   for  daily details\"");
-if(sb.contains("652177e9-d888-45de-a3c8-4270316faf87")) {
-System.out.println("652177e9-d888-45de-a3c8-4270316faf87eace is trigred for aax  call for daily details");
-logStep("652177e9-d888-45de-a3c8-4270316faf87 is trigred for aax  call  for daily details");
-}
-if(!sb.contains("652177e9-d888-45de-a3c8-4270316faf87")) {
-	System.out.println("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred for for daily details");
-	logStep("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred  for daily details");
-	Assert.fail("slotID 652177e9-d888-45de-a3c8-4270316faf87 is not trigred for daily details");
-	}
-}
-	
-	public static void settheTimerr() throws Exception {
-	logStep("current system time");
-	System.out.println("current system time");
-	long millis=System. currentTimeMillis();
-	java. util. Date date=new java. util. Date(millis);
-	//logStep(date);
-	System. out. println(date);
-	logStep("wait for 1 minute for getting agian interstitial ad call");
-	System.out.println("wait for 1 minute for getting again interstitial ad call");
-	Thread.sleep(60000);
-	logStep("completed the 1 minute need to go same details");
-	System.out.println("completed the 1 minute need to go same details");
-	long millis1=System. currentTimeMillis();
-	java. util. Date date1=new java. util. Date(millis1);
-	//logStep(date1);
-	System. out. println(date1);
-    logStep("current system time");
-	System.out.println("current system time");
-	logStep("current system time");
-}
 
 public static void validate_Size_integratedfeedCardad() throws Exception {
 	DeviceStatus device_status = new DeviceStatus();
@@ -5121,9 +5273,1727 @@ public static void validate_Size_integratedfeedCardad() throws Exception {
 		}
 		System.out.println(expectedValues);
 		
-		
+	}
+	}
+
+
+
+
+public static void validate_aax_bid_value_with_gampad_bid_value( String sheetName,boolean clearList) throws Exception {
+	//readExcelValues.excelValues(excelName, sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	String slotID =data[12][Cap];
+	// String feedCall = readExcelValues.data[18][Cap];
+	String feedCall = null;
+	// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
+	if (sheetName.equalsIgnoreCase("PreRollVideo")) {
+		feedCall = videoIUValue;
+	}/* else if(sheetName.equalsIgnoreCase("News(details)")) {
+		feedCall = return_iu_value_of_Feedcall( sheetName);
+	}*/
+	else {
+		feedCall = data[11][Cap];
+	}
+
+	boolean testpass = false;
+	String cust_param = "amzn_b";
+
+	if (sheetName.contains("PreRollVideo")) {
+		cust_param = "amzn_vid";
+	}
+
+	get_amazon_bid_values_from_aaxCalls(slotID, clearList);
+
+	if (aaxcallsSize == 0) {
+		System.out.println("amazon aax " + sheetName
+				+ " call is not generated in current session, so skipping the bid value verification");
+		logStep("amazon aax " + sheetName
+				+ " call is not generated in current session, so skipping the bid value verification");
+
+	} else if (aaxbidErrorCount == aaxcallsResponseSize) {
+		System.out.println("amazon aax " + sheetName
+				+ " call response contains error i.e. bidding is not happened in current session, so skipping the bid value verification");
+		logStep("amazon aax " + sheetName
+				+ " call response contains error i.e. bidding is not happened in current session, so skipping the bid value verification");
+
+	} else if (nextGenIMadDisplayed && sheetName.equalsIgnoreCase("Pulltorefresh")) {
+		/*
+		 * There may be chances that gampad call might not generated.. for ex: when IM
+		 * ad displayed on home screen, then homescreen today call doesnt generate
+		 * 
+		 */
+		System.out
+				.println("Since IM Ad displayed on App Launch, Homescreen Today call bid id validation is skipped");
+		logStep("Since IM Ad displayed on App Launch, Homescreen Today call bid id validation is skipped");
+	} else {
+		get_amazon_bid_values_from_gampadCalls(feedCall, cust_param);
+		/*
+		 * below checks whether the gampad call exists or not before validating for
+		 * amazon bid value..
+		 */
+		if (!isaaxgampadcallexists) {
+			System.out.println("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: "
+					+ cust_param + " validation failed");
+			logStep("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: " + cust_param
+					+ " validation failed");
+			Assert.fail("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: "
+					+ cust_param + " validation failed");
+		} else if(customParamsList.size() == 0) {
+			System.out.println("Ad Call :" + feedCall + " not contains the Custom Parameter: "+cust_param+", hence Custom Parameter: "
+					+ cust_param + " validation failed");
+			logStep("Ad Call :" + feedCall + " not contains the Custom Parameter: "+cust_param+", hence Custom Parameter: "
+					+ cust_param + " validation failed");
+			Assert.fail("Ad Call :" + feedCall + " not contains the Custom Parameter: "+cust_param+", hence Custom Parameter: "
+					+ cust_param + " validation failed");
+		}else {
+			for (int i = 0; i < listOf_b_Params.size(); i++) {
+				for (int j = 0; j < customParamsList.size(); j++) {
+					if (listOf_b_Params.get(i).equalsIgnoreCase(customParamsList.get(j))) {
+						testpass = true;
+						System.out.println("amazon aax " + sheetName
+								+ " call bid value is matched with corresponding gampad call bid value");
+						logStep("amazon aax " + sheetName
+								+ " call bid value is matched with corresponding gampad call bid value");
+						break;
+
+					}
+
+				}
+				if (testpass == true) {
+					break;
+				}
+			}
+		}
+		if (testpass == false) {
+			System.out.println("amazon aax " + sheetName
+					+ " call bid value is not matched with corresponding gampad call bid value");
+			logStep("amazon aax " + sheetName
+					+ " call bid value is not matched with corresponding gampad call bid value");
+			Assert.fail("amazon aax " + sheetName
+					+ " call bid value is not matched with corresponding gampad call bid value");
+		}
 
 	}
+}
+
+
+
+//get b value from gampad calls of XML File and store to list
+	public static void get_amazon_bid_values_from_gampadCalls(String feedCall, String cust_param) throws Exception {
+		// readExcelValues.excelValues(excelName, sheetName);
+
+		// Read the content form file
+		File fXmlFile = new File(CharlesFunctions.outfile.getName());
+		customParamsList.clear();
+		isaaxgampadcallexists = false;
+
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		dbFactory.setValidating(false);
+		dbFactory.setNamespaceAware(true);
+		dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+		dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+		dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+		dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+		Document doc = dBuilder.parse(fXmlFile);
+		// Getting the transaction element by passing xpath expression
+		// NodeList nodeList = doc.getElementsByTagName("transaction");
+		String xpathExpression = "charles-session/transaction/@query";
+		List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+		// Getting custom_params amzn_b values
+		// List<String> customParamsList = new ArrayList<String>();
+
+		// String iuId =
+		// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
+		// String iuId = "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+
+		for (String qry : getQueryList) {
+			if (qry.contains(feedCall)) {
+				isaaxgampadcallexists = true;
+				String tempCustmParam = getCustomParamBy_iu_value(qry, cust_param);
+				if (!"".equals(tempCustmParam)) {
+					customParamsList.add(getCustomParamBy_iu_value(qry, cust_param));
+				} else {
+
+				}
+
+			}
+		}
+		if (!isaaxgampadcallexists) {
+			System.out.println("Corresponding gampad call " + feedCall + " is not generated..");
+			logStep("Corresponding gampad call " + feedCall + " is not generated..");
+		} else {
+			System.out.println(customParamsList);
+			logStep(customParamsList.toString());
+		}
+
 	}
+
+
+public static void get_amazon_bid_values_from_aaxCalls(String slotID, boolean clearList) throws Exception {
+
+	// readExcelValues.excelValues(excelName, sheetName);
+
+	// Read the content form file
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+	if (clearList) {
+		listOf_b_Params.clear();
+		aaxcallsSize = 0;
+	}
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+
+	// Read JSONs and get b value
+	// List<String> jsonBValuesList = new ArrayList<String>();
+
+	// String slotId = readExcelValues.data[21][Cap];
+
+	// String slotId = "c4dd8ec4-e40c-4a63-ae81-8f756793ac5e";
+
+	boolean flag = false;
+	List<String> istofRequestBodies = new ArrayList<String>();
+	List<String> istofResponseBodies = new ArrayList<String>();
+	// List<String> listOf_b_Params = new ArrayList<String>();
+
+	for (int i = 0; i < nodeList.getLength(); i++) {
+		if (nodeList.item(i) instanceof Node) {
+			Node node = nodeList.item(i);
+			if (node.hasChildNodes()) {
+				NodeList nl = node.getChildNodes();
+				for (int j = 0; j < nl.getLength(); j++) {
+					Node innernode = nl.item(j);
+					if (innernode != null) {
+						if (innernode.getNodeName().equals("request")) {
+							if (innernode.hasChildNodes()) {
+								NodeList n2 = innernode.getChildNodes();
+								for (int k = 0; k < n2.getLength(); k++) {
+									Node innernode2 = n2.item(k);
+									if (innernode2 != null) {
+										if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+											Element eElement = (Element) innernode2;
+											if (eElement.getNodeName().equals("body")) {
+												String content = eElement.getTextContent();
+												if (content.contains(slotID)) {
+													flag = true;
+													aaxcallsSize++;
+													istofRequestBodies.add(content);
+													// System.out.println("request body "+content);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						if (flag) {
+							if (innernode.getNodeName().equals("response")) {
+								// System.out.println(innernode.getNodeName());
+								if (innernode.hasChildNodes()) {
+									NodeList n2 = innernode.getChildNodes();
+									for (int k = 0; k < n2.getLength(); k++) {
+										Node innernode2 = n2.item(k);
+										if (innernode2 != null) {
+											if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+												Element eElement = (Element) innernode2;
+												if (eElement.getNodeName().equals("body")) {
+													String content = eElement.getTextContent();
+													istofResponseBodies.add(content);
+													String tempBparam = get_b_value_inJsonResponseBody(content);
+													if (!"".contentEquals(tempBparam)) {
+														listOf_b_Params.add(tempBparam);
+													}
+													// System.out.println("response body "+content);
+												}
+											}
+										}
+									}
+								}
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+		flag = false;
+	}
+	System.out.println(listOf_b_Params);
+	logStep(listOf_b_Params.toString());
+
+	aaxcallsResponseSize = listOf_b_Params.size();
+	aaxbidErrorCount = 0;
+	for (String b : listOf_b_Params) {
+		System.out.println(" b values from JSON-----------> " + b);
+		if (b.contentEquals("error")) {
+			aaxbidErrorCount++;
+		}
+	}
+	System.out.println("aaxcalls Size is: " + aaxcallsSize);
+	System.out.println("aaxcallsResponse Size is: " + aaxcallsResponseSize);
+	System.out.println("aaxbidErrorCount size is: " + aaxbidErrorCount);
+
+}
+private static String get_b_value_inJsonResponseBody(String qryValue) {
+	String b_paramValue = "";
+	JSONParser parser = new JSONParser();
+	try {
+		JSONObject json = (JSONObject) parser.parse(qryValue);
+		Object obj = checkKey(json, "b");
+		if (obj != null) {
+			b_paramValue = obj.toString();
+		} else {
+			// inorder to not to disturb the existing method structure, when there is no
+			// bidding happens i.e. response contains error, returning error explicitly
+			b_paramValue = "error";
+		}
+	} catch (ParseException e) {
+		// inorder to not to disturb the existing method structure, when there is no
+		// bidding happens i.e. response contains error, returning error explicitly
+		b_paramValue = "error";
+		e.printStackTrace();
+	}
+
+	return b_paramValue;
+}
+
+////*** Criteo test Methods***///
+
+
+
+
+public static void verifyCriteo_inapp_v2_Call(String sheetName) throws Exception {
+	
+	String[][] data = read_excel_data.exceldataread("Criteo");
+	
+	//readExcelValues.excelValues( sheetName);
+	String host = data[2][1];
+	System.out.println(host);
+	
+	String path = data[3][1];
+	System.out.println(path);
+	boolean flag = verifyAPICalWithHostandPath(host, path);
+	if (flag) {
+		System.out.println(host + path + " call is present in Charles session");
+		logStep(host + path + " call is present in Charles session");
+
+	} else {
+		System.out.println(host + path + " call is not present in Charles session");
+		logStep(host + path + " call is not present in Charles session");
+
+		Assert.fail(host + path + " call is not present in Charles session");
+
+	}
+}
+
+
+public static void verifyCriteo_config_app_Call(String sheetName) throws Exception {
+String[][] data = read_excel_data.exceldataread("Criteo");
+	
+	//readExcelValues.excelValues( sheetName);
+	String host = data[2][1];
+	System.out.println(host);
+	String path = data[4][1];
+	System.out.println(path);
+	
+	/*readExcelValues.excelValues(excelName, sheetName);
+	String host = readExcelValues.data[2][Cap];
+	String path = readExcelValues.data[4][Cap];*/
+	boolean flag = verifyAPICalWithHostandPath(host, path);
+	if (flag) {
+		System.out.println(host + path + " call is present in Charles session");
+		logStep(host + path + " call is present in Charles session");
+
+	} else {
+		System.out.println(host + path + " call is not present in Charles session");
+		logStep(host + path + " call is not present in Charles session");
+
+		Assert.fail(host + path + " call is not present in Charles session");
+
+	}
+}
+
+
+public static void validate_Criteo_SDK_config_app_call_parameter(String sheetName,
+		String cust_param, String expected) throws Exception {
+String[][] data = read_excel_data.exceldataread("Criteo");
+	
+	//readExcelValues.excelValues( sheetName);
+	String host = data[2][1];
+	String path = data[4][1];
+	/*readExcelValues.excelValues(excelName, sheetName);
+	String host = readExcelValues.data[2][Cap];
+	String path = readExcelValues.data[4][Cap];*/
+
+	boolean flag = verifyAPICalWithHostandPath(host, path);
+	if (flag) {
+		System.out.println(host + path + " call is present in Charles session");
+		logStep(host + path + " call is present in Charles session");
+
+		String actual = get_param_value_from_APIRequest(host, path, cust_param);
+
+		if (actual.equalsIgnoreCase(expected)) {
+			System.out.println("Custom Parameter :" + cust_param + " value: " + actual
+					+ " is matched with the expected value " + expected);
+			logStep("Custom Parameter :" + cust_param + " value: " + actual + " is matched with the expected value "
+					+ expected);
+		} else {
+			System.out.println("Custom Parameter :" + cust_param + " value: " + actual
+					+ " is not matched with the expected value " + expected);
+			logStep("Custom Parameter :" + cust_param + " value: " + actual
+					+ " is not matched with the expected value " + expected);
+			Assert.fail("Custom Parameter :" + cust_param + " value: " + actual
+					+ " is not matched with the expected value " + expected);
+		}
+
+	} else {
+		System.out.println(host + path + " call is not present in Charles session, hence Custom Parameter: "
+				+ cust_param + " validation skipped");
+		logStep(host + path + " call is not present in Charles session, hence Custom Parameter: " + cust_param
+				+ " validation skipped");
+
+		Assert.fail(host + path + " call is not present in Charles session, hence Custom Parameter: " + cust_param
+				+ " validation skipped");
+
+	}
+
+}
+
+
+public static String get_param_value_from_APIRequest(String host, String path, String cust_param) throws Exception {
+	// readExcelValues.excelValues(excelName, sheetName);
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	// dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+	String xpathExpression = "charles-session/transaction/@host";
+	List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+	// Getting custom_params amzn_b values
+	List<String> customParamsList = new ArrayList<String>();
+
+	// String iuId = null;
+
+	boolean iuExists = false;
+	for (String qry : getQueryList) {
+		if (qry.contains(host)) {
+			iuExists = true;
+			break;
+		}
+	}
+	boolean hflag = false;
+	boolean pflag = false;
+	boolean resflag = false;
+	String ApiParamValue = null;
+
+	if (iuExists) {
+		System.out.println(host + "  call is present");
+		logStep(host + "  call is present");
+		outerloop: for (int p = 0; p < nodeList.getLength(); p++) {
+			// System.out.println("Total transactions: "+nodeList.getLength());
+			if (nodeList.item(p) instanceof Node) {
+				Node node = nodeList.item(p);
+				if (node.hasChildNodes()) {
+					NodeList nl = node.getChildNodes();
+					for (int j = 0; j < nl.getLength(); j++) {
+						// System.out.println("node1 length is: "+nl.getLength());
+						Node innernode = nl.item(j);
+						if (innernode != null) {
+							// System.out.println("Innernode name is: "+innernode.getNodeName());
+							if (innernode.getNodeName().equals("request")) {
+								if (innernode.hasChildNodes()) {
+									NodeList n2 = innernode.getChildNodes();
+									for (int k = 0; k < n2.getLength(); k++) {
+										// System.out.println("node2 length is: "+n2.getLength());
+										Node innernode2 = n2.item(k);
+										if (innernode2 != null) {
+											// System.out.println("Innernode2 name is: "+innernode2.getNodeName());
+											if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+												Element eElement = (Element) innernode2;
+												// System.out.println("Innernode2 element name is:
+												// "+eElement.getNodeName());
+												if (eElement.getNodeName().equals("headers")) {
+													if (innernode2.hasChildNodes()) {
+														NodeList n3 = innernode2.getChildNodes();
+														for (int q = 0; q < n3.getLength(); q++) {
+															// System.out.println("node3 length is:
+															// "+n3.getLength());
+															Node innernode3 = n3.item(q);
+															if (innernode3 != null) {
+																// System.out.println("Innernode3 name is:
+																// "+innernode3.getNodeName());
+																if (innernode3.getNodeType() == Node.ELEMENT_NODE) {
+																	Element eElement1 = (Element) innernode3;
+																	// System.out.println("Innernode3 element name
+																	// is: "+eElement1.getNodeName());
+																	if (eElement1.getNodeName().equals("header")) {
+																		String content = eElement1.getTextContent();
+																		// System.out.println("request body
+																		// "+content);
+
+																		if (content.contains(host)) {
+																			hflag = true;
+																			// System.out.println("request body
+																			// found "
+																			// + content);
+
+																		} else if (content.contains(path)) {
+																			pflag = true;
+																			// System.out.println("request body
+																			// found "
+																			// + content);
+																		}
+																	}
+																	
+																	//if(hflag && !pflag) {
+																		if (eElement1.getNodeName().equals("first-line")) {
+																			String content = eElement1.getTextContent();
+																			// System.out.println("request body
+																			// "+content);
+
+																			if (content.contains(path)) {
+																				pflag = true;
+																				// System.out.println("request body
+																				// found "
+																				// + content);
+																			}
+																		}
+																//	}
+																}
+															}
+														}
+													}
+												}
+												if (hflag && pflag) {
+													if (eElement.getNodeName().equals("body")) {
+														String scontent = eElement.getTextContent();
+														if (scontent.contains(cust_param)) {
+															// System.out.println("request body " + scontent);
+															ApiParamValue = get_Param_Value_inJsonBody(scontent,
+																	cust_param);
+															break outerloop;
+
+														}
+
+													}
+
+												}
+
+											}
+										}
+									}
+								}
+							}
+
+							/*
+							 * if (hflag && pflag) { resflag = true; break outerloop; }
+							 */
+						}
+					}
+				}
+			}
+			// flag = false;
+		}
+
+	} else {
+		System.out.println(host + " ad call is not present");
+		logStep(host + " ad call is not present");
+
+	}
+
+	// return resflag;
+	// System.out.println("Parameter value obtined from criteo request is :" +
+	// ApiParamValue);
+	return ApiParamValue;
+
+}
+
+
+
+private static String get_Param_Value_inJsonBody(String qryValue, String param) {
+	String b_paramValue = "";
+	JSONParser parser = new JSONParser();
+	try {
+		JSONObject json = (JSONObject) parser.parse(qryValue);
+		Object obj = checkKey(json, param);
+		if (obj != null) {
+			b_paramValue = obj.toString();
+		} else {
+			// inorder to not to disturb the existing method structure, when there is no
+			// bidding happens i.e. response contains error, returning error explicitly
+			b_paramValue = "error";
+		}
+	} catch (ParseException e) {
+		// inorder to not to disturb the existing method structure, when there is no
+		// bidding happens i.e. response contains error, returning error explicitly
+		b_paramValue = "error";
+		e.printStackTrace();
+	}
+
+	return b_paramValue;
+}
+
+// To get the value for "b". Here key is -> 'b'
+public static Object checkKey(JSONObject object, String searchedKey) {
+	boolean exists = object.containsKey(searchedKey);
+	Object obj = null;
+	if (exists) {
+		obj = object.get(searchedKey);
+	}
+	if (!exists) {
+		Set<String> keys = object.keySet();
+		for (String key : keys) {
+			if (object.get(key) instanceof JSONObject) {
+				obj = checkKey((JSONObject) object.get(key), searchedKey);
+			}
+		}
+	}
+	return obj;
+}
+
+
+public static boolean verifyAPICalWithHostandPath(String host, String path) throws Exception {
+	// readExcelValues.excelValues(excelName, sheetName);
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	// dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+	String xpathExpression = "charles-session/transaction/@host";
+	List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+// Getting custom_params amzn_b values
+	List<String> customParamsList = new ArrayList<String>();
+
+	// String iuId = null;
+
+	boolean iuExists = false;
+	for (String qry : getQueryList) {
+		if (qry.contains(host)) {
+			iuExists = true;
+			break;
+		}
+	}
+	boolean hflag = false;
+	boolean pflag = false;
+	boolean resflag = false;
+
+	if (iuExists) {
+		System.out.println(host + "  call is present");
+		logStep(host + "  call is present");
+		outerloop: for (int p = 0; p < nodeList.getLength(); p++) {
+			// System.out.println("Total transactions: "+nodeList.getLength());
+			if (nodeList.item(p) instanceof Node) {
+				Node node = nodeList.item(p);
+				if (node.hasChildNodes()) {
+					NodeList nl = node.getChildNodes();
+					for (int j = 0; j < nl.getLength(); j++) {
+						// System.out.println("node1 length is: "+nl.getLength());
+						Node innernode = nl.item(j);
+						if (innernode != null) {
+							// System.out.println("Innernode name is: "+innernode.getNodeName());
+							if (innernode.getNodeName().equals("request")) {
+								if (innernode.hasChildNodes()) {
+									NodeList n2 = innernode.getChildNodes();
+									for (int k = 0; k < n2.getLength(); k++) {
+										// System.out.println("node2 length is: "+n2.getLength());
+										Node innernode2 = n2.item(k);
+										if (innernode2 != null) {
+											// System.out.println("Innernode2 name is: "+innernode2.getNodeName());
+											if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+												Element eElement = (Element) innernode2;
+												// System.out.println("Innernode2 element name is:
+												// "+eElement.getNodeName());
+												if (eElement.getNodeName().equals("headers")) {
+													if (innernode2.hasChildNodes()) {
+														NodeList n3 = innernode2.getChildNodes();
+														for (int q = 0; q < n3.getLength(); q++) {
+															// System.out.println("node3 length is:
+															// "+n3.getLength());
+															Node innernode3 = n3.item(q);
+															if (innernode3 != null) {
+																// System.out.println("Innernode3 name is:
+																// "+innernode3.getNodeName());
+																if (innernode3.getNodeType() == Node.ELEMENT_NODE) {
+																	Element eElement1 = (Element) innernode3;
+																	// System.out.println("Innernode3 element name
+																	// is: "+eElement1.getNodeName());
+																	if (eElement1.getNodeName().equals("header")) {
+																		String content = eElement1.getTextContent();
+																		// System.out.println("request body
+																		// "+content);
+
+																		if (content.contains(host)) {
+																			hflag = true;
+																			// System.out.println("request body
+																			// found "
+																			// + content);
+
+																		} else if (content.contains(path)) {
+																			pflag = true;
+																			// System.out.println("request body
+																			// found "
+																			// + content);
+																		}
+																	}
+																	//if(hflag && !pflag) {
+																		if (eElement1.getNodeName().equals("first-line")) {
+																			String content = eElement1.getTextContent();
+																			// System.out.println("request body
+																			// "+content);
+
+																			if (content.contains(path)) {
+																				pflag = true;
+																				// System.out.println("request body
+																				// found "
+																				// + content);
+																			}
+																		}
+																	//}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							/*
+							 * if (flag) { // System.out.println("Exiting after found true "); //
+							 * System.out.println("checking innernode name is: "+innernode.getNodeName());
+							 * if (innernode.getNodeName().equals("response")) { //
+							 * System.out.println(innernode.getNodeName()); if (innernode.hasChildNodes()) {
+							 * NodeList n2 = innernode.getChildNodes(); for (int k = 0; k < n2.getLength();
+							 * k++) { Node innernode2 = n2.item(k); if (innernode2 != null) { if
+							 * (innernode2.getNodeType() == Node.ELEMENT_NODE) { Element eElement =
+							 * (Element) innernode2; if (eElement.getNodeName().equals("body")) { String
+							 * content = eElement.getTextContent(); //
+							 * System.out.println("response body "+content); if
+							 * (content.contains(readExcelValues.data[13][Cap])) { resflag = true; break
+							 * outerloop;
+							 * 
+							 * } } } } } } }
+							 * 
+							 * }
+							 */
+							if (hflag && pflag) {
+								resflag = true;
+								break outerloop;
+							}
+						}
+					}
+				}
+			}
+			// flag = false;
+		}
+
+	} else {
+		System.out.println(host + " ad call is not present");
+		logStep(host + " ad call is not present");
+
+	}
+
+	return resflag;
+
+	// Get Pubad call from
+
+	/*
+	 * if (resflag) { System.out.println(host + path
+	 * +" call is present in Charles session"); logStep(host + path
+	 * +" call is present in Charles session"); return resflag;
+	 * 
+	 * } else { System.out .println(host + path
+	 * +" call is not present in Charles session"); logStep(host + path
+	 * +" call is not present in Charles session"); return resflag;
+	 * //Assert.fail(host + path +" call is not present in Charles session");
+	 * 
+	 * }
+	 */
+
+}
+
+
+public static void verifyAAX_SlotId(String sheetName) throws Exception {
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	// Read the content form file
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+
+	// Read JSONs and get b value
+	// List<String> jsonBValuesList = new ArrayList<String>();
+
+	// String slotId = "153f5936-781f-4586-8fdb-040ce298944a";
+
+	// String slotId = "c4dd8ec4-e40c-4a63-ae81-8f756793ac5e";
+	String slotId = data[12][Cap];
+
+	boolean flag = false;
+	// List<String> istofRequestBodies = new ArrayList<String>();
+	// List<String> istofResponseBodies = new ArrayList<String>();
+	// List<String> listOf_b_Params = new ArrayList<String>();
+
+	nodeList: for (int i = 0; i < nodeList.getLength(); i++) {
+		if (nodeList.item(i) instanceof Node) {
+			Node node = nodeList.item(i);
+			if (node.hasChildNodes()) {
+				NodeList nl = node.getChildNodes();
+				NodeList: for (int j = 0; j < nl.getLength(); j++) {
+					Node innernode = nl.item(j);
+					if (innernode != null) {
+						if (innernode.getNodeName().equals("request")) {
+							if (innernode.hasChildNodes()) {
+								NodeList n2 = innernode.getChildNodes();
+								for (int k = 0; k < n2.getLength(); k++) {
+									Node innernode2 = n2.item(k);
+									if (innernode2 != null) {
+										if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+											Element eElement = (Element) innernode2;
+											if (eElement.getNodeName().equals("body")) {
+												String content = eElement.getTextContent();
+												if (content.contains(slotId)) {
+													flag = true;
+													// istofRequestBodies.add(content);
+
+													break nodeList;
+
+													// System.out.println("request body "+content);
+												}
+											}
+										}
+									}
+								}
+
+							}
+						}
+
+					}
+				}
+
+			}
+		}
+
+	}
+	if (flag) {
+		System.out.println("slot id: " + slotId + " is present");
+		logStep("slot id: " + slotId + " is present");
+
+	} else {
+		System.out.println("slot id: " + slotId + " is not present");
+		logStep("slot id: " + slotId + " is not present");
+		Assert.fail("slot id: " + slotId + " is not present");
+	}
+
+}
+
+//this retrives amazon bid values from aax calls and gampad calls of
+	// correponding add calls and verifies any one matching.
+	public static void validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value(String sheetName, String cust_param, boolean clearList) throws Exception {
+
+			String[][] data = read_excel_data.exceldataread(sheetName);
+		DeviceStatus device_status = new DeviceStatus();
+		int Cap = device_status.Device_Status();
+		String placementId = null;
+		if (sheetName.equalsIgnoreCase("Pulltorefresh")) {
+			placementId = "weather.feed1";
+		} else if (sheetName.equalsIgnoreCase("Hourly")) {
+			placementId = "weather.hourly";
+		} else if (sheetName.equalsIgnoreCase("Feed1")) {
+			placementId = "weather.feed2";
+		} else if (sheetName.equalsIgnoreCase("Feed2")) {
+			placementId = "weather.feed3";
+		} else if (sheetName.equalsIgnoreCase("Feed3")) {
+			placementId = "weather.feed4";
+		} else if (sheetName.equalsIgnoreCase("Feed4")) {
+			placementId = "weather.feed5";
+		} else if (sheetName.equalsIgnoreCase("Feed5")) {
+			placementId = "weather.feed6";
+		} else if (sheetName.equalsIgnoreCase("Feed6")) {
+			placementId = "weather.feed6";
+		} else if (sheetName.equalsIgnoreCase("Feed7")) {
+			placementId = "weather.feed7";
+		} else if (sheetName.equalsIgnoreCase("Air Quality(Content)")) {
+			placementId = "weather.aq";
+		} else if (sheetName.equalsIgnoreCase("SeasonalHub(Details)")) {
+			placementId = "weather.sh.details";
+		} else if (sheetName.equalsIgnoreCase("Today")) {
+			placementId = "weather.trending";
+		} else if (sheetName.equalsIgnoreCase("Daily(10day)")) {
+			placementId = "weather.dailydetails.largeAds.1";
+		} else if (sheetName.equalsIgnoreCase("Map")) {
+			placementId = "weather.maps";
+		} else if (sheetName.equalsIgnoreCase("MyAlerts")) {
+			placementId = "weather.alerts.center";
+		} else if (sheetName.equalsIgnoreCase("weather.alerts")) {
+			placementId = "weather.alerts";
+		} else if (sheetName.equalsIgnoreCase("Health(coldAndFluArticles)")) {
+			/*
+			 * News detils, flu articles, alergy articles has same placement Id, here anything can be used
+			 */
+			placementId = "weather.articles";
+		} else if (sheetName.equalsIgnoreCase("Health(goRun)")) {
+			placementId = "content.run.largeAds";
+		} else if (sheetName.equalsIgnoreCase("Health(boatAndBeach)")) {
+			placementId = "content.beach.largeAds";
+		}
+		
+		String feedCall = null;
+		// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
+		if (sheetName.equalsIgnoreCase("PreRollVideo")) {
+			feedCall = videoIUValue;
+		} /*
+			 * else if (sheetName.equalsIgnoreCase("IDD")) { String today =
+			 * dailyDetailsDayOfWeek.concat("1"); feedCall = readExcelValues.data[18][Cap];
+			 * feedCall = feedCall.concat("_") + today; }
+			 */else {
+					feedCall = data[11][Cap];
+		}
+
+		boolean testpass = false;
+		int failCount = 0;
+
+		get_Criteo_SDK_inapp_v2_call_response_parameter_by_placementId("Criteo", placementId, cust_param,
+				clearList);
+
+		if (criteocallsSize == 0) {
+			System.out.println("Criteo call is not generated in current session, so skipping the " + cust_param
+					+ " value verification");
+			logStep("Criteo call is not generated in current session, so skipping the " + cust_param
+					+ " value verification");
+
+		} else if (criteocallsResponseSize == 0) {
+			System.out.println("Criteo call response doesn't have the placement id: " + placementId
+					+ "  i.e. bidding is not happened in current session, so skipping the " + cust_param
+					+ " value verification");
+			logStep("Criteo call response doesn't have the placement id: " + placementId
+					+ "  i.e. bidding is not happened in current session, so skipping the " + cust_param
+					+ " value verification");
+
+		} else if (criteoparamErrorCount == criteocallsResponseSize) {
+			System.out.println(
+					"Criteo call response contains error i.e. bidding is not happened in current session, so skipping the "
+							+ cust_param + " value verification");
+			logStep("Criteo call response contains error i.e. bidding is not happened in current session, so skipping the "
+					+ cust_param + " value verification");
+
+		} else if (nextGenIMadDisplayed && sheetName.equalsIgnoreCase("Pulltorefresh")) {
+			/*
+			 * There may be chances that gampad call might not generated.. for ex: when IM
+			 * ad displayed on home screen, then homescreen today call doesnt generate
+			 * 
+			 */
+			System.out.println("Since IM Ad displayed on App Launch, Homescreen Today call: " + cust_param
+					+ " id validation is skipped");
+			logStep("Since IM Ad displayed on App Launch, Homescreen Today call: " + cust_param
+					+ " id validation is skipped");
+		} else {
+			if (cust_param.contentEquals("displayUrl")) {
+				cust_param = "displayurl";
+			}
+			get_custom_param_values_from_gampadCalls(feedCall, "crt_" + cust_param);
+			if (criteogampadcallcount == 0) {
+				System.out.println("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: "
+						+ cust_param + " validation failed");
+				logStep("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: " + cust_param
+						+ " validation failed");
+				Assert.fail("Ad Call :" + feedCall + " not found in charles session, hence Custom Parameter: "
+						+ cust_param + " validation failed");
+			} else if (customParamsList.size() == 0) {
+				System.out.println("Ad Call :" + feedCall + " not having Custom Parameter: " + cust_param
+						+ ", hence Custom Parameter: " + cust_param + " validation failed");
+				logStep("Ad Call :" + feedCall + " not having Custom Parameter: " + cust_param
+						+ ", hence Custom Parameter: " + cust_param + " validation failed");
+				Assert.fail("Ad Call :" + feedCall + " not having Custom Parameter: " + cust_param
+						+ ", hence Custom Parameter: " + cust_param + " validation failed");
+			} else {
+
+				int maxIterations = 0;
+				if (listOf_criteo_Params.size() > customParamsList.size()) {
+					maxIterations = customParamsList.size();
+				} else {
+					maxIterations = listOf_criteo_Params.size();
+				}
+
+				if (!sheetName.equalsIgnoreCase("Health(goRun)")
+						&& !sheetName.equalsIgnoreCase("Health(boatAndBeach)")) {
+					for (int i = 0; i < maxIterations; i++) {
+
+						if (listOf_criteo_Params.get(i).equalsIgnoreCase("-1")) {
+							if (listOf_criteo_Params.size() == 1) {
+								System.out.println(
+										"It looks that the only Occurance of Criteo Call bidding is not happened..Hence skipping the further validation...inspect the charles response for more details");
+								logStep("It looks that the only Occurance of Criteo Call bidding is not happened..Hence skipping the further validation...inspect the charles response for more details");
+							} else {
+								System.out.println("It looks that: " + i
+										+ " Occurance of Criteo Call bidding is not happened..Hence skipping the current instance validation...inspect the charles response for more details");
+								logStep("It looks that: " + i
+										+ " Occurance of Criteo Call bidding is not happened..Hence skipping the current instance validation...inspect the charles response for more details");
+							}
+
+						} else {
+
+							if (cust_param.equalsIgnoreCase("displayurl")) {
+
+								if (customParamsList.get(i).equalsIgnoreCase("-1")) {
+									System.out.println(i + " Occurance of corresponding " + sheetName + " gampad call: "
+											+ feedCall + " not having parameter " + cust_param);
+									logStep(i + " Occurance of corresponding " + sheetName + " gampad call: " + feedCall
+											+ " not having parameter " + cust_param);
+									failCount++;
+								} else {
+									System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is  matched with " + i
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i));
+									logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is  matched with " + i
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i));
+
+								}
+
+							} else {
+								if (listOf_criteo_Params.get(i).equalsIgnoreCase(customParamsList.get(i))) {
+
+									System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is matched with " + i
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i));
+									logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is matched with " + i
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i));
+								} else {
+									if (customParamsList.get(i).equalsIgnoreCase("-1")) {
+										System.out.println(i + " Occurance of corresponding " + sheetName
+												+ " gampad call: " + feedCall + " not having parameter " + cust_param);
+										logStep(i + " Occurance of corresponding " + sheetName + " gampad call: "
+												+ feedCall + " not having parameter " + cust_param);
+										failCount++;
+									} else {
+										System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+												+ listOf_criteo_Params.get(i) + " is not matched with " + i
+												+ " Occurance of corresponding " + sheetName + " gampad call "
+												+ cust_param + " value: " + customParamsList.get(i));
+										logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+												+ listOf_criteo_Params.get(i) + " is not matched with " + i
+												+ " Occurance of corresponding " + sheetName + " gampad call "
+												+ cust_param + " value: " + customParamsList.get(i));
+										failCount++;
+									}
+
+								}
+							}
+
+						}
+
+					}
+
+				} else {
+					for (int i = 0; i < maxIterations / 2; i++) {
+
+						if (listOf_criteo_Params.get(i).equalsIgnoreCase("-1")) {
+							if (listOf_criteo_Params.size() == 1) {
+								System.out.println(
+										"It looks that the only Occurance of Criteo Call bidding is not happened..Hence skipping the further validation...inspect the charles response for more details");
+								logStep("It looks that the only Occurance of Criteo Call bidding is not happened..Hence skipping the further validation...inspect the charles response for more details");
+							} else {
+								System.out.println("It looks that: " + i
+										+ " Occurance of Criteo Call bidding is not happened..Hence skipping the current instance validation...inspect the charles response for more details");
+								logStep("It looks that: " + i
+										+ " Occurance of Criteo Call bidding is not happened..Hence skipping the current instance validation...inspect the charles response for more details");
+							}
+
+						} else {
+							if (cust_param.equalsIgnoreCase("displayurl")) {
+
+								if (customParamsList.get(i + 1).equalsIgnoreCase("-1")) {
+									System.out.println(i + 1 + " Occurance of corresponding " + sheetName
+											+ " gampad call: " + feedCall + " not having parameter " + cust_param);
+									logStep(i + 1 + " Occurance of corresponding " + sheetName + " gampad call: "
+											+ feedCall + " not having parameter " + cust_param);
+									failCount++;
+								} else {
+									System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is  matched with " + i + 1
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i + 1));
+									logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is  matched with " + i + 1
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i + 1));
+
+								}
+
+							} else {
+								if (listOf_criteo_Params.get(i).equalsIgnoreCase(customParamsList.get(i + 1))) {
+
+									System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is matched with " + i + 1
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i + 1));
+									logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+											+ listOf_criteo_Params.get(i) + " is matched with " + i + 1
+											+ " Occurance of corresponding " + sheetName + " gampad call " + cust_param
+											+ " value: " + customParamsList.get(i + 1));
+								} else {
+									if (customParamsList.get(i + 1).equalsIgnoreCase("-1")) {
+										System.out.println(i + 1 + " Occurance of corresponding " + sheetName
+												+ " gampad call: " + feedCall + " not having parameter " + cust_param);
+										logStep(i + 1 + " Occurance of corresponding " + sheetName + " gampad call: "
+												+ feedCall + " not having parameter " + cust_param);
+										failCount++;
+									} else {
+										System.out.println(i + " Occurance of Criteo call " + cust_param + " value: "
+												+ listOf_criteo_Params.get(i) + " is not matched with " + i + 1
+												+ " Occurance of corresponding " + sheetName + " gampad call "
+												+ cust_param + " value: " + customParamsList.get(i + 1));
+										logStep(i + " Occurance of Criteo call " + cust_param + " value: "
+												+ listOf_criteo_Params.get(i) + " is not matched with " + i + 1
+												+ " Occurance of corresponding " + sheetName + " gampad call "
+												+ cust_param + " value: " + customParamsList.get(i + 1));
+										failCount++;
+									}
+
+								}
+							}
+
+						}
+
+					}
+				}
+
+			}
+		}
+
+		if (failCount > 0) {
+			System.out.println("Criteo call " + cust_param + " values  not matched with corresponding " + sheetName
+					+ " gampad call " + cust_param + " values");
+			logStep("Criteo call " + cust_param + " values  not matched with corresponding " + sheetName
+					+ " gampad call " + cust_param + " values");
+			Assert.fail("Criteo call " + cust_param + " values  not matched with corresponding " + sheetName
+					+ "  gampad call " + cust_param + " values");
+		}
+
+	}
+private static List<String> evaluateXPath(Document document, String xpathExpression) throws Exception {
+	// Create XPathFactory object
+	XPathFactory xpathFactory = XPathFactory.newInstance();
+	// Create XPath object
+	XPath xpath = xpathFactory.newXPath();
+	List<String> values = new ArrayList<String>();
+	try {
+		// Create XPathExpression object
+		XPathExpression expr = xpath.compile(xpathExpression);
+		NodeList nodes = (NodeList) expr.evaluate(document, XPathConstants.NODESET);
+		for (int i = 0; i < nodes.getLength(); i++) {
+			values.add(nodes.item(i).getNodeValue());
+		}
+	} catch (XPathExpressionException e) {
+		e.printStackTrace();
+	}
+	return values;
+}
+
+public static void verifyCriteo_config_app_Call(String sheetName, boolean expected)
+		throws Exception {
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	String host = data[2][Cap];
+	String path = data[4][Cap];
+	boolean flag = verifyAPICalWithHostandPath(host, path);
+	if (flag) {
+		System.out.println(host + path + " call is present in Charles session");
+		logStep(host + path + " call is present in Charles session");
+
+	} else {
+		System.out.println(host + path + " call is not present in Charles session");
+		logStep(host + path + " call is not present in Charles session");
+	}
+	if (expected == flag) {
+		System.out.println(host + path + " :API Call Verification is successfull");
+		logStep(host + path + " :API Call Verification is successfull");
+
+	} else {
+		System.out.println(host + path + " :API Call Verification is failed");
+		logStep(host + path + " :API Call Verification is failed");
+		if (expected) {
+			System.out.println(host + path + " :API Call expected to present but it not exists");
+			logStep(host + path + " :API Call expected to present but it not exists");
+			Assert.fail(host + path + " :API Call expected to present but it not exists");
+		} else {
+			System.out.println(host + path + " :API Call is not expected to present but it exists");
+			logStep(host + path + " :API Call is not expected to present but it exists");
+			Assert.fail(host + path + " :API Call is not expected to present but it exists");
+		}
+	}
+
+}
+
+public static void verifyCriteo_inapp_v2_Call(String sheetName, boolean expected)
+		throws Exception {
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	//readExcelValues.excelValues(excelName, sheetName);
+	String host =data[2][Cap];
+	String path =data[3][Cap];
+	boolean flag = verifyAPICalWithHostandPath(host, path);
+	if (flag) {
+		System.out.println(host + path + " call is present in Charles session");
+		logStep(host + path + " call is present in Charles session");
+
+	} else {
+		System.out.println(host + path + " call is not present in Charles session");
+		logStep(host + path + " call is not present in Charles session");
+	}
+
+	if (expected == flag) {
+		System.out.println(host + path + " :API Call Verification is successfull");
+		logStep(host + path + " :API Call Verification is successfull");
+
+	} else {
+		System.out.println(host + path + " :API Call Verification is failed");
+		logStep(host + path + " :API Call Verification is failed");
+		if (expected) {
+			System.out.println(host + path + " :API Call expected to present but it not exists");
+			logStep(host + path + " :API Call expected to present but it not exists");
+			Assert.fail(host + path + " :API Call expected to present but it not exists");
+		} else {
+			System.out.println(host + path + " :API Call is not expected to present but it exists");
+			logStep(host + path + " :API Call is not expected to present but it exists");
+			Assert.fail(host + path + " :API Call is not expected to present but it exists");
+		}
+	}
+}
+
+public static void get_custom_param_values_from_gampadCalls(String feedCall, String cust_param) throws Exception {
+	// readExcelValues.excelValues(excelName, sheetName);
+
+	// Read the content form file
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+	customParamsList.clear();
+	criteogampadcallcount = 0;
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	// NodeList nodeList = doc.getElementsByTagName("transaction");
+	String xpathExpression = "charles-session/transaction/@query";
+	List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+	// Getting custom_params amzn_b values
+	// List<String> customParamsList = new ArrayList<String>();
+
+	// String iuId =
+	// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
+	// String iuId = "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+
+	for (String qry : getQueryList) {
+		if (qry.contains(feedCall)) {
+			criteogampadcallcount++;
+			String tempCustmParam = getCustomParamBy_iu_value(qry, cust_param);
+			if (!"".equals(tempCustmParam)) {
+				customParamsList.add(getCustomParamBy_iu_value(qry, cust_param));
+			} else {
+				customParamsList.add("-1");
+				}
+
+		}
+	}
+	System.out.println(customParamsList);
+	logStep(customParamsList.toString());
+	System.out.println("No of times the criteo parameter found in gampad call is: " + customParamsList.size());
+	logStep("No of times the criteo parameter found in gampad call is: " + customParamsList.size());
+	System.out.println("No of times the gampad call found is: " + criteogampadcallcount);
+	logStep("No of times the gampad call found is: " + criteogampadcallcount);
+
+}
+
+private static String getCustomParamBy_iu_value(String qryValue, String cust_param) {
+	List<String> listOfUisQrys = new ArrayList<String>();
+	String cust_params = "";
+	String[] key = null;
+	// if (qryValue != null && qryValue.contains("cust_params")) {
+	if (qryValue != null && qryValue.contains("cust_params")) {
+		cust_params = qryValue.substring(qryValue.indexOf("cust_params"));
+		cust_params = cust_params.replace("%26", "&");
+		cust_params = cust_params.replace("%2C", ",");
+		cust_params = cust_params.replace("%3D", "=");
+	}
+	if (cust_params.indexOf(cust_param) > 0) {
+		try {
+			cust_params = cust_params.substring(cust_params.indexOf("&" + cust_param + "="));
+			cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		} catch (Exception e) {
+			cust_params = cust_params.substring(cust_params.indexOf("=" + cust_param + "="));
+			cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		}
+		// cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		String b[] = cust_params.split("&");
+		cust_params = b[0];
+		key = cust_params.split("=");
+		cust_params = key[1];
+	} else {
+		cust_params = "";
+	}
+	if (cust_param.equalsIgnoreCase("ct")) {
+		cust_params = cust_params.replaceAll("_", " ");
+	}
+
+	return cust_params;
+}
+public static void get_Criteo_SDK_inapp_v2_call_response_parameter_by_placementId(String sheetName, String placementId, String cust_param, boolean clearList) throws Exception {
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	//readExcelValues.excelValues(excelName, sheetName);
+	String host = data[2][1];
+	String path = data[3][1];
+	// Read the content form file
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+	if (clearList) {
+		listOf_criteo_Params.clear();
+		criteocallsSize = 0;
+	}
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+
+	// Read JSONs and get b value
+	// List<String> jsonBValuesList = new ArrayList<String>();
+
+	// String slotId = readExcelValues.data[21][Cap];
+
+	// String slotId = "c4dd8ec4-e40c-4a63-ae81-8f756793ac5e";
+	// weather.hourly
+
+	boolean flag = false;
+	boolean hflag = false;
+	boolean pflag = false;
+	boolean resflag = false;
+	List<String> istofRequestBodies = new ArrayList<String>();
+	List<String> istofResponseBodies = new ArrayList<String>();
+	// List<String> listOf_b_Params = new ArrayList<String>();
+
+	for (int i = 0; i < nodeList.getLength(); i++) {
+		hflag = false;
+		pflag = false;
+		if (nodeList.item(i) instanceof Node) {
+			Node node = nodeList.item(i);
+			if (node.hasChildNodes()) {
+				NodeList nl = node.getChildNodes();
+				for (int j = 0; j < nl.getLength(); j++) {
+					Node innernode = nl.item(j);
+					if (innernode != null) {
+						if (innernode.getNodeName().equals("request")) {
+							if (innernode.hasChildNodes()) {
+								NodeList n2 = innernode.getChildNodes();
+								for (int k = 0; k < n2.getLength(); k++) {
+									Node innernode2 = n2.item(k);
+									if (innernode2 != null) {
+										if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+											Element eElement = (Element) innernode2;
+											if (eElement.getNodeName().equals("headers")) {
+												if (innernode2.hasChildNodes()) {
+													NodeList n3 = innernode2.getChildNodes();
+													for (int q = 0; q < n3.getLength(); q++) {
+														// System.out.println("node3 length is:
+														// "+n3.getLength());
+														Node innernode3 = n3.item(q);
+														if (innernode3 != null) {
+															// System.out.println("Innernode3 name is:
+															// "+innernode3.getNodeName());
+															if (innernode3.getNodeType() == Node.ELEMENT_NODE) {
+																Element eElement1 = (Element) innernode3;
+																// System.out.println("Innernode3 element name
+																// is: "+eElement1.getNodeName());
+																if (eElement1.getNodeName().equals("header")) {
+																	String content = eElement1.getTextContent();
+																	// System.out.println("request body
+																	// "+content);
+
+																	if (content.contains(host)) {
+																		hflag = true;
+																		// System.out.println("request body found "
+																		// + content);
+
+																	} else if (content.contains(path)) {
+																		pflag = true;
+																		// System.out.println("request body found "
+																		// + content);
+																	}
+																	
+																}
+																//if(hflag && !pflag) {
+																if (eElement1.getNodeName().equals("first-line")) {
+																	String content = eElement1.getTextContent();
+																	// System.out.println("request body
+																	// "+content);
+
+																	if (content.contains(path)) {
+																		pflag = true;
+																		// System.out.println("request body
+																		// found "
+																		// + content);
+																	}
+																}
+														//	}
+															}
+														}
+													}
+												}
+											}
+
+											
+											
+											
+											if (hflag && pflag) {
+												if (eElement.getNodeName().equals("body")) {
+													String scontent = eElement.getTextContent();
+
+													/*
+													 * if (scontent.contains(placementId)) { flag = true;
+													 * criteocallsSize++; istofRequestBodies.add(scontent); //
+													 * System.out.println("request body "+scontent);
+													 * 
+													 * }
+													 */
+													boolean tempFlag = verify_criteo_request_for_given_placementId_inJsonRequestBody(
+															placementId, scontent);
+													if (tempFlag) {
+														flag = true;
+														criteocallsSize++;
+														istofRequestBodies.add(scontent);
+														// System.out.println("request body "+scontent);
+
+													}
+
+												}
+
+											}
+											
+											
+											
+											
+											
+										}
+									}
+								}
+							}
+						}
+
+						if (flag) {
+							if (innernode.getNodeName().equals("response")) {
+								// System.out.println(innernode.getNodeName());
+								if (innernode.hasChildNodes()) {
+									NodeList n2 = innernode.getChildNodes();
+									for (int k = 0; k < n2.getLength(); k++) {
+										Node innernode2 = n2.item(k);
+										if (innernode2 != null) {
+											if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
+												Element eElement = (Element) innernode2;
+												if (eElement.getNodeName().equals("body")) {
+													String content = eElement.getTextContent();
+													istofResponseBodies.add(content);
+													// String tempBparam = get_b_value_inJsonResponseBody(content);
+													String tempBparam = get_criteo_response_parameter_value_by_placementId_inJsonResponseBody(
+															placementId, cust_param, content);
+													System.out.println(tempBparam);
+													if (!"".contentEquals(tempBparam)) {
+														listOf_criteo_Params.add(tempBparam);
+													}
+													// System.out.println("response body "+content);
+												}
+											}
+										}
+									}
+								}
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+		flag = false;
+	}
+	System.out.println(listOf_criteo_Params);
+	logStep(listOf_criteo_Params.toString());
+
+	criteocallsResponseSize = listOf_criteo_Params.size();
+	criteoparamErrorCount = 0;
+	for (String b : listOf_criteo_Params) {
+		System.out.println(cust_param + " value from JSON-----------> " + b);
+		if (b.contentEquals("error")) {
+			criteoparamErrorCount++;
+		}
+	}
+	System.out.println("Criteo calls Size is: " + criteocallsSize);
+	System.out.println("Criteo callsResponse Size is: " + criteocallsResponseSize);
+	System.out.println("Criteo Param ErrorCount size is: " + criteoparamErrorCount);
+
+}
+
+
+public static boolean verify_criteo_request_for_given_placementId_inJsonRequestBody(String placementId,
+		String apiData) throws Exception {
+
+	// Functions.Read_Turbo_api("Cust_Param", readSheet);
+
+	JSONParser parser = new JSONParser();
+	// System.out.println("adreq1 is : "+adreq1.toString());
+	Object obj = parser.parse(new String(apiData));
+	// System.out.println("obj : "+obj);
+	JSONObject jsonObject = (JSONObject) obj;
+	String ApiParamValue = "";
+	String JsonParam = null;
+
+	JSONObject mainTag = null;
+	JSONArray eleArray = null;
+	boolean matchFound = false;
+
+	try {
+		JsonParam = "slots".trim();
+		eleArray = (JSONArray) jsonObject.get(JsonParam);
+		// System.out.println(eleArray);
+		try {
+
+			ArrayList<String> Ingredients_names = new ArrayList<>();
+			for (int i = 0; i < eleArray.size(); i++) {
+
+				String arrayElement = String.valueOf(eleArray.get(i));
+
+				Ingredients_names.add(arrayElement);
+				obj = parser.parse(new String(arrayElement));
+				jsonObject = (JSONObject) obj;
+				mainTag = (JSONObject) obj;
+
+				try {
+					String cApiParamValue = String.valueOf(mainTag.get("placementId"));
+					if (cApiParamValue.equalsIgnoreCase(placementId)) {
+						/*
+						 * if (cust_param.equalsIgnoreCase("size")) { String width =
+						 * String.valueOf(mainTag.get("width")); String height =
+						 * String.valueOf(mainTag.get("height")); ApiParamValue =
+						 * width.concat("x").concat(height); } else { ApiParamValue =
+						 * String.valueOf(mainTag.get(cust_param)); }
+						 */
+						matchFound = true;
+
+					} else {
+						// System.out.println("... noticed");
+						continue;
+					}
+
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					continue;
+				}
+
+			}
+		} catch (Exception e) {
+
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	/*
+	 * try { JSONArray arrayElementValues = (JSONArray) mainTag .get(cust_param);
+	 * ApiParamValue = String.valueOf(arrayElementValues.get(0)); } catch (Exception
+	 * e) { ApiParamValue = String.valueOf(mainTag.get(cust_param)); }
+	 */
+	// System.out.println(cust_param + " Param Values from Criteo API Call is : " +
+	// ApiParamValue);
+	// logStep(cust_param + " Param Values from Criteo API Call is : " +
+	// ApiParamValue);
+	/*
+	 * if (ApiParamValue.equalsIgnoreCase("null")) { ApiParamValue = "nl"; }
+	 */
+	// return ApiParamValue;
+
+	return matchFound;
+}
+
+public static String get_criteo_response_parameter_value_by_placementId_inJsonResponseBody(String placementId,
+		String cust_param, String apiData) throws Exception {
+
+	// Functions.Read_Turbo_api("Cust_Param", readSheet);
+
+	JSONParser parser = new JSONParser();
+	// System.out.println("adreq1 is : "+adreq1.toString());
+	Object obj = parser.parse(new String(apiData));
+	// System.out.println("obj : "+obj);
+	JSONObject jsonObject = (JSONObject) obj;
+	String ApiParamValue = "";
+	String JsonParam = null;
+
+	JSONObject mainTag = null;
+	JSONArray eleArray = null;
+
+	try {
+		JsonParam = "slots".trim();
+		eleArray = (JSONArray) jsonObject.get(JsonParam);
+		// System.out.println(eleArray);
+		try {
+
+			ArrayList<String> Ingredients_names = new ArrayList<>();
+			for (int i = 0; i < eleArray.size(); i++) {
+
+				String arrayElement = String.valueOf(eleArray.get(i));
+
+				Ingredients_names.add(arrayElement);
+				obj = parser.parse(new String(arrayElement));
+				jsonObject = (JSONObject) obj;
+				mainTag = (JSONObject) obj;
+
+				try {
+					String cApiParamValue = String.valueOf(mainTag.get("placementId"));
+					if (cApiParamValue.equalsIgnoreCase(placementId)) {
+						if (cust_param.equalsIgnoreCase("size")) {
+							String width = String.valueOf(mainTag.get("width"));
+							String height = String.valueOf(mainTag.get("height"));
+							ApiParamValue = width.concat("x").concat(height);
+						} else {
+							ApiParamValue = String.valueOf(mainTag.get(cust_param));
+						}
+
+					} else {
+						// System.out.println("... noticed");
+						continue;
+					}
+
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					continue;
+				}
+
+			}
+		} catch (Exception e) {
+
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	/*
+	 * try { JSONArray arrayElementValues = (JSONArray) mainTag .get(cust_param);
+	 * ApiParamValue = String.valueOf(arrayElementValues.get(0)); } catch (Exception
+	 * e) { ApiParamValue = String.valueOf(mainTag.get(cust_param)); }
+	 */
+	System.out.println(cust_param + " Param Values from Criteo API Call is : " + ApiParamValue);
+	logStep(cust_param + " Param Values from Criteo API Call is : " + ApiParamValue);
+	/*
+	 * if (ApiParamValue.equalsIgnoreCase("null")) { ApiParamValue = "nl"; }
+	 */
+	return ApiParamValue;
+}
+
+
+public static void verifyingdailydetailiuu() throws Exception {
+	String expected_data = null;
+	String today=null;
+	String day1=null;
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	
+	//String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+//	logStep("Verifying  SOD custum param for  iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fcard%2Fradar ad call");
+	
+
+
+	today=Ad.findElementById("com.weather.Weather:id/daily_details_day_title").getText();
+	String days=today.replace(today, today+1);
+	//System.out.println("day from the UI is  " +day);
+	//logStep("day from the UI is  " +day);
+	 currentday1=days.toLowerCase();
+	
+	
+	
+
+	
+}
+
 
 }
