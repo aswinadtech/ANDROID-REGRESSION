@@ -35,6 +35,7 @@ import twc.Regression.General.Functions;
 import twc.Regression.General.TwcAndroidBaseTest;
 import twc.Regression.ReadDataFromFile.read_xml_data_into_buffer;
 import twc.Regression.TestCases.regressionTestCases;
+import twc.Regression.HandleWithAppium.AppiumFunctions;
 //import twc.Automation.RetryAnalyzer.RetryAnalyzer;
 import twc.Regression.Driver.Drivers;
 import twc.Regression.ReadDataFromFile.read_excel_data;
@@ -46,6 +47,7 @@ import twc.Regression.HandleWithCharles.CharlesProxy;
 public class AppiumFunctions extends TwcAndroidBaseTest{
 	static int startY;
 	static int endY;
+
 	 public static String apkVersion=null;
 	 public static final int maxTimeout = 60;
 //	public static void verifyAdPresentOnExtendedPage(String excel_sheet_name) throws Exception{
@@ -382,14 +384,14 @@ public static void scrollInToView(String excel_sheet_name) throws Exception{
 
 
 public static void Swipe() throws Exception{
-	Thread.sleep(55000);
+	Thread.sleep(3000);
 	Dimension dimensions = Ad.manage().window().getSize();//throwing exception
 	Double startY1 = dimensions.getHeight() * 0.7;  
 	startY = startY1.intValue();
 	Double endY1 = (double) (dimensions.getHeight()/40);  //  dimensions.getHeight()  0.2;  == 512.0
 	endY = endY1.intValue();
 	Ad.swipe(0, startY, 0, endY,2000);
-	Thread.sleep(55000);
+	Thread.sleep(3000);
 	//Ad.swipe(0, 1816, 0, 1272,2000);
 
 }
@@ -579,10 +581,10 @@ public static void killADB() throws IOException, Exception{
 				capabilities.setCapability(capabilitydata[13][0],capabilitydata[13][Cap]);
 				//capabilities.setCapability(capabilitydata[14][0],capabilitydata[14][Cap]);
 				
-				Thread.sleep(5000);
+				//Thread.sleep(5000);
 			
 				Ad = new AndroidDriver(new URL(capabilitydata[15][Cap]), capabilities);
-				Thread.sleep(10000);
+				//Thread.sleep(10000);
 				
 				/* ---End Android Device Capabilities --- */
     			Ad.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
@@ -653,6 +655,8 @@ public static void killADB() throws IOException, Exception{
 		logStep("clicking today element");
 		try {
 		Ad.findElementById("com.weather.Weather:id/details_button").click();
+		System.out.println("clicked today element");
+		logStep("clicked today element");
 		Thread.sleep(2000);	
 		}
 		catch(Exception e) {
@@ -666,10 +670,14 @@ public static void killADB() throws IOException, Exception{
 		//Ad.scrollTo(Ad.findElementById("com.weather.Weather:id/today_details_container").getAttribute("text"));
 			//Ad.scrollToExact(Ad.findElementById("com.weather.Weather:id/today_details_container").getAttribute("text"));
 				Ad.findElementById("com.weather.Weather:id/today_details_container").click();
+				System.out.println("clicked today element");
+				logStep("clicked today element");
 				Thread.sleep(2000);
 			}
 			catch(Exception e1){
 			Ad.findElementById("com.weather.Weather:id/today_details_container").click();
+			System.out.println("clicked today element");
+			logStep("clicked today element");
 			Thread.sleep(2000);
 		}	
 		}
@@ -693,12 +701,14 @@ public static void killADB() throws IOException, Exception{
 				Ad.findElementByAccessibilityId("Navigate up").click();
 			}
 			catch(Exception e4) {
-				System.out.println("BackArrowElemen not clicked");
+				System.out.println("BackArrowElement not clicked");
 			}
 			}
 		}
 }
 	
+	
+
 	public static void clickOnBackArrowElement_today() throws Exception
 	{
 		try {
@@ -837,7 +847,7 @@ if(i==swipeup) {
 		System.out.println("Scroll the app till"+ data[1][1] +" is displaying on the screen");
 		for(int i=1;i<=swipeup ;i++){
 			Swipe_feed();
-
+			//com.weather.Weather:id/watson_header_title
 			String ModuleName;
 			try {
 			if(Ad.findElementById("com.weather.Weather:id/header_title").isDisplayed()) {
@@ -941,6 +951,217 @@ if(i==swipeup) {
 				}	
 }
 	
+	
+	
+	
+public static void SwipeUp_Counter_WMFLU_card(int Counter) throws Exception{
+		
+		int swipeup = Counter;
+	//System.out.println("swipeup");
+		System.out.println("Scroll the app till Watson Flu Card is displaying on the screen");
+		logStep("Scroll the app till Watson Flu Card is displaying on the screen");
+		for(int i=1;i<=swipeup ;i++){
+			Swipe_feed();
+			//com.weather.Weather:id/watson_header_title
+			String ModuleName;
+			try {
+			if(Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed()) {
+				try {
+	 ModuleName=Ad.findElementById("com.weather.Weather:id/watson_header_title").getAttribute("text");
+				}
+	catch(Exception e) {
+	 ModuleName=Ad.findElementById("com.weather.Weather:id/watson_header_title").getText();
+	}
+		System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+		
+		if(ModuleName.toString().contains("Flu Alert") ) {
+			System.out.println(ModuleName +" is presented on the UI");
+			logStep(ModuleName +" is presented on the UI");
+			i=100;
+			break;
+		}
+			}
+	
+			}
+			
+			catch(Exception e) {
+				try {
+					Swipe_feed();
+				Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+				}
+				catch(Exception e1) {
+					try {
+					Swipe_feed();
+					Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+					}
+					catch(Exception e2) {
+						try {
+							Swipe_feed();
+							Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+						}
+						catch(Exception e4) {
+							Swipe_feed();
+							Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+						}
+					}
+				}
+		
+				
+			}
+		}
+}
+	
+
+public static void SwipeUp_Counter_WMAllergy_card(int Counter) throws Exception{
+	
+	int swipeup = Counter;
+//System.out.println("swipeup");
+	System.out.println("Scroll the app till Watson Allergy Card is displaying on the screen");
+	logStep("Scroll the app till Watson Allergy Card is displaying on the screen");
+	for(int i=1;i<=swipeup ;i++){
+		Swipe_feed();
+		//com.weather.Weather:id/watson_header_title
+		String ModuleName;
+		try {
+		if(Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed()) {
+			try {
+ ModuleName=Ad.findElementById("com.weather.Weather:id/watson_header_title").getAttribute("text");
+			}
+catch(Exception e) {
+ ModuleName=Ad.findElementById("com.weather.Weather:id/watson_header_title").getText();
+}
+	System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+	
+	if(ModuleName.toString().contains("Allergy Risk") ) {
+		System.out.println(ModuleName +" is presented on the UI");
+		logStep(ModuleName +" is presented on the UI");
+		i=100;
+		break;
+	}
+		}
+
+		}
+		
+		catch(Exception e) {
+			try {
+				Swipe_feed();
+			Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+			}
+			catch(Exception e1) {
+				try {
+				Swipe_feed();
+				Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+				}
+				catch(Exception e2) {
+					try {
+						Swipe_feed();
+						Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+					}
+					catch(Exception e4) {
+						Swipe_feed();
+						Ad.findElementById("com.weather.Weather:id/watson_header_title").isDisplayed();
+					}
+				}
+			}
+	
+			
+		}
+	}
+}
+
+public static void SwipeUp_Counter_WeekAhead_card(int Counter) throws Exception{
+		
+		int swipeup = Counter;
+	//System.out.println("swipeup");
+		System.out.println("Scroll the app tillPlan Your Week Ahead card  is displaying on the screen");
+		logStep("Scroll the app tillPlan Your Week Ahead card is displaying on the screen");
+		for(int i=1;i<=swipeup ;i++){
+			Swipe_feed();
+			//com.weather.Weather:id/watson_header_title
+			String ModuleName;
+			try {
+			if(Ad.findElementById("com.weather.Weather:id/title").isDisplayed()) {
+				try {
+	 ModuleName=Ad.findElementById("com.weather.Weather:id/title").getAttribute("text");
+				}
+	catch(Exception e) {
+	 ModuleName=Ad.findElementById("com.weather.Weather:id/title").getText();
+	}
+		System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+		
+		if(ModuleName.toString().contains("Plan Your Week Ahead") ) {
+			System.out.println(ModuleName +" is presented on the UI");
+			logStep(ModuleName +" is presented on the UI");
+			i=100;
+			break;
+		}
+			}
+	
+			}
+			
+			catch(Exception e) {
+				try {
+					Swipe_feed();
+				Ad.findElementById("com.weather.Weather:id/title").isDisplayed();
+				}
+				catch(Exception e1) {
+				
+					Swipe_feed();
+						
+					
+				
+			}
+		
+}
+		}
+}
+
+public static void SwipeUp_Counter_Weekend_card(int Counter) throws Exception{
+	
+	int swipeup = Counter;
+//System.out.println("swipeup");
+	System.out.println("Scroll the app tillPlan Your Weekend card  is displaying on the screen");
+	logStep("Scroll the app tillPlan Your Weekend card is displaying on the screen");
+	for(int i=1;i<=swipeup ;i++){
+		Swipe_feed();
+		//com.weather.Weather:id/watson_header_title
+		String ModuleName;
+		try {
+		if(Ad.findElementById("com.weather.Weather:id/title").isDisplayed()) {
+			try {
+ ModuleName=Ad.findElementById("com.weather.Weather:id/title").getAttribute("text");
+			}
+catch(Exception e) {
+ ModuleName=Ad.findElementById("com.weather.Weather:id/title").getText();
+}
+	System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+	
+	if(ModuleName.toString().contains("tile") ) {
+		System.out.println(ModuleName +" is presented on the UI");
+		logStep(ModuleName +" is presented on the UI");
+		i=100;
+		break;
+	}
+		}
+
+		}
+		
+		catch(Exception e) {
+			try {
+				Swipe_feed();
+			Ad.findElementById("com.weather.Weather:id/title").isDisplayed();
+			}
+			catch(Exception e1) {
+			
+				Swipe_feed();
+					
+				
+			
+		}
+	
+}
+	}
+}
 public static void SwipeUp_Counter_custparam(int Counter) throws Exception{
 		
 		int radarCount=0;
@@ -1232,16 +1453,72 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 
 	}
 	public static void click_cold_Flu_element() throws Exception
-	{try {
-		Ad.findElementByName("Low").click();
-		Thread.sleep(3000);
+	{
+		try {
+		new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu")));
+	Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu").click();
+	System.out.println("Cold&Flu element clicked");
+	logStep("Cold&Flu  element clicked");
 	}
 	catch(Exception e) {
-		Ad.findElementById("com.weather.Weather:id/index_3_description").click();
+		try {
+			SwipeUp_Counter(1);
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu")));
+			Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu").click();
+			System.out.println("Cold&Flu element clicked");
+			logStep("Cold&Flu  element clicked");
+		}
+		catch(Exception e1) {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu")));
+			Ad.findElementById("com.weather.Weather:id/health_activities_cold_flu").click();
+			System.out.println("Cold&Flu element clicked");
+			logStep("Cold&Flu  element clicked");
+		}
+	}	
+	}
+	
+	public static void clickdailydetails()  throws Exception{
+		try {
+		System.out.println("clicking on daily");
+		logStep("clicking on daily");
+		Ad.findElementByAccessibilityId("Daily").click();
 		Thread.sleep(3000);
-
+		}
+		catch(Exception e) {
+			System.out.println("daily element not found");
+			logStep("daily element not found");
+		}
 	}
+	
+	
+	public static void clickdailymaps()  throws Exception{
+		try {
+		System.out.println("clicking on maps");
+		logStep("clicking on maps");
+		Ad.findElementByAccessibilityId("Radar").click();
+		Thread.sleep(3000);
+		}
+		catch(Exception e) {
+			System.out.println("maps element not found");
+			logStep("maps element not found");
+		}
 	}
+	public static void clickOnAlertsbell()  throws Exception{
+		try {
+		System.out.println("clicking on bell icon");
+		logStep("clicking on bell icon");
+		Ad.findElementByAccessibilityId("Go to Alerts and Notifications").click();
+		Thread.sleep(3000);
+		attachScreen();
+		clickOnBackArrowElement();
+		Thread.sleep(3000);
+		}
+		catch(Exception e) {
+			System.out.println("alerts element not found");
+			logStep("alerts element not found");
+		}
+	}
+	
 	public static void click_Running_element() throws Exception
 	{
 		try {
@@ -1275,11 +1552,52 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 		Thread.sleep(3000);
 		}		
 	}
+	
+	
 	public static void click_Airpollution_element() throws Exception
+	{
+		
+		//com.weather.Weather:id/call_to_action_button
+		//com.weather.Weather:id/air_quality_dial
+		//com.weather.Weather:id/air_quality_pollutant_title
+		try {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/call_to_action_button")));
+			Ad.findElementById("com.weather.Weather:id/call_to_action_button").click();
+			System.out.println("Air Quality element clicked");
+			logStep("Air Quality element clicked");
+		}
+		catch(Exception e) {
+			try {
+				SwipeUp_Counter(1);
+				new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/call_to_action_button")));
+				Ad.findElementById("com.weather.Weather:id/call_to_action_button").click();
+				System.out.println("Air Quality element clicked");
+				logStep("Air Quality element clicked");
+			}
+			catch(Exception e1) {
+				try {
+				new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/air_quality_dial")));
+				Ad.findElementById("com.weather.Weather:id/air_quality_dial").click();
+				System.out.println("Air Quality element clicked");
+				logStep("Air Quality element clicked");
+				}
+				catch(Exception e3) {
+					new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/air_quality_pollutant_title")));
+					Ad.findElementById("com.weather.Weather:id/air_quality_pollutant_title").click();
+					System.out.println("Air Quality element clicked");
+					logStep("Air Quality element clicked");
+				}
+			}
+			
+		}
+	}
+	/*public static void click_Airpollution_element() throws Exception
 	{
 		Ad.findElementById("com.weather.Weather:id/air_quality_dial").click();
 		Thread.sleep(3000);		
-	}
+		System.out.println("clicked AQ element");
+		logStep("clicked AQ  element");
+	}*/
 	public static void click_news_element() throws Exception
 	{
 		Ad.findElementById("com.weather.Weather:id/video_backdrop").click();
@@ -1484,8 +1802,8 @@ catch(Exception e1) {
 		try {
 		System.out.println("Clicking on View More");
 		logStep("Clicking on View More");
-		new WebDriverWait(Ad, maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementByAccessibilityId("View More")));
-		Ad.findElementByAccessibilityId("View More").click();
+		new WebDriverWait(Ad, maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementByAccessibilityId("View More Options Button")));
+		Ad.findElementByAccessibilityId("View More Options Button").click();
 		//Thread.sleep(5000);
 		}
 		catch(Exception e) {
@@ -1562,7 +1880,7 @@ catch(Exception e1) {
 	     	//cliking on aboutthisapp
 	     	clickOnAboutthisapp();
 	     	
-	     	 clickOnVersionnumber();
+	     	// clickOnVersionnumber();
 	     	clickOntestmodesettings() ;
 	     	clickOnAirlock();
 	     	clickOnUserGroups();
@@ -1572,13 +1890,19 @@ catch(Exception e1) {
 			
 			//cliking View more Button		
 		 	clickOnviewMore();
+		 	attachScreen();
 		 	//cliking on aboutthisapp
 		 	clickOnAboutthisapp();
-		 	 clickOnVersionnumber();
+		 	attachScreen();
+		 	// clickOnVersionnumber();
 		 	clickOntestmodesettings() ;
+		 	attachScreen();
 		 	clickOnAirlock();
+		 	attachScreen();
 		 	clickOnBranch();
+		 	attachScreen();
 		 	seletingRequiredBranch(branchName);
+		 	attachScreen();
 		 	Ad.runAppInBackground(10);
 		}
 		public static void seletingRequiredBranch(String branchName) throws Exception {
@@ -1626,25 +1950,28 @@ catch(Exception e1) {
 
 		public static void clickOnVersionnumber() throws Exception {
 			try {
-					//Thread.sleep(15000);
-					Functions.verifyElement(By.id("com.weather.Weather:id/test_mode_settings"));
-						//Thread.sleep(15000);
-						System.out.println("Clicking on test mode settings");
-						logStep("Clicking on test mode settings");
-						//Thread.sleep(15000);
-						new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/test_mode_settings")));
-						Ad.findElementById("com.weather.Weather:id/test_mode_settings").click();
-						//Thread.sleep(5000);		
-			}
-			catch(Exception e) {
+				
 				System.out.println("Clicking on BuildNumber till test mode settings option is displaying");
 				logStep("Clicking on BuildNumber till test mode settings option is displaying");	
 				for(int i=1;i<10;i++) {
 					 //Thread.sleep(7000);
+
 					 new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/about_version")));
 					Ad.findElementById("com.weather.Weather:id/about_version").click();
 					 //Thread.sleep(6000);
 				}
+					//Thread.sleep(15000);
+					
+						//Thread.sleep(5000);		
+			}
+			catch(Exception e) {
+				Functions.verifyElement(By.id("com.weather.Weather:id/test_mode_settings"));
+				//Thread.sleep(15000);
+				System.out.println("Clicking on test mode settings");
+				logStep("Clicking on test mode settings");
+				//Thread.sleep(15000);
+				new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/test_mode_settings")));
+				Ad.findElementById("com.weather.Weather:id/test_mode_settings").click();
 			}
 				}
 		public static void clickOntestmodesettings() throws Exception {
@@ -1714,16 +2041,22 @@ catch(Exception e1) {
 			 }
 		}
 		public static void enablingResponsiveMode() throws Exception {
+			System.out.println("enabling responsive mode");
+		logStep("enabling responsive mode");
 			//cliking View more Button		
 	     	clickOnviewMore();
 	     	//cliking on aboutthisapp
 	     	clickOnAboutthisapp();
 	     	
-	     	 clickOnVersionnumber();
+	     	// clickOnVersionnumber();
 	     	clickOntestmodesettings() ;
 	     	clickOnAirlock();
-	     	Ad.findElementById("android:id/title").click();
-				 
+	    	
+	     
+	     	Ad.findElementById("android:id/checkbox").click();
+	     	Thread.sleep(6000);
+	     	attachScreen();
+	     	Thread.sleep(6000);
 			 
 		}
 		
@@ -1744,12 +2077,28 @@ catch(Exception e1) {
 		
 		public static void enterRequiredUserGroup(String usergroup) throws Exception {
 		
+		
+  clickOnviewMore();
+  attachScreen();
+		clickOnAboutthisapp();
+		attachScreen();
+     clickOnVersionnumber();
+     attachScreen();
+			clickOntestmodesettings();
+			attachScreen();
+	clickOnAirlock();
+	attachScreen();
+		clickOnUserGroups();
+		attachScreen();
+			
 			System.out.println("entering "+ usergroup);
 			logStep("entering "+ usergroup);
+			attachScreen();
 		//	 Thread.sleep(15000);
 			//	Functions.verifyElement(By.id("com.weather.Weather:id/search_bar"));
 			Ad.findElementById("com.weather.Weather:id/search_bar").sendKeys(usergroup);
 	      Thread.sleep(15000);
+	      attachScreen();
 	      try {
 	    		 //Thread.sleep(15000);
 	    			//.
@@ -1759,8 +2108,10 @@ catch(Exception e1) {
 			 for(WebElement req:all) {
 				if( req.getAttribute("text").equalsIgnoreCase(usergroup)) {
 					new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(req));
+					attachScreen();
 				//	 Thread.sleep(15000);
 					 req.click();
+					 attachScreen();
 					Thread.sleep(15000);
 					 break;
 				 }
@@ -1793,14 +2144,14 @@ catch(Exception e1) {
 				CharlesProxy.proxy.getXml();
 				read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 				String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-			if(sb.contains("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Ffeed%2Ffeed_1")) {
-			System.out.println("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is trigred in charles");
-			logStep("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is trigred in charles");
+			if(sb.contains("iu=%2F7646%2Ftest_app_android_us%2Fdisplay%2Ffeed%2Ffeed_1")) {
+			System.out.println("iu=%2F7646%2Ftest_app_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is trigred in charles");
+			logStep("iu=%2F7646%2Ftest_app_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is trigred in charles");
 			break;
 			}
 			else{
-				System.out.println("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is not trigred in charles swipe till feed1 ad call is generated");
-				logStep("iu=%2F7646%2Fapp_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is not trigred in charles swipe till feed1 ad call is generated");
+				System.out.println("iu=%2F7646%2Ftest_app_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is not trigred in charles swipe till feed1 ad call is generated");
+				logStep("iu=%2F7646%2Ftest_app_android_us%2Fdisplay%2Ffeed%2Ffeed_1 ad call is not trigred in charles swipe till feed1 ad call is generated");
 			}
 
 			}
@@ -1814,7 +2165,7 @@ catch(Exception e1) {
 		List<WebElement> allLocations=Ad.findElementsById("com.weather.Weather:id/title");
 
 		//allLocations.get(0).getText();
-		System.out.println(allLocations.size());
+		//System.out.println(allLocations.size());
 
 		for(int i=0;i<=allLocations.size();i++) {
 
@@ -1825,6 +2176,7 @@ catch(Exception e1) {
 					Thread.sleep(6000);
 					allLocations.get(i).click();
 				Thread.sleep(6000);
+				attachScreen();
 				break;
 				}
 			}
@@ -1900,5 +2252,235 @@ catch(Exception e1) {
 			}
 		}
 		
+	public static void SwipeUp_Counter_feedcards(int Counter) throws Exception{int radarCount=0;
+	int MorNewsCount=0;
+	int TodayDeatilsCount=0;
+	int HealthActivities=0;
+	int  RunningCount=0;
+	int BoatBeachCount=0;
+	int AllergyCount=0;
+	int CofFluCount=0;
+	int videoCount=0;
+	int  outdoorcount=0;
+	int AirQualityCount=0;
+
+
+
+
+
+	String[][] data = read_excel_data.exceldataread("General");
+	System.out.println("Scroll the app till"+ data[1][1] +" is displaying on the screen");
+	logStep("Scroll the app till"+ data[1][1] +" is displaying on the screen");
+	//System.out.println("Copy right text is: " + data[1][1]);
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	Swipe_feed();
+	String copyRight = null;
+
+	int swipeup = Counter;
+	//System.out.println("swipeup");
 	
+	for(int i=1;i<=swipeup ;i++){
+		Swipe_feed();
+		Thread.sleep(5000);
+
+		if(i>10) {
+			//local
+			if(Functions.verifyElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView"))){
+		//	server
+			//if(Functions.verifyElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView"))){
+			if(Ad.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView").isDisplayed()){
+//		if(text==true) {
+				//local
+				 copyRight = Ad.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView").getAttribute("text");
+			//server
+			//	copyRight = Ad.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView").getAttribute("text");
+				if(copyRight.equalsIgnoreCase( data[1][1])) {
+						System.out.println(copyRight +" text is displaying on the screen");
+						i=150;
+						break;	
+			}
+			}
+		}
+		}
+		
+		Thread.sleep(5000);
+		String ModuleName;
+		Thread.sleep(5000);
+
+		try {
+		if(Ad.findElementById("com.weather.Weather:id/header_title").isDisplayed()) {
+			try {
+	ModuleName=Ad.findElementById("com.weather.Weather:id/header_title").getAttribute("text");
+			}
+	catch(Exception e) {
+	ModuleName=Ad.findElementById("com.weather.Weather:id/header_title").getText();
+	}
+	System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+
+	/*if(ModuleName.toString().contains("Top Stories") ||ModuleName.toString().contains("Low Stories") || ModuleName.toString().contains("Videos")) {
+		if(videoCount==0) {
+		AppiumFunctions.clickOnVideoElement();
+	AppiumFunctions.clickOnBackArrowElement();
+	//Functions.closeInterstailads() ;
+	videoCount=1;
+		}
+		}*/
+
+	/*if(ModuleName.toString().contains("More News")) {
+		if(MorNewsCount==0) {
+		AppiumFunctions.clickOnVideoElement();
+	AppiumFunctions.clickOnBackArrowElement();
+	Functions.closeInterstailads() ;
+	MorNewsCount=1;
+		}
+		}*/
+		
+
+	/*if(ModuleName.toString().contains("Maps") ||ModuleName.toString().contains("Thunderstorms possible") || ModuleName.toString().contains("Thunderstorms ending") || ModuleName.toString().contains("Thunderstorms starts")||ModuleName.toString().contains("Dry conditions") || ModuleName.toString().contains("Thunderstorms ending") || ModuleName.toString().contains("Thunderstorms starts")  || ModuleName.toString().contains("Rain possible") || ModuleName.toString().contains("Thunderstorms likely") ||  ModuleName.toString().contains("Rain ending") ||  ModuleName.toString().contains("Thunderstorms likely")) {
+	//System.out.println(ModuleName.toString() +" feed card is presented on the screen");
+	if(radarCount==0)
+	{
+	AppiumFunctions.clickOnRadarMaps();
+	AppiumFunctions.clickOnBackArrowElement();
+	//Functions.closeInterstailads();
+	radarCount=1;
+	}
+	}*/
+	if(ModuleName.toString().contains("Health & Activities")) {
+
+
+	/*if(AllergyCount==0) {
+		 AppiumFunctions.click_Allergy_element(); 
+		  AppiumFunctions.clickOnBackArrowElement();
+		   Thread.sleep(10000);
+		  Thread.sleep(5000);
+		  AllergyCount=1;
+	}*/
+
+
+	if(RunningCount==0) {
+		 AppiumFunctions.click_Running_element();
+		 AppiumFunctions.clickOnBackArrowElement();
+		   Thread.sleep(10000);
+		 RunningCount=1;
+		}
+
+
+
+		/*/if(CofFluCount==0) {
+	 AppiumFunctions.click_cold_Flu_element();
+	 attachScreen();
+	  AppiumFunctions.clickOnBackArrowElement();
+	   Thread.sleep(10000);
+	  Thread.sleep(5000);
+	  CofFluCount=1;
+	}*/
+	if(BoatBeachCount==0) {
+		 AppiumFunctions.click_Boat_Beach_element();
+		  AppiumFunctions.clickOnBackArrowElement();
+		   Thread.sleep(10000);
+		  BoatBeachCount=1;
+		}
+
+	}
+	if(ModuleName.toString().contains("Today's Details") ) {
+	if(TodayDeatilsCount==0) {
+	AppiumFunctions.click_Todaydetails_element();
+	attachScreen();
+	 AppiumFunctions.clickOnBackArrowElement_today();
+	 Thread.sleep(10000);
+	 TodayDeatilsCount=1;
+	}
+	}
+
+	if(ModuleName.toString().contains("Air Quality")) {
+	if(AirQualityCount==0) {
+	AppiumFunctions.click_Airpollution_element();
+	attachScreen();
+	AppiumFunctions.clickOnBackArrowElement();
+	Thread.sleep(10000);
+	AirQualityCount=1;
+	}
+	}
+
+	if(ModuleName.toString().contains("Outdoor Conditions")) {
+	if(outdoorcount==0)
+	click_SH_element() ;
+	attachScreen();
+	AppiumFunctions.clickOnBackArrowElement();
+	Thread.sleep(10000);
+	outdoorcount=1;
+
+	}
+		
+		}
+	}
+		
+
+		catch(Exception e) {
+			try {
+				Swipe_feed();
+			Ad.findElementById("com.weather.Weather:id/header_title").isDisplayed();
+			}
+			catch(Exception e1) {
+				Swipe_feed();
+			}
+
+			
+		}
+		}}
+	
+	public static void click_SH_element() throws Exception
+	{
+		try {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/card_dial_index1_item")));
+			Ad.findElementById("com.weather.Weather:id/card_dial_index1_item").click();
+			System.out.println("outdoor details element clicked");
+			logStep("outdoor details  element clicked");
+		}
+		catch(Exception e) {
+			try {
+				Swipe_feed();
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/card_dial_index2_item")));
+		 Ad.findElementById("com.weather.Weather:id/card_dial_index2_item").click();
+			System.out.println("outdoor details element clicked");
+			logStep("outdoor details  element clicked");
+			}
+			catch(Exception e1) {
+				try {
+				new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/card_dial_index4_item")));
+				Ad.findElementById("com.weather.Weather:id/card_dial_index4_item").click();
+				System.out.println("outdoor details element clicked");
+				logStep("outdoor details  element clicked");
+				}
+				catch(Exception e3) {
+					new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Ad.findElementById("com.weather.Weather:id/card_dial_index6_item")));
+					Ad.findElementById("com.weather.Weather:id/card_dial_index6_item").click();
+					System.out.println("outdoor details element clicked");
+					logStep("outdoor details  element clicked");
+				}
+			}
+		}
+	}
 }
