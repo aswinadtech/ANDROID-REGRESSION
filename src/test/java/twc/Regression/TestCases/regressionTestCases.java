@@ -52,9 +52,10 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		proxy.startRecording();
 		proxy.clearCharlesSession();
 		AppiumFunctions.LaunchAppWithFullReset();
+		Thread.sleep(5000);
 		//Thread.sleep(20000);
 		//AppiumFunctions.gettingApkVersion() ;
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		attachScreen();
 	}
 
@@ -84,7 +85,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	//  Ad.runAppInBackground(10);
 	  Functions.handleInterstailadss();
 	  Functions.closeInterstailadss();
-	 	 Functions.settheTimerr();
+	 Functions.settheTimerr();
 		proxy.clearCharlesSession();
 	 // CharlesFunctions.startSessionBrowserData();
 	  AppiumFunctions.click_hourly_element();
@@ -104,26 +105,28 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Test(priority = 2, enabled = true)
 		@Title("Verifying amazon interstitial Slot Id for hourly details preload ad call")
 		public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_preload_adcall() throws Exception {
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case Started =========================");
+			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preload adcall test case Started =========================");
 			//AppiumFunctions.gettingApkVersion();
 			logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
 		//	AppiumFunctions.Kill_Launch_App();
 			System.out.println("Launching the app with full reset");
+			proxy.clearCharlesSession();
 			Ad.resetApp();
 			Thread.sleep(3000);
+			System.out.println("Clicking on Next button");
 			logStep("Clicking on Next button");
-			Thread.sleep(2000);
+			Thread.sleep(3000);
+			System.out.println("Clicking on I Understand button");
 			logStep("Clicking on I Understand button");
-			Thread.sleep(2000);
+			Thread.sleep(3000);
+			System.out.println("Clicking on While using the app");
 			logStep("Clicking on While using the app");
 			Thread.sleep(5000);
 			AppiumFunctions.click_hourly_element();
-			Thread.sleep(3000);
-			attachScreen();
 			this.proxy.getXml();
-		    CharlesFunctions.createXMLFileForCharlesSessionFile();
+			CharlesFunctions.createXMLFileForCharlesSessionFile();
 			Functions.get_Interstitial_aaxcal_Hourly();
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case  End =========================");
+			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preload adcall test case  End =========================");
 		}
 		
 		
@@ -168,32 +171,18 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		
 
+	
+
+		
 		@Test(priority = 6, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for maps details nomal ad call")
-		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_normal_adcall() throws Exception {
-			System.out.println(
-					"================= Verifying amazon intertstitial Slot Id for maps details normal adcal test case Started =========================");
-
-			logStep(" Verifying amazon intertstitial Slot Id for maps details normal ad cal");
-			proxy.clearCharlesSession();
-			AppiumFunctions.clickOnMaps();
-			this.proxy.getXml();
-			Functions.get_Interstitial_aaxcal_map_details();
-			System.out
-					.println("================= Verifying amazon intertstitial Slot Id for maps details normal ad cal test csase End =========================");
-
-		}
-
-		
-		
-		@Test(priority = 7, enabled = true)
-		@Description("Verify Hourly Details ad call amazon bid id")
-		public void Verify_Hourly_Details_ad_call_amazon_bid_id() throws Exception {
+		@Description("Verify Hourly interstials Details ad call amazon bid id")
+		public void Verify_Hourly_interstitial_Details_ad_call_amazon_bid_id() throws Exception {
 			System.out.println("==============================================");
-			System.out.println("=========================== Hourly Details ad call amazon bid id ====================");
-			System.out.println("****** Hourly Details ad call amazon bid id validation Started");
-			logStep("****** Hourly Details ad call amazon bid id validation Started");
-			Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly", true);
+			System.out.println("=========================== Hourly Interstitial Details ad call amazon bid id ====================");
+
+			System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+			logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+			Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
 		}
 		
 		
