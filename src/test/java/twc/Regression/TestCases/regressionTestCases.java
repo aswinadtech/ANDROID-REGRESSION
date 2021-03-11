@@ -117,6 +117,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			Thread.sleep(2000);
 			logStep("Clicking on While using the app");
 			Thread.sleep(5000);
+			AppiumFunctions.click_hourly_element();
+			Thread.sleep(3000);
+			attachScreen();
 			this.proxy.getXml();
 		    CharlesFunctions.createXMLFileForCharlesSessionFile();
 			Functions.get_Interstitial_aaxcal_Hourly();
@@ -188,9 +191,6 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		public void Verify_Hourly_Details_ad_call_amazon_bid_id() throws Exception {
 			System.out.println("==============================================");
 			System.out.println("=========================== Hourly Details ad call amazon bid id ====================");
-			
-			AppiumFunctions.click_hourly_element();
-			attachScreen();
 			System.out.println("****** Hourly Details ad call amazon bid id validation Started");
 			logStep("****** Hourly Details ad call amazon bid id validation Started");
 			Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly", true);
