@@ -52,7 +52,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		proxy.startRecording();
 		proxy.clearCharlesSession();
 		AppiumFunctions.LaunchAppWithFullReset();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		//Thread.sleep(20000);
 		//AppiumFunctions.gettingApkVersion() ;
 		Thread.sleep(5000);
@@ -61,7 +61,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	  ////Interstail ads/////
 	  
-	  @Test(priority =1, enabled = true)
+	  @Test(priority =1, enabled = false)
 	  @Title("Verifying Hourly  details Interstal ads") 
 	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
 	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
@@ -110,9 +110,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
 			proxy.clearCharlesSession();
 			//AppiumFunctions.Kill_Launch_App();
-			System.out.println("Launching the app with full reset");
+			//System.out.println("Launching the app with full reset");
 			
-			Ad.resetApp();
+			//Ad.resetApp();
 			Thread.sleep(10000);
 			System.out.println("Clicking on Next button");
 			logStep("Clicking on Next button");
@@ -154,7 +154,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case Started =========================");
 			logStep("Verify amazon intertstitial slot id for Daily details  preload adcall");
 			Functions.get_Intertstitial_aaxcal_Daily1();
-			Thread.sleep(10000);
+			//Thread.sleep(10000);
 			System.out.println(
 					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case  End =========================");
 		}
