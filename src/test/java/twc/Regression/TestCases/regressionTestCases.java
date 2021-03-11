@@ -61,7 +61,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	  ////Interstail ads/////
 	  
-	  @Test(priority =1, enabled = true)
+	  @Test(priority =1, enabled = false)
 	  @Title("Verifying Hourly  details Interstal ads") 
 	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
 	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
