@@ -121,8 +121,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			Thread.sleep(3000);
 			System.out.println("Clicking on While using the app");
 			logStep("Clicking on While using the app");*/
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			AppiumFunctions.clickdailymaps();
+			Thread.sleep(20000);
 			this.proxy.getXml();
 			CharlesFunctions.createXMLFileForCharlesSessionFile();
 			Functions.get_Interstitial_aaxcal_Hourly();
