@@ -84,7 +84,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	//  Ad.runAppInBackground(10);
 	  Functions.handleInterstailadss();
 	  Functions.closeInterstailadss();
-	 Functions.settheTimer();
+	 	 Functions.settheTimerr();
 		proxy.clearCharlesSession();
 	 // CharlesFunctions.startSessionBrowserData();
 	  AppiumFunctions.click_hourly_element();
@@ -118,6 +118,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			logStep("Clicking on While using the app");
 			Thread.sleep(5000);
 			this.proxy.getXml();
+		    CharlesFunctions.createXMLFileForCharlesSessionFile();
 			Functions.get_Interstitial_aaxcal_Hourly();
 			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preroll adcall test case  End =========================");
 		}
