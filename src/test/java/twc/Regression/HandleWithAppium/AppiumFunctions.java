@@ -589,10 +589,10 @@ public static void killADB() throws IOException, Exception{
 				/* ---End Android Device Capabilities --- */
     			Ad.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
     			//####added ths to handle allow button			
-    			clickONNext();
+    			/*clickONNext();
     		    ClickonIUnderstand();
         		clickOnAllow();		
-    			Thread.sleep(10000);
+    			Thread.sleep(10000);*/
     			System.out.println("Capabilities have been launched  with fullreset ");
 			}
 		
