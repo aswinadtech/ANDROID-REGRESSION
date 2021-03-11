@@ -61,7 +61,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 	  ////Interstail ads/////
 	  
-	  @Test(priority =1, enabled = false)
+	  @Test(priority =1, enabled = true)
 	  @Title("Verifying Hourly  details Interstal ads") 
 	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
 	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
@@ -110,7 +110,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
 			proxy.clearCharlesSession();
 			//AppiumFunctions.Kill_Launch_App();
-			//System.out.println("Launching the app with full reset");
+			System.out.println("Launching the app with full reset");
 			
 			Ad.resetApp();
 			Thread.sleep(10000);
