@@ -54,7 +54,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		AppiumFunctions.LaunchAppWithFullReset();
 		//Thread.sleep(20000);
 		//AppiumFunctions.gettingApkVersion() ;
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		attachScreen();
 	}
 
