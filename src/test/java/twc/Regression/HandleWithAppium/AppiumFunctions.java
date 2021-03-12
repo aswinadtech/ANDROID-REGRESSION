@@ -593,7 +593,7 @@ public static void killADB() throws IOException, Exception{
     		    ClickonIUnderstand();
         		clickOnAllow();		
     			Thread.sleep(10000);*/
-    			System.out.println("Capabilities have been launched  with fullreset ");
+    			//System.out.println("Capabilities have been launched  with fullreset ");
 			}
 		
 		
