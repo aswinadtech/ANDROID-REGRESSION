@@ -52,6 +52,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
 			logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
 			CharlesFunctions.createXMLFileForCharlesSessionFile();
+			Thread.sleep(30000);
 			Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
 		}
 		
