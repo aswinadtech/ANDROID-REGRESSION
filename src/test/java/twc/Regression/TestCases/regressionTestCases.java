@@ -40,101 +40,6 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 
 	
-	@BeforeClass(alwaysRun = true)
-	public void beforeClass() throws Exception {	
-		this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
-		proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
-		proxy.startCharlesProxyWithUI();
-		proxy.disableRewriting();
-	    proxy.stopRecording();
-		proxy.disableMapLocal();
-		proxy.startRecording();
-		proxy.clearCharlesSession();
-		AppiumFunctions.LaunchAppWithFullReset();
-		Thread.sleep(15000);
-		//Thread.sleep(20000);
-		//AppiumFunctions.gettingApkVersion() ;
-		Thread.sleep(5000);
-		attachScreen();
-	}
-
-  
-	  
-	  /*amazon interstitial slot id verification test cases*/
-		
-		@Test(priority = 2, enabled = true)
-		@Title("Verifying amazon interstitial Slot Id for hourly details preload ad call")
-		public void Smoke_Test_amazon_slotid_Hourly_Intertstitial_preload_adcall() throws Exception {
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preload adcall test case Started =========================");
-			//AppiumFunctions.gettingApkVersion();
-			logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
-			proxy.clearCharlesSession();
-			//AppiumFunctions.Kill_Launch_App();
-			//System.out.println("Launching the app with full reset");
-			
-			//Ad.resetApp();
-			Thread.sleep(10000);
-			System.out.println("Clicking on Next button");
-			logStep("Clicking on Next button");
-			Thread.sleep(3000);
-			System.out.println("Clicking on I Understand button");
-			logStep("Clicking on I Understand button");
-			Thread.sleep(3000);
-			System.out.println("Clicking on While using the app");
-			logStep("Clicking on While using the app");
-			System.out.println("Launched the app with full reset");
-			Thread.sleep(20000);
-			
-			AppiumFunctions.Kill_Launch_App();
-			Thread.sleep(20000);
-		       AppiumFunctions.click_hourly_element();
-			Thread.sleep(20000);
-			this.proxy.getXml();
-			CharlesFunctions.createXMLFileForCharlesSessionFile();
-			Functions.get_Interstitial_aaxcal_Hourly();
-			System.out.println("================= Verify amazon interstitial slot id for  Hourly details preload adcall test case  End =========================");
-		}
-		
-		
-		
-		@Test(priority = 3, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for maps details prerold ad call")
-		public void Smoke_Test_amazon_slotId_mapsdetails_Interstitial_preload_adcall() throws Exception {
-			System.out.println(
-					"================= Verifying amazon intertstitial Slot Id for maps details preload adcal test case Started =========================");
-
-			logStep(" Verifying amazon intertstitial Slot Id for maps details preload ad cal");
-			Functions.get_Interstitial_aaxcal_map_details();
-			System.out
-					.println("================= Verifying amazon intertstitial Slot Id for maps details preload ad cal test csase End =========================");
-
-		}
-		
-		
-		@Test(priority = 4, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for daily details preload ad call")
-		public void Smoke_Test_amazon_slotId_Dailydetails_Intertstitial_preload_adcall() throws Exception {
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case Started =========================");
-			logStep("Verify amazon intertstitial slot id for Daily details  preload adcall");
-			Functions.get_Intertstitial_aaxcal_Daily1();
-			//Thread.sleep(10000);
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Daily details  preload adcall test case  End =========================");
-		}
-		
-		
-		@Test(priority = 5, enabled = true)
-		@Title("Verifying amazon intertstitial Slot Id for video details preload ad call")
-		public void Smoke_Test_amazon_slotId_Videodetails_Intertstitial_preload_adcall() throws Exception {
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Video details  preload adcall test case Started =========================");
-			logStep("Verify amazon intertstitial slot id for Video details  preload adcall");
-			Functions.get_Intertstitial_aaxcal_video_details() ;
-			System.out.println(
-					"================= Verify amazon intertstitial slot id for Video details  preload adcall test case  End =========================");
-		}
-	
 		
 	
 		
@@ -147,6 +52,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 		System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
 		logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+		
+		Thread.sleep(30000);
 		CharlesFunctions.createXMLFileForCharlesSessionFile();
 		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
 		
