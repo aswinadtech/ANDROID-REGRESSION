@@ -42,23 +42,19 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	
 		
 	
-		
 	
-	@Test(priority = 6, enabled = true)
-	@Description("Verify Hourly interstials Details ad call amazon bid id")
-	public void Verify_Hourly_interstitial_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly Interstitial Details ad call amazon bid id ====================");
+		@Test(priority = 6, enabled = true)
+		@Description("Verify Hourly interstials Details ad call amazon bid id")
+		public void Verify_Hourly_interstitial_Details_ad_call_amazon_bid_id() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== Hourly Interstitial Details ad call amazon bid id ====================");
 
-		System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
-		logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+			System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+			logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
+			CharlesFunctions.createXMLFileForCharlesSessionFile();
+			Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
+		}
 		
-		Thread.sleep(30000);
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
-		
-		Thread.sleep(10000);
-	}
 		
 	
 	
