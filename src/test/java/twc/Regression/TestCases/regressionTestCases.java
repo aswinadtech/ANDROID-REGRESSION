@@ -58,46 +58,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		attachScreen();
 	}
 
-  ////Interstail ads/////
-	  
-	  @Test(priority =1, enabled = true)
-	  @Title("Verifying Hourly  details Interstal ads") 
-	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
-	 //Functions.settheTimer(); // Functions.enable_QA_Usergroup(); //
-	//  AppiumFunctions.Kill_Launch_App(); //AppiumFunctions.Kill_launch();
-	 // Thread.sleep(20000);
-//	 Ad.resetApp();
-	 // Thread.sleep(20000);
-	/*  AppiumFunctions.clickONNext();
-	  AppiumFunctions. ClickonIUnderstand();
-	  AppiumFunctions.clickOnAllow();*/
-		proxy.clearCharlesSession();
-	//  Thread.sleep(250000);
-	  AppiumFunctions.click_hourly_element();
-		attachScreen();
-	  Functions.wiatfor5secindetails();
-       this.proxy.getXml(); 
-	  Functions.Verify_hourly_detailpage_interstitial_adcall();
-	  Functions.click_home_element();
-		attachScreen();
-	//  Ad.runAppInBackground(10);
-	  Functions.handleInterstailadss();
-	  Functions.closeInterstailadss();
-	 Functions.settheTimerr();
-		proxy.clearCharlesSession();
-	 // CharlesFunctions.startSessionBrowserData();
-	  AppiumFunctions.click_hourly_element();
-		attachScreen();
-	  Functions.wiatfor5secindetails();
-      this.proxy.getXml(); 
-	  Functions.Verify_hourly_detailpage_interstitial_adcall1();
-	/*  Functions.click_home_element(); 
-	  Functions.handleInterstailads();
-	 Functions.closeInterstailads();*/
-	  
-	  }
-	  
+  
 	  
 	  /*amazon interstitial slot id verification test cases*/
 		
@@ -111,7 +72,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			//AppiumFunctions.Kill_Launch_App();
 			//System.out.println("Launching the app with full reset");
 			
-			Ad.resetApp();
+			//Ad.resetApp();
 			Thread.sleep(10000);
 			System.out.println("Clicking on Next button");
 			logStep("Clicking on Next button");
@@ -121,6 +82,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			Thread.sleep(3000);
 			System.out.println("Clicking on While using the app");
 			logStep("Clicking on While using the app");
+			System.out.println("Launched the app with full reset");
 			Thread.sleep(20000);
 		       AppiumFunctions.click_hourly_element();
 			Thread.sleep(20000);
