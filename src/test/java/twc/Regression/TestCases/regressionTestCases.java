@@ -108,11 +108,11 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			//AppiumFunctions.gettingApkVersion();
 			logStep(" Verifying preload amazon intertstitial slot id for  hourly details");	
 			proxy.clearCharlesSession();
-			//AppiumFunctions.Kill_Launch_App();
+			AppiumFunctions.Kill_Launch_App();
 			//System.out.println("Launching the app with full reset");
 			
 			//Ad.resetApp();
-			Thread.sleep(10000);
+			/*Thread.sleep(10000);
 			System.out.println("Clicking on Next button");
 			logStep("Clicking on Next button");
 			Thread.sleep(3000);
@@ -120,7 +120,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			logStep("Clicking on I Understand button");
 			Thread.sleep(3000);
 			System.out.println("Clicking on While using the app");
-			logStep("Clicking on While using the app");
+			logStep("Clicking on While using the app");*/
 			Thread.sleep(10000);
 		       AppiumFunctions.click_hourly_element();
 			Thread.sleep(20000);
