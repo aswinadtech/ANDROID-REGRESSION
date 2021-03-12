@@ -84,6 +84,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			logStep("Clicking on While using the app");
 			System.out.println("Launched the app with full reset");
 			Thread.sleep(20000);
+			
+			AppiumFunctions.Kill_Launch_App();
+			Thread.sleep(20000);
 		       AppiumFunctions.click_hourly_element();
 			Thread.sleep(20000);
 			this.proxy.getXml();
