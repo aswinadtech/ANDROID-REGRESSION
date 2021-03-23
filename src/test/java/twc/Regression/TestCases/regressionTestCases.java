@@ -440,7 +440,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter Wfxtg Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("wfxtg");
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
-			CharlesFunctions.archive_folder("Charles");
+			
 		}
 	
 	
