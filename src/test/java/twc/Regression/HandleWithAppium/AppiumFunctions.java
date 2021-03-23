@@ -1203,7 +1203,7 @@ public static void SwipeUp_Counter_custparam(int Counter) throws Exception{
 	}
 		System.out.println(ModuleName.toString() +" feed card is presented on the screen");
 		
-		if(ModuleName.toString().contains("Top Stories") ||ModuleName.toString().contains("Low Stories") || ModuleName.toString().contains("Videos")) {
+		/*if(ModuleName.toString().contains("Top Stories") ||ModuleName.toString().contains("Low Stories") || ModuleName.toString().contains("Videos")) {
 			if(videoCount==0) {
 			AppiumFunctions.clickOnVideoElement();
 		AppiumFunctions.clickOnBackArrowElement();
@@ -1212,7 +1212,7 @@ public static void SwipeUp_Counter_custparam(int Counter) throws Exception{
 	//	Functions.closeInterstailads() ;
 		
 			}
-			}
+			}*/
 		
 		/*if(ModuleName.toString().contains("More News")) {
 			if(MorNewsCount==0) {
