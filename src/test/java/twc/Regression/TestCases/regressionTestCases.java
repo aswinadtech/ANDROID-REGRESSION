@@ -152,13 +152,13 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}*/
 
 
-		/*@Test(priority = 23)
+		@Test(priority = 23)
 		@Title("Verify custom parameter st")
 		public void C333219_Verify_cust_param_st() throws Exception {
 			System.out.println("================= Custom Parameter St Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("st");
 			System.out.println("================= Custom Parameter St Verfication End =========================");
-		}*/
+		}
 
 		@Test(priority = 25)
 		@Title("Verify custom parameter ord")
@@ -255,14 +255,14 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 
 		// turbo call values
-		/*@Test(priority = 60)
+		@Test(priority = 60)
 		@Title("Verify custom parameter cnd")
 		public void C333216_Verify_cust_param_cnd() throws Exception {
 			System.out.println("================= Custom Parameter Cnd Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("cnd");
+			Custom_Parameters_Verification.parameters_Verification("cnd");
 
 			System.out.println("================= Custom Parameter Cnd Verfication End =========================");
-		}*/
+		}
 
 		@Test(priority = 61)
 		@Title("Verify custom parameter ct")
@@ -355,7 +355,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		  System.out.println("================= Custom Parameters Hmid Verfication End =========================" );
 		  }*/
 
-		@Test(priority = 74)
+		/*@Test(priority = 74)
 		@Title("Verify custom parameter wind")
 		public void C333221_Verify_cust_param_wind() throws Exception {
 			System.out.println("================= Custom Parameter Wind Verfication Started =========================");
@@ -369,7 +369,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("================= Custom Parameter Uv Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("uv");
 			System.out.println("================= Custom Parameter Uv Verfication End =========================");
-		}
+		}*/
 
 		@Test(priority = 76)
 		@Title("Verify custom parameter fltmpc")
@@ -387,13 +387,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter mnth")
 		public void C333213_Verify_cust_param_mnth_day1_adCall() throws Exception {
 			System.out.println("================= Custom Parameter mnth Verfication Started =========================");
-			System.out.println("current system month is feb");
-			logStep("current system month is feb");
-			System.out.println("daily details ad call custum param mnth value is feb");
-		logStep("daily details ad call custum param mnth value is feb");
-		System.out.println("Expected is matched oct is matched with Actual data feb");
-		logStep("Expected is matched oct is matched with Actual data feb");
-			//Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
+		
+			Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
 			System.out.println("================= Custom Parameter mnth Verfication End =========================");
 			
 		}
@@ -402,27 +397,15 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter fcnd")
 		public void C333213_Verify_cust_param_fcnd_day1_adCall() throws Exception {
 			System.out.println("================= Custom Parameter fcnd Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_daily_custom_parameters("fcnd");
-			System.out.println("turbo call value is ::29");
-			logStep("turbo call value is ::29");
-			System.out.println("daily details ad call custum param fcnd value is cld");
-		logStep("daily details ad call custum param fcnd value is cld");
-		System.out.println("values are matched");
-		logStep("values are matched");
+			Custom_Parameters_Verification.verify_daily_custom_parameters("fcnd");
 			System.out.println("================= Custom Parameter fcnd Verfication End =========================");
 		}
 
 		@Test(priority = 32)
 		@Title("Verify custom parameter fdynght")
 		public void C333213_Verify_cust_param_fdynght_day1_adCall() throws Exception {
-			System.out.println("================= Custom Parameter fdynght Verfication Started =========================");
-			System.out.println("fdynght value from UI is::Day");
-			logStep("fdynght value from UI is::Day");
-			System.out.println("daily details ad call custum param fdynght value is D");
-		logStep("daily details ad call custum param fdynght value is D");
-		System.out.println("values are matched");
-		logStep("values are matched");
-		//	Custom_Parameters_Verification.verify_daily_custom_parameters("fdynght");
+		
+			Custom_Parameters_Verification.verify_daily_custom_parameters("fdynght");
 			System.out.println("================= Custom Parameter fdynght Verfication End =========================");
 			
 		}
@@ -431,7 +414,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter dt")
 		public void C333213_Verify_cust_param_dt_day1__adCall() throws Exception {
 			System.out.println("================= Custom Parameter fdynght Verfication Started =========================");
-			
+			Custom_Parameters_Verification.verify_daily_custom_parameters("dt");
 			System.out.println("================= Custom Parameter fdynght Verfication End =========================");
 		}
 		@Test(priority = 90)
