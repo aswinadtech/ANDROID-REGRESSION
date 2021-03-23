@@ -39,40 +39,28 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	private CharlesProxy proxy;
 
 
-		@BeforeTest(alwaysRun = true)
-		public void beforeClass() throws Exception {	
-			this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
-			proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
-			proxy.startCharlesProxyWithUI();
-			proxy.disableRewriting();
-		    proxy.stopRecording();
-			proxy.disableMapLocal();
-			proxy.startRecording();
-			proxy.clearCharlesSession();
-			AppiumFunctions.LaunchAppWithFullReset();
-			Thread.sleep(20000);
-			Thread.sleep(25000);
-			AppiumFunctions. ClickonIUnderstand();
-			Thread.sleep(10000);
-			AppiumFunctions.gettingApkVersion();
-			Thread.sleep(5000);
-		//	CustomParamFunctions.get_fhic_floc_value();    
-			AppiumFunctions.SwipeUp_Counter_custparam(15);
-			Thread.sleep(15000);
-			AppiumFunctions.click_hourly_element();
-			 Thread.sleep(5000);
-			AppiumFunctions.click_daily_element();
-		//	 AppiumFunctions.closeInterstailads();
-				this.proxy.getXml();
-				
-				
-		}
+		
 		
 		// video ad call custum parameters
 	@Test(priority = 1)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
+				public void preconditions_custum_params() throws Exception {	
+			proxy.clearCharlesSession();
+		AppiumFunctions.LaunchAppWithFullReset();
+		Thread.sleep(10000);
+	//	CustomParamFunctions.get_fhic_floc_value();    
+		AppiumFunctions.SwipeUp_Counter_custparam(15);
+		Thread.sleep(15000);
+		AppiumFunctions.click_hourly_element();
+		 Thread.sleep(5000);
+		AppiumFunctions.click_daily_element();
+		 Thread.sleep(5000);
+		 AppiumFunctions.clickOnVideotab();
+		 Thread.sleep(10000);
+	//	 AppiumFunctions.closeInterstailads();		
+			this.proxy.getXml();
 			Custom_Parameters_Verification.verify_video_custom_parameters("cmsid");
 			System.out.println("================= Custom Parameter Cmsid Verfication End =========================");
 		}
