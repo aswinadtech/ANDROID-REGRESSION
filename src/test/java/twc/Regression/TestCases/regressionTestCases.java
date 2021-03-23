@@ -46,7 +46,6 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
-				public void preconditions_custum_params() throws Exception {	
 			proxy.clearCharlesSession();
 		AppiumFunctions.LaunchAppWithFullReset();
 		Thread.sleep(10000);
