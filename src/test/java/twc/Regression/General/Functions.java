@@ -6910,9 +6910,9 @@ public static void get_iu_value_of_Feedcall(String sheetName) throws Exception {
 	int Cap = device_status.Device_Status();
 	boolean adCallFound = false;
 	videoIUValue = null;
-	outfile = new File(System.getProperty("user.dir") + "/myoutputFile.xml");
+	CharlesFunctions.outfile = new File(System.getProperty("user.dir") + "/myoutputFile.xml");
 	// Read the content form file
-	File fXmlFile = new File(outfile.getName());
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
 
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	dbFactory.setValidating(false);
