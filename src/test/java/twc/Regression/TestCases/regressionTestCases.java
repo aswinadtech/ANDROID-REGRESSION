@@ -55,6 +55,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			proxy.startRecording();
 			proxy.clearCharlesSession();
 		AppiumFunctions.LaunchAppWithFullReset();
+			AppiumFunctions.gettingApkVersion();
 		Thread.sleep(10000);
 	//	CustomParamFunctions.get_fhic_floc_value();    
 		AppiumFunctions.SwipeUp_Counter_custparam(15);
