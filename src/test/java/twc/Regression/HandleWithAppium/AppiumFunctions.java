@@ -1503,7 +1503,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 			logStep("maps element not found");
 		}
 	}
-	public static void clickOnAlertsbell()  throws Exception{
+  public static void clickOnAlertsbell()  throws Exception{
 		try {
 		System.out.println("clicking on bell icon");
 		logStep("clicking on bell icon");
