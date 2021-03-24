@@ -432,6 +432,27 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
+	@Test(priority = 22, enabled = true)
+	@Description("Verify amazon video bid id's")
+	public void Verify_amazon_video_adcall_bid_id() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== amazon video ad call bid id's ====================");
+
+		System.out.println("****** amazon video ad call bid id validation Started");
+		logStep("****** amazon video ad call bid id validation Started");
+		proxy.clearCharlesSession();
+		AppiumFunctions.Kill_launch();
+		Functions.load_amazon_bid_values_from_aaxCalls("PreRollVideo", true);
+		proxy.clearCharlesSession();
+		Appium
+		this.proxy.getXml();
+		CharlesFunctions.createXMLFileForCharlesSessionFile();
+	Functions.get_iu_value_of_Feedcall("PreRollVideo");
+Functions.validate_aax_bid_value_with_gampad_bid_value("PreRollVideo", false);
+	}
+	
+	
+	
 	
 	
 	
