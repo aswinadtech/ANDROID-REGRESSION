@@ -444,11 +444,12 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 		AppiumFunctions.Kill_launch();
 		Functions.load_amazon_bid_values_from_aaxCalls("PreRollVideo", true);
 		proxy.clearCharlesSession();
-		Appium
+			AppiumFunctions.clickOnVideotab();
 		this.proxy.getXml();
 		CharlesFunctions.createXMLFileForCharlesSessionFile();
 	Functions.get_iu_value_of_Feedcall("PreRollVideo");
 Functions.validate_aax_bid_value_with_gampad_bid_value("PreRollVideo", false);
+		CharlesFunctions.archive_folder("Charles");
 	}
 	
 	
