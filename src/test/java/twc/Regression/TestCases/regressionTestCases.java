@@ -95,6 +95,7 @@ proxy.clearCharlesSession();
 AppiumFunctions.Kill_Launch_App();
 AppiumFunctions.Kill_Launch_App();
 Thread.sleep(15000);
+		AppiumFunctions.gettingApkVersion();
 AppiumFunctions.enter_requiredLocation("New York City");
 Thread.sleep(15000);
 AppiumFunctions.clickOnAlertsbell();
