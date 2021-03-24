@@ -256,14 +256,14 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 
 		// turbo call values
-		@Test(priority = 60)
+		/*@Test(priority = 60)
 		@Title("Verify custom parameter cnd")
 		public void C333216_Verify_cust_param_cnd() throws Exception {
 			System.out.println("================= Custom Parameter Cnd Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("cnd");
 
 			System.out.println("================= Custom Parameter Cnd Verfication End =========================");
-		}
+		}*/
 
 		@Test(priority = 61)
 		@Title("Verify custom parameter ct")
