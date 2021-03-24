@@ -42,35 +42,14 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		
 		// video ad call custum parameters
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
-			this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
-			proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
-			proxy.startCharlesProxyWithUI();
-			proxy.disableRewriting();
-		    proxy.stopRecording();
-			proxy.disableMapLocal();
-			proxy.startRecording();
-			proxy.clearCharlesSession();
-		AppiumFunctions.LaunchAppWithFullReset();
-			AppiumFunctions.gettingApkVersion();
-		Thread.sleep(10000);
-	//	CustomParamFunctions.get_fhic_floc_value();    
-		AppiumFunctions.SwipeUp_Counter_custparam(5);
-		Thread.sleep(15000);
-		AppiumFunctions.click_hourly_element();
-		 Thread.sleep(5000);
-		AppiumFunctions.click_daily_element();
-		 Thread.sleep(5000);
-		 AppiumFunctions.clickOnVideotab();
-		 Thread.sleep(10000);
-	//	 AppiumFunctions.closeInterstailads();		
-			this.proxy.getXml();
+			
 			Custom_Parameters_Verification.verify_video_custom_parameters("cmsid");
 			System.out.println("================= Custom Parameter Cmsid Verfication End =========================");
-		}
+		}*/
 
 		/*@Test(priority = 2)
 		@Title("Verify custom parameter ttid")
@@ -125,6 +104,28 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		@Title("Verify custom parameter adid")
 		public void C333213_Verify_cust_param_adid() throws Exception {
 			System.out.println("================= Custom Parameter adid Verfication Started =========================");
+			this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
+			proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
+			proxy.startCharlesProxyWithUI();
+			proxy.disableRewriting();
+		    proxy.stopRecording();
+			proxy.disableMapLocal();
+			proxy.startRecording();
+			proxy.clearCharlesSession();
+		AppiumFunctions.LaunchAppWithFullReset();
+			AppiumFunctions.gettingApkVersion();
+		Thread.sleep(10000);
+	//	CustomParamFunctions.get_fhic_floc_value();    
+		AppiumFunctions.SwipeUp_Counter_custparam(5);
+		Thread.sleep(15000);
+		AppiumFunctions.click_hourly_element();
+		 Thread.sleep(5000);
+		AppiumFunctions.click_daily_element();
+		 Thread.sleep(5000);
+		 AppiumFunctions.clickOnVideotab();
+		 Thread.sleep(10000);
+	//	 AppiumFunctions.closeInterstailads();		
+			this.proxy.getXml();
 			Custom_Parameters_Verification.parameters_Verification("adid");
 			System.out.println("================= Custom Parameter adid Verfication End =========================");
 		}
