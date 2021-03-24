@@ -629,12 +629,12 @@ public static void killADB() throws IOException, Exception{
 		System.out.println("clicking video tab");
 		logStep("clicking video tab");
 		try {
-	Ad.findElementByAccessibilityId("Storm Prep").click();
+	Ad.findElementByAccessibilityId("Severe").click();
 		Thread.sleep(10000);
 		}
 		catch(Exception e) {
 			try {
-				Ad.findElementByAccessibilityId("Storm Prep").click();
+				Ad.findElementByAccessibilityId("Severe").click();
 			Thread.sleep(10000);
 			}
 			catch(Exception e1) {
