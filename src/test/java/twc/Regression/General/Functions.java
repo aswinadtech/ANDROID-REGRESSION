@@ -89,7 +89,8 @@ public class Functions extends Drivers{
 	public static String adType;
 	  public static final int maxTimeout = 60;
 	  public static int criteocallsSize = 0;
-
+	//  public static String videoIUValue = null;
+		public static String iuId = null;
 		public static int criteocallsResponseSize = 0;
 		public static List<String> customParamsList = new ArrayList<String>();
 		public static int criteogampadcallcount = 0;
@@ -5290,9 +5291,9 @@ public static void validate_aax_bid_value_with_gampad_bid_value( String sheetNam
 	// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
 	if (sheetName.equalsIgnoreCase("PreRollVideo")) {
 		feedCall = videoIUValue;
-	}/* else if(sheetName.equalsIgnoreCase("News(details)")) {
+	} else if(sheetName.equalsIgnoreCase("News(details)")) {
 		feedCall = return_iu_value_of_Feedcall( sheetName);
-	}*/
+	}
 	else {
 		feedCall = data[11][Cap];
 	}
@@ -5379,6 +5380,78 @@ public static void validate_aax_bid_value_with_gampad_bid_value( String sheetNam
 }
 
 
+public static String return_iu_value_of_Feedcall(String sheetName) throws Exception {
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	boolean adCallFound = false;
+	videoIUValue = null;
+	CharlesFunctions.outfile = new File(System.getProperty("user.dir") + "/myoutputFile.xml");
+	// Read the content form file
+	File fXmlFile = new File(CharlesFunctions.outfile.getName());
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	// dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+	String xpathExpression = "charles-session/transaction/@query";
+	List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+	//String iuId = null;
+	iuId = null;
+	String iuValue = null;
+
+	String tempCustmParam = null;
+	for (String qry : getQueryList) {
+		if (qry.contains("iu=")) {
+			adCallFound = true;
+			tempCustmParam = getNonCustomParamBy_iu_value(qry, "iu");
+			// if (!"".equals(tempCustmParam))
+			// customParamsList.add(getCustomParamsBy_iu_value(qry));
+			break;
+		}
+	}
+	try {
+		iuValue = tempCustmParam.replace("/", "%2F");
+		iuValue = "iu=" + iuValue;
+		if (sheetName.equalsIgnoreCase("PreRollVideo")) {
+			videoIUValue = iuValue;
+			iuId = iuValue;
+		} else {
+			iuId = iuValue;
+		}
+	} catch (Exception e) {
+		System.out.println("There is an exception while framing iu value");
+		logStep("There is an exception while framing iu value");
+	}
+
+	if (!adCallFound) {
+		System.out.println("Ad Call not found in charles session");
+		logStep("Ad Call not found in charles session");
+		//Assert.fail("Ad Call not found in charles session");
+	} else if (iuValue == null || iuValue.isEmpty()) {
+		System.out.println("Ad Call not found/no value in ad call");
+		logStep("Ad Call not found/no value in ad call");
+		//Assert.fail("Ad Call not found/no value in ad call");
+	} else {
+		System.out.println("Ad Call " + iuId + " found in charles session");
+		logStep("Ad Call " + iuId + " found in charles session");
+	}
+	return iuId;
+
+}
+
+
 
 //get b value from gampad calls of XML File and store to list
 	public static void get_amazon_bid_values_from_gampadCalls(String feedCall, String cust_param) throws Exception {
@@ -5434,7 +5507,21 @@ public static void validate_aax_bid_value_with_gampad_bid_value( String sheetNam
 
 	}
 
-
+	// this retrives amazon bid values of specific call from amazon calls and add to
+		// list
+		public static void load_amazon_bid_values_from_aaxCalls(String sheetName, boolean clearList)
+				throws Exception {
+			DeviceStatus device_status = new DeviceStatus();
+			int Cap = device_status.Device_Status();
+			String[][] data = read_excel_data.exceldataread(sheetName);
+			String slotID =data[12][Cap];
+			get_amazon_bid_values_from_aaxCalls(slotID, clearList);
+		}
+		
+		public static void NavigatetoNews(String ModuleName)
+				throws Exception {
+			
+		}
 public static void get_amazon_bid_values_from_aaxCalls(String slotID, boolean clearList) throws Exception {
 
 	// readExcelValues.excelValues(excelName, sheetName);
@@ -6813,6 +6900,111 @@ public static void get_Criteo_SDK_inapp_v2_call_response_parameter_by_placementI
 	System.out.println("Criteo callsResponse Size is: " + criteocallsResponseSize);
 	System.out.println("Criteo Param ErrorCount size is: " + criteoparamErrorCount);
 
+}
+
+
+
+public static void get_iu_value_of_Feedcall(String sheetName) throws Exception {
+	String[][] data = read_excel_data.exceldataread(sheetName);
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	boolean adCallFound = false;
+	videoIUValue = null;
+	outfile = new File(System.getProperty("user.dir") + "/myoutputFile.xml");
+	// Read the content form file
+	File fXmlFile = new File(outfile.getName());
+
+	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	dbFactory.setValidating(false);
+	dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+	// dbFactory.setNamespaceAware(true);
+	dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+	dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+	Document doc = dBuilder.parse(fXmlFile);
+	// Getting the transaction element by passing xpath expression
+	NodeList nodeList = doc.getElementsByTagName("transaction");
+	String xpathExpression = "charles-session/transaction/@query";
+	List<String> getQueryList = evaluateXPath(doc, xpathExpression);
+
+	//String iuId = null;
+	iuId = null;
+	String iuValue = null;
+
+	String tempCustmParam = null;
+	for (String qry : getQueryList) {
+		if (qry.contains("iu=")) {
+			adCallFound = true;
+			tempCustmParam = getNonCustomParamBy_iu_value(qry, "iu");
+			// if (!"".equals(tempCustmParam))
+			// customParamsList.add(getCustomParamsBy_iu_value(qry));
+			break;
+		}
+	}
+	try {
+		iuValue = tempCustmParam.replace("/", "%2F");
+		iuValue = "iu=" + iuValue;
+		if (sheetName.equalsIgnoreCase("PreRollVideo")) {
+			videoIUValue = iuValue;
+			iuId = iuValue;
+		} else {
+			iuId = iuValue;
+		}
+	} catch (Exception e) {
+		System.out.println("There is an exception while framing iu value");
+		logStep("There is an exception while framing iu value");
+	}
+
+	if (!adCallFound) {
+		System.out.println("Ad Call not found in charles session");
+		logStep("Ad Call not found in charles session");
+		Assert.fail("Ad Call not found in charles session");
+	} else if (iuValue == null || iuValue.isEmpty()) {
+		System.out.println("Ad Call not found/no value in ad call");
+		logStep("Ad Call not found/no value in ad call");
+		Assert.fail("Ad Call not found/no value in ad call");
+	} else {
+		System.out.println("Ad Call " + iuId + " found in charles session");
+		logStep("Ad Call " + iuId + " found in charles session");
+	}
+
+}
+
+private static String getNonCustomParamBy_iu_value(String qryValue, String cust_param) {
+	List<String> listOfUisQrys = new ArrayList<String>();
+	String cust_params = "";
+	String[] key = null;
+	// if (qryValue != null && qryValue.contains("cust_params")) {
+	if (qryValue != null && qryValue.contains(cust_param)) {
+		cust_params = qryValue.substring(qryValue.indexOf(cust_param));
+		cust_params = cust_params.replace("%26", "&");
+		cust_params = cust_params.replace("%2C", ",");
+		cust_params = cust_params.replace("%3D", "=");
+		cust_params = cust_params.replace("%2F", "/");
+		cust_params = cust_params.replace("%3A", ":");
+		cust_params = cust_params.replace("%3F", "?");
+	}
+	if (cust_params.indexOf(cust_param) >= 0) {
+		try {
+			cust_params = cust_params.substring(cust_params.indexOf(cust_param + "="));
+			cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		} catch (Exception e) {
+			cust_params = cust_params.substring(cust_params.indexOf("&" + cust_param + "="));
+			cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		}
+		// cust_params = cust_params.substring(cust_params.indexOf(cust_param));
+		String b[] = cust_params.split("&");
+		cust_params = b[0];
+		key = cust_params.split("=");
+		cust_params = key[1];
+	} else {
+		cust_params = "";
+	}
+	return cust_params;
 }
 
 
