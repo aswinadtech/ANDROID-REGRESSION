@@ -153,13 +153,13 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		}*/
 
 
-		@Test(priority = 23)
+		/*@Test(priority = 23)
 		@Title("Verify custom parameter st")
 		public void C333219_Verify_cust_param_st() throws Exception {
 			System.out.println("================= Custom Parameter St Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("st");
 			System.out.println("================= Custom Parameter St Verfication End =========================");
-		}
+		}*/
 
 		@Test(priority = 25)
 		@Title("Verify custom parameter ord")
