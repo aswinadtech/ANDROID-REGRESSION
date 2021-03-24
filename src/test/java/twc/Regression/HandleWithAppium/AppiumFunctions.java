@@ -1525,7 +1525,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 			logStep("maps element not found");
 		}
 	}
-	public static void clickOnAlertsbell()  throws Exception{
+		public static void clickOnAlertsbell()  throws Exception{
 		try {
 		System.out.println("clicking on bell icon");
 		logStep("clicking on bell icon");
@@ -1536,10 +1536,18 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 		Thread.sleep(3000);
 		}
 		catch(Exception e) {
-			System.out.println("alerts element not found");
-			logStep("alerts element not found");
+			try {
+				Ad.findElementById("com.weather.Weather:id/notifications_icon").click();
+				Thread.sleep(3000);
+				attachScreen();
+				clickOnBackArrowElement();
+				Thread.sleep(3000);
+			}catch(Exception e1) {
+		
+			}
 		}
 	}
+	
 	
 	public static void click_Running_element() throws Exception
 	{
