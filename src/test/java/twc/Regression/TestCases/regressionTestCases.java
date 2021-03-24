@@ -468,6 +468,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	  @Title("Verifying SlotName Cust param value for hourly details  ad all" )
 	  public void Smoke_Test_Verifying_SlotName_Cust_Param_hourly_details_adCall() throws Exception {
 		 System.out.println("================= Verifying SlotName CUST_PARAM value for hourly details ad call  started =========================");
+		  CharlesFunctions.archive_folder("Charles");
 		 Functions.validate_SlotName_Cust_param_hourlydetails();
 		 System.out.println("================= Verifying SlotName  CUST_PARAM value forhourly details ad  call  End =========================");
 		 }
