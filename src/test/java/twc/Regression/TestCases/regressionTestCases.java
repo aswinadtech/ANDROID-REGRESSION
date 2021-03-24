@@ -383,12 +383,13 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		
 		
 		// wfxtg call
-@Test(priority = 32)
+/*@Test(priority = 32)
 		@Title("Verify custom parameter mnth")
 		public void C333213_Verify_cust_param_mnth_day1_adCall() throws Exception {
 			System.out.println("================= Custom Parameter mnth Verfication Started =========================");
 		
-			Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
+			//Custom_Parameters_Verification.verify_daily_custom_parameters("mnth");
+			Custom_Parameters_Verification.parameters_Verification("mnth");
 			System.out.println("================= Custom Parameter mnth Verfication End =========================");
 			
 		}
@@ -424,7 +425,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			Custom_Parameters_Verification.parameters_Verification("wfxtg");
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
 			
-		}
+		}*/
 	
 	
 		  @Test(priority =95, enabled = true) 
