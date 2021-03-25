@@ -1098,7 +1098,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 		// video ad call custum parameters
-	@Test(priority = 1000)
+	/*@Test(priority = 1000)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
@@ -1152,13 +1152,34 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 			System.out.println("================= Verify Content URL for video call Started =========================");
 			Custom_Parameters_Verification.verify_video_request("content_url");
 			System.out.println("================= Verify Content URL for video call  End =========================");
-		}
+		}*/
 
 		// Not null
 		@Test(priority = 1019)
 		@Title("Verify custom parameter adid")
 		public void C333213_Verify_cust_param_adid() throws Exception {
+			
+			
 			System.out.println("================= Custom Parameter adid Verfication Started =========================");
+			
+			proxy.clearCharlesSession();
+			Ad.resetApp();
+                       Thread.sleep(10000);
+			AppiumFunctions.LaunchAppWithFullReset();
+			AppiumFunctions.Kill_Launch_App();
+			  Thread.sleep(10000);
+			proxy.clearCharlesSession();
+			AppiumFunctions.Kill_Launch_App();
+			  Thread.sleep(10000);
+			AppiumFunctions.SwipeUp_Counter_custparam(6);
+                       Thread.sleep(15000);
+			AppiumFunctions.click_hourly_element();
+			 Thread.sleep(5000);
+			AppiumFunctions.click_daily_element();
+			 Thread.sleep(10000);
+				AppiumFunctions.clickOnVideotab();
+			Thread.sleep(10000);
+		      this.proxy.getXml();
 			Custom_Parameters_Verification.parameters_Verification("adid");
 			System.out.println("================= Custom Parameter adid Verfication End =========================");
 		}
@@ -1458,6 +1479,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	  public void Smoke_Test_Verifying_SlotName_Cust_Param_feed_1_adCall() throws Exception {
 		 System.out.println("================= Verifying SlotName CUST_PARAM value for feed_1 ad call  started =========================");
 		 Functions.validate_SlotName_Cust_param_feed1();
+		  CharlesFunctions.archive_folder("Charles");
 		 System.out.println("================= Verifying SlotName  CUST_PARAM value for feed_1 ad  call  End =========================");
 		 }
 	
