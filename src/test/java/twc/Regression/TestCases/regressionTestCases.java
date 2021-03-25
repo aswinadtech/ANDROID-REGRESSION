@@ -412,7 +412,19 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 		Functions.validate_aax_bid_value_with_gampad_bid_value("Health(boatAndBeach)", true);
 	}
 
-	
+		@Test(priority = 20, enabled = true)
+	@Description("Verify amazon aax Seasonal Hub Details ad call")
+	public void Verify_amazon_aax_SeasonalHub_details_adcall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== amazon aax Seasonal Hub Details ad call ====================");
+
+		System.out.println("****** amazon aax Seasonal Hub Details ad call validation Started");
+		logStep("****** amazon aax Seasonal Hub Details ad call validation Started");
+
+		// Functions.verifyAAX_SlotId("Smoke", "Daily(10day)");
+		Functions.validate_aax_bid_value_with_gampad_bid_value("SeasonalHub(Details)", true);
+
+	}
 	
 
 
