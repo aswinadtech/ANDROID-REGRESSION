@@ -1162,10 +1162,12 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 			
 			System.out.println("================= Custom Parameter adid Verfication Started =========================");
 			
-			proxy.clearCharlesSession();
+			//proxy.clearCharlesSession();
 			Ad.resetApp();
                        Thread.sleep(10000);
-			AppiumFunctions.LaunchAppWithFullReset();
+			AppiumFunctions.Kill_Launch_App();
+			Thread.sleep(10000);
+			//AppiumFunctions.LaunchAppWithFullReset();
 			AppiumFunctions.Kill_Launch_App();
 			  Thread.sleep(10000);
 			proxy.clearCharlesSession();
