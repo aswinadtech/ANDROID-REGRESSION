@@ -98,7 +98,7 @@ Thread.sleep(15000);
 		AppiumFunctions.gettingApkVersion();
 AppiumFunctions.enter_requiredLocation("New York City");
 Thread.sleep(15000);
-AppiumFunctions.clickOnAlertsbell();
+//AppiumFunctions.clickOnAlertsbell();
 Thread.sleep(5000);
 AppiumFunctions.clickOnBackArrowElement();
 Thread.sleep(10000);
@@ -1120,6 +1120,9 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("PreRollVideo", false);
 		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Running Details call validation Started");
 	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Health(goRun)","displayUrl", true);
 	}
+	
+	
+	
 	
 	
 	
