@@ -444,38 +444,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
-	
-	@Test(priority = 500, enabled = true)
-	@Description("Verify amazon video bid id's")
-	public void Verify_amazon_video_adcall_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== amazon video ad call bid id's ====================");
 
-		System.out.println("****** amazon video ad call bid id validation Started");
-		logStep("****** amazon video ad call bid id validation Started");
-		proxy.clearCharlesSession();
-		AppiumFunctions.Kill_launch();
-		AppiumFunctions.enablingBranch("criteo");
-Ad.runAppInBackground(30);
-AppiumFunctions.Kill_Launch_App();
-AppiumFunctions.enablingResponsiveMode();
-Ad.runAppInBackground(30);
-AppiumFunctions.Kill_Launch_App();
-		Thread.sleep(10000);
-		AppiumFunctions.enter_requiredLocation("New York City");
-		Thread.sleep(10000);
-		Functions.load_amazon_bid_values_from_aaxCalls("PreRollVideo", true);
-		proxy.clearCharlesSession();
-			AppiumFunctions.clickOnVideotab();
-		
-		this.proxy.getXml();
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-		CharlesFunctions.archive_folder("Charles");
-	Functions.get_iu_value_of_Feedcall("PreRollVideo");
-Functions.validate_aax_bid_value_with_gampad_bid_value("PreRollVideo", false);
-		
-		
-	}
 	
 	
 	@Test(priority = 101, enabled = true)
