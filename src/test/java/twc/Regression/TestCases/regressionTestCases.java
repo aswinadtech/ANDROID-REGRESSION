@@ -443,14 +443,26 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 		logStep("****** amazon video ad call bid id validation Started");
 		proxy.clearCharlesSession();
 		AppiumFunctions.Kill_launch();
+		AppiumFunctions.enablingBranch("criteo");
+Ad.runAppInBackground(30);
+AppiumFunctions.Kill_Launch_App();
+AppiumFunctions.enablingResponsiveMode();
+Ad.runAppInBackground(30);
+AppiumFunctions.Kill_Launch_App();
+		Thread.sleep(10000);
+		AppiumFunctions.enter_requiredLocation("New York City");
+		Thread.sleep(10000);
 		Functions.load_amazon_bid_values_from_aaxCalls("PreRollVideo", true);
 		proxy.clearCharlesSession();
 			AppiumFunctions.clickOnVideotab();
+		
 		this.proxy.getXml();
 		CharlesFunctions.createXMLFileForCharlesSessionFile();
+		CharlesFunctions.archive_folder("Charles");
 	Functions.get_iu_value_of_Feedcall("PreRollVideo");
 Functions.validate_aax_bid_value_with_gampad_bid_value("PreRollVideo", false);
-		CharlesFunctions.archive_folder("Charles");
+		
+		
 	}
 	
 	
