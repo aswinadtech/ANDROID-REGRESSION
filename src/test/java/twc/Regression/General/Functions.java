@@ -2468,7 +2468,7 @@ public static void validate_BG_adcall_IDD() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	String[][] exceldata=read_excel_data.exceldataread("idd");
 	if(sb.contains(exceldata[7][1])) {
 		System.out.println(exceldata[7][1]+" Background  call was generated for IDD");
 		logStep(exceldata[7][1]+" Background call was generated for IDD");
@@ -2476,12 +2476,55 @@ public static void validate_BG_adcall_IDD() throws Exception {
 	
 	
 
-		if(!sb.contains(exceldata[7][1]))
+		if(!sb.contains(exceldata[7][1])) {
 			System.out.println(exceldata[7][1]+" Background call is not  generated for IDD");
 		logStep(exceldata[7][1]+" Background call is not  generated for IDD");
 		Assert.fail(exceldata[7][1]+" Background call is not  generated for IDD");
 	}
+}
+
+
+public static void validate_BG_adcall_NextGenIM() throws Exception {
+	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
+	String wxtgValues="";
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	if(sb.contains(exceldata[7][1])) {
+		System.out.println(exceldata[7][1]+" Background  call was generated for NextGenIM ad call");
+		logStep(exceldata[7][1]+" Background call was generated for NexrGenIM ad call");
+	}	
 	
+		if(!sb.contains(exceldata[7][1])) {
+			System.out.println(exceldata[7][1]+" Background call is not  generated for NextGenIM ad call");
+		logStep(exceldata[7][1]+" Background call is not  generated for NextGenIM ad call");
+		Assert.fail(exceldata[7][1]+" Background call is not  generated for NextGenIM ad call");
+	}
+}
+	
+
+public static void validate_BG_adcall_NextGenIM_video() throws Exception {
+	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
+	String wxtgValues="";
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	if(sb.contains(exceldata[20][1])) {
+		System.out.println(exceldata[20][1]+" Background  call was generated for NextGenIM ad call");
+		logStep(exceldata[20][1]+" Background call was generated for NexrGenIM ad call");
+	}	
+	
+		if(!sb.contains(exceldata[20][1])) {
+			System.out.println(exceldata[20][1]+" Background call is not  generated for NextGenIM ad call");
+		logStep(exceldata[20][1]+" Background call is not  generated for NextGenIM ad call");
+		Assert.fail(exceldata[20][1]+" Background call is not  generated for NextGenIM ad call");
+	}
+}
+
 public static void validate_BG_adcall_IntegratedIM() throws Exception {
 	Map<String , String> wfxtriggers_values = new HashMap<String, String>();
 	String wxtgValues="";
@@ -2511,13 +2554,14 @@ public static Map<String, String> Verify_watsonFlucard_iu() throws Exception{
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentFlu");
+	String[][] exceldata=read_excel_data.exceldataread("FLUWM");
 	if(sb.toString().contains(exceldata[1][1])){
 		System.out.println(exceldata[1][1] + " call was  trigred");
+		logStep(exceldata[1][1] + " call was  trigred");
 }
 if(!sb.contains(exceldata[1][1])) {
 	System.out.println(exceldata[1][11] + " call was not   trigred");
- logStep(exceldata[1][1] + " call was not   trigred");
+ logStep(exceldata[1][1] + "  call was not   trigred");
  Assert.fail(exceldata[1][1] + " call was not   trigred");
 }
 return wfxtriggers_values;
@@ -2527,7 +2571,7 @@ public static void validate_Size_WMFlu() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentFlu");
+	String[][] exceldata=read_excel_data.exceldataread("FLUWM");
 	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
@@ -2536,9 +2580,11 @@ public static void validate_Size_WMFlu() throws Exception {
 		String WMFLUCardsize=expectedValues.replaceAll(exceldata[4][1], "");
 		if(WMFLUCardsize.equalsIgnoreCase(exceldata[3][1])) {
 			System.out.println("WM Flu card ad call size is:::"  + WMFLUCardsize);
+			logStep("WM Flu card ad call size is:::"  + WMFLUCardsize);
 		}
 		else {
 			System.out.println("WM Flu card ad call size is not matched with"     + exceldata[3][1]);
+			logStep("WM Flu card ad call size is not matched with"     + exceldata[3][1]);
 			Assert.fail("WM Flu card ad call size is not matched with"+ exceldata[3][1]);
 		}
 		System.out.println(expectedValues);
@@ -2571,14 +2617,15 @@ public static void validate_FG_adcall_IntegratedIM() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("dailydeatils");
+	String[][] exceldata=read_excel_data.exceldataread("idd");
 	if(sb.contains(exceldata[6][1])) {		
 		System.out.println(exceldata[6][1]+ " Foreground call was generated for IntegratedIM Im ad call");		
 		logStep(exceldata[6][1]+ " Foreground call was generated for IntegratedIM Im ad call");
 	}
 	
 	if(!sb.contains(exceldata[6][1])) {
-		System.out.println(exceldata[6][1]+" Foreground call is not generated for IntegratedIM Im ad call");;
+		System.out.println(exceldata[6][1]+" Foreground call is not generated for IntegratedIM Im ad call");
+		logStep(exceldata[6][1]+" Foreground call is not generated for IntegratedIM Im ad call");
 		Assert.fail(exceldata[6][1]+"Foreground cal is not  trigred");
 	}
 	}
@@ -2590,7 +2637,7 @@ public static void validate_FG_adcall_IDD() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	String[][] exceldata=read_excel_data.exceldataread("idd");
 	if(sb.contains(exceldata[6][1])) {		
 		System.out.println(exceldata[6][1]+ " Foreground call was generated for IDD ad call");		
 		logStep(exceldata[6][1]+ " Foreground call was generated for IDD  ad call");
@@ -2602,25 +2649,73 @@ public static void validate_FG_adcall_IDD() throws Exception {
 	}
 	}
 
+public static void validate_FG_adcall_NextImad() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	if(sb.contains(exceldata[6][1])) {		
+		System.out.println(exceldata[6][1]+ " Foreground call was generated for NextGenIm ad call");		
+		logStep(exceldata[6][1]+ " Foreground call was generated for NextGenIm  ad call");
+	}
+	
+	if(!sb.contains(exceldata[6][1])) {
+		System.out.println(exceldata[6][1]+" Foreground call is not generated for NextGenIm ad call");
+		logStep(exceldata[6][1]+" Foreground call is not generated for NextGenIm ad call");
+		Assert.fail(exceldata[6][1]+"Foreground call is not generated for NextGenIm ad cal");
+	}
+	}
+
+public static void validate_FG_adcall_NextImad_video() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	if(sb.contains(exceldata[19][1])) {		
+		System.out.println(exceldata[19][1]+ " Foreground call was generated for NextGenIm ad call");		
+		logStep(exceldata[19][1]+ " Foreground call was generated for NextGenIm  ad call");
+	}
+	
+	if(!sb.contains(exceldata[19][1])) {
+		System.out.println(exceldata[19][1]+" Foreground call is not generated for NextGenIm ad call");
+		logStep(exceldata[19][1]+" Foreground call is not generated for NextGenIm ad call");
+		Assert.fail(exceldata[19][1]+"Foreground call is not generated for NextGenIm ad cal");
+	}
+	}
+
 
 public static void validate_Size_dailydetails_integratedad() throws Exception {
 	DeviceStatus device_status = new DeviceStatus();
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	String[][] exceldata=read_excel_data.exceldataread("idd");
+
 	if(sb.toString().contains(exceldata[1][1])){
-		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
-		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
-		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
+		//System.out.println(exceldata[1][3]);
+		System.out.println(exceldata[1][1]);
+		System.out.println(exceldata[2][1]);
+		System.out.println(exceldata[3][1]);
+		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[3][1]));
+String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[3][1]));
+		
+		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[3][1]),required_info.indexOf(exceldata[22][1]));
 		String expectedValues = expected_data.toString();
-		String marqueeadsize=expectedValues.replaceAll(exceldata[4][1], "");
-		if(marqueeadsize.equalsIgnoreCase(exceldata[3][1])) {
-			System.out.println("daily details integrated ad call size is matched with:::"  + marqueeadsize);
+		System.out.println(expectedValues);
+		   String val[]=expected_data.split("&");
+		      System.out.println("Size  is  " + val[0]);
+				logStep("Size of theis " + val[0]);
+		String iddsize=val[0].replaceAll("%7C", "|");
+		if(iddsize.contains(exceldata[4][1])) {
+			System.out.println("daily details integrated ad call size is matched with::: "  + iddsize);
 		}
 		else {
-			System.out.println("daily details integrated ad call size is not matched with"     + exceldata[3][1]);
-			Assert.fail("daily details integrated  is not matched with"+ exceldata[3][1]);
+			System.out.println("daily details integrated ad call size is not matched with "     + exceldata[3][1]);
+			Assert.fail("daily details integrated  is not matched with "+ exceldata[3][1]);
 		}
 	}
 }
@@ -2872,11 +2967,11 @@ public static void validate_pos_Cust_param_WM_Flu() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentFlu");
+	String[][] exceldata=read_excel_data.exceldataread("FLUWM");
 		if(sb.toString().contains(exceldata[1][1])){
-			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[8][1]));
+			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26tmp%3D"));
+			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26ref%3D"));
 			
 			//6sod%3Dno%
 			String expectedValues = expected_data.toString();
@@ -2889,7 +2984,7 @@ public static void validate_pos_Cust_param_WM_Flu() throws Exception {
 			else {
 				System.out.println("pos cust param value is not matched with"     + pos);
 				logStep("pos cust param value is not matched with"     + pos);
-				Assert.fail("pos cust param value is not matched withh"     + pos);
+				Assert.fail("pos cust param value is not matched with"     + pos);
 			}
 			//System.out.println(expectedValues);
 			
@@ -2905,7 +3000,7 @@ public static Map<String, String> Verify_watsonAllergycard_iu() throws Exception
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
+	String[][] exceldata=read_excel_data.exceldataread("AllergyWM");
 	if(sb.toString().contains(exceldata[1][1])){
 		System.out.println(exceldata[1][1] + " call was  trigred");
 }
@@ -2963,7 +3058,7 @@ public static void validate_Size_WMAllergy() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
+	String[][] exceldata=read_excel_data.exceldataread("AllergyWM");
 	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
@@ -2988,11 +3083,11 @@ public static void validate_pos_Cust_param_WM_Allergy() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("WatsonmomentAllergy");
+	String[][] exceldata=read_excel_data.exceldataread("AllergyWM");
 		if(sb.toString().contains(exceldata[1][1])){
 			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26tmp%3D"));
+			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26ref%3D"));
 			
 			//6sod%3Dno%
 			String expectedValues = expected_data.toString();
@@ -3668,6 +3763,28 @@ if(!sb.contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Fhome_screen%2Fmarque
 }
 return wfxtriggers_values;
 }
+
+public static void  finding_Homescreen_marquee_iu() throws Exception{
+
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	logStep("checking for iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+	System.out.println("checking for iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee ad call");
+if(sb.contains("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")) {
+	System.out.println("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call was trigred");
+	logStep("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call was trigred");
+}
+if(!sb.contains("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee")) {
+
+	System.out.println("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call was not trigred");
+	logStep("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call was not trigred");
+    Assert.fail("iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee call was not trigred");
+}
+}
+
 
 
 public static void validate_SOD_Cust_param_homescreenHourly_Optoutmode() throws Exception {
@@ -5027,25 +5144,48 @@ public static void dailydetailsintegrated_adcall_response() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("DailydetailsIDD");
+	String[][] exceldata=read_excel_data.exceldataread("idd");
 	 
-	if(sb.contains(exceldata[8][1]) && sb.contains(exceldata[9][1]) && sb.contains(exceldata[10][1])) {
+	if(sb.contains(exceldata[8][1])) {
 		//bgEvent:'adBg'
-		System.out.println("got the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
-		logStep("got the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
-		Check_marquee_ad();
+		System.out.println("got the response" + exceldata[8][1] +" for daily details integrated  ad call");	
+		logStep("got the response" + exceldata[8][1] +" for daily details integrated  ad call");
+		//Check_marquee_ad();
 	}
-	if(!sb.contains(exceldata[8][1]))	
+	if(!sb.contains(exceldata[8][1]))
 	 {
-		System.out.println("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
-		logStep("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
-		try {
-		Check_marquee_ad();
-		}
-		finally {
-			System.out.println("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");	
-			logStep("did't get  the response" + exceldata[8][1] +" and "+  exceldata[9][1] + "and" +exceldata[10][1] +" for daily details integrated  ad call");
-		}
+		System.out.println(exceldata[8][1]);
+		System.out.println("did't get  the response" + exceldata[8][1] +"  for daily details integrated  ad call");	
+		logStep("did't get  the response" + exceldata[8][1] +"  for daily details integrated  ad call");
+Assert.fail("did't get  the response" + exceldata[8][1] +"  for daily details integrated  ad call");
+		
+	
+	}
+	 
+	 }
+
+public static void NextGenIm_adcall_response() throws Exception {
+	
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	 
+	if(sb.contains(exceldata[8][1])) {
+		//bgEvent:'adBg'
+		System.out.println("got the response " + exceldata[8][1] +" for NextGenIM  ad call");	
+		logStep("got the response " + exceldata[8][1] +"  for NextGenIM  ad call");	
+		//Check_marquee_ad();
+	}
+	if(!sb.contains(exceldata[8][1]))
+	 {
+		System.out.println(exceldata[8][1]);
+		System.out.println("did't get  the response " + exceldata[8][1] +"   for NextGenIM  ad calll");	
+		logStep("did't get  the response " + exceldata[8][1] +"  for NextGenIM  ad call");
+Assert.fail("did't get  the response " + exceldata[8][1] +"   for NextGenIM  ad callaqR67");
+		
+	
 	}
 	 
 	 }
@@ -5061,14 +5201,14 @@ public static void dailydetailsintegratedVideo_adcall_response() throws Exceptio
 	if(sb.contains(exceldata[19][1])) {
 		//bgEvent:'adBg'
 		System.out.println("got the response for daily details integrated  ad call");
-		Check_marquee_ad();
+	//	Check_marquee_ad();
 	}
 	if(!sb.contains(exceldata[19][1]))	
 	 {
 		System.out.println("did't  get the response for daily details integrated  ad calll");
 
 		try {
-		Check_marquee_ad();
+		//Check_marquee_ad();
 		}
 		finally {
 	    Assert.fail("did't the response for marquee ad call");
@@ -5130,7 +5270,7 @@ Assert.fail("Integrated Feed Card ad is not presenon UI");
 }	
 } 
 
-public static void Check_marquee_ad() throws Exception
+public static void Check_idd() throws Exception
 {  
 WebElement feedad=null;
 try{
@@ -5271,6 +5411,32 @@ public static void validate_Size_integratedfeedCardad() throws Exception {
 		else {
 			System.out.println("Integrated feed card ad call size is not matched with"     + exceldata[3][1]);
 			Assert.fail("\"Integrated feed card ad call size is not matched with"+ exceldata[3][1]);
+		}
+		System.out.println(expectedValues);
+		
+	}
+	}
+
+public static void validate_Size_iNextGenIM() throws Exception {
+	DeviceStatus device_status = new DeviceStatus();
+	int Cap = device_status.Device_Status();
+	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+	String[][] exceldata=read_excel_data.exceldataread("NextGenIM");
+	if(sb.toString().contains(exceldata[1][1])){
+		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
+		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
+		String expected_data = required_info.toString().substring(required_info.indexOf(exceldata[2][1]),required_info.indexOf(exceldata[5][1]));
+		String expectedValues = expected_data.toString();
+		String NextGenIm=expectedValues.replaceAll(exceldata[4][1], "");
+		if(NextGenIm.equalsIgnoreCase(exceldata[3][1])) {
+			System.out.println("NextGenIM ad call  size is:::"  + NextGenIm);
+			logStep("NextGenIm ad call  size is:::"  + NextGenIm);
+		}
+		else {
+			System.out.println("NextGenIM ad call size is not matched with"     + exceldata[3][1]);
+			logStep("NextGenIM ad call size is not matched with"     + exceldata[3][1]);
+			Assert.fail("NextGenIM ad call size is not matched with"     + exceldata[3][1]);
 		}
 		System.out.println(expectedValues);
 		
