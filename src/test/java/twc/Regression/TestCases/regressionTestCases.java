@@ -93,7 +93,7 @@ AppiumFunctions.Kill_Launch_App();
 AppiumFunctions.Kill_Launch_App();
 proxy.clearCharlesSession();
 AppiumFunctions.Kill_Launch_App();
-AppiumFunctions.Kill_Launch_App();
+//AppiumFunctions.Kill_Launch_App();
 Thread.sleep(15000);
 		AppiumFunctions.gettingApkVersion();
 AppiumFunctions.enter_requiredLocation("New York City");
@@ -126,7 +126,7 @@ AppiumFunctions.Swipe_feed();
 	Thread.sleep(5000);
 	AppiumFunctions.clickdailydetails();
 	//AppiumFunctions.Kill_Launch_App();
-	Thread.sleep(10000);
+	Thread.sleep(15000);
 	//AppiumFunctions.clickdailydetails();
 	//Thread.sleep(5000);
 	attachScreen();
@@ -246,16 +246,7 @@ Thread.sleep(15000);
 	}
 	
 	
-	@Test(priority = 6, enabled = true)
-	@Description("Verify Hourly interstials Details ad call amazon bid id")
-	public void Verify_Hourly_interstitial_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly Interstitial Details ad call amazon bid id ====================");
-
-		System.out.println("****** Hourly Interstitial Details ad call amazon bid id validation Started");
-		logStep("****** Hourly Interstitial Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly(Interstitial)", true);
-	}
+	
 	
 	@Test(priority = 7, enabled = true)
 	@Description("Verify Hourly1 Details ad call amazon bid id")
@@ -306,16 +297,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	}
 	
 	
-	@Test(priority = 11, enabled = true)
-	@Description("Verify Daily Details  Interstials ad call amazon bid id")
-	public void Verify_Daily_Details_Interstitial_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Daily Details Interstitial ad call amazon bid id ====================");
-
-		System.out.println("****** Daily Details Interstitial ad call amazon bid id validation Started");
-		logStep("****** Daily Details  Interstitial ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day Interstitial)", true);
-	}
+	
 
 	@Test(priority = 12, enabled = true)
 	@Description("Verify Map Details ad call amazon bid id")
@@ -330,16 +312,6 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
-	@Test(priority = 13, enabled = true)
-	@Description("Verify Map Details ad call amazon bid id")
-	public void Verify_Map_Details_Interstitial_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Map Details Interstitial ad call amazon bid id ====================");
-
-		System.out.println("****** Map Details Interstitial ad call amazon bid id validation Started");
-		logStep("****** Map Details  Interstitial ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Map(Interstitial)", true);
-	}
 	
 	
 	@Test(priority = 14, enabled = true)
@@ -1487,7 +1459,262 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
+		@Test(priority = 3000, enabled = true)
+	@Title("Verifying daily integrated details ad call iu value")
+	public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exception {
+		System.out.println("================= Verifying daily detials integrated ad call test case Started =========================");	
+		System.out.println("Verifying daily details integrated ad call test case Started");
+		//logStep("Verifying daily details integrated ad call test case started");
+		Thread.sleep(5000);
+		Ad.resetApp();
+		Thread.sleep(10000);
+		AppiumFunctions.enterRequiredUserGroup("AdsTestAdUnitOnly");
+		Ad.runAppInBackground(10);
+		//Ad.launchApp();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.ClickonIUnderstand();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingResponsiveMode();
+		Ad.runAppInBackground(10);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		proxy.clearCharlesSession();
+		AppiumFunctions.click_daily_element();
+		proxy.clearCharlesSession();	
+		AppiumFunctions.enter_requiredLocation("30124");
+		Thread.sleep(10000);
+		this.proxy.getXml();
+		 Functions.verifyingdailydetailiu();
+		
+		System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
+	}
 	
+	
+	@Test(priority = 3002, enabled = true)
+	@Title("Verifying daily details integrated ad call size")
+	public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Exception {
+		System.out.println("================= Verifying daily detials integrated ad call size test case Started =========================");	
+		 Functions.validate_Size_dailydetails_integratedad();
+		
+		System.out.println("================= Verifying daily detials integrated ad call size test case End =========================");
+	}
+	
+	
+	
+	
+	@Test(priority = 3004, enabled = true)
+	@Title("Verifying daily  integrated details ad call response")
+	public void Smoke_Test_Verify_IDD_DailyDetails_Response() throws Exception {
+		System.out.println("================= Verifying dailetials integrated daily details ad call response test case Started =========================");	
+	
+		Functions.dailydetailsintegrated_adcall_response();
+		System.out.println("================= Verifying daily detials integrated daily details ad call response test case  End =========================");
+	}
+	
+	@Test(priority = 3006, enabled = true)
+	@Title("Verifying daily  integrated details FG  assest call URL")
+	public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exception {
+		System.out.println("================= Verifying daily detials integrated FG assest url  test case Started =========================");	
+		  Functions. validate_FG_adcall_IDD();
+		
+		System.out.println("================= Verifying daily detials integrated FG assest url test case End =========================");
+	}
+	
+	
+	@Test(priority = 3008, enabled = true)
+	@Title("Verifying daily  integrated details BG assest  call URL")
+	public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exception {
+		System.out.println("================= Verifying daily detials integrated BG assest url  test case Started =========================");	
+		CharlesFunctions.archive_folder("Charles");
+		Functions.validate_BG_adcall_IDD();
+		
+		System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
+	}
+	
+
+
+
+
+
+
+
+
+
+	
+	
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+	@Test(priority = 3010, enabled = true)
+	@Description("Validating NextGen IM Static Ad when app in test mode")
+	public void Validate_NextGenIM_StaticAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad in test mode");
+		logStep("Validating NextGen IM Static Ad in test mode ");
+		Ad.resetApp();
+		Thread.sleep(15000);
+		AppiumFunctions.enterRequiredUserGroup("AdsTestAdUnitOnly");
+		Ad.runAppInBackground(10);
+		//Ad.launchApp();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.ClickonIUnderstand();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingResponsiveMode();
+		Ad.runAppInBackground(10);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		proxy.clearCharlesSession();	
+		AppiumFunctions.enter_requiredLocation("30124");
+		Thread.sleep(15000);
+		this.proxy.getXml();
+		Functions.finding_Homescreen_marquee_iu();
+		
+		
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad response
+	 */
+	@Test(priority = 3012, enabled = true)
+	@Description("Validating NextGen IM Static Ad response when app in test mode")
+	public void Validate_NextGenIM_StaticAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
+		logStep("Validating NextGen IM Static Ad response in test mode ");
+		Functions.NextGenIm_adcall_response();
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3014, enabled = true)
+
+	@Description("Validating NextGen IM Static Ad BackGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
+		logStep("Validating NextGen IM Static Ad BG Asset Call ");
+		 Functions.validate_Size_iNextGenIM();
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3016, enabled = true)
+	@Description("Validating NextGen IM Static Ad ForeGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_fgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
+		logStep("Validating NextGen IM Static Ad FG Asset Call ");
+		  Functions.validate_FG_adcall_NextImad() ;
+
+	}
+
+	@Test(priority = 3018, enabled = true)
+	@Description("Validating NextGen IM Static Ad sz parameter")
+	public void Validate_NextGenIM_StaticAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
+		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
+		CharlesFunctions.archive_folder("Charles");
+		Functions.validate_BG_adcall_NextGenIM();
+       
+	}
+	
+	
+	
+
+	@Test(priority = 3020, enabled = true)
+	@Description("Validating NextGen IM Video Ad and its Parameters when app in test mode")
+	public void Validate_NextGenIM_VideoAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad in test mode");
+		logStep("Validating NextGen IM Video Ad in test mode ");
+		System.out.println("****** Validating NextGen IM Static Ad in test mode");
+		logStep("Validating NextGen IM Static Ad in test mode ");
+		Ad.resetApp();
+		Thread.sleep(15000);
+		AppiumFunctions.enterRequiredUserGroup("AdsTestAdUnitOnly");
+		Ad.runAppInBackground(10);
+		//Ad.launchApp();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.ClickonIUnderstand();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingResponsiveMode();
+		Ad.runAppInBackground(10);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		proxy.clearCharlesSession();	
+		AppiumFunctions.enter_requiredLocation("73645");
+		Thread.sleep(15000);
+		this.proxy.getXml();
+		Functions.finding_Homescreen_marquee_iu();
+
+	}
+
+	@Test(priority = 3022, enabled = true)
+	@Description("Validating NextGen IM Video Ad response when app in test mode")
+	public void Validate_NextGenIM_VideoAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad response in test mode");
+		logStep("Validating NextGen IM Video Ad response in test mode ");
+		Functions.NextGenIm_adcall_response();
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+	@Test(priority = 3024, enabled = true)
+	@Description("Validating NextGen IM Video Ad BackGround Asset Call")
+	public void Validate_NextGenIM_VideoAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad BG Asset Call");
+		logStep("Validating NextGen IM Video Ad BG Asset Call ");
+		Functions.validate_BG_adcall_NextGenIM_video();
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters Video
+	 *                   ad will not be having only fg asset call always, it has
+	 *                   only bg asset call hence commenting
+	 */
+	
+	  @Test(priority = 3026, enabled = true)
+	  @Description("Validating NextGen IM Video Ad ForeGround Asset Call")
+	  public void Validate_NextGenIM_VideoAd_fgAssetCall() throws Exception {
+	 System.out.println("==============================================");
+	 System.out.println("****** Validating NextGen IM Video Ad FG Asset Call");
+	 logStep("Validating NextGen IM Video Ad FG Asset Call ");
+	  Functions.validate_FG_adcall_NextImad_video();
+	 
+	 
+	  }
+	 
+
+	@Test(priority = 3028, enabled = true)
+	@Description("Validating NextGen IM Video Ad sz parameter")
+	public void Validate_NextGenIM_VideoAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad sz parameter in charles");
+		logStep("Validating NextGen IM Video Ad sz parameter in charles ");
+		CharlesFunctions.archive_folder("Charles");
+		 Functions.validate_Size_iNextGenIM();
+
+	}
+	
+
 	
 	
 	
