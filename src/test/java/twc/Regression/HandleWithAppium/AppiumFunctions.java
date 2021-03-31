@@ -2221,6 +2221,15 @@ catch(Exception e1) {
 				break;
 				}
 			}
+			if(location.contains("73645")) {
+				//System.out.println(loc.getText());
+				if(allLocations.get(i).getText().contains("Erick")) {
+					Thread.sleep(6000);
+					allLocations.get(i).click();
+					Thread.sleep(6000);
+				break;
+				}
+			}
 			
 			if(location.contains("30124")) {
 				//System.out.println(loc.getText());
