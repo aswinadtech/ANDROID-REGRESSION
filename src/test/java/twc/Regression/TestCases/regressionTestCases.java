@@ -341,19 +341,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
-	@Test(priority = 16, enabled = true)
-	@Description("Verify amazon aax AlertCenter ad call")
-	public void Verify_amazon_aax_AlertCenter_adcall() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== amazon aax AlertCenter ad call ====================");
-
-		System.out.println("****** amazon aax AlertCenter ad call validation Started");
-		logStep("****** amazon aax AlertCenter ad call validation Started");
-
-		// Functions.verifyAAX_SlotId("Smoke", "Daily(10day)");
-		Functions.verifyAAX_SlotId("MyAlerts");
-
-	}
+	
 
 	@Test(priority = 17, enabled = true)
 	@Description("Verify AlertCenter ad call amazon bid id")
@@ -1600,7 +1588,8 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
 		logStep("Validating NextGen IM Static Ad BG Asset Call ");
-		 Functions.validate_Size_iNextGenIM();
+		Functions.validate_BG_adcall_NextGenIM();
+		
 		
 
 	}
@@ -1625,8 +1614,10 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
 		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
-		CharlesFunctions.archive_folder("Charles");
-		Functions.validate_BG_adcall_NextGenIM();
+		 	CharlesFunctions.archive_folder("Charles");
+		Functions.validate_Size_iNextGenIM();
+	
+		
        
 	}
 	
@@ -1696,7 +1687,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	  public void Validate_NextGenIM_VideoAd_fgAssetCall() throws Exception {
 	 System.out.println("==============================================");
 	 System.out.println("****** Validating NextGen IM Video Ad FG Asset Call");
-	 logStep("Validating NextGen IM Video Ad FG Asset Call ");
+	 logStep("Validating NextGen IM Video Ad FG Asset Call ");	  	
 	  Functions.validate_FG_adcall_NextImad_video();
 	 
 	 
