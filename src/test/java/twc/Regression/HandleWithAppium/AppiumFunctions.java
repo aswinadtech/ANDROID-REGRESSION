@@ -2226,7 +2226,7 @@ catch(Exception e1) {
 				if(allLocations.get(i).getText().contains("Erick")) {
 					Thread.sleep(6000);
 					allLocations.get(i).click();
-					Thread.sleep(6000);
+					Thread.sleep(8000);
 				break;
 				}
 			}
@@ -2234,9 +2234,9 @@ catch(Exception e1) {
 			if(location.contains("30124")) {
 				//System.out.println(loc.getText());
 				if(allLocations.get(i).getText().contains("Cave Spring")) {
-
+                                 Thread.sleep(8000);
 					allLocations.get(i).click();
-				Thread.sleep(3000);
+				Thread.sleep(8000);
 				break;
 				}
 			}
