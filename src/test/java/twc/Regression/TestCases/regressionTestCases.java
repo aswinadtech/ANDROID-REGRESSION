@@ -404,6 +404,15 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
+	@Test(priority = 1, enabled = true)
+	@Title("Validating 'adsdk' parameter of Amazon aax call")
+	public void Validate_Amazon_SDK_adsdk_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
+		logStep("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
+		Functions.validate_Amazon_aax_call_parameter("Amazon", "adsdk", properties.getProperty("AmazonSDKVersion"));
+
+	}
 
 
 	
