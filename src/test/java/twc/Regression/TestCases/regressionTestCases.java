@@ -404,7 +404,7 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 	
 	
 	
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 30, enabled = true)
 	@Title("Validating 'adsdk' parameter of Amazon aax call")
 	public void Validate_Amazon_SDK_adsdk_parameter() throws Exception {
 		System.out.println("==============================================");
@@ -414,6 +414,16 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 
 	}
 
+	@Test(priority = 32, enabled = true)
+	@Title("Validating Google Mobile Ads SDK version of gampad call ")
+	public void Validate_GMA_SDK_version() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
+		logStep("Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
+
+		Functions.validate_Noncustom_param_val_of_gampad( "Marquee", "js", properties.getProperty("GMASDKVersion"));
+
+	}
 
 	
 	
