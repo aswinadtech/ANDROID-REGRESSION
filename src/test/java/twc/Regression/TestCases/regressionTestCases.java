@@ -831,6 +831,26 @@ Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
 				"****** Criteo SDK invapp v2 call cpm parameter with  homescreen hourly call validation Started");
 		logStep("****** Criteo SDK invapp v2 call cpm parameter with homescreen hourly call validation Started");
 
+		 AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+		AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
 		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Pulltorefresh", "cpm",true);
 	}
 
