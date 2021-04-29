@@ -857,7 +857,7 @@ AppiumFunctions.Swipe_feed();
 		
 Thread.sleep(15000);
 		this.proxy.getXml();
-		CharlesFunctions.createXMLFileForCharlesSessionFile()
+		CharlesFunctions.createXMLFileForCharlesSessionFile();
 		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Pulltorefresh", "cpm",true);
 	}
 
