@@ -143,6 +143,32 @@ AppiumFunctions.Swipe_feed();
 	
 	
 	
+		@Test(priority = 4, enabled = true)
+	@Title("Verifying watson Allergy card iu value")
+	public void Smoke_Test_Verify_WM_Allergy_iu() throws Exception {
+		System.out.println("================= Verifying WM Allergy card  iu value   test case Started =========================");	
+		Functions.Verify_watsonAllergycard_iu();
+		System.out.println("================= Verifying  WM Allergy card  iu value  test case End =========================");
+	}
+	
+	
+	
+	@Test(priority = 5, enabled = true)
+	@Title("Verifying  WM Allergy ad call size")
+	public void Smoke_Test_Verify_Size_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy  ad call Size test case Started =========================");	
+		Functions.validate_Size_WMAllergy();
+		System.out.println("================= Validate WM Allergy ad call Size test caseEnd =========================");
+	}
+	@Test(priority = 6, enabled = true)
+	@Title("Verifying WM allergy card ad call pos_Custom param")
+	public void Smoke_Test_WM_Allergy_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case Started =========================");	
+		Functions.validate_pos_Cust_param_WM_Allergy();
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case End =========================");
+	}
+	
+	
 	
 	
 	
