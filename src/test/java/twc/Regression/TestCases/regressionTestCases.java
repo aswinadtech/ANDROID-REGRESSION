@@ -172,6 +172,34 @@ AppiumFunctions.Swipe_feed();
 	
 	
 	
+	@Test(priority = 7, enabled = true)
+	@Title("Verifying watson weekend card iu value")
+	public void Smoke_Test_Verify_WM_WeekendCard_iu() throws Exception {
+		System.out.println("================= Verifying watson weekend card iu value   test case Started =========================");	
+		Functions.Verify_weekend_iu();
+		System.out.println("================= Verifyingwatson weekend card  iu value  test case End =========================");
+	}
+	
+	@Test(priority = 8, enabled = true)
+	@Title("Verifying  Weekend cardad call size")
+	public void Smoke_Test_Verify_Size_WM_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend_Ad_Size test case Started =========================");	
+		Functions.validate_Size_weeekend();
+		System.out.println("================= Validate Weekend_Ad_Size test caseEnd =========================");
+	}
+	
+
+	
+	
+	@Test(priority = 10, enabled = true)
+	@Title("Verifying Weekend card ad call pos_Custom param")
+	public void Smoke_Test_WM_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate Weekend card ad call pos custom param test case Started =========================");	
+		Functions.validate_pos_Cust_param_WM_Weekend();
+		System.out.println("================= Validate Weekend card ad call pos custom param test case End =========================");
+	}
+	
+	
 }
 
 	
