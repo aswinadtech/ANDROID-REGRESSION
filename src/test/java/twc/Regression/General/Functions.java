@@ -3251,9 +3251,9 @@ public static Map<String, String> Verify_weekend_iu() throws Exception{
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
 	
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmoment");
+	String[][] exceldata=read_excel_data.exceldataread("WeekendWM");
 	if(sb.toString().contains(exceldata[1][1])){
-		System.out.println(exceldata[1][11] + " call was  trigred");
+		System.out.println(exceldata[1][1] + " call was  trigred");
 }
 if(!sb.contains(exceldata[1][1])) {
 	System.out.println(exceldata[1][1] + " call was not   trigred");
@@ -3268,7 +3268,7 @@ public static void validate_Size_weeekend() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekend");
+	String[][] exceldata=read_excel_data.exceldataread("WeekendWM");
 	if(sb.toString().contains(exceldata[1][1])){
 		String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[1][1]));
 		String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf(exceldata[2][1]));
@@ -3365,11 +3365,11 @@ public static void validate_pos_Cust_param_WM_Weekend() throws Exception {
 	int Cap = device_status.Device_Status();
 	read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
 	String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
-	String[][] exceldata=read_excel_data.exceldataread("Watsonmomentweekend");
+	String[][] exceldata=read_excel_data.exceldataread("WeekendWM");
 		if(sb.toString().contains(exceldata[1][1])){
 			String Read_API_Call_Data = sb.toString().substring(sb.toString().lastIndexOf(exceldata[8][1]));
 			String required_info = Read_API_Call_Data.toString().substring(Read_API_Call_Data.toString().indexOf("cust_params="));
-			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26tmp%3D"));
+			String expected_data = required_info.toString().substring(required_info.indexOf("pos%3D"),required_info.indexOf("%26ref%3D\""));
 			
 			//6sod%3Dno%
 			String expectedValues = expected_data.toString();
