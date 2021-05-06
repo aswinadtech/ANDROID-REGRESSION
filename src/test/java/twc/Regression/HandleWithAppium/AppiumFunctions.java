@@ -7,7 +7,6 @@ import io.appium.java_client.android.AndroidDriver;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -2489,6 +2488,17 @@ catch(Exception e1) {
 			
 		}
 		}}
+	
+	public static void SwipeUp_Counter_watsoncards(int Counter) throws Exception{
+		int swipeup = Counter;
+		
+		for(int i=1;i<=swipeup ;i++){
+			Swipe_feed();
+			Thread.sleep(5000);
+		}
+		
+		
+	}
 	
 	public static void click_SH_element() throws Exception
 	{
