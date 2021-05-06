@@ -44,7 +44,15 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	@Title("Verifying watson Flu card iu value")
 	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
 		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
-	   	  AppiumFunctions.LaunchAppWithFullReset();
+	   	this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
+		proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
+		proxy.startCharlesProxyWithUI();
+		proxy.disableRewriting();
+	    proxy.stopRecording();
+		proxy.disableMapLocal();
+		proxy.startRecording();
+		proxy.clearCharlesSession();
+		AppiumFunctions.LaunchAppWithFullReset();
 		Ad.resetApp();
 	     AppiumFunctions.ClickonIUnderstand();
 	     AppiumFunctions.clickOnAllow();
