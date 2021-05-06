@@ -44,7 +44,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	@Title("Verifying watson Flu card iu value")
 	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
 		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
-	     Ad.resetApp();
+	   	  AppiumFunctions.LaunchAppWithFullReset();
+		Ad.resetApp();
 	     AppiumFunctions.ClickonIUnderstand();
 	     AppiumFunctions.clickOnAllow();
 		AppiumFunctions.enterRequiredUserGroup("allergy");
