@@ -40,7 +40,47 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 
 
-		
+		@Test(priority = 1, enabled = true)
+	@Title("Verifying watson Flu card iu value")
+	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
+		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+	     Ad.resetApp();
+	     AppiumFunctions.ClickonIUnderstand();
+	     AppiumFunctions.clickOnAllow();
+		AppiumFunctions.enterRequiredUserGroup("allergy");
+		Ad.runAppInBackground(30);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingBranch("WM cards");
+		Ad.runAppInBackground(30);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingResponsiveMode();
+		Ad.runAppInBackground(30);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		proxy.clearCharlesSession();
+		AppiumFunctions.SwipeUp_Counter_watsoncards(50);
+		this.proxy.getXml();
+		Functions.Verify_watsonFlucard_iu();
+		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
+	}
+	
+	
+	@Test(priority = 2, enabled = true)
+	@Title("Verifying  WM Flu ad call size")
+	public void Smoke_Test_Verify_Size_WM_Flu_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Flu_Ad_Size test case Started =========================");	
+		Functions.validate_Size_WMFlu();
+		System.out.println("================= Validate WM Flu_Ad_Size test caseEnd =========================");
+	} 
+	
+	@Test(priority = 3, enabled = true)
+	@Title("Verifying WM Flu card ad call pos_Custom param")
+	public void Smoke_Test_WM_Flu_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
+		Functions.validate_pos_Cust_param_WM_Flu();
+		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+	} 
 
 	
 	
