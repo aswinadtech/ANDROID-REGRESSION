@@ -2489,16 +2489,7 @@ catch(Exception e1) {
 		}
 		}}
 	
-	public static void SwipeUp_Counter_watsoncards(int Counter) throws Exception{
-		int swipeup = Counter;
-		
-		for(int i=1;i<=swipeup ;i++){
-			Swipe_feed();
-			Thread.sleep(5000);
-		}
-		
-		
-	}
+	
 	
 	public static void click_SH_element() throws Exception
 	{
