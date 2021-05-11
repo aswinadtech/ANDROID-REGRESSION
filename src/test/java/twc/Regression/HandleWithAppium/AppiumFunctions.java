@@ -1503,7 +1503,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 		try {
 		System.out.println("clicking on daily");
 		logStep("clicking on daily");
-		Ad.findElementByAccessibilityId("Daily").click();
+		Ad.findElementByAccessibilityId("Daily Tab").click();
 		Thread.sleep(3000);
 		}
 		catch(Exception e) {
@@ -1517,7 +1517,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 		try {
 		System.out.println("clicking on maps");
 		logStep("clicking on maps");
-		Ad.findElementByAccessibilityId("Radar").click();
+		Ad.findElementByAccessibilityId("Radar Tab").click();
 		Thread.sleep(3000);
 		}
 		catch(Exception e) {
@@ -1639,12 +1639,12 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
      	logStep("clicking hourly details element");
 		try {
 		
-		Ad.findElementByAccessibilityId("Hourly").click();
+		Ad.findElementByAccessibilityId("Hourly Tab").click();
 		Thread.sleep(2000);	
 	}
 	catch(Exception e) {
 		try {
-			Ad.findElementByAccessibilityId("Hourly").click();
+			Ad.findElementByAccessibilityId("Hourly Tab").click();
 			Thread.sleep(2000);	
 		}
 		catch(Exception e2) {
