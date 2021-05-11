@@ -96,10 +96,10 @@ AppiumFunctions.Kill_Launch_App();
 //AppiumFunctions.Kill_Launch_App();
 Thread.sleep(15000);
 		AppiumFunctions.gettingApkVersion();
-//AppiumFunctions.enter_requiredLocation("New York City");
+AppiumFunctions.enter_requiredLocation("New York City");
 Thread.sleep(15000);
-//AppiumFunctions.clickOnAlertsbell();
-//Thread.sleep(5000);
+AppiumFunctions.clickOnAlertsbell();
+Thread.sleep(5000);
 //AppiumFunctions.clickOnBackArrowElement();
 //Thread.sleep(10000);
 AppiumFunctions.SwipeUp_Counter_feedcards(35);
@@ -934,7 +934,7 @@ Thread.sleep(15000);
 		
 
 		// turbo call values
-		@Test(priority = 60)
+		@Test(priority = 1042)
 		@Title("Verify custom parameter cnd")
 		public void C333216_Verify_cust_param_cnd() throws Exception {
 			System.out.println("================= Custom Parameter Cnd Verfication Started =========================");
