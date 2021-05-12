@@ -633,7 +633,7 @@ Thread.sleep(15000);
 
 		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed3 call validation Started");
 		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed3 call validation Started");
-		AppiumFunctions.clickOnVideotab();
+		
 		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed3", "displayUrl",true);
 	}
 
@@ -785,7 +785,7 @@ Thread.sleep(15000);
 			
 			//proxy.clearCharlesSession();
 			Ad.resetApp();
-                       Thread.sleep(10000);
+                       Thread.sleep(30000);
 			AppiumFunctions.Kill_Launch_App();
 			Thread.sleep(10000);
 			//AppiumFunctions.LaunchAppWithFullReset();
@@ -800,7 +800,7 @@ Thread.sleep(15000);
 			 Thread.sleep(5000);
 			AppiumFunctions.click_daily_element();
 			 Thread.sleep(10000);
-				AppiumFunctions.clickOnVideotab();
+				//AppiumFunctions.clickOnVideotab();
 			Thread.sleep(10000);
 		      this.proxy.getXml();
 			Custom_Parameters_Verification.parameters_Verification("adid");
