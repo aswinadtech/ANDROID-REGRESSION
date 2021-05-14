@@ -511,6 +511,9 @@ Thread.sleep(15000);
 	}
 	
 	
+	
+	
+	
 	@Test(priority = 162, enabled = true)
 	@Description("Verify Criteo SDK config app call")
 	public void Verify_Criteo_SDK_config_app_Call() throws Exception {
@@ -524,6 +527,23 @@ Thread.sleep(15000);
 
 	//Functions.verifyCriteo_config_app_Call("Criteo", false);
 	}
+	
+	
+		
+	@Test(priority = 163, enabled = true)
+	@Description("Verify Criteo SDK inapp v2 call")
+	public void Verify_Criteo_SDK_inapp_v2_Call() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+
+		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+		logStep("****** Criteo SDK inapp/v2 call validation Started");
+
+	Functions.verifyCriteo_inapp_v2_Call("Criteo");
+	//Functions.verifyCriteo_inapp_v2_Call("Criteo", false);
+
+	}
+	
 	
 
 	
@@ -789,21 +809,7 @@ Thread.sleep(15000);
 	
 	
 	
-	
-	@Test(priority = 204, enabled = true)
-	@Description("Verify Criteo SDK inapp v2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
 
-		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
-		logStep("****** Criteo SDK inapp/v2 call validation Started");
-
-	Functions.verifyCriteo_inapp_v2_Call("Criteo");
-	//Functions.verifyCriteo_inapp_v2_Call("Criteo", false);
-
-	}
-	
 	
 	
 	
@@ -821,8 +827,46 @@ Thread.sleep(15000);
 
 		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
 		logStep("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
+		proxy.clearCharlesSession();	
+              AppiumFunctions.Kill_Launch_App();
+		Thread.sleep(30000);
+		AppiumFunctions.enter_requiredLocation("New York City");
+		Thread.sleep(30000);
+		AppiumFunctions.clickOnAlertsbell();
+                Thread.sleep(5000);
+		AppiumFunctions.SwipeUp_Counter_feedcards(35);
+                AppiumFunctions.click_hourly_element();
+                attachScreen();
+		Thread.sleep(5000);
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	AppiumFunctions.Swipe_feed();
+	attachScreen();
+	Thread.sleep(15000);
+      AppiumFunctions.clickdailydetails();
+     Thread.sleep(10000);
+    attachScreen();
+	 AppiumFunctions.clickdailymaps();
+		attachScreen();
+		Thread.sleep(20000);
+		this.proxy.getXml();
+		CharlesFunctions.createXMLFileForCharlesSessionFile();
 	
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Hourly", "cpm", true);
+		
+        Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Hourly", "cpm", true);
 	}
 	
 	@Test(priority = 210, enabled = true)
