@@ -1571,6 +1571,159 @@ AppiumFunctions.Swipe_feed();
 	
 	
 	
+	
+	
+	
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+	@Test(priority = 3010, enabled = true)
+	@Description("Validating NextGen IM Static Ad when app in test mode")
+	public void Validate_NextGenIM_StaticAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad in test mode");
+		logStep("Validating NextGen IM Static Ad in test mode ");
+		Ad.resetApp();
+		Thread.sleep(15000);
+		AppiumFunctions.enterRequiredUserGroup("AdsTestAdUnitOnly");
+		Ad.runAppInBackground(10);
+		//Ad.launchApp();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.ClickonIUnderstand();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.enablingResponsiveMode();
+		Ad.runAppInBackground(10);
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		AppiumFunctions.Kill_Launch_App();
+		proxy.clearCharlesSession();	
+		AppiumFunctions.enter_requiredLocation("30124");
+		Thread.sleep(20000);
+		this.proxy.getXml();
+		Functions.finding_Homescreen_marquee_iu();
+		
+		
+		
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad response
+	 */
+	@Test(priority = 3012, enabled = true)
+	@Description("Validating NextGen IM Static Ad response when app in test mode")
+	public void Validate_NextGenIM_StaticAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
+		logStep("Validating NextGen IM Static Ad response in test mode ");
+		Functions.NextGenIm_adcall_response();
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3014, enabled = true)
+
+	@Description("Validating NextGen IM Static Ad BackGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
+		logStep("Validating NextGen IM Static Ad BG Asset Call ");
+		Functions.validate_BG_adcall_NextGenIM();
+		
+		
+
+	}
+
+	/**
+	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 */
+
+	@Test(priority = 3016, enabled = true)
+	@Description("Validating NextGen IM Static Ad ForeGround Asset Call")
+	public void Validate_NextGenIM_StaticAd_fgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
+		logStep("Validating NextGen IM Static Ad FG Asset Call ");
+		  Functions.validate_FG_adcall_NextImad() ;
+
+	}
+
+	@Test(priority = 3018, enabled = true)
+	@Description("Validating NextGen IM Static Ad sz parameter")
+	public void Validate_NextGenIM_StaticAd_Size() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
+		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
+		 	//CharlesFunctions.archive_folder("Charles");
+		        Functions.validate_Size_iNextGenIM();
+	
+		
+       
+	}
+	
+
+	
+	@Test(priority = 4000, enabled = true)
+@Title("Verifying daily integrated details ad call iu value")
+public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exception {
+	System.out.println("================= Verifying daily detials integrated ad call test case Started =========================");	
+	System.out.println("Verifying daily details integrated ad call test case Started");
+	//logStep("Verifying daily details integrated ad call test case started");
+	proxy.clearCharlesSession();
+	AppiumFunctions.click_daily_element();
+	Thread.sleep(20000);
+	proxy.clearCharlesSession();	
+	Thread.sleep(10000);
+	this.proxy.getXml();
+	 Functions.verifyingdailydetailiu();
+	
+	System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
+}
+
+
+@Test(priority = 4002, enabled = true)
+@Title("Verifying daily details integrated ad call size")
+public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Exception {
+	System.out.println("================= Verifying daily detials integrated ad call size test case Started =========================");	
+	 Functions.validate_Size_dailydetails_integratedad();
+	
+	System.out.println("================= Verifying daily detials integrated ad call size test case End =========================");
+}
+
+
+
+
+@Test(priority = 4004, enabled = true)
+@Title("Verifying daily  integrated details ad call response")
+public void Smoke_Test_Verify_IDD_DailyDetails_Response() throws Exception {
+	System.out.println("================= Verifying dailetials integrated daily details ad call response test case Started =========================");	
+
+	Functions.dailydetailsintegrated_adcall_response();
+	System.out.println("================= Verifying daily detials integrated daily details ad call response test case  End =========================");
+}
+
+@Test(priority = 4006, enabled = true)
+@Title("Verifying daily  integrated details FG  assest call URL")
+public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exception {
+	System.out.println("================= Verifying daily detials integrated FG assest url  test case Started =========================");	
+	  Functions. validate_FG_adcall_IDD();
+	
+	System.out.println("================= Verifying daily detials integrated FG assest url test case End =========================");
+}
+
+
+@Test(priority = 4008, enabled = true)
+@Title("Verifying daily  integrated details BG assest  call URL")
+public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exception {
+	System.out.println("================= Verifying daily detials integrated BG assest url  test case Started =========================");	
+	CharlesFunctions.archive_folder("Charles");
+	Functions.validate_BG_adcall_IDD();
+	
+	System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
+}
 
 	
 	
