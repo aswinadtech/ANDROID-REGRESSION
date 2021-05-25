@@ -707,6 +707,53 @@ public class Functions extends Drivers{
 		}
 	}
 
+	
+	public static void Swipe_feeds() throws Exception{
+
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+}
+	
+			
+	
+	public static void get_feed1() throws Exception {
+		read_xml_data_into_buffer xml_data_into_buffer = new read_xml_data_into_buffer();
+		String sb = xml_data_into_buffer.read_xml_file_into_buffer_string();
+		System.out.println("Verifying iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call");
+		logStep("Verifying iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call");
+		//System.out.println("Slot Name is  : "+slotID);
+		if(sb.contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1")) {
+		System.out.println("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call was trigred");
+		logStep("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call was trigred");
+		}
+		if(!sb.contains("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1")) {
+			System.out.println("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call was not trigred");
+			logStep("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call was not trigred");
+			Assert.fail("iu=%2F7646%2Fapp_android_us%2Fdb_display%2Ffeed%2Ffeed_1 ad call was not trigred");
+			
+			}
+	}
+	
+	
+	
+	
+	
+	
+	
 	public static void verify_Vedio_Module_Click_On_Forecast_Video(String excel_sheet_name) throws Exception{
 
 		System.out.println("Searching for Video module");
