@@ -708,25 +708,7 @@ public class Functions extends Drivers{
 	}
 
 	
-	public static void Swipe_feeds() throws Exception{
 
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-	 Swipe_feed();
-	 Thread.sleep(3000);
-}
 	
 			
 	
