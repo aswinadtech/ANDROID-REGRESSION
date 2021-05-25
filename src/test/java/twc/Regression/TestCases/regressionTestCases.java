@@ -1664,6 +1664,69 @@ AppiumFunctions.Swipe_feed();
        
 	}
 	
+	
+	@Test(priority = 3050, enabled = true)
+@Title("Validating Integrated Feed Card Static Ad i.e. Feed1 Card when app in test mode")
+public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
+	System.out.println("==============================================");
+	System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
+	logStep("Validating Integrated Feed Card Static Ad in test mode ");
+proxy.clearCharlesSession();
+AppiumFunctions.Swipe_feeds();
+this.proxy.getXml();
+Functions.get_feed1();
+
+}
+
+@Test(priority = 3052, enabled = true)
+@Description("Validating Integrated Feed Card Static Ad response")
+public void Validate_Integrated_FeedCard_StaticAd_response() throws Exception {
+	System.out.println("==============================================");
+	System.out.println("****** Validating Integrated Feed Card Static Ad response");
+	logStep("Validating Integrated Feed Card Static Ad response");
+	Functions. integratedfeed_adcall_response();
+}
+
+/**
+ * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
+ *                   parameters
+ */
+
+@Test(priority = 3054, enabled = true)
+@Description("Validating Integrated Feed Card Static Ad BackGround Asset Call")
+public void Validate_Integrated_FeedCard_StaticAd_bgAssetCall() throws Exception {
+	System.out.println("==============================================");
+	System.out.println("****** Validating Integrated Feed Card Static Ad BG Asset Call");
+	logStep("Validating Integrated Feed Card Static Ad BG Asset Call ");
+	
+	Functions.validate_BG_adcall_Integratedfeedcard();
+}
+
+/**
+ * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
+ *                   parameters
+ */
+
+@Test(priority = 3056, enabled = true)
+@Description("Validating Integrated Feed Card Static Ad ForeGround Asset Call")
+public void Validate_Integrated_FeedCard_StaticAd_fgAssetCall() throws Exception {
+	System.out.println("==============================================");
+	System.out.println("****** Validating Integrated Feed Card Static Ad FG Asset Call");
+	logStep("Validating Integrated Feed Card Static Ad FG Asset Call ");
+	// Utils.verifyFGAd_byCallResponse("Smoke", "IntegratedFeedCard", "Static");
+	Functions.validate_FG_adcall_Integratedfeedcard();
+
+}
+
+@Test(priority = 3058, enabled = true)
+@Description("Validating Integrated Feed Card Static Ad sz parameter")
+public void Validate_Integrated_FeedCard_StaticAd_Size() throws Exception {
+	System.out.println("==============================================");
+	System.out.println("****** Validating Integrated Feed Card Static Ad sz parameter in charles");
+	logStep("Validating Integrated Feed Card Static Ad sz parameter in charles ");
+	Functions.validate_Size_integratedfeedCardad();
+
+}
 
 	
 	@Test(priority = 4000, enabled = true)
