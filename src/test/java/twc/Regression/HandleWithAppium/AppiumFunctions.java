@@ -1671,7 +1671,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 		System.out.println("clicking daily deatils");
      	logStep("clicking daily details element");
 		try {
-			Ad.findElementByAccessibilityId("Daily").click();
+			Ad.findElementByAccessibilityId("Daily Tab").click();
 		Thread.sleep(3000);
 			
 	}
@@ -1680,7 +1680,7 @@ public static void SwipeUp_Counter_videos_maps(int Counter) throws Exception{
 				
 			}
 			catch(Exception e1) {
-				Ad.findElementByAccessibilityId("Daily").click();
+				Ad.findElementByAccessibilityId("Daily Tab").click();
 				Thread.sleep(3000);
 			}
 	}
