@@ -670,7 +670,26 @@ public static void killADB() throws IOException, Exception{
 			    			logStep("maps element clicked");
 						}
 					}
-}	
+}
+	
+	public static void Swipe_feeds() throws Exception{
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+	 Swipe_feed();
+	 Thread.sleep(3000);
+}
 	public static void click_Todaydetails_element() throws Exception
 	{
 		System.out.println("clicking today element");
