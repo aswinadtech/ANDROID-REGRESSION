@@ -2222,9 +2222,9 @@ catch(Exception e1) {
 			if(location.contains("New York City")) {
 				//System.out.println(loc.getText());
 				if(allLocations.get(i).getText().contains("New York City")) {
-					Thread.sleep(6000);
+					Thread.sleep(60000);
 					allLocations.get(i).click();
-				Thread.sleep(6000);
+				Thread.sleep(10000);
 				attachScreen();
 				break;
 				}
@@ -2253,7 +2253,7 @@ catch(Exception e1) {
 			if(location.contains("30124")) {
 				//System.out.println(loc.getText());
 				if(allLocations.get(i).getText().contains("Cave Spring")) {
-                                 Thread.sleep(8000);
+                                 Thread.sleep(15000);
 					allLocations.get(i).click();
 				Thread.sleep(8000);
 				break;
