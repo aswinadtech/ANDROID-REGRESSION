@@ -1604,7 +1604,7 @@ AppiumFunctions.Swipe_feed();
 		AppiumFunctions.Kill_Launch_App();
 		AppiumFunctions.Kill_Launch_App();
 		proxy.clearCharlesSession();	
-		AppiumFunctions.enter_requiredLocation("30124");
+		AppiumFunctions.enter_requiredLocation("07095");
 		Thread.sleep(20000);
 		this.proxy.getXml();
 		Functions.finding_Homescreen_marquee_iu();
