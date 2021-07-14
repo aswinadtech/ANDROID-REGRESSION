@@ -834,6 +834,7 @@ Thread.sleep(15000);
 
 		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
 		logStep("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
+		try{
 		proxy.clearCharlesSession();	
               AppiumFunctions.Kill_Launch_App();
 		Thread.sleep(30000);
@@ -874,6 +875,9 @@ AppiumFunctions.Swipe_feed();
 	
 		
         Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Hourly", "cpm", true);
+		}
+		catch(Exception e){
+		}
 	}
 	
 	@Test(priority = 210, enabled = true)
