@@ -1838,6 +1838,173 @@ Thread.sleep(3000);
 	  
 	  }
 	
+		@Test(priority = 6000, enabled = true)
+	@Title("Verifying watson Flu card iu value")
+	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
+		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+		//Functions.Verify_watsonFlucard_iu();
+		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
+	}
+	
+	
+	@Test(priority =6002, enabled = true)
+	@Title("Verifying  WM Flu ad call size")
+	public void Smoke_Test_Verify_Size_WM_Flu_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Flu_Ad_Size test case Started =========================");	
+		//Functions.validate_Size_WMFlu();
+		System.out.println("================= Validate WM Flu_Ad_Size test caseEnd =========================");
+	} 
+	
+	@Test(priority = 6003, enabled = true)
+	@Title("Verifying WM Flu card ad call pos_Custom param")
+	public void Smoke_Test_WM_Flu_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
+		//Functions.validate_pos_Cust_param_WM_Flu();
+		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
+	} 
+	///DETaAILS CLICK 
+	//details iu validation
+	
+	
+	
+	
+	
+	
+	@Test(priority = 6004, enabled = true)
+	@Title("Verifying watson Allergy card iu value")
+	public void Smoke_Test_Verify_Weekendcard_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+		//Functions.Verify_watsonAllergycard_iu();
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+	
+	
+	
+	@Test(priority = 6005, enabled = true)
+	@Title("Verifying  WM Allergy ad call size")
+	public void Smoke_Test_Verify_Size_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy_Ad_Size test case Started =========================");	
+		//Functions.validate_Size_WMAllergy();
+		System.out.println("================= Validate WM Allergy_Ad_Size test caseEnd =========================");
+	}
+	@Test(priority = 6006, enabled = true)
+	@Title("Verifying WM allergy card ad call pos_Custom param")
+	public void Smoke_Test_WM_Allergy_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case Started =========================");	
+		//Functions.validate_pos_Cust_param_WM_Allergy();
+		System.out.println("================= Validate WM Allergy card ad call pos custom param test case End =========================");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test(priority = 6007, enabled = true)
+	@Title("Verifying  weekAhead card ad call response")
+	public void Smoke_Test_Verify_response__WMFlu_adcall() throws Exception {
+		System.out.println("================= Validate Week_Ahead card ad call response test case Started =========================");	
+		//Functions.watson_adcall_response(); 
+		System.out.println("================= Validate Week_Ahead card ad call response test case End =========================");
+	}
+	
+	
+	
+	
+	
+	
+	@Test(priority = 6008, enabled = true)
+	@Title("Verifying  WM Allergy card ad call response")
+	public void Smoke_Test_Verify_response_WM_Allergy_Card_adcall() throws Exception {
+		System.out.println("================= Validate WM Allergy card ad call response test case Started =========================");	
+		//Functions.watson_adcall_response();
+		System.out.println("================= Validate WM Allergy card ad call response test case End =========================");
+	}
+	
+	
+
+	
+	@Test(priority = 6009, enabled = true)
+	@Title("Verifying watson weekend card iu value")
+	public void Smoke_Test_Verify_watson_AllergyCard_iu() throws Exception {
+		System.out.println("================= Verifying watson Allergy card iu value   test case Started =========================");	
+		//Functions.Verify_weekend_iu();
+		System.out.println("================= Verifying Allergy  card iu value  test case End =========================");
+	}
+	
+	@Test(priority = 6010, enabled = true)
+	@Title("Verifying  Weekend cardad call size")
+	public void Smoke_Test_Verify_Size_Weekend_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend_Ad_Size test case Started =========================");	
+		//Functions.validate_Size_weeekend();
+		System.out.println("================= Validate Weekend_Ad_Size test caseEnd =========================");
+	}
+	
+
+	
+	@Test(priority =6011, enabled = true)
+	@Title("Verifying  weekend card ad call response")
+	public void Smoke_Test_Verify_response__Weekend_Card_adcall() throws Exception {
+		System.out.println("================= Validate Weekend card ad call response test case Started =========================");	
+		//Functions.watson_adcall_response();
+		System.out.println("================= Validate Weekend card ad call response test case End =========================");
+	}
+	
+	@Test(priority = 6012, enabled = true)
+	@Title("Verifying Weekend card ad call pos_Custom param")
+	public void Smoke_Test_Weekend_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate Weekend card ad call pos custom param test case Started =========================");	
+		//Functions.validate_pos_Cust_param_WM_Weekend();
+		System.out.println("================= Validate Weekend card ad call pos custom param test case End =========================");
+	}
+	
+	
+	
+	
+	
+	@Test(priority = 1013, enabled = true)
+	@Title("Verifying  WeekAhead card iu value")
+	public void Smoke_Test_Verify_Weekend_Card_iu() throws Exception {
+		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
+		//Functions.Verify_Week_Ahead_card_iu();
+		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
+	}
+	
+	@Test(priority = 2012, enabled = true)
+	@Title("Verifying  Week Ahead ad call size")
+	public void Smoke_Test_Verify_Size_WeekAhead_Card_adcall() throws Exception {
+		System.out.println("================= Validate WeekAhead _Ad_Size test case Started =========================");	
+		//Functions.validate_Size_weeekahead();
+		System.out.println("================= Validate WeekAhead_Ad_Size test caseEnd =========================");
+	}
+	
+	
+	@Test(priority = 6014, enabled = true)
+	@Title("Verifying  weekAhead card ad call response")
+	public void Smoke_Test_Verify_response__WeekAhead_Card_adcall() throws Exception {
+		System.out.println("================= Validate Week_Ahead card ad call response test case Started =========================");	
+		//Functions.watson_adcall_response();
+		System.out.println("================= Validate Week_Ahead card ad call response test case End =========================");
+	}
+	
+	@Test(priority =6015, enabled = true)
+	@Title("Verifying WeekAhead card ad call pos_Custom param")
+	public void Smoke_Test_WeekAhead_pos_Custom_param() throws Exception {
+		System.out.println("================= Validate WeekAhead card ad call pos custom param test case Started =========================");	
+		//Functions.validate_pos_Cust_param_WM_WeekAhead();
+		System.out.println("================= Validate WeekAhe card ad call pos custom param test case End =========================");
+	}
+
+	
 	
 	
 	
