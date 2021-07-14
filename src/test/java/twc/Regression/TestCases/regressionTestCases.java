@@ -86,8 +86,8 @@ Ad.runAppInBackground(30);
 AppiumFunctions.Kill_Launch_App();
 AppiumFunctions.ClickonIUnderstand();
 AppiumFunctions.enablingBranch("Criteo");
-		AppiumFunctions.enterRequiredUserGroup("Criteo");
-		Ad.hideKeyboard();
+		/*AppiumFunctions.enterRequiredUserGroup("Criteo");
+		Ad.hideKeyboard();*/
 		Thread.sleep(5000);
 Ad.runAppInBackground(30);
 AppiumFunctions.Kill_Launch_App();
@@ -1189,11 +1189,11 @@ AppiumFunctions.Swipe_feed();
 	
 	
 		// video ad call custum parameters
-	/*@Test(priority = 1000)
+	@Test(priority = 1000)
 		@Title("Verify custom parameter cmsid")
 		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
 			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
-			Custom_Parameters_Verification.verify_video_custom_parameters("cmsid");
+			//Custom_Parameters_Verification.verify_video_custom_parameters("cmsid");
 			System.out.println("================= Custom Parameter Cmsid Verfication End =========================");
 		}
 
@@ -1201,7 +1201,7 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify custom parameter ttid")
 		public void C344258_Verify_Video_Url_Parameter_ttid() throws Exception {
 			System.out.println("================= Custom Parameter Ttid Verfication Started =========================");
-			Custom_Parameters_Verification.verify_video_custom_parameters("ttid");
+			//Custom_Parameters_Verification.verify_video_custom_parameters("ttid");
 			System.out.println("================= Custom Parameter Ttid Verfication End =========================");
 		}
 
@@ -1209,7 +1209,7 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify custom parameter lnid")
 		public void C344260_Verify_Video_Url_Parameter_lnid() throws Exception {
 			System.out.println("================= Custom Parameter Lnid Verfication Started =========================");
-			Custom_Parameters_Verification.verify_video_custom_parameters("lnid");
+			//Custom_Parameters_Verification.verify_video_custom_parameters("lnid");
 			System.out.println("================= Custom Parameter Lnid Verfication End =========================");
 		}
 
@@ -1217,7 +1217,7 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify custom parameter vid")
 		public void C344259_Verify_Video_Url_Parameter_vid() throws Exception {
 			System.out.println("================= Custom Parameter Vid Verfication Started =========================");
-			Custom_Parameters_Verification.verify_video_custom_parameters("vid");
+			//Custom_Parameters_Verification.verify_video_custom_parameters("vid");
 			System.out.println("================= Custom Parameter Vid Verfication End =========================");
 		}
 
@@ -1225,7 +1225,7 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify video ad call custom parameter iu")
 		public void C344261_Verify_Video_Url_Parameter_iu() throws Exception {
 			System.out.println("================= Custom Parameter IU Verfication Started =========================");
-			Custom_Parameters_Verification.verify_video_custom_parameters("iu");
+			//Custom_Parameters_Verification.verify_video_custom_parameters("iu");
 			System.out.println("================= Custom Parameter IU Verfication End =========================");
 		}
 
@@ -1233,7 +1233,7 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify Description_url for video call")
 		public void C344261_Verify_DescriptionURL_Video() throws Exception {
 			System.out.println("================= Verify description URL for video call Started =========================");
-			Custom_Parameters_Verification.verify_video_request("description_url");
+			//Custom_Parameters_Verification.verify_video_request("description_url");
 			System.out.println("================= Verify description URL for video call  End =========================");
 		}
 
@@ -1241,9 +1241,9 @@ AppiumFunctions.Swipe_feed();
 		@Title("Verify Content_url for video call")
 		public void C344261_Verify_ContentURL_Video() throws Exception {
 			System.out.println("================= Verify Content URL for video call Started =========================");
-			Custom_Parameters_Verification.verify_video_request("content_url");
+			//Custom_Parameters_Verification.verify_video_request("content_url");
 			System.out.println("================= Verify Content URL for video call  End =========================");
-		}*/
+		}
 
 		// Not null
 		@Test(priority = 1019)
@@ -1532,14 +1532,14 @@ AppiumFunctions.Swipe_feed();
 		
 		
 		
-		@Test(priority = 1073)
+		/*@Test(priority = 1073)
 		@Title("Verify custom parameter wfxtg")
 		public void C333228_Verify_cust_param_wfxtg() throws Exception {
 			System.out.println("================= Custom Parameter Wfxtg Verfication Started =========================");
 			Custom_Parameters_Verification.parameters_Verification("wfxtg");
 			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
 			
-		}
+		}*/
 	
 	
 		  @Test(priority =1076, enabled = true) 
@@ -1604,7 +1604,7 @@ AppiumFunctions.Swipe_feed();
 		AppiumFunctions.Kill_Launch_App();
 		AppiumFunctions.Kill_Launch_App();
 		proxy.clearCharlesSession();	
-		AppiumFunctions.enter_requiredLocation("07095");
+		AppiumFunctions.enter_requiredLocation("30124");
 		Thread.sleep(20000);
 		this.proxy.getXml();
 		Functions.finding_Homescreen_marquee_iu();
