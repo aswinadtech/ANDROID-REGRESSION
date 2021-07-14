@@ -1608,10 +1608,10 @@ AppiumFunctions.Swipe_feed();
 		AppiumFunctions.Kill_Launch_App();
 		AppiumFunctions.Kill_Launch_App();
 		proxy.clearCharlesSession();	
-		AppiumFunctions.enter_requiredLocation("30124");
+		/*AppiumFunctions.enter_requiredLocation("30124");
 		Thread.sleep(20000);
 		this.proxy.getXml();
-		Functions.finding_Homescreen_marquee_iu();
+		Functions.finding_Homescreen_marquee_iu();*/
 		
 		
 		
@@ -1626,7 +1626,7 @@ AppiumFunctions.Swipe_feed();
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
 		logStep("Validating NextGen IM Static Ad response in test mode ");
-		Functions.NextGenIm_adcall_response();
+		//Functions.NextGenIm_adcall_response();
 		
 
 	}
@@ -1642,7 +1642,7 @@ AppiumFunctions.Swipe_feed();
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
 		logStep("Validating NextGen IM Static Ad BG Asset Call ");
-		Functions.validate_BG_adcall_NextGenIM();
+		//Functions.validate_BG_adcall_NextGenIM();
 		
 		
 
@@ -1658,7 +1658,7 @@ AppiumFunctions.Swipe_feed();
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
 		logStep("Validating NextGen IM Static Ad FG Asset Call ");
-		  Functions.validate_FG_adcall_NextImad() ;
+		 // Functions.validate_FG_adcall_NextImad() ;
 
 	}
 
@@ -1669,7 +1669,7 @@ AppiumFunctions.Swipe_feed();
 		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
 		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
 		 	//CharlesFunctions.archive_folder("Charles");
-		        Functions.validate_Size_iNextGenIM();
+		       // Functions.validate_Size_iNextGenIM();
 	
 		
        
@@ -1682,10 +1682,10 @@ public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
 	System.out.println("==============================================");
 	System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
 	logStep("Validating Integrated Feed Card Static Ad in test mode ");
-proxy.clearCharlesSession();
+/*proxy.clearCharlesSession();
 AppiumFunctions.Swipe_feeds();
 this.proxy.getXml();
-Functions.get_feed1();
+Functions.get_feed1();*/
 
 }
 
@@ -1695,7 +1695,7 @@ public void Validate_Integrated_FeedCard_StaticAd_response() throws Exception {
 	System.out.println("==============================================");
 	System.out.println("****** Validating Integrated Feed Card Static Ad response");
 	logStep("Validating Integrated Feed Card Static Ad response");
-	Functions. integratedfeed_adcall_response();
+	//Functions. integratedfeed_adcall_response();
 }
 
 /**
@@ -1710,7 +1710,7 @@ public void Validate_Integrated_FeedCard_StaticAd_bgAssetCall() throws Exception
 	System.out.println("****** Validating Integrated Feed Card Static Ad BG Asset Call");
 	logStep("Validating Integrated Feed Card Static Ad BG Asset Call ");
 	
-	Functions.validate_BG_adcall_Integratedfeedcard();
+	//Functions.validate_BG_adcall_Integratedfeedcard();
 }
 
 /**
@@ -1725,7 +1725,7 @@ public void Validate_Integrated_FeedCard_StaticAd_fgAssetCall() throws Exception
 	System.out.println("****** Validating Integrated Feed Card Static Ad FG Asset Call");
 	logStep("Validating Integrated Feed Card Static Ad FG Asset Call ");
 	// Utils.verifyFGAd_byCallResponse("Smoke", "IntegratedFeedCard", "Static");
-	Functions.validate_FG_adcall_Integratedfeedcard();
+	//Functions.validate_FG_adcall_Integratedfeedcard();
 
 }
 
@@ -1735,7 +1735,7 @@ public void Validate_Integrated_FeedCard_StaticAd_Size() throws Exception {
 	System.out.println("==============================================");
 	System.out.println("****** Validating Integrated Feed Card Static Ad sz parameter in charles");
 	logStep("Validating Integrated Feed Card Static Ad sz parameter in charles ");
-	Functions.validate_Size_integratedfeedCardad();
+	//Functions.validate_Size_integratedfeedCardad();
 
 }
 
@@ -1752,7 +1752,7 @@ public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exceptio
 	proxy.clearCharlesSession();	
 	Thread.sleep(10000);
 	this.proxy.getXml();
-	 Functions.verifyingdailydetailiu();
+	// Functions.verifyingdailydetailiu();
 	
 	System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
 }
@@ -1762,7 +1762,7 @@ public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exceptio
 @Title("Verifying daily details integrated ad call size")
 public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Exception {
 	System.out.println("================= Verifying daily detials integrated ad call size test case Started =========================");	
-	 Functions.validate_Size_dailydetails_integratedad();
+	// Functions.validate_Size_dailydetails_integratedad();
 	
 	System.out.println("================= Verifying daily detials integrated ad call size test case End =========================");
 }
@@ -1775,7 +1775,7 @@ public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Except
 public void Smoke_Test_Verify_IDD_DailyDetails_Response() throws Exception {
 	System.out.println("================= Verifying dailetials integrated daily details ad call response test case Started =========================");	
 
-	Functions.dailydetailsintegrated_adcall_response();
+	//Functions.dailydetailsintegrated_adcall_response();
 	System.out.println("================= Verifying daily detials integrated daily details ad call response test case  End =========================");
 }
 
@@ -1783,7 +1783,7 @@ public void Smoke_Test_Verify_IDD_DailyDetails_Response() throws Exception {
 @Title("Verifying daily  integrated details FG  assest call URL")
 public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exception {
 	System.out.println("================= Verifying daily detials integrated FG assest url  test case Started =========================");	
-	  Functions. validate_FG_adcall_IDD();
+	 // Functions. validate_FG_adcall_IDD();
 	
 	System.out.println("================= Verifying daily detials integrated FG assest url test case End =========================");
 }
@@ -1794,7 +1794,7 @@ public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exce
 public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exception {
 	System.out.println("================= Verifying daily detials integrated BG assest url  test case Started =========================");	
 	CharlesFunctions.archive_folder("Charles");
-	Functions.validate_BG_adcall_IDD();
+	//Functions.validate_BG_adcall_IDD();
 	
 	System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
 }
@@ -1837,6 +1837,7 @@ Thread.sleep(30000);
 Thread.sleep(3000);
 	  
 	  }
+	
 	
 	
 	
