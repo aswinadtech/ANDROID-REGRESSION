@@ -1796,6 +1796,44 @@ public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exce
 }
 
 	
+	  @Test(priority =5000, enabled = true)
+	  @Title("Verifying Hourly  details Interstal ads") 
+	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
+	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
+	 
+	 Thread.sleep(30000);
+	  
+	  }
+
+	  
+
+	  @Test(priority =5001, enabled = true)
+	  @Title("Verifying daily  details Interstal ads") 
+	  public void Smoke_Test_Verify_daily_interstial_ads() throws Exception {
+	 System.out.println( "================= Verifying daily details Interstal ads test case  Started =========================");
+	Thread.sleep(3000);
+	  
+	  }
+	
+	  
+	  @Test(priority =5002, enabled = true)
+	  @Title("Verifying maps  details Interstal ads") 
+	  public void Smoke_Test_Verify_maps_interstial_ads() throws Exception {
+	 System.out.println( "================= Verifying maps details Interstal ads test case  Started =========================");
+Thread.sleep(30000);
+	  
+	  }
+	
+	  
+	  
+	  @Test(priority =5003, enabled = true)
+	  @Title("Verifying videosInterstal ads") 
+	  public void Smoke_Test_Verify_Videos_interstial_ads() throws Exception {
+	 System.out.println( "================= Verifying Videos details Interstal ads test case  Started =========================");
+Thread.sleep(3000);
+	  
+	  }
+	
 	
 	
 
