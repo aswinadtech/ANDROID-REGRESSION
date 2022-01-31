@@ -42,1872 +42,1816 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 		
 
-	@BeforeClass(alwaysRun = true)
-	public void beforeClass() throws Exception {	
-		this.configFile = this.charlesGeneralConfigFile(CONFIG_FILE_PATH);
-		proxy = new CharlesProxy("localhost", 8333, CONFIG_FILE_PATH);
-		proxy.startCharlesProxyWithUI();
-		proxy.disableRewriting();
-	    proxy.stopRecording();
-		proxy.disableMapLocal();
-		proxy.startRecording();
-		proxy.clearCharlesSession();
-AppiumFunctions.LaunchAppWithFullReset();
-
-		
-           Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-			Thread.sleep(100000);
-		Thread.sleep(100000);
-		this.proxy.getXml();
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-	}
-	
-	
-/* =======================================all feed ad calls test cases started======================================================================================*/
-	
-	/*@Test(priority = 0, enabled = true)
-	@Title("Verifying Home screen marquee ad call on FTL")
-	public void Smoke_Test_CaseVerify_Homescreen_marquee_adCall_FTL() throws Exception {
-		System.out.println(
-				"================= verifying iu value for home screen marquee test case started =========================");	
-		System.out.println("going to all detail and content pages");
-		logStep("going to all detail and content pages");
-		//AppiumFunctions.LaunchAppWithFullReset();
-		Thread.sleep(10000);
-		AppiumFunctions.Kill_Launch_App();
-		proxy.clearCharlesSession();
-	AppiumFunctions.SwipeUp_Counter_feedcards(35);
-
-		this.proxy.getXml();
-		CharlesFunctions.archive_folder("Charles");
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-	//	Functions.finding_Homescreen_marquee_iu_value();
-		System.out.println(
-				"================= verifying iu value for home screen marquee test case End =========================");
-	}*/
-	
-	
-	
-	
-	@Test(priority = 0, enabled = true)
-	@Description("Verify homescreen hourly ad call amazon bid id")
-	public void Verify_homescreen_hourly_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== homescreen hourly ad call amazon bid id ====================");
-
-		System.out.println("****** homescreen hourly ad call amazon bid id validation Started");
-		logStep("****** homescreen hourly ad call amazon bid id validation Started");
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Pulltorefresh", true);
-		//Functions.verifyAAX_SlotId("Pulltorefresh");
-	}
-	
-	
-	@Test(priority = 1, enabled = true)
-	@Description("Verify Feed1 ad call amazon bid id")
-	public void Verify_Feed1_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Feed1 ad call amazon bid id ====================");
-
-		System.out.println("****** Feed1 ad call amazon bid id validation Started");
-		logStep("****** Feed1 ad call amazon bid id validation Started");
-	  Functions.validate_aax_bid_value_with_gampad_bid_value("Feed1", true);
-		//Functions.verifyAAX_SlotId("Feed1");
-	}
-	
-	
-	
-	@Test(priority = 2, enabled = true)
-	@Description("Verify Feed2 ad call amazon bid id")
-	public void Verify_Feed2_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Feed2 ad call amazon bid id ====================");
-		System.out.println("****** Feed2 ad call amazon bid id validation Started");
-		logStep("****** Feed2 ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Feed2", true);
-	}
-	
-	@Test(priority = 3, enabled = true)
-	@Description("Verify Feed3 ad call amazon bid id")
-	public void Verify_Feed3_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Feed3 ad call amazon bid id ====================");
-
-		System.out.println("****** Feed3 ad call amazon bid id validation Started");
-		logStep("****** Feed3 ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Feed3", true);
-	}
-	
-	
-	@Test(priority = 4, enabled = true)
-	@Description("Verify Feed4 ad call amazon bid id")
-	public void Verify_Feed4_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Feed4 ad call amazon bid id ====================");
-
-		System.out.println("****** Feed4 ad call amazon bid id validation Started");
-		logStep("****** Feed4 ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Feed4", true);
-	}
-	
-	
-	
-	
-	@Test(priority = 5, enabled = true)
-	@Description("Verify Hourly Details ad call amazon bid id")
-	public void Verify_Hourly_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly Details ad call amazon bid id ====================");
-
-		System.out.println("****** Hourly Details ad call amazon bid id validation Started");
-		logStep("****** Hourly Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly", true);
-	}
-	
-	
-	
-	
-	@Test(priority = 7, enabled = true)
-	@Description("Verify Hourly1 Details ad call amazon bid id")
-	public void Verify_Hourly1_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly1 Details ad call amazon bid id ====================");
-
-		System.out.println("****** Hourly1 Details ad call amazon bid id validation Started");
-		logStep("****** Hourly1 Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly1", true);
-	}
-	
-	
-	@Test(priority = 8, enabled = true)
-	@Description("Verify Hourly2 Details ad call amazon bid id")
-	public void Verify_Hourly2_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly2 Details ad call amazon bid id ====================");
-
-		System.out.println("****** Hourly2 Details ad call amazon bid id validation Started");
-		logStep("****** Hourly2 Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly2", true);
-	}
-	
-	@Test(priority = 9, enabled = true)
-	@Description("Verify Hourly3 Details ad call amazon bid id")
-	public void Verify_Hourly3_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Hourly3 Details ad call amazon bid id ====================");
-
-		System.out.println("****** Hourly1 Details ad call amazon bid id validation Started");
-		logStep("****** Hourly3 Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value( "Hourly3", true);
-	}
-	
-	
-	
-	
-	@Test(priority = 10, enabled = true)
-	@Description("Verify Daily Details ad call amazon bid id")
-	public void Verify_Daily_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Daily Details ad call amazon bid id ====================");
-
-		System.out.println("****** Daily Details ad call amazon bid id validation Started");
-		logStep("****** Daily Details ad call amazon bid id validation Started");
-Functions.validate_aax_bid_value_with_gampad_bid_value("Daily(10day)", true);
-	}
-	
-	
-	
-
-	@Test(priority = 12, enabled = true)
-	@Description("Verify Map Details ad call amazon bid id")
-	public void Verify_Map_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Map Details ad call amazon bid id ====================");
-
-		System.out.println("****** Map Details ad call amazon bid id validation Started");
-		logStep("****** Map Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Map", true);
-	}
-	
-	
-	
-	
-	
-	@Test(priority = 14, enabled = true)
-	@Description("Verify Today Details ad call amazon bid id")
-	public void Verify_Today_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Today Details ad call amazon bid id ====================");
-
-		System.out.println("****** Today Details ad call amazon bid id validation Started");
-		logStep("****** Today Details ad call amazon bid id validation Started");
-	Functions.validate_aax_bid_value_with_gampad_bid_value("Today", true);
-	}
-	
-	
-	
-	@Test(priority = 15, enabled = true)
-	@Description("Verify AQ Details ad call amazon bid id")
-	public void Verify_AQ_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== AQ Details ad call amazon bid id ====================");
-
-		System.out.println("****** AQ Details ad call amazon bid id validation Started");
-		logStep("****** AQ Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Air Quality(Content)", true);
-	}
-	
-	
-	
-	
-	
-
-	@Test(priority = 17, enabled = true)
-	@Description("Verify AlertCenter ad call amazon bid id")
-	public void Verify_AlertCenter_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== AlertCenter ad call amazon bid id ====================");
-
-		System.out.println("****** AlertCenter ad call amazon bid id validation Started");
-		logStep("****** AlertCenter ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("MyAlerts", true);
-
-	}
-	
-	
-	
-	
-
-
-	@Test(priority = 19, enabled = true)
-	@Description("Verify Health Boat & Beach Details ad call amazon bid id")
-	public void Verify_Health_BoatAndBeach_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Health Boat & Beach Details ad call amazon bid id ====================");
-
-		System.out.println("****** Health Boat & Beach Details ad call amazon bid id validation Started");
-		logStep("****** Health Boat & Beach Details ad call amazon bid id validation Started");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Health(boatAndBeach)", true);
-	}
-
-		@Test(priority = 20, enabled = true)
-	@Description("Verify amazon aax Seasonal Hub Details ad call")
-	public void Verify_amazon_aax_SeasonalHub_details_adcall() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== amazon aax Seasonal Hub Details ad call ====================");
-
-		System.out.println("****** amazon aax Seasonal Hub Details ad call validation Started");
-		logStep("****** amazon aax Seasonal Hub Details ad call validation Started");
-
-		// Functions.verifyAAX_SlotId("Smoke", "Daily(10day)");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("SeasonalHub(Details)", true);
-
-	}
-	
-
-
-	@Test(priority = 21, enabled = true)
-	@Description("Verify Health Running Details ad call amazon bid id")
-	public void Verify_Health_Running_Details_ad_call_amazon_bid_id() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Health Running Details ad call amazon bid id ====================");
-
-		System.out.println("****** Health Running Details ad call amazon bid id validation Started");
-		logStep("****** Health Running Details ad call amazon bid id validation Started");
-		CharlesFunctions.archive_folder("Charles");
-		Functions.validate_aax_bid_value_with_gampad_bid_value("Health(goRun)", true);
-	}
-	
-	
-	
-	
-	
-	
-	@Test(priority = 30, enabled = true)
-	@Title("Validating 'adsdk' parameter of Amazon aax call")
-	public void Validate_Amazon_SDK_adsdk_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
-		logStep("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
-		//Functions.validate_Amazon_aax_call_parameter("Amazon", "adsdk", properties.getProperty("AmazonSDKVersion"));
-
-	}
-
-	@Test(priority = 32, enabled = true)
-	@Title("Validating Google Mobile Ads SDK version of gampad call ")
-	public void Validate_GMA_SDK_version() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
-		logStep("Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
-
-		//Functions.validate_Noncustom_param_val_of_gampad( "Marquee", "js", properties.getProperty("GMASDKVersion"));
-
-	}
-
-	
-		/*
-	 * This method validates Google Interactive Media Ads SDK version i.e. IMA SDK
-	 */
-	@Test(priority = 614, enabled = true)
-	@Description("Validating Google Interactive Media Ads SDK version of Preroll video call ")
-	public void Validate_IMA_SDK_version() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating Google Interactive Media Ads SDK version i.e. 'js' parameter of Preroll video call");
-		logStep("Validating Google Interactive Media Ads SDK version i.e. 'js' parameter of Preroll video call");
-
-		//Utils.validate_Noncustom_param_val_of_gampad("Smoke", "PreRollVideo", "js", properties.getProperty("IMASDKVersion"));
-		//CharlesFunctions.archive_folder("Charles");
-
-	}
-	
-	
-
-
-	
-	
-	
-	@Test(priority = 160, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with homescreen hourly call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_homescreen_hourly_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  homescreen hourly call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call cpm parameter with  homescreen hourly call validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with homescreen hourly call validation Started");
-
-		 Ad.resetApp();
-		Thread.sleep(100000);
-		proxy.clearCharlesSession();
-		
-		Thread.sleep(10000);
-		 AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Kill_Launch_App();
-		Thread.sleep(100000);
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-	AppiumFunctions.Swipe_feed();
-		
-Thread.sleep(15000);
-		this.proxy.getXml();
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Pulltorefresh", "cpm",true);
-	}
-	
-	
-	
-	
-	
-	@Test(priority = 162, enabled = true)
-	@Description("Verify Criteo SDK config app call")
-	public void Verify_Criteo_SDK_config_app_Call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK config/app call ====================");
-
-		System.out.println("****** Criteo SDK config/app call validation Started");
-		logStep("****** Criteo SDK config/app call validation Started");
-
-	Functions.verifyCriteo_config_app_Call( "Criteo");
-
-	//Functions.verifyCriteo_config_app_Call("Criteo", false);
-	}
-	
-	
-		
-	@Test(priority = 163, enabled = true)
-	@Description("Verify Criteo SDK inapp v2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
-
-		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
-		logStep("****** Criteo SDK inapp/v2 call validation Started");
-
-	Functions.verifyCriteo_inapp_v2_Call("Criteo");
-	//Functions.verifyCriteo_inapp_v2_Call("Criteo", false);
-
-	}
-	
-	
-
-	
-		@Test(priority = 164, enabled = true)
-	@Description("Validating 'cpId' parameter of Criteo SDK config app call")
-	public void Validate_Criteo_SDK_config_app_Call_cpId_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating 'cpId' parameter of Criteo SDK config app call");
-		logStep("****** Validating 'cpId' parameter of Criteo SDK config app call");
-		Functions.validate_Criteo_SDK_config_app_call_parameter("Criteo", "cpId", "B-051673");
-
-	}
-	@Test(priority = 166, enabled = true)
-	@Description("Validating 'bundleId' parameter of Criteo SDK config app call ")
-	public void Validate_Criteo_SDK_config_app_Call_bundleId_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating 'bundleId' parameter of Criteo SDK config app call");
-		logStep("****** Validating 'bundleId' parameter of Criteo SDK config app call");
-		Functions.validate_Criteo_SDK_config_app_call_parameter("Criteo", "bundleId", "com.weather.Weather");
-
-	}
-	
-	@Test(priority = 168, enabled = true)
-	@Description("Validating 'sdkVersion' parameter of Criteo SDK config app call ")
-	public void Validate_Criteo_SDK_config_app_Call_sdkVersion_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating 'sdkVersion' parameter of Criteo SDK config app call");
-		logStep("****** Validating 'sdkVersion' parameter of Criteo SDK config app call");
-		Functions.validate_Criteo_SDK_config_app_call_parameter("Criteo", "sdkVersion", "3.10.1");
-
-	}
-
-	@Test(priority = 170, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with homescreen hourly call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_homescreen_hourly_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with homescreen hourly call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call size parameter with homescreen hourly call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with homescreen hourly call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Pulltorefresh", "size",true);
-	}
-
-	@Test(priority = 172, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with homescreen hourly call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_homescreen_hourly_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with homescreen hourly call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with homescreen hourly call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with homescreen hourly call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Pulltorefresh","displayUrl", true);
-	}
-
-	
-	
-	
-	
-
-	
-
-	
-	@Test(priority = 174, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Feed1 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed1_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  Feed1 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with  Feed1 validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Feed1 call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed1", "cpm", true);
-	}
-
-	@Test(priority = 176, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Feed1 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed1_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Feed1 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with Feed1 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Feed1 call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed1", "size", true);
-	}
-
-	@Test(priority = 178, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Feed1 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed1_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Feed1 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed1 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed1 call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed1", "displayUrl",true);
-	}
-	
-	
-	
-	
-	
-	@Test(priority = 180, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Feed2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed2_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  Feed2 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with  Feed2 validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Feed2 call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed2", "cpm", true);
-	}
-
-	@Test(priority = 182, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Feed2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed2_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Feed2 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with Feed2 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Feed2 call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed2", "size", true);
-	}
-
-	@Test(priority = 184, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Feed2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed2_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Feed2 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed2 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed2 call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed2", "displayUrl",true);
-	}
-	
-	
-	@Test(priority = 186, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Feed3 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed3_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  Feed3 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with  Feed3 validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Feed3 call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed3", "cpm", true);
-	}
-
-	@Test(priority = 188, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Feed3 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed3_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Feed3 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with Feed3 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Feed3 call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed3", "size", true);
-	}
-
-	@Test(priority = 190, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Feed3 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed3_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Feed3 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed3 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed3 call validation Started");
-		
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed3", "displayUrl",true);
-	}
-
-	
-	
-	
-	@Test(priority = 192, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Feed4 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed4_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  Feed4 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with  Feed4 validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Feed4 call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Feed4", "cpm", true);
-	}
-
-	@Test(priority = 194, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Feed4 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed4_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Feed4 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with Feed4 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Feed4 call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed4", "size", true);
-	}
-
-	@Test(priority = 196, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Feed4 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed4_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Feed4 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed4 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed4 call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed4", "displayUrl",true);
-	}
-	
-	
-	
-	@Test(priority = 198, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Feed5 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed5_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with  Feed5 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with  Feed5 validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Feed5 call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Feed5", "cpm", true);
-	}
-
-	@Test(priority = 200, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Feed5 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed5_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Feed5 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with Feed5 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Feed5 call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Feed5", "size", true);
-	}
-
-	@Test(priority = 202, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Feed5 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed5_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Feed5 call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter with Feed5 call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Feed5 call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Feed5", "displayUrl",true);
-	}
-	
-	
-	
-
-	
-	
-	
-	
-	
-
-
-	
-	
-		@Test(priority = 208, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Hourly Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_hourly_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK invapp v2 call cpm parameter ====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter of Hourly Details validation Started");
-		
-	     Thread.sleep(100000);
-		 Thread.sleep(100000);
-		 Thread.sleep(100000);
-		 Thread.sleep(100000);
-		   Thread.sleep(100000);
-		 Thread.sleep(100000);
-		 Thread.sleep(100000);
-		 Thread.sleep(100000);
-		this.proxy.getXml();
-		CharlesFunctions.createXMLFileForCharlesSessionFile();
-   
-	}
-	
-	@Test(priority = 210, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Hourly Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_hourly_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK invapp v2 call size parameter ====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter of Hourly Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter of Hourly Details validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Hourly", "size", true);
-	}
-	@Test(priority = 212, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Hourly Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_hourly_details_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK invapp v2 call displayUrl parameter ====================");
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter of Hourly Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter of Hourly Details validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Hourly", "displayUrl",true);
-	}
-	
-	
-	
-	
-		
-	@Test(priority = 214, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Map Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_map_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK invapp v2 call cpm parameter ====================");
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of Map Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter of Map Details validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Map", "cpm", true);
-	}
-	
-	
-	@Test(priority = 216, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Map Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_map_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("=========================== Criteo SDK invapp v2 call size parameter ====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter of Map Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter of Map Details validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Map", "size", true);
-	}
-	
-
-	@Test(priority = 218, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Map Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_map_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter ====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call displayUrl parameter of Map Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter of Map Details validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Map", "displayUrl", true);
-	}
-	
-	
-		@Test(priority = 220, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Daily Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_daily_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with Daily details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with Daily Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Today Details call validation Started");
-	//	Functions.verifyingdailydetailiuu();
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Daily(10day)", "cpm",true);
-	}
-
-	@Test(priority = 222, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with daily Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_daily_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Daily details call====================");
-
-		System.out
-				.println("****** Criteo SDK invapp v2 call size parameter with Daily details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Daily details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Daily(10day)", "size",true);
-	}
-
-	@Test(priority = 224, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Daily Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_daily_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Daily details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with Daily details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Daily details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Daily(10day)","displayUrl", true);
-	}
-	
-	
-	
-	
-	@Test(priority = 226, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Today Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_today_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with Today details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with Today Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Today Details call validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Today", "cpm", true);
-	}
-
-	@Test(priority = 228, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Today Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_today_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Today details call====================");
-
-		System.out
-				.println("****** Criteo SDK invapp v2 call size parameter with Today details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Today details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Today", "size", true);
-	}
-
-	@Test(priority = 230, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Today Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_today_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Today details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with Today details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Today details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Today", "displayUrl",true);
-	}
-	
-	
-	
-	@Test(priority = 232, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with AQ Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_aq_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with aq details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter with aq details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with aq details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Air Quality(Content)","cpm", true);
-	}
-
-	@Test(priority = 234, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with AQ Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_aq_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with aq details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call size parameter with aq details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with aq details call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Air Quality(Content)", "size", true);
-	}
-
-	@Test(priority = 236, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with AQ Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_aq_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with aq details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with aq details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with aq details call validation Started");
-			CharlesFunctions.archive_folder("Charles");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Air Quality(Content)","displayUrl", true);
-	}
-	
-	
-		@Test(priority = 238, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Seasonal Hub Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_SeasonalHub_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with Seasonal Hub details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call cpm parameter with Seasonal Hub details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter with Seasonal Hub details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("SeasonalHub(Details)", "cpm", true);
-	}
-
-	@Test(priority = 240, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Seasonal Hub Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_SeasonalHub_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Seasonal Hub details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call size parameter with Seasonal Hub details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Seasonal Hub details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("SeasonalHub(Details)","size", true);
-	}
-
-	@Test(priority = 242, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Seasonal Hub Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_SeasonalHub_details_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Seasonal Hub details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with Seasonal Hub details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Seasonal Hub details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("SeasonalHub(Details)","displayUrl", true);
-	}
-	
-	
-	
-	@Test(priority = 244, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with boatAndBeach Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_boatAndBeach_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with boatAndBeach Details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of boatAndBeach Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter of boatAndBeach Details validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Health(boatAndBeach)","cpm", true);
-	}
-
-	@Test(priority = 246, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with boatAndBeach Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_boatAndBeach_details_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with boatAndBeach Details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call size parameter with boatAndBeach Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with boatAndBeach Details call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Health(boatAndBeach)","size", true);
-	}
-
-	@Test(priority = 248, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with boatAndBeach Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_boatAndBeach_details_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with boatAndBeach Details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with boatAndBeach Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with boatAndBeach Details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Health(boatAndBeach)","displayUrl", true);
-	}
-
-
-	
-	@Test(priority = 250, enabled = true)
-	@Description("Verify cpm parameter of Criteo SDK inapp v2 call with Running Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Running_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call cpm parameter with Running Details call====================");
-
-		System.out.println("****** Criteo SDK invapp v2 call cpm parameter of Running Details validation Started");
-		logStep("****** Criteo SDK invapp v2 call cpm parameter of Running Details validation Started");
-
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value( "Health(goRun)", "cpm",true);
-	}
-
-	@Test(priority = 252, enabled = true)
-	@Description("Verify size parameter of Criteo SDK inapp v2 call with Running Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Running_details_gampad_call() throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call size parameter with Running Details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call size parameter with Running Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call size parameter with Running Details call validation Started");
-		Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Health(goRun)", "size",true);
-	}
-
-	@Test(priority = 254, enabled = true)
-	@Description("Verify displayUrl parameter of Criteo SDK inapp v2 call with Running Details call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Running_details_gampad_call()
-			throws Exception {
-		System.out.println("==============================================");
-		System.out.println(
-				"=========================== Criteo SDK invapp v2 call displayUrl parameter with Running Details call====================");
-
-		System.out.println(
-				"****** Criteo SDK invapp v2 call displayUrl parameter with Running Details call validation Started");
-		logStep("****** Criteo SDK invapp v2 call displayUrl parameter with Running Details call validation Started");
-	Functions.validate_Criteo_SDK_inapp_v2_call_param_value_with_gampad_param_value("Health(goRun)","displayUrl", true);
-	}
-	
-	
-	
-	
-		// video ad call custum parameters
-	@Test(priority = 1000)
-		@Title("Verify custom parameter cmsid")
-		public void C344257_Verify_Video_Url_Parameter_cmsid() throws Exception {
-			System.out.println("================= Custom Parameter Cmsid Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_video_custom_parameters("cmsid");
-			System.out.println("================= Custom Parameter Cmsid Verfication End =========================");
-		}
-
-		@Test(priority = 1003)
-		@Title("Verify custom parameter ttid")
-		public void C344258_Verify_Video_Url_Parameter_ttid() throws Exception {
-			System.out.println("================= Custom Parameter Ttid Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_video_custom_parameters("ttid");
-			System.out.println("================= Custom Parameter Ttid Verfication End =========================");
-		}
-
-		@Test(priority = 1006)
-		@Title("Verify custom parameter lnid")
-		public void C344260_Verify_Video_Url_Parameter_lnid() throws Exception {
-			System.out.println("================= Custom Parameter Lnid Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_video_custom_parameters("lnid");
-			System.out.println("================= Custom Parameter Lnid Verfication End =========================");
-		}
-
-		@Test(priority = 1009)
-		@Title("Verify custom parameter vid")
-		public void C344259_Verify_Video_Url_Parameter_vid() throws Exception {
-			System.out.println("================= Custom Parameter Vid Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_video_custom_parameters("vid");
-			System.out.println("================= Custom Parameter Vid Verfication End =========================");
-		}
-
-		@Test(priority = 1010)
-		@Title("Verify video ad call custom parameter iu")
-		public void C344261_Verify_Video_Url_Parameter_iu() throws Exception {
-			System.out.println("================= Custom Parameter IU Verfication Started =========================");
-			//Custom_Parameters_Verification.verify_video_custom_parameters("iu");
-			System.out.println("================= Custom Parameter IU Verfication End =========================");
-		}
-
-		@Test(priority = 1013)
-		@Title("Verify Description_url for video call")
-		public void C344261_Verify_DescriptionURL_Video() throws Exception {
-			System.out.println("================= Verify description URL for video call Started =========================");
-			//Custom_Parameters_Verification.verify_video_request("description_url");
-			System.out.println("================= Verify description URL for video call  End =========================");
-		}
-
-		@Test(priority = 1016)
-		@Title("Verify Content_url for video call")
-		public void C344261_Verify_ContentURL_Video() throws Exception {
-			System.out.println("================= Verify Content URL for video call Started =========================");
-			//Custom_Parameters_Verification.verify_video_request("content_url");
-			System.out.println("================= Verify Content URL for video call  End =========================");
-		}
-
-		// Not null
-		@Test(priority = 1019)
-		@Title("Verify custom parameter adid")
-		public void C333213_Verify_cust_param_adid() throws Exception {
-			
-			
-			System.out.println("================= Custom Parameter adid Verfication Started =========================");
-			
-			
-			//Custom_Parameters_Verification.parameters_Verification("adid");
-			System.out.println("================= Custom Parameter adid Verfication End =========================");
-		}
-
-		@Test(priority = 1021)
-		@Title("Verify custom parameter aid")
-		public void C333213_Verify_cust_param_aid() throws Exception {
-			System.out.println("================= Custom Parameter Aid Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("aid");
-			System.out.println("================= Custom Parameter Aid Verfication End =========================");
-		}
-		
-		@Test(priority = 1023)
-		@Title("Verify custom parameter ltv")
-		public void C333213_Verify_cust_param_ltv() throws Exception {
-			System.out.println("================= Custom Parameter adid Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("ltv");
-			System.out.println("================= Custom Parameter adid Verfication End =========================");
-		}
-		/*@Test(priority = 22)
-		@Title("Verify custom parameter env")
-		public void C333244_Verify_cust_param_env() throws Exception {
-			System.out.println("================= Custom Parameter env Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("env");
-			System.out.println("================= Custom Parameter env Verfication End =========================");
-		}*/
-
-
-		/*@Test(priority = 23)
-		@Title("Verify custom parameter st")
-		public void C333219_Verify_cust_param_st() throws Exception {
-			System.out.println("================= Custom Parameter St Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("st");
-			System.out.println("================= Custom Parameter St Verfication End =========================");
-		}*/
-
-		@Test(priority = 1026)
-		@Title("Verify custom parameter ord")
-		public void C333200_Verify_cust_param_ord() throws Exception {
-			System.out.println("================= Custom Parameter ORD Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("ord");
-			System.out.println("================= Custom Parameter ORD Verfication End =========================");
-		}
-
-		/*@Test(priority = 26)
-		@Title("Verify custom parameter rmid")
-		public void C333204_Verify_cust_param_rmid() throws Exception {
-			System.out.println("================= Custom Parameter Rmid Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("rmid");
-			System.out.println("================= Custom Parameter Rmid Verfication End =========================");
-		}*/
-
-	@Test(priority = 1029)
-		@Title("Verify custom parameter ver")
-		public void C333219_Verify_cust_param_ver() throws Exception {
-			System.out.println("================= Custom Parameter Ver Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("ver");
-			System.out.println("================= Custom Parameter Ver Verfication End =========================");
-		}
-		
-
-		 /* @Test(priority=29)  
-		  @Title("Verify custom parameter ftl") 
-		  public void C333215_Verify_cust_param_ftl() throws Exception{ 
-			  System.out.println("================= Custom Parameter Ftl Verfication Started =========================" );
-		  Custom_Parameters_Verification.parameters_Verification("ftl"); 
-		  System.out. println("================= Custom Parameter Ftl Verfication End =========================");  
-		  }
-		  @Test(priority=30)
-		  @Title("Verify custom parameter g") 
-		  public void C333236_Verify_cust_param_g()  throws Exception{ 
-		 System.out. println("================= Custom Parameter G Verfication Started =========================");
-		 Custom_Parameters_Verification.parameters_Verification("g"); 
-		 System.out.println("================= Custom Parameter G Verfication End =========================" );
-		 }*/
-
-
-		
-		@Test(priority = 1031)
-		@Title("Verify custom parameter tf")
-		public void C658716_Verify_cust_param_tf() throws Exception {
-			System.out.println("================= Custom Parameter Tf Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("tf");
-			System.out.println("================= Custom Parameter Tf Verfication End =========================");
-		}
-
-
-
-		
-		
-	//Hard code values
-
-		@Test(priority = 1033)
-		@Title("Verify custom parameter lang")
-		public void C658711_Verify_cust_param_lang() throws Exception {
-			System.out.println("================= Custom Parameter Lang Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("lang");
-			System.out.println("================= Custom Parameter Lang Verfication End =========================");
-		}
-
-		@Test(priority = 1036)
-		@Title("Verify custom parameter plat")
-		public void C658712_Verify_cust_param_plat() throws Exception {
-			System.out.println("================= Custom Parameter Plat Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("plat");
-			System.out.println("================= Custom Parameter Plat Verfication End =========================");
-		}
-
-		@Test(priority = 1039)
-		@Title("Verify custom parameter pos")
-		public void C333218_Verify_cust_param_pos() throws Exception {
-			System.out.println("================= Custom Parameter Pos Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("pos");
-			System.out.println("================= Custom Parameter Pos Verfication End =========================");
-		}
-
-		@Test(priority = 1041)
-		@Title("Verify custom parameter tile")
-		public void C333205_Verify_cust_param_tile() throws Exception {
-			System.out.println("================= Custom Parameter Tile Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("tile");
-			System.out.println("================= Custom Parameter Tile Verfication End =========================");
-		}
-
-		
-		
-		
-		
-		
-
-		// turbo call values
-		@Test(priority = 1042)
-		@Title("Verify custom parameter cnd")
-		public void C333216_Verify_cust_param_cnd() throws Exception {
-			System.out.println("================= Custom Parameter Cnd Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("cnd");
-
-			System.out.println("================= Custom Parameter Cnd Verfication End =========================");
-		}
-
-		@Test(priority = 1043)
-		@Title("Verify custom parameter ct")
-		public void C333212_Verify_cust_param_ct() throws Exception {
-			System.out.println("================= Custom Parameter Ct Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("ct");
-			System.out.println("================= Custom Parameter Ct Verfication End =========================");
-		}
-
-		@Test(priority = 1046)
-		@Title("Verify custom parameter dma")
-		public void C333203_Verify_cust_param_dma() throws Exception {
-			System.out.println("================= Custom Parameter Dma Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("dma");
-			System.out.println("================= Custom Parameter Dma Verfication End =========================");
-		}
-
-		@Test(priority = 1049)
-		@Title("Verify custom parameter dynght")
-		public void C628160_Verify_Parameter_DyNght() throws Exception {
-			System.out.println("================= Custom Parameter DayNight Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("dynght");
-			System.out.println("================= Custom Parameter DayNight Verfication End =========================");
-		}
-
-		@Test(priority = 1051)
-		@Title("Verify custom parameter cc")
-		public void C333209_Verify_cust_param_cc() throws Exception {
-			System.out.println("================= Custom Parameter Cc Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("cc");
-			System.out.println("================= Custom Parameter Cc Verfication End =========================");
-		}
-
-		/*@Test(priority = 65)
-		@Title("Verify custom parameter fhic")
-		public void C333232_Verify_cust_param_fhic() throws Exception {
-			System.out.println("================= Custom Parameter Fhic Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("fhic");
-			System.out.println("================= Custom Parameter Fhic Verfication End =========================");
-		}*/
-
-		/*@Test(priority = 66)
-		@Title("Verify custom parameter floc")
-		public void C333238_Verify_cust_param_floc() throws Exception {
-			System.out.println("================= Custom Parameter Floc Verfication Started =========================");
-		//	Custom_Parameters_Verification.parameters_Verification("floc");
-			System.out.println("================= Custom Parameter Floc Verfication End =========================");
-		}*/
-
-		@Test(priority = 1054)
-		@Title("Verify custom parameter tmp")
-		public void C333208_Verify_cust_param_tmp() throws Exception {
-			System.out.println("================= Custom Parameter Tmp Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("tmp");
-			System.out.println("================= Custom Parameter Tmp Verfication End =========================");
-		}
-
-		@Test(priority = 1057)
-		@Title("Verify custom parameter tmpr")
-		public void C333217_Verify_cust_param_tmpr() throws Exception {
-			System.out.println("================= Custom Parameter Tmpr Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("tmpr");
-			System.out.println("================= Custom Parameter Tmpr Verfication End =========================");
-		}
-
-		@Test(priority = 1059)
-		@Title("Verify custom parameter tmpc")
-		public void C333239_Verify_cust_param_tmpc() throws Exception {
-			System.out.println("================= Custom Parameter Tmpc Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("tmpc");
-			System.out.println("================= Custom Parameter Tmpc Verfication End =========================");
-		}
-
-		@Test(priority = 1061)
-		@Title("Verify custom parameter zip from  turbo api")
-		public void C333202_Verify_cust_param_zip() throws Exception {
-			System.out.println(
-					"================= Custom Parameter Zip Verfication  from turbo call Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("zip");
-
-			System.out.println(
-					"================= Custom Parameter Zip Verfication  from turbo call End =========================");
-		}
-		
-		/*@Test(priority=73) 
-		  @Title("Verify custom parameter hmid") 
-	public void  C333207_Verify_cust_param_hmid() throws Exception{ 
-		  System.out.println("================= Custom Parameter Hmid Verfication Started =========================");
-		  Custom_Parameters_Verification.parameters_Verification("hmid"); 
-		  System.out.println("================= Custom Parameters Hmid Verfication End =========================" );
-		  }*/
-
-		@Test(priority = 1063)
-		@Title("Verify custom parameter wind")
-		public void C333221_Verify_cust_param_wind() throws Exception {
-			System.out.println("================= Custom Parameter Wind Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("wind");
-			System.out.println("================= Custom Parameter Wind Verfication End =========================");
-		}
-
-		@Test(priority = 1065)
-		@Title("Verify custom parameter uv")
-		public void C333224_Verify_cust_param_uv() throws Exception {
-			System.out.println("================= Custom Parameter Uv Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("uv");
-			System.out.println("================= Custom Parameter Uv Verfication End =========================");
-		}
-
-		@Test(priority = 1069)
-		@Title("Verify custom parameter fltmpc")
-		public void C333232_Verify_cust_param_fltmpc() throws Exception {
-			System.out.println("================= Custom Parameter fltmpc Verfication Started =========================");
-			//Custom_Parameters_Verification.parameters_Verification("fltmpc");
-			System.out.println("================= Custom Parameter fltmpc Verfication End =========================");
-		}
-
-	
-		
-		
-		
-		/*@Test(priority = 1073)
-		@Title("Verify custom parameter wfxtg")
-		public void C333228_Verify_cust_param_wfxtg() throws Exception {
-			System.out.println("================= Custom Parameter Wfxtg Verfication Started =========================");
-			Custom_Parameters_Verification.parameters_Verification("wfxtg");
-			System.out.println("================= Custom Parameter Wfxtg Verfication End =========================");
-			
-		}*/
-	
-	
-		  @Test(priority =1076, enabled = true) 
-	  @Title("Verifying IM Cust param value for home screen marquee ad all" )
-	  public void Smoke_Test_Verifying_IM_Cust_Param_homescreen_marquee_adCall() throws Exception {
-		 System.out.println("================= Verifying IM CUST_PARAM value for home screen marquee call  started =========================");
-		// Functions.validate_IM_Cust_param_homescreenmarquee();
-		 System.out.println("================= Verifying SOD CUST_PARAM value for home screen IM call  End =========================");
-		 }
-	  
-	  
-	  @Test(priority = 1079, enabled = true) 
-	  @Title("Verifying SlotName Cust param value for home screen marquee ad all" )
-	  public void Smoke_Test_Verifying_SlotName_Cust_Param_homescreen_marquee_adCall() throws Exception {
-		 System.out.println("================= Verifying SlotName CUST_PARAM value for home screen marquee call  started =========================");
-		// Functions.validate_SlotName_Cust_param_homescreenmarquee();
-		 System.out.println("================= Verifying SlotName  CUST_PARAM value for home screen IM call  End =========================");
-		 }
-	  
-	  @Test(priority = 1081, enabled = true) 
-	  @Title("Verifying SlotName Cust param value for home screen hourly ad all" )
-	  public void Smoke_Test_Verifying_SlotName_Cust_Param_homescreen_hourly_adCall() throws Exception {
-		 System.out.println("================= Verifying SlotName CUST_PARAM value for home screen hourly call  started =========================");
-		// Functions.validate_SlotName_Cust_param_homescreenhourly();
-		 System.out.println("================= Verifying SlotName  CUST_PARAM value for home screen hourly call  End =========================");
-		 }
-	
-	  @Test(priority = 1085, enabled = true) 
-	  @Title("Verifying SlotName Cust param value for feed_1 ad all" )
-	  public void Smoke_Test_Verifying_SlotName_Cust_Param_feed_1_adCall() throws Exception {
-		 System.out.println("================= Verifying SlotName CUST_PARAM value for feed_1 ad call  started =========================");
-		 //Functions.validate_SlotName_Cust_param_feed1();
-		 // CharlesFunctions.archive_folder("Charles");
-		 System.out.println("================= Verifying SlotName  CUST_PARAM value for feed_1 ad  call  End =========================");
-		 }
-	
-	
-	
-	
-	
-	
 	/**
 	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
 	 */
 	@Test(priority = 3010, enabled = true)
-	@Description("Validating NextGen IM Static Ad when app in test mode")
+	@Title("Validating NextGen IM Static Ad when app in test mode")
 	public void Validate_NextGenIM_StaticAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad in test mode");
 		logStep("Validating NextGen IM Static Ad in test mode ");
-		
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-		/*AppiumFunctions.enter_requiredLocation("30124");
-		Thread.sleep(20000);
-		this.proxy.getXml();
-		Functions.finding_Homescreen_marquee_iu();*/
-		
-		
-		
-	}
 
+	}
+	
 	/**
-	 * @throws Exception This Script Validate NextGen IM Ad response
+	 * This Script Validate NextGen IM Ad response
+	 * @throws Exception
 	 */
-	@Test(priority = 3012, enabled = true)
-	@Description("Validating NextGen IM Static Ad response when app in test mode")
+	@Test(priority = 602, enabled = true)
+	@Title("Validating NextGen IM Static Ad response when app in test mode")
 	public void Validate_NextGenIM_StaticAd_response() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
 		logStep("Validating NextGen IM Static Ad response in test mode ");
-		//Functions.NextGenIm_adcall_response();
-		
+
 
 	}
-
+	
+	
 	/**
-	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 * This Script Validate NextGen IM Ad and its parameters
+	 * @throws Exception
 	 */
 
-	@Test(priority = 3014, enabled = true)
+	@Test(priority = 603, enabled = true)
 
-	@Description("Validating NextGen IM Static Ad BackGround Asset Call")
+	@Title("Validating NextGen IM Static Ad BackGround Asset Call")
 	public void Validate_NextGenIM_StaticAd_bgAssetCall() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
 		logStep("Validating NextGen IM Static Ad BG Asset Call ");
-		//Functions.validate_BG_adcall_NextGenIM();
-		
-		
+
 
 	}
-
+	
 	/**
-	 * @throws Exception This Script Validate NextGen IM Ad and its parameters
+	 * This Script Validate NextGen IM Ad and its parameters
+	 * @throws Exception
 	 */
 
-	@Test(priority = 3016, enabled = true)
-	@Description("Validating NextGen IM Static Ad ForeGround Asset Call")
+	@Test(priority = 604, enabled = true)
+	@Title("Validating NextGen IM Static Ad ForeGround Asset Call")
 	public void Validate_NextGenIM_StaticAd_fgAssetCall() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
 		logStep("Validating NextGen IM Static Ad FG Asset Call ");
-		 // Functions.validate_FG_adcall_NextImad() ;
+
 
 	}
-
-	@Test(priority = 3018, enabled = true)
-	@Description("Validating NextGen IM Static Ad sz parameter")
+	
+	@Test(priority = 605, enabled = true)
+	@Title("Validating NextGen IM Static Ad sz parameter")
 	public void Validate_NextGenIM_StaticAd_Size() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad sz parameter in charles");
 		logStep("Validating NextGen IM Static Ad sz parameter in charles ");
-		 	//CharlesFunctions.archive_folder("Charles");
-		       // Functions.validate_Size_iNextGenIM();
-	
 		
-       
+
 	}
 	
 	
-	@Test(priority = 3050, enabled = true)
-@Title("Validating Integrated Feed Card Static Ad i.e. Feed1 Card when app in test mode")
-public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
-	System.out.println("==============================================");
-	System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
-	logStep("Validating Integrated Feed Card Static Ad in test mode ");
-/*proxy.clearCharlesSession();
-AppiumFunctions.Swipe_feeds();
-this.proxy.getXml();
-Functions.get_feed1();*/
-
-}
-
-@Test(priority = 3052, enabled = true)
-@Description("Validating Integrated Feed Card Static Ad response")
-public void Validate_Integrated_FeedCard_StaticAd_response() throws Exception {
-	System.out.println("==============================================");
-	System.out.println("****** Validating Integrated Feed Card Static Ad response");
-	logStep("Validating Integrated Feed Card Static Ad response");
-	//Functions. integratedfeed_adcall_response();
-}
-
-/**
- * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
- *                   parameters
- */
-
-@Test(priority = 3054, enabled = true)
-@Description("Validating Integrated Feed Card Static Ad BackGround Asset Call")
-public void Validate_Integrated_FeedCard_StaticAd_bgAssetCall() throws Exception {
-	System.out.println("==============================================");
-	System.out.println("****** Validating Integrated Feed Card Static Ad BG Asset Call");
-	logStep("Validating Integrated Feed Card Static Ad BG Asset Call ");
-	
-	//Functions.validate_BG_adcall_Integratedfeedcard();
-}
-
-/**
- * @throws Exception This Script Validate Integrated Feed Card Static Ad and its
- *                   parameters
- */
-
-@Test(priority = 3056, enabled = true)
-@Description("Validating Integrated Feed Card Static Ad ForeGround Asset Call")
-public void Validate_Integrated_FeedCard_StaticAd_fgAssetCall() throws Exception {
-	System.out.println("==============================================");
-	System.out.println("****** Validating Integrated Feed Card Static Ad FG Asset Call");
-	logStep("Validating Integrated Feed Card Static Ad FG Asset Call ");
-	// Utils.verifyFGAd_byCallResponse("Smoke", "IntegratedFeedCard", "Static");
-	//Functions.validate_FG_adcall_Integratedfeedcard();
-
-}
-
-@Test(priority = 3058, enabled = true)
-@Description("Validating Integrated Feed Card Static Ad sz parameter")
-public void Validate_Integrated_FeedCard_StaticAd_Size() throws Exception {
-	System.out.println("==============================================");
-	System.out.println("****** Validating Integrated Feed Card Static Ad sz parameter in charles");
-	logStep("Validating Integrated Feed Card Static Ad sz parameter in charles ");
-	//Functions.validate_Size_integratedfeedCardad();
-
-}
-
-	
-	@Test(priority = 4000, enabled = true)
-@Title("Verifying daily integrated details ad call iu value")
-public void Smoke_Test_Verify_DailyDetails_Integratedadcall_iu() throws Exception {
-	System.out.println("================= Verifying daily detials integrated ad call test case Started =========================");	
-	System.out.println("Verifying daily details integrated ad call test case Started");
-	//logStep("Verifying daily details integrated ad call test case started");
+	@Test(priority = 611, enabled = true)
+	@Title("Validating NextGen IM Video Ad and its Parameters when app in test mode")
+	public void Validate_NextGenIM_VideoAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad in test mode");
+		logStep("Validating NextGen IM Video Ad in test mode ");
 		
-	Thread.sleep(100000);
-		Thread.sleep(100000);
-		Thread.sleep(100000);
-	// Functions.verifyingdailydetailiu();
+
+	}
 	
-	System.out.println("================= Verifying daily detials integrated ad call test case End =========================");
-}
+	@Test(priority = 612, enabled = true)
+	@Title("Validating NextGen IM Video Ad response when app in test mode")
+	public void Validate_NextGenIM_VideoAd_response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad response in test mode");
+		logStep("Validating NextGen IM Video Ad response in test mode ");
 
 
-@Test(priority = 4002, enabled = true)
-@Title("Verifying daily details integrated ad call size")
-public void Smoke_Test_Verify_DailyDetails_Integratedadcall_Size() throws Exception {
-	System.out.println("================= Verifying daily detials integrated ad call size test case Started =========================");	
-	// Functions.validate_Size_dailydetails_integratedad();
+	}
 	
-	System.out.println("================= Verifying daily detials integrated ad call size test case End =========================");
-}
-
-
-
-
-@Test(priority = 4004, enabled = true)
-@Title("Verifying daily  integrated details ad call response")
-public void Smoke_Test_Verify_IDD_DailyDetails_Response() throws Exception {
-	System.out.println("================= Verifying dailetials integrated daily details ad call response test case Started =========================");	
-
-	//Functions.dailydetailsintegrated_adcall_response();
-	System.out.println("================= Verifying daily detials integrated daily details ad call response test case  End =========================");
-}
-
-@Test(priority = 4006, enabled = true)
-@Title("Verifying daily  integrated details FG  assest call URL")
-public void Smoke_Test_Verify_DailyIntegratedDetails_FG_Assest_URL() throws Exception {
-	System.out.println("================= Verifying daily detials integrated FG assest url  test case Started =========================");	
-	 // Functions. validate_FG_adcall_IDD();
+	/**
+	 * This Script Validate NextGen IM Ad and its parameters
+	 * @throws Exception
+	 */
+	@Test(priority = 613, enabled = true)
+	@Title("Validating NextGen IM Video Ad BackGround Asset Call")
+	public void Validate_NextGenIM_VideoAd_bgAssetCall() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating NextGen IM Video Ad BG Asset Call");
+		logStep("Validating NextGen IM Video Ad BG Asset Call ");
 	
-	System.out.println("================= Verifying daily detials integrated FG assest url test case End =========================");
-}
 
-
-@Test(priority = 4008, enabled = true)
-@Title("Verifying daily  integrated details BG assest  call URL")
-public void Smoke_Test_Verify_DailyIntegratedDetails_BG_Assest_URL() throws Exception {
-	System.out.println("================= Verifying daily detials integrated BG assest url  test case Started =========================");	
-	CharlesFunctions.archive_folder("Charles");
-	//Functions.validate_BG_adcall_IDD();
+	}
 	
-	System.out.println("================= Verifying daily detials integrated BG assest url  test case End =========================");
-}
-
+	/**
+	 *This Script Validate NextGen IM Ad and its parameters Video
+	 *ad will not be having only fg asset call always, it has
+	 *only bg asset call hence commenting
+	 *@throws Exception 
+	 */
 	
-	  @Test(priority =5000, enabled = true)
-	  @Title("Verifying Hourly  details Interstal ads") 
-	  public void Smoke_Test_Verify_Hourlydetails_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying Hourly details Interstal ads test case  Started =========================");
+	  @Test(priority = 614, enabled = true)	 
+	  @Title("Validating NextGen IM Video Ad ForeGround Asset Call") 
+	  public void Validate_NextGenIM_VideoAd_fgAssetCall() throws Exception {
+	  System.out.println("==============================================");
+	  System.out.println("****** Validating NextGen IM Video Ad FG Asset Call");
+	  logStep("Validating NextGen IM Video Ad FG Asset Call ");  
+
+	  
+	  }
+	  
+		@Test(priority = 615, enabled = true)
+		@Title("Validating NextGen IM Video Ad sz parameter")
+		public void Validate_NextGenIM_VideoAd_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating NextGen IM Video Ad sz parameter in charles");
+			logStep("Validating NextGen IM Video Ad sz parameter in charles ");
+			
+
+		}
 	 
-	 Thread.sleep(100000);
-	  
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		  
-	  }
+		
+		/**
+		 *This Script Validate Integrated Daily Details Ad Call and its response
+		 * @throws Exception 
+		 */
+		@Test(priority = 701, enabled = true)
+		@Title("Validating IDD Ad when app in test mode")
+		public void Validate_IDD_Ad() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating IDD Ad in test mode");
+			logStep("Validating IDD Ad in test mode ");
+	    
+		
+		}
+		
+		@Test(priority = 702, enabled = true)
+		@Title("Validating IDD Ad response")
+		public void Validate_IDD_Ad_response() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating IDD Ad response");
+			logStep("Validating IDD Ad response");
+			
 
-	  
+		}
+		
+		/**
+		 * This Script Validate IDD Ad and its parameters
+		 * @throws Exception 
+		 */
 
-	  @Test(priority =5001, enabled = true)
-	  @Title("Verifying daily  details Interstal ads") 
-	  public void Smoke_Test_Verify_daily_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying daily details Interstal ads test case  Started =========================");
-	 
-	 Thread.sleep(100000);
-	  
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-	  
-	  }
+		@Test(priority = 703, enabled = true)
+		@Title("Validating IDD Static Ad BackGround Asset Call")
+		public void Validate_IDD_StaticAd_bgAssetCall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating IDD Static Ad BG Asset Call");
+			logStep("Validating IDD Static Ad BG Asset Call ");
+			
+
+		}
 	
-	  
-	  @Test(priority =5002, enabled = true)
-	  @Title("Verifying maps  details Interstal ads") 
-	  public void Smoke_Test_Verify_maps_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying maps details Interstal ads test case  Started =========================");
- 
-	 Thread.sleep(100000);
-	  
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-	  
-	  }
+		@Test(priority = 705, enabled = true)
+		@Title("Validating IDD Ad sz parameter")
+		public void Validate_IDD_Ad_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating IDD Ad sz parameter in charles");
+			logStep("Validating IDD Ad sz parameter in charles ");
+
+
+		}
+		
+		/**
+		 * This Script Validate Integrated Feed Card Static Ad Call and its response
+		 * @throws Exception                 
+		 */
+		@Test(priority = 751, enabled = true)
+		@Title("Validating Integrated Feed Card Static Ad i.e. Feed1 Card when app in test mode")
+		public void Validate_Integrated_FeedCard_StaticAd() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Static Ad in test mode");
+			logStep("Validating Integrated Feed Card Static Ad in test mode ");
+		}
+		
+		@Test(priority = 752, enabled = true)
+		@Title("Validating Integrated Feed Card Static Ad response")
+		public void Validate_Integrated_FeedCard_StaticAd_response() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Static Ad response");
+			logStep("Validating Integrated Feed Card Static Ad response");
+			
+		}
+		
+		/**
+		 * This Script Validate Integrated Feed Card Static Ad and its parameters
+		 * @throws Exception                
+		 */
+
+		@Test(priority = 753, enabled = true)
+		@Title("Validating Integrated Feed Card Static Ad BackGround Asset Call")
+		public void Validate_Integrated_FeedCard_StaticAd_bgAssetCall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Static Ad BG Asset Call");
+			logStep("Validating Integrated Feed Card Static Ad BG Asset Call ");
+			
 	
-	  
-	  
-	  @Test(priority =5003, enabled = true)
-	  @Title("Verifying videosInterstal ads") 
-	  public void Smoke_Test_Verify_Videos_interstial_ads() throws Exception {
-	 System.out.println( "================= Verifying Videos details Interstal ads test case  Started =========================");
- 
-	 Thread.sleep(100000);
-	  
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-	  
-	  }
+		}
+
+
+		
+
+		/**
+		 * This Script Validate Integrated Feed Card Static Ad and its parameters
+		 * @throws Exception              
+		 */
+		@Test(priority = 754, enabled = true)
+		@Title("Validating Integrated Feed Card Static Ad ForeGround Asset Call")
+		public void Validate_Integrated_FeedCard_StaticAd_fgAssetCall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Static Ad FG Asset Call");
+			logStep("Validating Integrated Feed Card Static Ad FG Asset Call ");
+		
+
+		}
+		
+		
+		@Test(priority = 755, enabled = true)
+		@Title("Validating Integrated Feed Card Static Ad sz parameter")
+		public void Validate_Integrated_FeedCard_StaticAd_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Static Ad sz parameter in charles");
+			logStep("Validating Integrated Feed Card Static Ad sz parameter in charles ");
 	
-		@Test(priority = 6000, enabled = true)
-	@Title("Verifying watson Flu card iu value")
-	public void Smoke_Test_Verify_watson_FluCard_iu() throws Exception {
-		System.out.println("================= Verifying watson flu card iu value   test case Started =========================");	
+		}
+		
+		/**
+		 * This Script Validate Integrated Feed Card Video Ad Call and its response
+		 * @throws Exception          
+		 */
+		@Test(priority = 761, enabled = true)
+		@Title("Validating Integrated Feed Card Video Ad i.e. Feed1 Card when app in test mode")
+		public void Validate_Integrated_FeedCard_VideoAd() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Video Ad in test mode");
+			logStep("Validating Integrated Feed Card Video Ad in test mode ");
+			
+		}
+		
+		
+		@Test(priority = 762, enabled = true)
+		@Title("Validating Integrated Feed Card Video Ad response")
+		public void Validate_Integrated_FeedCard_VideoAd_response() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Video Ad response");
+			logStep("Validating Integrated Feed Card Video Ad response");
+		
+
+		}
+		
+		/**
+		 * This Script Validate Integrated Feed Card Video Ad and its parameters
+		 * @throws Exception            
+		 */
+
+		@Test(priority = 763, enabled = true)
+		@Title("Validating Integrated Feed Card Video Ad BackGround Asset Call")
+		public void Validate_Integrated_FeedCard_VideoAd_bgAssetCall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Video Ad BG Asset Call");
+			logStep("Validating Integrated Feed Card Video Ad BG Asset Call ");
+			
+		}
+		
+		@Test(priority = 765, enabled = true)
+		@Title("Validating Integrated Feed Card Video Ad sz parameter")
+		public void Validate_Integrated_FeedCard_VideoAd_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Integrated Feed Card Video Ad sz parameter in charles");
+			logStep("Validating Integrated Feed Card Video Ad sz parameter in charles ");
+
+			
+
+		}
+		
+		
+		/**
+		 * This Script Enable preconfiguration for spotlight cards i.e. Flu, Allergy, Week Ahead, Weekend
+		 * @throws Exception    
+		 */
+		@Test(priority = 901, enabled = true)
+		@Title("Enabling Preconfiguration for Watson Moment and Planning Moment Cards")
+		public void enable_PreConfiguration_for_WatsonAndPlanningMomentCards() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Enable Preconfiguration for Watson Moment and Planning Moment Cards");
+			logStep("Enable Preconfiguration for Watson Moment and Planning Moment Cards ");
+
+			}
+		
+		
+		@Test(priority = 902, enabled = true)
+		@Title("Verify Week Ahead ad call iu")
+		public void Verify_Week_Ahead_AdCall() throws Exception {
+			System.out.println("==============================================");		
+			System.out.println("****** Week Ahead Adcall verification test case Started");
+			logStep("****** Week Ahead Adcall verification test case Started");
+	
+		}
+		
+		/**
+		 * This method validates pos custom parameter of Week Ahead call
+		 */
+		@Test(priority = 903, enabled = true)
+		@Title("Validating 'pos' custom parameter of Week Ahead call ")
+		public void Validate_Week_Ahead_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Week Ahead call");
+			logStep("Validating pos custom parameter of Week Ahead call ");
+
+		}
+		
+		
+		@Test(priority = 904, enabled = true)
+		@Title("Validating Week Ahead call Ad sz parameter")
+		public void Validate_Week_Ahead_Ad_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Week Ahead call Ad sz parameter in charles");
+			logStep("Validating Week Ahead call Ad sz parameter in charles ");
+		
+
+		}
+		
+		@Test(priority = 911, enabled = true)
+		@Title("Verify Weekend ad call iu")
+		public void Verify_Weekend_AdCall() throws Exception {
+			System.out.println("==============================================");
+					System.out.println("****** Weekend Adcall verification test case Started");
+
+		}
+		
+		/**
+		 * This method validates pos custom parameter of Weekend call
+		 */
+		@Test(priority = 912, enabled = true)
+		@Title("Validating 'pos' custom parameter of Weekend call ")
+		public void Validate_Weekend_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Weekend call");
+			logStep("Validating pos custom parameter of Weekend call ");
+		
+		}
+		
+		
+		@Test(priority = 913, enabled = true)
+		@Title("Validating Weekend call Ad sz parameter")
+		public void Validate_Weekend_Ad_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Weekend call Ad sz parameter in charles");
+			logStep("Validating Weekend call Ad sz parameter in charles ");
+
+		}
+		
+		@Test(priority = 921, enabled = true)
+		@Title("Verify WM Flu ad call iu")
+		public void Verify_WMFlu_AdCall() throws Exception {
+			System.out.println("==============================================");		
+			System.out.println("****** WM Flu Adcall verification test case Started");
+			logStep("****** WM Flu Adcall verification test case Started");
+
+		}
+		
+		/**
+		 * This method validates pos custom parameter of WM Flu call
+		 */
+		@Test(priority = 922, enabled = true)
+		@Title("Validating 'pos' custom parameter of WM Flu call ")
+		public void Validate_WMFlu_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of WM Flu call");
+			logStep("Validating pos custom parameter of WM Flu call ");
+			
+
+		}
+		
+		@Test(priority = 923, enabled = true)
+		@Title("Validating WM Flu call Ad sz parameter")
+		public void Validate_WMFlu_Ad_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating WM Flu call Ad sz parameter in charles");
+			logStep("Validating WM Flu call Ad sz parameter in charles ");
+	
+		}
+
+		@Test(priority = 931, enabled = true)
+		@Title("Verify WM Allergy ad call iu")
+		public void Verify_WMAllergy_AdCall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** WM Allergy Adcall verification test case Started");
+			logStep("****** WM Allergy Adcall verification test case Started");
+			
+		}
+		
+		/**
+		 * This method validates pos custom parameter of WM Allergy call
+		 */
+		@Test(priority = 932, enabled = true)
+		@Title("Validating 'pos' custom parameter of WM Allergy call ")
+		public void Validate_WMAllergy_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of WM Allergy call");
+			logStep("Validating pos custom parameter of WM Allergy call ");
+    		
+		}
+
+		@Test(priority = 933, enabled = true)
+		@Title("Validating WM Allergy call Ad sz parameter")
+		public void Validate_WMAllergy_Ad_Size() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating WM Allergy call Ad sz parameter in charles");
+			logStep("Validating WM Allergy call Ad sz parameter in charles ");
+		
+
+		}
+		
+		@Test(priority = 350, enabled = true)
+		@Title("Enabling Preconfiguration for Severe1 Breaking News Card")
+		public void enable_PreConfiguration_for_servere1_BreakingNewsCard() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Enable Preconfiguration for Severe1 Breaking News Card");
+			logStep("Enable Preconfiguration for Severe1 Breaking News Card");
+		
+		
+		}
+
+		
+		@Test(priority = 351, enabled = true)
+		@Title("Verify BreakingNews Severe1 ad call iu")
+		public void Verify_BreakingNews_Severe1_AdCall() throws Exception {
+			System.out.println("==============================================");			
+			System.out.println("****** Breaking News Severe1 Adcall verification test case Started");
+			logStep("****** Breaking News Severe1 Adcall verification test case Started");		
+		
+		}
+	
+		
+		/**
+		 * This method validates bn custom parameter of Breaking News Severe1 call
+		 */
+		@Test(priority = 352, enabled = true)
+		@Title("Validating 'bn' custom parameter of BreakingNews Severe1 call ")
+		public void Validate_BreakingNews_Severe1_bn_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 call");
+			logStep("Validating bn custom parameter of Breaking News Severe1 call ");
+		
+
+		}
+		
+		/**
+		 * This method validates pos custom parameter of Breaking News Severe1 call
+		 */
+		@Test(priority = 353, enabled = true)
+		@Title("Validating 'pos' custom parameter of BreakingNews Severe1 call ")
+		public void Validate_BreakingNews_Severe1_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Breaking News Severe1 call");
+			logStep("Validating pos custom parameter of Breaking News Severe1 call ");
+		
+
+		}
+		
+		@Test(priority = 361, enabled = true)
+		@Title("Verify BreakingNews Severe1 Video1 ad call iu")
+		public void Verify_BreakingNews_Video1_Severe1_AdCall() throws Exception {
+			System.out.println("==============================================");		
+			System.out.println("****** Breaking News Severe1 Video1 Adcall verification test case Started");
+			logStep("****** Breaking News Severe1 Video1 Adcall verification test case Started");
+		
+		
+
+		}
+		
+		/**
+		 * This method validates bn custom parameter of Breaking News Severe1 Video1
+		 * call
+		 */
+		@Test(priority = 362, enabled = true)
+		@Title("Validating 'bn' custom parameter of BreakingNews Severe1 Video1 call ")
+		public void Validate_BreakingNews_Video1_Severe1_bn_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 Video1 call");
+			logStep("Validating bn custom parameter of Breaking News Severe1 Video1 call ");
+			
+
+		}
+		/**
+		 * This method validates ref custom parameter of Breaking News Severe1 Video1
+		 * call
+		 */
+		@Test(priority = 363, enabled = true)
+		@Title("Validating 'ref' custom parameter of BreakingNews Severe1 Video1 call ")
+		public void Validate_BreakingNews_Video1_Severe1_ref_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ref custom parameter of Breaking News Severe1 Video1 call");
+			logStep("Validating ref custom parameter of Breaking News Severe1 Video1 call ");
+		
+		}
+		
+		
+		@Test(priority = 375, enabled = true)
+		@Title("Enabling Preconfiguration for Severe2 Breaking News Card")
+		public void enable_PreConfiguration_for_servere2_BreakingNewsCard() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Enable Preconfiguration for Severe2 Breaking News Card");
+			logStep("Enable Preconfiguration for Severe2 Breaking News Card");
+			
+		}
+		
+		@Test(priority = 376, enabled = true)
+		@Title("Verify BreakingNews Severe2 ad call iu")
+		public void Verify_BreakingNews_Severe2_AdCall() throws Exception {
+			System.out.println("==============================================");	
+			System.out.println("****** Breaking News Severe2 Adcall verification test case Started");
+
+		}
+
+		/**
+		 * This method validates bn custom parameter of Breaking News Severe2 call
+		 */
+		@Test(priority = 377, enabled = true)
+		@Title("Validating 'bn' custom parameter of BreakingNews Severe2 call ")
+		public void Validate_BreakingNews_Severe2_bn_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 call");
+			logStep("Validating bn custom parameter of Breaking News Severe2 call ");
+		
+		}
+		
+		/**
+		 * This method validates pos custom parameter of Breaking News Severe2 call
+		 */
+		@Test(priority = 378, enabled = true)
+		@Title("Validating 'pos' custom parameter of BreakingNews Severe2 call ")
+		public void Validate_BreakingNews_Severe2_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Breaking News Severe2 call");
+			logStep("Validating pos custom parameter of Breaking News Severe2 call ");
+			
+		}
+		
+		
+		@Test(priority = 381, enabled = true)
+		@Title("Verify BreakingNews Severe2 Video1 ad call iu")
+		public void Verify_BreakingNews_Video1_Severe2_AdCall() throws Exception {
+			System.out.println("==============================================");	
+			System.out.println("****** Breaking News Severe2 Video1 Adcall verification test case Started");
+			logStep("****** Breaking News Severe2 Video1 Adcall verification test case Started");
+
+		}
+
+		/**
+		 * This method validates bn custom parameter of Breaking News Severe2 Video1
+		 * call
+		 */
+		@Test(priority = 382, enabled = true)
+		@Title("Validating 'bn' custom parameter of BreakingNews Severe2 Video1 call ")
+		public void Validate_BreakingNews_Video1_Severe2_bn_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 Video1 call");
+			logStep("Validating bn custom parameter of Breaking News Severe2 Video1 call ");
+		
+		}
+		
+		/**
+		 * This method validates ref custom parameter of Breaking News Severe1 Video1
+		 * call
+		 */
+		@Test(priority = 383, enabled = true)
+		@Title("Validating 'ref' custom parameter of BreakingNews Severe2 Video1 call ")
+		public void Validate_BreakingNews_Video1_Severe2_ref_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ref custom parameter of Breaking News Severe2 Video1 call");
+			logStep("Validating ref custom parameter of Breaking News Severe2 Video1 call ");
+
+
+		}
+
+		@Test(priority = 801, enabled = true)
+		@Title("Verify Entry Interstitial Ads of Boat and Beach card")
+		public void Verify_interstitial_ad_BoatandBeach() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== Entry Interstitial Ad Verification of Hourly Tab====================");
+
+		
+
+		}
+			
+		@Test(priority = 802, enabled = true)
+		@Title("Verify Exit Interstitial Ads of Daily Tab")
+		public void Verify_interstitial_ads_dailyTab() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== Exit Interstitial Ad Verification of Daily Tab====================");
+
+			System.out.println("****** Exit Interstitial Ad validation of Daily Tab Started");
+			logStep("Exit Interstitial Ad validation of Daily Tab Started ");
+		
+		}
+
+		@Test(priority = 803, enabled = true)
+		@Title("Verify Exit Interstitial Ads of Radar Tab")
+		public void Verify_interstitial_ads_radarTab() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== Exit Interstitial Ad Verification of Radar Tab====================");
+
+			System.out.println("****** Exit Interstitial Ad validation of Radar Tab Started");
+			logStep("Exit Interstitial Ad validation of Radar Tab Started ");
+		
+		}
+
+		@Test(priority = 804, enabled = true)
+		@Title("Verify Exit Interstitial Ads of Video Tab")
+		public void Verify_interstitial_ads_videoTab() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== Exit Interstitial Ad Verification of Video Tab====================");
+
+			System.out.println("****** Exit Interstitial Ad validation of Video Tab Started");
+			logStep("Exit Interstitial Ad validation of Video Tab Started ");
+			
+		}
+		
+		
+		@Test(priority = 51, enabled = true)
+		@Title("Verify amazon aax homescreen Adhesive preload ad call")
+		public void Verify_amazon_aax_preload_homescreen_adhesive_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== amazon aax homescreen adhesive preload ad call ====================");
+
+			System.out.println("****** amazon aax homescreen adhesive preload ad call validation Started");
+			logStep("****** amazon aax homescreen adhesive preload ad call validation Started");
+
+;
+
+		}
 		 
-	 Thread.sleep(100000);
-	   
-	 Thread.sleep(100000);
-	   
-	 Thread.sleep(100000);
-	  
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		   Thread.sleep(100000);
-		System.out.println("================= Verifying watson flu card iu value  test case End =========================");
-	}
-	
-	
-	@Test(priority =6002, enabled = true)
-	@Title("Verifying  WM Flu ad call size")
-	public void Smoke_Test_Verify_Size_WM_Flu_Card_adcall() throws Exception {
-		System.out.println("================= Validate WM Flu_Ad_Size test case Started =========================");	
-		//Functions.validate_Size_WMFlu();
-		System.out.println("================= Validate WM Flu_Ad_Size test caseEnd =========================");
-	} 
-	
-	@Test(priority = 6003, enabled = true)
-	@Title("Verifying WM Flu card ad call pos_Custom param")
-	public void Smoke_Test_WM_Flu_pos_Custom_param() throws Exception {
-		System.out.println("================= Validate WM Flu card ad call pos custom param test case Started =========================");	
-		//Functions.validate_pos_Cust_param_WM_Flu();
-		System.out.println("================= Validate WM Flu  card ad call pos custom param test case End =========================");
-	} 
-	///DETaAILS CLICK 
-	//details iu validation
-	
-	
-	
-	
-	
-	
-	@Test(priority = 6004, enabled = true)
-	@Title("Verifying watson Allergy card iu value")
-	public void Smoke_Test_Verify_Weekendcard_iu() throws Exception {
-		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
-		//Functions.Verify_watsonAllergycard_iu();
-		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
-	}
-	
-	
-	
-	@Test(priority = 6005, enabled = true)
-	@Title("Verifying  WM Allergy ad call size")
-	public void Smoke_Test_Verify_Size_WM_Allergy_Card_adcall() throws Exception {
-		System.out.println("================= Validate WM Allergy_Ad_Size test case Started =========================");	
-		//Functions.validate_Size_WMAllergy();
-		System.out.println("================= Validate WM Allergy_Ad_Size test caseEnd =========================");
-	}
-	@Test(priority = 6006, enabled = true)
-	@Title("Verifying WM allergy card ad call pos_Custom param")
-	public void Smoke_Test_WM_Allergy_pos_Custom_param() throws Exception {
-		System.out.println("================= Validate WM Allergy card ad call pos custom param test case Started =========================");	
-		//Functions.validate_pos_Cust_param_WM_Allergy();
-		System.out.println("================= Validate WM Allergy card ad call pos custom param test case End =========================");
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@Test(priority = 6007, enabled = true)
-	@Title("Verifying  weekAhead card ad call response")
-	public void Smoke_Test_Verify_response__WMFlu_adcall() throws Exception {
-		System.out.println("================= Validate Week_Ahead card ad call response test case Started =========================");	
-		//Functions.watson_adcall_response(); 
-		System.out.println("================= Validate Week_Ahead card ad call response test case End =========================");
-	}
-	
-	
-	
-	
-	
-	
-	@Test(priority = 6008, enabled = true)
-	@Title("Verifying  WM Allergy card ad call response")
-	public void Smoke_Test_Verify_response_WM_Allergy_Card_adcall() throws Exception {
-		System.out.println("================= Validate WM Allergy card ad call response test case Started =========================");	
-		//Functions.watson_adcall_response();
-		System.out.println("================= Validate WM Allergy card ad call response test case End =========================");
-	}
-	
+		@Test(priority = 52, enabled = true)
+		@Title("Verify amazon aax Feed1 preload ad call")
+		public void Verify_amazon_aax_preload_feed1_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed1 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed1 preload ad call validation Started");
+			logStep("****** amazon aax feed1 preload ad call validation Started");
+
+
+
+		}
+
+		@Test(priority = 53, enabled = true)
+		@Title("Verify amazon aax Feed2 preload ad call")
+		public void Verify_amazon_aax_preload_feed2_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed2 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed2 preload ad call validation Started");
+			logStep("****** amazon aax feed2 preload ad call validation Started");
+
+
+		}
+
+		@Test(priority = 54, enabled = true)
+		@Title("Verify amazon aax Feed3 preload ad call")
+		public void Verify_amazon_aax_preload_feed3_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed3 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed3 preload ad call validation Started");
+			logStep("****** amazon aax feed3 preload ad call validation Started");
+
+
+
+		}
+
+		@Test(priority = 55, enabled = true)
+		@Title("Verify amazon aax Feed4 preload ad call")
+		public void Verify_amazon_aax_preload_feed4_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed4 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed4 preload ad call validation Started");
+			logStep("****** amazon aax feed4 preload ad call validation Started");
+
+		
+
+		}
+
+		@Test(priority = 57, enabled = true)
+		@Title("Verify amazon aax PreRollVideo preload ad call")
+		public void Verify_amazon_aax_preload_PreRollVideo_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon PreRollVideo preload ad call ====================");
+
+			System.out.println("****** amazon aax PreRollVideo preload ad call validation Started");
+			logStep("****** amazon aax PreRollVideo preload ad call validation Started");
+
+
+		}
+
+		@Test(priority = 58, enabled = true)
+		@Title("Verify amazon aax map details preload ad call")
+		public void Verify_amazon_aax_preload_map_details_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax map details preload ad call ====================");
+
+			System.out.println("****** amazon aax Map details preload ad call validation Started");
+			logStep("****** amazon aax Map details preload ad call validation Started");
+
+		
+
+		}
+
+		@Test(priority = 59, enabled = true)
+		@Title("Verify amazon aax Daily Details preload ad call")
+		public void Verify_amazon_aax_preload_Daily_details_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax Daily Details preload ad call ====================");
+
+			System.out.println("****** amazon aax Daily Details preload ad call validation Started");
+			logStep("****** amazon aax Daily Details preload ad call validation Started");
+
+		
+
+		}
+
+		@Test(priority = 60, enabled = true)
+		@Title("Verify amazon aax Hourly Details preload ad call")
+		public void Verify_amazon_aax_preload_Hourly_details_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out
+					.println("=========================== amazon aax Hourly Details preload ad call ====================");
+
+			System.out.println("****** amazon aax Hourly Details preload ad call validation Started");
+			logStep("****** amazon aax Hourly Details preload ad call validation Started");
+
+
+		}
+		
+		@Test(priority = 65, enabled = true)
+		@Title("Validating 'adsdk' parameter of Amazon aax call ")
+		public void Validate_Amazon_SDK_adsdk_parameter() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
+			logStep("****** Validating Amazon SDK version i.e. 'adsdk' parameter of Amazon aax call");
+		
+		}
+
+		@Test(priority = 70, enabled = true)
+		@Title("Validating Google Mobile Ads SDK version of gampad call ")
+		public void Validate_GMA_SDK_version() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
+			logStep("Validating Google Mobile Ads SDK Version i.e. 'js' parameter of gampad call");
+
+		
+
+		}
+		
+		@Test(priority = 75, enabled = true)
+		@Title("Verify Criteo SDK inapp v2 call")
+		public void Verify_Criteo_SDK_inapp_v2_Call() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+
+			System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+			logStep("****** Criteo SDK inapp/v2 call validation Started");
+
+
+
+		}
+
+		@Test(priority = 76, enabled = true)
+		@Title("Verify Criteo SDK config app call")
+		public void Verify_Criteo_SDK_config_app_Call() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== Criteo SDK config/app call ====================");
+
+			System.out.println("****** Criteo SDK config/app call validation Started");
+			logStep("****** Criteo SDK config/app call validation Started");
+
+
+
+		}
+
+		@Test(priority = 77, enabled = true)
+		@Title("Validating 'cpId' parameter of Criteo SDK config app call ")
+		public void Validate_Criteo_SDK_config_app_Call_cpId_parameter() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating 'cpId' parameter of Criteo SDK config app call");
+			logStep("****** Validating 'cpId' parameter of Criteo SDK config app call");
+			
+
+		}
+
+		@Test(priority = 78, enabled = true)
+		@Title("Validating 'bundleId' parameter of Criteo SDK config app call ")
+		public void Validate_Criteo_SDK_config_app_Call_bundleId_parameter() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating 'bundleId' parameter of Criteo SDK config app call");
+			logStep("****** Validating 'bundleId' parameter of Criteo SDK config app call");
+			
+
+		}
+
+		@Test(priority = 79, enabled = true)
+		@Title("Validating 'sdkVersion' parameter of Criteo SDK config app call ")
+		public void Validate_Criteo_SDK_config_app_Call_sdkVersion_parameter() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating 'sdkVersion' parameter of Criteo SDK config app call");
+			logStep("****** Validating 'sdkVersion' parameter of Criteo SDK config app call");
+		
+		}
+
+		/**
+		 * This method validates Criteo Bidder API (invapp v2) call response code
+		 */
+		@Test(priority = 81, enabled = true)
+		@Title("Validating Criteo Bidder API (invapp v2) call response code")
+		public void Validate_Criteo_SDK_Bidder_API_Call_Response_Code() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Criteo Bidder API (invapp v2) Call Response Code");
+			logStep("****** Validating Criteo Bidder API (invapp v2) Call Response Code");
+		
+		}
+
+		/**
+		 * This method validates Initialization API (config app) call response code
+		 */
+		@Test(priority = 82, enabled = true)
+		@Title("Validating Criteo Initialization API (config app) call response code")
+		public void Validate_Criteo_SDK_Initialization_API_Call_Response_Code() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating Criteo Initialization API (config app) Call Response Code");
+			logStep("****** Validating Criteo Initialization API (config app) Call Response Code");
+			
+		}
+
+		/**
+		 * This method validates Initialization API (config app) call response parameter
+		 * 'csmEnabled'
+		 */
+		@Test(priority = 83, enabled = true)
+		@Title("Validating Criteo Initialization API (config app) call response parameter 'csmEnabled' value")
+		public void Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_csmEnabled() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"****** Validating csmEnabled parameter value in Criteo Initialization API (config app) Call Response");
+			logStep("****** Validating csmEnabled parameter value in Criteo Initialization API (config app) Call Response");
+			
+		}
+
+		/**
+		 * This method validates Initialization API (config app) call response parameter
+		 * 'liveBiddingEnabled'
+		 */
+		@Test(priority = 84, enabled = true)
+		@Title("Validating Criteo Initialization API (config app) call response parameter 'liveBiddingEnabled' value")
+		public void Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_liveBiddingEnabled() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"****** Validating liveBiddingEnabled parameter value in Criteo Initialization API (config app) Call Response");
+			logStep("****** Validating liveBiddingEnabled parameter value in Criteo Initialization API (config app) Call Response");
+		
+		}
+		
+		/*
+		 * This method validates plat custom parameter of Marquee call
+		 */
+		@Test(priority = 700, enabled = true)
+		@Title("Validating 'plat' custom parameter of Marquee call ")
+		public void Validate_Marquee_plat_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating plat custom parameter of Marquee call");
+			logStep("Validating plat custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates plat custom parameter of Feed1 call
+		 */
+		@Test(priority = 702, enabled = true)
+		@Title("Validating 'plat' custom parameter of Feed1 call ")
+		public void Validate_Feed1_plat_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating plat custom parameter of Feed1 call");
+			logStep("Validating plat custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates plat custom parameter of Hourly details call
+		 */
+		@Test(priority = 704, enabled = true)
+		@Title("Validating 'plat' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_plat_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating plat custom parameter of Hourly details call");
+			logStep("Validating plat custom parameter of Hourly details call ");
+			
+
+		}
+
+
+
+		/*
+		 * This method validates pos custom parameter of Marquee call
+		 */
+		@Test(priority = 706, enabled = true)
+		@Title("Validating 'pos' custom parameter of Marquee call ")
+		public void Validate_Marquee_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Marquee call");
+			logStep("Validating pos custom parameter of Marquee call ");
+			CharlesFunctions.createXMLFileForCharlesSessionFile();
+
+
+		}
+
+		/*
+		 * This method validates pos custom parameter of Feed1 call
+		 */
+		@Test(priority = 708, enabled = true)
+		@Title("Validating 'pos' custom parameter of Feed1 call ")
+		public void Validate_Feed1_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Feed1 call");
+			logStep("Validating pos custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates pos custom parameter of Hourly details call
+		 */
+		@Test(priority = 710, enabled = true)
+		@Title("Validating 'pos' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_pos_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating pos custom parameter of Hourly details call");
+			logStep("Validating pos custom parameter of Hourly details call ");
 	
 
-	
-	@Test(priority = 6009, enabled = true)
-	@Title("Verifying watson weekend card iu value")
-	public void Smoke_Test_Verify_watson_AllergyCard_iu() throws Exception {
-		System.out.println("================= Verifying watson Allergy card iu value   test case Started =========================");	
-		//Functions.Verify_weekend_iu();
-		System.out.println("================= Verifying Allergy  card iu value  test case End =========================");
-	}
-	
-	@Test(priority = 6010, enabled = true)
-	@Title("Verifying  Weekend cardad call size")
-	public void Smoke_Test_Verify_Size_Weekend_Card_adcall() throws Exception {
-		System.out.println("================= Validate Weekend_Ad_Size test case Started =========================");	
-		//Functions.validate_Size_weeekend();
-		System.out.println("================= Validate Weekend_Ad_Size test caseEnd =========================");
-	}
+		}
+
+
+
+		/*
+		 * This method validates tile custom parameter of Marquee call
+		 */
+		@Test(priority = 706, enabled = true)
+		@Title("Validating 'tile' custom parameter of Marquee call ")
+		public void Validate_Marquee_tile_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tile custom parameter of Marquee call");
+			logStep("Validating tile custom parameter of Marquee call ");
 	
 
+		}
+
+		/*
+		 * This method validates tile custom parameter of Feed1 call
+		 */
+		@Test(priority = 708, enabled = true)
+		@Title("Validating 'tile' custom parameter of Feed1 call ")
+		public void Validate_Feed1_tile_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tile custom parameter of Feed1 call");
+			logStep("Validating tile custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates tile custom parameter of Hourly details call
+		 */
+		@Test(priority = 710, enabled = true)
+		@Title("Validating 'tile' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_tile_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tile custom parameter of Hourly details call");
+			logStep("Validating tile custom parameter of Hourly details call ");
+
+
+		}
+
+
+
+
+		/*
+		 * This method validates sod custom parameter of HomeScreen Today Call
+		 */
+		@Test(priority = 712, enabled = true)
+		@Title("Validating 'sod' custom parameter of marquee hour Call")
+		public void validate_HomeScreen_marquee_sod_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating sod custom parameter of HomeScreen marqueeay call");
+			logStep("Validating sod custom parameter of HomeScreen marquee call");
+
+		}
+
+		/*
+		 * This method validates sod custom parameter of Feed1 call
+		 */
+		@Test(priority = 714, enabled = true)
+		@Title("Validating 'sod' custom parameter of Feed1 call ")
+		public void Validate_Feed1_sod_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating sod custom parameter of Feed1 call");
+			logStep("Validating sod custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates sod custom parameter of Hourly details call
+		 */
+		@Test(priority = 716, enabled = true)
+		@Title("Validating 'sod' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_sod_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating sod custom parameter of Hourly Details call");
+			logStep("Validating sod custom parameter of Hourly Details call ");
+		
+
+		}
+
+
+		/*
+		 * This method validates lang custom parameter of Marquee call
+		 */
+		@Test(priority = 718, enabled = true)
+		@Title("Validating 'lang' custom parameter of Marquee call ")
+		public void Validate_Marquee_lang_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating lang custom parameter of Marquee call");
+			logStep("Validating lang custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates lang custom parameter of Feed1 call
+		 */
+		@Test(priority = 720, enabled = true)
+		@Title("Validating 'lang' custom parameter of Feed1 call ")
+		public void Validate_Feed1_lang_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating lang custom parameter of Feed1 call");
+			logStep("Validating lang custom parameter of Feed1 call ");
+			
+
+		}
+
+		/*
+		 * This method validates lang custom parameter of Hourly details call
+		 */
+		@Test(priority = 722, enabled = true)
+		@Title("Validating 'lang' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_lang_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating lang custom parameter of Hourly details call");
+			logStep("Validating lang custom parameter of Hourly details call ");
+			
+
+		}
+
+
+
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 726, enabled = true)
+		@Title("Validating 'tf' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_tf_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tf custom parameter of Hourly details call");
+			logStep("Validating tf custom parameter of Hourly details call ");
+
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Marquee call
+		 */
+		@Test(priority = 734, enabled = true)
+		@Title("Validating 'adid' custom parameter of Marquee call ")
+		public void Validate_Marquee_adid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating adid custom parameter of Marquee call");
+			logStep("Validating adid custom parameter of Marquee call ");
+
+			
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Feed1 call
+		 */
+		@Test(priority = 736, enabled = true)
+		@Title("Validating 'adid' custom parameter of Feed1 call ")
+		public void Validate_Feed1_adid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating adid custom parameter of Feed1 call");
+			logStep("Validating adid custom parameter of Feed1 call ");
+			
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 738, enabled = true)
+		@Title("Validating 'adid' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_adid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating adid custom parameter of Hourly details call");
+			logStep("Validating adid custom parameter of Hourly details call ");
+		
+
+		}
+
+
+
+		/*
+		 * This method validates DayNight custom parameter of Marquee call
+		 */
+		@Test(priority = 740, enabled = true)
+		@Title("Validating 'aid' custom parameter of Marquee call ")
+		public void Validate_Marquee_aid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating aid custom parameter of Marquee call");
+			logStep("Validating aid custom parameter of Marquee call ");
+
 	
-	@Test(priority =6011, enabled = true)
-	@Title("Verifying  weekend card ad call response")
-	public void Smoke_Test_Verify_response__Weekend_Card_adcall() throws Exception {
-		System.out.println("================= Validate Weekend card ad call response test case Started =========================");	
-		//Functions.watson_adcall_response();
-		System.out.println("================= Validate Weekend card ad call response test case End =========================");
-	}
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Feed1 call
+		 */
+		@Test(priority = 742, enabled = true)
+		@Title("Validating 'aid' custom parameter of Feed1 call ")
+		public void Validate_Feed1_aid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating adid custom parameter of Feed1 call");
+			logStep("Validating adid custom parameter of Feed1 call ");
 	
-	@Test(priority = 6012, enabled = true)
-	@Title("Verifying Weekend card ad call pos_Custom param")
-	public void Smoke_Test_Weekend_pos_Custom_param() throws Exception {
-		System.out.println("================= Validate Weekend card ad call pos custom param test case Started =========================");	
-		//Functions.validate_pos_Cust_param_WM_Weekend();
-		System.out.println("================= Validate Weekend card ad call pos custom param test case End =========================");
-	}
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 746, enabled = true)
+		@Title("Validating 'adid' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_aid_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating adid custom parameter of Hourly details call");
+			logStep("Validating adid custom parameter of Hourly details call ");
+
+
+		}
+
+
+
+
+		/*
+		 * This method validates ltv custom parameter of Marquee call
+		 */
+		@Test(priority = 748, enabled = true)
+		@Title("Validating 'ltv' custom parameter of Marquee call ")
+		public void Validate_Marquee_ltv_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ltv custom parameter of Marquee call");
+			logStep("Validating ltv custom parameter of Marquee call ");
+
+			
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Feed1 call
+		 */
+		@Test(priority = 750, enabled = true)
+		@Title("Validating 'ltv' custom parameter of Feed1 call ")
+		public void Validate_Feed1_ltv_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ltv custom parameter of Feed1 call");
+			logStep("Validating ltv custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 752, enabled = true)
+		@Title("Validating 'ltv' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_ltv_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ltv custom parameter of Hourly details call");
+			logStep("Validating ltv custom parameter of Hourly details call ");
+
+
+		}
+
+
+
+		/*
+		 * This method validates ord custom parameter of Marquee call
+		 */
+		@Test(priority = 754, enabled = true)
+		@Title("Validating 'ord' custom parameter of Marquee call ")
+		public void Validate_Marquee_ord_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ord custom parameter of Marquee call");
+			logStep("Validating ord custom parameter of Marquee call ");
+
+			Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Marquee", "ord", "NotNull");
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Feed1 call
+		 */
+		@Test(priority = 756, enabled = true)
+		@Title("Validating 'ord' custom parameter of Feed1 call ")
+		public void Validate_Feed1_ord_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ord custom parameter of Feed1 call");
+			logStep("Validating ord custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 758, enabled = true)
+		@Title("Validating 'ord' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_ord_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ord custom parameter of Hourly details call");
+			logStep("Validating ord custom parameter of Hourly details call ");
+			
+
+		}
+
+		/*
+		 * This method validates ord custom parameter of Marquee call
+		 */
+		@Test(priority = 760, enabled = true)
+		@Title("Validating 'ver' custom parameter of Marquee call ")
+		public void Validate_Marquee_ver_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ver custom parameter of Marquee call");
+			logStep("Validating ver custom parameter of Marquee call ");
+
+			
+
+		}
+
+
+		/*
+		 * This method validates DayNight custom parameter of Feed1 call
+		 */
+		@Test(priority = 762, enabled = true)
+		@Title("Validating 'ver' custom parameter of Feed1 call ")
+		public void Validate_Feed1_ver_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ver custom parameter of Feed1 call");
+			logStep("Validating ver custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 764, enabled = true)
+		@Title("Validating 'ver' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_ver_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ver custom parameter of Hourly details call");
+			logStep("Validating ver custom parameter of Hourly details call ");
+		
+
+		}
+
+
+		/*
+		 * This method validates ord custom parameter of Marquee call
+		 */
+		@Test(priority = 766, enabled = true)
+		@Title("Validating 'slotName' custom parameter of Marquee call ")
+		public void Validate_Marquee_slotName_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating slotName custom parameter of Marquee call");
+			logStep("Validating slotName custom parameter of Marquee call ");
+
+		
+
+		}
+
+
+
+		@Test(priority = 768, enabled = true)
+		@Title("Validating 'slotName' custom parameter of Feed1 call ")
+		public void Validate_Feed1_slotName_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating slotName custom parameter of Feed1 call");
+			logStep("Validating slotName custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates DayNight custom parameter of Hourly details call
+		 */
+		@Test(priority = 770, enabled = true)
+		@Title("Validating 'slotName' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_slotName_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating slotName custom parameter of slotName details call");
+			logStep("Validating slotName custom parameter of Hourly details call ");
 	
+
+		}
+
+		/*
+		 * This method validates ord custom parameter of Marquee call
+		 */
+		@Test(priority = 768, enabled = true)
+		@Title("Validating 'im' custom parameter of Marquee call ")
+		public void Validate_Marquee_im_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating im custom parameter of Marquee call");
+			logStep("Validating im custom parameter of Marquee call ");
+
+		
+
+		}
+
+
+
+
+		/*
+		 * This method validates cnd custom parameter of Marquee call
+		 */
+		@Test(priority = 770, enabled = true)
+		@Title("Validating 'cnd' custom parameter of Marquee call ")
+		public void Validate_Marquee_cnd_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating cnd custom parameter of Marquee call");
+			logStep("Validating cnd custom parameter of Marquee call ");
 	
+
+		}
+
+		/*
+		 * This method validates cnd custom parameter of Feed1 call
+		 */
+		@Test(priority = 772, enabled = true)
+		@Title("Validating 'cnd' custom parameter of Feed1 call ")
+		public void Validate_Feed1_cnd_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating cnd custom parameter of Feed1 call");
+			logStep("Validating cnd custom parameter of Feed1 call ");
+
+
+		}
+
+
+		/*
+		 * This method validates cnd custom parameter of Hourly details call
+		 */
+		 @Test(priority = 774, enabled = true)
+		@Title("Validating 'cnd' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_cnd_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating cnd custom parameter of Hourly details call");
+			logStep("Validating cnd custom parameter of Hourly details call ");
+		
+
+		}
+
+
+
+
+		/*
+		 * This method validates dma custom parameter of Marquee call
+		 */
+		@Test(priority = 776, enabled = true)
+		@Title("Validating 'dma' custom parameter of Marquee call ")
+		public void Validate_Marquee_dma_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dma custom parameter of Marquee call");
+			logStep("Validating dma custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates dma custom parameter of Feed1 call
+		 */
+		@Test(priority = 778, enabled = true)
+		@Title("Validating 'dma' custom parameter of Feed1 call ")
+		public void Validate_Feed1_dma_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dma custom parameter of Feed1 call");
+			logStep("Validating dma custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates dma custom parameter of Hourly details call
+		 */
+		@Test(priority = 780, enabled = true)
+		@Title("Validating 'dma' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_dma_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dma custom parameter of Hourly details call");
+			logStep("Validating dma custom parameter of Hourly details call ");
+		
+
+		}
+
+
+
+
+		/*
+		 * This method validates tmpc custom parameter of Marquee call
+		 */
+		@Test(priority = 782, enabled = true)
+		@Title("Validating 'tmpc' custom parameter of Marquee call ")
+		public void Validate_Marquee_tmpc_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpc custom parameter of Marquee call");
+			logStep("Validating tmpc custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates tmpc custom parameter of Feed1 call
+		 */
+		@Test(priority = 784, enabled = true)
+		@Title("Validating 'tmpc' custom parameter of Feed1 call ")
+		public void Validate_Feed1_tmpc_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpc custom parameter of Feed1 call");
+			logStep("Validating tmpc custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates tmpc custom parameter of Hourly details call
+		 */
+		@Test(priority = 786, enabled = true)
+		@Title("Validating 'tmpc' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_tmpc_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpc custom parameter of Hourly details call");
+			logStep("Validating tmpc custom parameter of Hourly details call ");
 	
+
+		}
+
+
+
+		/*
+		 * This method validates ct custom parameter of Marquee call
+		 */
+		@Test(priority = 788, enabled = true)
+		@Title("Validating 'ct' custom parameter of Marquee call ")
+		public void Validate_Marquee_ct_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ct custom parameter of Marquee call");
+			logStep("Validating ct custom parameter of Marquee call ");
+			
+
+		}
+
+		/*
+		 * This method validates ct custom parameter of Feed1 call
+		 */
+		@Test(priority = 780, enabled = true)
+		@Title("Validating 'ct' custom parameter of Feed1 call ")
+		public void Validate_Feed1_ct_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ct custom parameter of Feed1 call");
+			logStep("Validating ct custom parameter of Feed1 call ");
+		
+
+		}
+
+
+		/*
+		 * This method validates ct custom parameter of Hourly details call
+		 */
+		@Test(priority = 782, enabled = true)
+		@Title("Validating 'ct' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_ct_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating ct custom parameter of Hourly details call");
+			logStep("Validating ct custom parameter of Hourly details call ");
+		
+
+		}
+
+
+
+		/*
+		 * This method validates locale custom parameter of Marquee call
+		 */
+		@Test(priority = 786, enabled = true)
+		@Title("Validating 'locale' custom parameter of Marquee call ")
+		public void Validate_Marquee_locale_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating locale custom parameter of Marquee call");
+			logStep("Validating locale custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates locale custom parameter of Feed1 call
+		 */
+		@Test(priority = 788, enabled = true)
+		@Title("Validating 'locale' custom parameter of Feed1 call ")
+		public void Validate_Feed1_locale_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating locale custom parameter of Feed1 call");
+			logStep("Validating locale custom parameter of Feed1 call ");
 	
+
+		}
+
+		/*
+		 * This method validates locale custom parameter of Hourly details call
+		 */
+		@Test(priority = 790, enabled = true)
+		@Title("Validating 'locale' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_locale_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating locale custom parameter of Hourly details call");
+			logStep("Validating locale custom parameter of Hourly details call ");
+		
+
+		}
+
+		/*
+		 * This method validates zip custom parameter of Marquee call
+		 */
+		@Test(priority = 792, enabled = true)
+		@Title("Validating 'zip' custom parameter of Marquee call ")
+		public void Validate_Marquee_zip_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating zip custom parameter of Marquee call");
+			logStep("Validating zip custom parameter of Marquee call ");
 	
-	@Test(priority = 1013, enabled = true)
-	@Title("Verifying  WeekAhead card iu value")
-	public void Smoke_Test_Verify_Weekend_Card_iu() throws Exception {
-		System.out.println("================= Verifying Weekend card iu value   test case Started =========================");	
-		//Functions.Verify_Week_Ahead_card_iu();
-		System.out.println("================= Verifying Weekend  card iu value  test case End =========================");
-	}
+
+		}
+
+		/*
+		 * This method validates zip custom parameter of Feed1 call
+		 */
+		@Test(priority = 794, enabled = true)
+		@Title("Validating 'zip' custom parameter of Feed1 call ")
+		public void Validate_Feed1_zip_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating zip custom parameter of Feed1 call");
+			logStep("Validating zip custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates zip custom parameter of Hourly details call
+		 */
+		@Test(priority = 796, enabled = true)
+		@Title("Validating 'zip' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_zip_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating zip custom parameter of Hourly details call");
+			logStep("Validating zip custom parameter of Hourly details call ");
+
+
+		}
+
+
+		/*
+		 * This method validates tmp custom parameter of Marquee call
+		 */
+		@Test(priority = 798, enabled = true)
+		@Title("Validating 'tmp' custom parameter of Marquee call ")
+		public void Validate_Marquee_tmp_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmp custom parameter of Marquee call");
+			logStep("Validating tmp custom parameter of Marquee call ");
+			
+
+		}
+
+		/*
+		 * This method validates tmp custom parameter of Feed1 call
+		 */
+		@Test(priority = 800, enabled = true)
+		@Title("Validating 'tmp' custom parameter of Feed1 call ")
+		public void Validate_Feed1_tmp_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmp custom parameter of Feed1 call");
+			logStep("Validating tmp custom parameter of Feed1 call ");
+		
+
+		}
+
+		/*
+		 * This method validates tmp custom parameter of Hourly details call
+		 */
+		@Test(priority = 802, enabled = true)
+		@Title("Validating 'tmp' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_tmp_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmp custom parameter of Hourly details call");
+			logStep("Validating tmp custom parameter of Hourly details call ");
 	
-	@Test(priority = 2012, enabled = true)
-	@Title("Verifying  Week Ahead ad call size")
-	public void Smoke_Test_Verify_Size_WeekAhead_Card_adcall() throws Exception {
-		System.out.println("================= Validate WeekAhead _Ad_Size test case Started =========================");	
-		//Functions.validate_Size_weeekahead();
-		System.out.println("================= Validate WeekAhead_Ad_Size test caseEnd =========================");
-	}
+
+		}
+
+		/*
+		 * This method validates tmpr custom parameter of Marquee call
+		 */
+		@Test(priority = 804, enabled = true)
+		@Title("Validating 'tmpr' custom parameter of Marquee call ")
+		public void Validate_Marquee_tmpr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpr custom parameter of Marquee call");
+			
+
+		}
+
+		/*
+		 * This method validates tmpr custom parameter of Feed1 call
+		 */
+		@Test(priority = 806, enabled = true)
+		@Title("Validating 'tmpr' custom parameter of Feed1 call ")
+		public void Validate_Feed1_tmpr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpr custom parameter of Feed1 call");
+
+
+		}
+
+		/*
+		 * This method validates tmpr custom parameter of Hourly details call
+		 */
+		@Test(priority = 808, enabled = true)
+		@Title("Validating 'tmpr' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_tmpr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating tmpr custom parameter of Hourly details call");
+			logStep("Validating tmpr custom parameter of Hourly details call ");
+
+
+		}
+
+
+		/*
+		 * This method validates dynght custom parameter of Marquee call
+		 */
+		@Test(priority = 810, enabled = true)
+		@Title("Validating 'dynght' custom parameter of Marquee call ")
+		public void Validate_Marquee_dynght_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dynght custom parameter of Marquee call");
+			logStep("Validating dynght custom parameter of Marquee call ");
+			
+
+		}
+
+		/*
+		 * This method validates dynght custom parameter of Feed1 call
+		 */
+		@Test(priority = 812, enabled = true)
+		@Title("Validating 'dynght' custom parameter of Feed1 call ")
+		public void Validate_Feed1_dynght_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dynght custom parameter of Feed1 call");
+			logStep("Validating dynght custom parameter of Feed1 call ");
+
+
+		}
+
+		/*
+		 * This method validates dynght custom parameter of Hourly details call
+		 */
+		@Test(priority = 814, enabled = true)
+		@Title("Validating 'dynght' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_dynght_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating dynght custom parameter of Hourly details call");
+			logStep("Validating dynght custom parameter of Hourly details call ");
 	
+
+		}
+
+
+
+		/*
+		 * This method validates st custom parameter of Marquee call
+		 */
+		@Test(priority = 816, enabled = true)
+		@Title("Validating 'st' custom parameter of Marquee call ")
+		public void Validate_Marquee_st_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating st custom parameter of Marquee call");
+			logStep("Validating st custom parameter of Marquee call ");
+		
+
+		}
+
+		/*
+		 * This method validates st custom parameter of Feed1 call
+		 */
+		@Test(priority = 818, enabled = true)
+		@Title("Validating 'st' custom parameter of Feed1 call ")
+		public void Validate_Feed1_st_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating st custom parameter of Feed1 call");
+			logStep("Validating st custom parameter of Feed1 call ");
+			
+
+		}
+
+		/*
+		 * This method validates st custom parameter of Hourly details call
+		 */
+		@Test(priority = 820, enabled = true)
+		@Title("Validating 'st' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_st_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating st custom parameter of Hourly details call");
+			logStep("Validating st custom parameter of Hourly details call ");
+		
+
+		}
+					@Test(priority = 822, enabled = true)
+		@Title("Validating 'mr' custom parameter of Marquee call ")
+		public void Validate_Marquee_mr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating mr custom parameter of Marquee call");
+			logStep("Validating mr custom parameter of Marquee call ");
+
 	
-	@Test(priority = 6014, enabled = true)
-	@Title("Verifying  weekAhead card ad call response")
-	public void Smoke_Test_Verify_response__WeekAhead_Card_adcall() throws Exception {
-		System.out.println("================= Validate Week_Ahead card ad call response test case Started =========================");	
-		//Functions.watson_adcall_response();
-		System.out.println("================= Validate Week_Ahead card ad call response test case End =========================");
-	}
-	
-	@Test(priority =6015, enabled = true)
-	@Title("Verifying WeekAhead card ad call pos_Custom param")
-	public void Smoke_Test_WeekAhead_pos_Custom_param() throws Exception {
-		System.out.println("================= Validate WeekAhead card ad call pos custom param test case Started =========================");	
-		//Functions.validate_pos_Cust_param_WM_WeekAhead();
-		System.out.println("================= Validate WeekAhe card ad call pos custom param test case End =========================");
-	}
+
+		}
+
+
+		@Test(priority = 824, enabled = true)
+		@Title("Validating 'mr' custom parameter of Feed1 call ")
+		public void Validate_Feed1_mr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating mr custom parameter of Feed1 call");
+			logStep("Validating mr custom parameter of Feed1 call ");
+		
+
+		}
+
+
+		@Test(priority = 826, enabled = true)
+		@Title("Validating 'mr' custom parameter of Hourly details call ")
+		public void Validate_HourlyDetails_mr_Custom_param() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("****** Validating mr custom parameter of Hourly details call");
+			logStep("Validating mr custom parameter of Hourly details call ");
+
+			
+
+		}
 
 	
 	
