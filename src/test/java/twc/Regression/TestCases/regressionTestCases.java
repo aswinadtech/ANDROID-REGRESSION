@@ -1287,7 +1287,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("****** Validating ord custom parameter of Marquee call");
 			logStep("Validating ord custom parameter of Marquee call ");
 
-			Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Marquee", "ord", "NotNull");
+			
 
 		}
 
