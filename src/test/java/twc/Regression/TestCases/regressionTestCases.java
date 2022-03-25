@@ -1852,6 +1852,51 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			
 
 		}
+	
+	
+	@Test(priority = 1000, enabled = true)
+	@Description("Validating Tapability Of HomeScreen Sticky Test Ad when app in test mode")
+	public void Validate_TapabilityOfHomeScreenStickyTestAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Tapability Of HomeScreen Sticky Test Ad in test mode");
+		
+		
+	}
+	
+	@Test(priority = 1002, enabled = true)
+	@Description("Validating Tapability Of Daily Nav Tab Test Ad when app in test mode")
+	public void Validate_TapabilityOfDailyNavTabTestAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Tapability Of Daily Nav Tab Test Ad in test mode");
+		logStep("Validating Tapability Of Daily Nav Tab Test Ad in test mode ");
+	
+		
+	}
+	
+	@Test(priority = 1004, enabled = true)
+	@Description("Validating Tapability Of Radar Nav Tab Test Ad when app in test mode")
+	public void Validate_TapabilityOfRadarNavTabTestAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Tapability Of Radar Nav Tab Test Ad in test mode");
+		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode ");
+		Assert.fail(“not able to click the ad on the UI”);
+		
+	}
+
+
+	@Test(priority = 1006, enabled = true)
+	@Description("Validating Tapability Of Hourly Nav Tab Test Ad when app in test mode")
+	public void Validate_TapabilityOfHourlyavTabTestAd() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
+		logStep("Validating Tapability Of Hourly Nav Tab Test Ad in test mode ");
+       Assert.fail(“not able to click the ad on the UI”);
+	
+		
+	}
+	
+	
+	
 
 	
 	
