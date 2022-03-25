@@ -1847,7 +1847,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		public void Validate_HourlyDetails_mr_Custom_param() throws Exception {
 			System.out.println("==============================================");
 			System.out.println("****** Validating mr custom parameter of Hourly details call");
-			logStep("Validating mr custom parameter of Hourly details call ");
+			logStep("Validating mr custom parameter of Hourly details call");
 
 			
 
@@ -1868,7 +1868,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public void Validate_TapabilityOfDailyNavTabTestAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Daily Nav Tab Test Ad in test mode");
-		logStep("Validating Tapability Of Daily Nav Tab Test Ad in test mode ");
+		logStep("Validating Tapability Of Daily Nav Tab Test Ad in test mode");
 	
 		
 	}
@@ -1878,8 +1878,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public void Validate_TapabilityOfRadarNavTabTestAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Radar Nav Tab Test Ad in test mode");
-		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode ");
-		Assert.fail("not able to click the ad on the UI”");
+		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode");
+		Assert.fail("not able to click the ad on the UI”);
 		
 		
 	}
@@ -1890,8 +1890,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 	public void Validate_TapabilityOfHourlyavTabTestAd() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
-		logStep("Validating Tapability Of Hourly Nav Tab Test Ad in test mode ");
-     Assert.fail("not able to click the ad on the UI”");
+		logStep("Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
+     Assert.fail("not able to click the ad on the UI”);
 	
 		
 	}
