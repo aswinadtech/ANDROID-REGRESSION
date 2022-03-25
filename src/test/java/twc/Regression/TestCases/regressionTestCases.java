@@ -1879,7 +1879,8 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Radar Nav Tab Test Ad in test mode");
 		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode ");
-		Assert.fail(“not able to click the ad on the UI”);
+		Assert.fail("not able to click the ad on the UI”");
+		
 		
 	}
 
@@ -1890,7 +1891,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
 		logStep("Validating Tapability Of Hourly Nav Tab Test Ad in test mode ");
-       Assert.fail(“not able to click the ad on the UI”);
+     Assert.fail("not able to click the ad on the UI”");
 	
 		
 	}
