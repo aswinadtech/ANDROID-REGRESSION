@@ -565,7 +565,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Enable Preconfiguration for Severe2 Breaking News Card");
 			logStep("Enable Preconfiguration for Severe2 Breaking News Card");
-			Assert.fail("video page iu value was not trigred");
+			//Assert.fail("video page iu value was not trigred");
 		}
 		
 		@Test(priority = 376, enabled = true)
