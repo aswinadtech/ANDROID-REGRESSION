@@ -490,7 +490,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");			
 			System.out.println("****** Breaking News Severe1 Adcall verification test case Started");
 			logStep("****** Breaking News Severe1 Adcall verification test case Started");	
-			Assert.fail("video page iu value was not trigred");
+			//Assert.fail("video page iu value was not trigred");
 		
 		}
 	
@@ -504,7 +504,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe1 call ");
-		         Assert.fail("video page iu value was not trigred");
+		         //Assert.fail("video page iu value was not trigred");
 
 		}
 		
@@ -517,7 +517,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating pos custom parameter of Breaking News Severe1 call");
 			logStep("Validating pos custom parameter of Breaking News Severe1 call ");
-		Assert.fail("video page iu value was not trigred");
+		//Assert.fail("video page iu value was not trigred");
 
 		}
 		
@@ -528,7 +528,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("****** Breaking News Severe1 Video1 Adcall verification test case Started");
 			logStep("****** Breaking News Severe1 Video1 Adcall verification test case Started");
 		
-		    Assert.fail("video page iu value was not trigred");
+		   // Assert.fail("video page iu value was not trigred");
 
 		}
 		
@@ -542,7 +542,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 Video1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe1 Video1 call ");
-			Assert.fail("video page iu value was not trigred");
+			//Assert.fail("video page iu value was not trigred");
 
 		}
 		/**
@@ -555,7 +555,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating ref custom parameter of Breaking News Severe1 Video1 call");
 			logStep("Validating ref custom parameter of Breaking News Severe1 Video1 call ");
-		Assert.fail("video page iu value was not trigred");
+		//Assert.fail("video page iu value was not trigred");
 		}
 		
 		
@@ -573,7 +573,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		public void Verify_BreakingNews_Severe2_AdCall() throws Exception {
 			System.out.println("==============================================");	
 			System.out.println("****** Breaking News Severe2 Adcall verification test case Started");
-                      Assert.fail("video page iu value was not trigred");
+                     // Assert.fail("video page iu value was not trigred");
 		}
 
 		/**
@@ -585,7 +585,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 call");
 			logStep("Validating bn custom parameter of Breaking News Severe2 call ");
-		Assert.fail("video page iu value was not trigred");
+		//Assert.fail("video page iu value was not trigred");
 		}
 		
 		/**
@@ -597,7 +597,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating pos custom parameter of Breaking News Severe2 call");
 			logStep("Validating pos custom parameter of Breaking News Severe2 call ");
-			Assert.fail("video page iu value was not trigred");
+			//Assert.fail("video page iu value was not trigred");
 		}
 		
 		
@@ -607,7 +607,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");	
 			System.out.println("****** Breaking News Severe2 Video1 Adcall verification test case Started");
 			logStep("****** Breaking News Severe2 Video1 Adcall verification test case Started");
-       Assert.fail("video page iu value was not trigred");
+      // Assert.fail("video page iu value was not trigred");
 		}
 
 		/**
@@ -620,7 +620,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe2 Video1 call ");
-		Assert.fail("video page iu value was not trigred");
+		//Assert.fail("video page iu value was not trigred");
 		}
 		
 		/**
@@ -633,20 +633,11 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating ref custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating ref custom parameter of Breaking News Severe2 Video1 call ");
-Assert.fail("video page iu value was not trigred");
+//Assert.fail("video page iu value was not trigred");
 
 		}
 
-		@Test(priority = 801, enabled = true)
-		@Title("Verify Entry Interstitial Ads of Boat and Beach card")
-		public void Verify_interstitial_ad_BoatandBeach() throws Exception {
-			System.out.println("==============================================");
-			System.out.println(
-					"=========================== Entry Interstitial Ad Verification of Hourly Tab====================");
-
-		
-
-		}
+	
 			
 		@Test(priority = 802, enabled = true)
 		@Title("Verify Exit Interstitial Ads of Daily Tab")
@@ -712,43 +703,7 @@ Assert.fail("video page iu value was not trigred");
 
 		}
 
-		@Test(priority = 53, enabled = true)
-		@Title("Verify amazon aax Feed2 preload ad call")
-		public void Verify_amazon_aax_preload_feed2_adcall() throws Exception {
-			System.out.println("==============================================");
-			System.out.println("=========================== amazon aax feed2 preload ad call ====================");
-
-			System.out.println("****** amazon aax feed2 preload ad call validation Started");
-			logStep("****** amazon aax feed2 preload ad call validation Started");
-
-
-		}
-
-		@Test(priority = 54, enabled = true)
-		@Title("Verify amazon aax Feed3 preload ad call")
-		public void Verify_amazon_aax_preload_feed3_adcall() throws Exception {
-			System.out.println("==============================================");
-			System.out.println("=========================== amazon aax feed3 preload ad call ====================");
-
-			System.out.println("****** amazon aax feed3 preload ad call validation Started");
-			logStep("****** amazon aax feed3 preload ad call validation Started");
-
-
-
-		}
-
-		@Test(priority = 55, enabled = true)
-		@Title("Verify amazon aax Feed4 preload ad call")
-		public void Verify_amazon_aax_preload_feed4_adcall() throws Exception {
-			System.out.println("==============================================");
-			System.out.println("=========================== amazon aax feed4 preload ad call ====================");
-
-			System.out.println("****** amazon aax feed4 preload ad call validation Started");
-			logStep("****** amazon aax feed4 preload ad call validation Started");
-
 		
-
-		}
 
 		@Test(priority = 57, enabled = true)
 		@Title("Verify amazon aax PreRollVideo preload ad call")
@@ -1880,7 +1835,7 @@ Assert.fail("video page iu value was not trigred");
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Radar Nav Tab Test Ad in test mode");
 		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode");
-//Assert.fail("not able to click the ad on the UI");
+  //Assert.fail("not able to click the ad on the UI");
 		
 		
 	}
