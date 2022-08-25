@@ -52,7 +52,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad in test mode");
 		logStep("Validating NextGen IM Static Ad in test mode ");
-		Assert.fail("");
+		Assert.fail("IM ad not displyed on UI");
 
 	}
 	
@@ -66,6 +66,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad response in test mode");
 		logStep("Validating NextGen IM Static Ad response in test mode ");
+
 
 
 	}
@@ -84,7 +85,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("****** Validating NextGen IM Static Ad BG Asset Call");
 		logStep("Validating NextGen IM Static Ad BG Asset Call ");
 
-
+		Assert.fail("Charles response doesn't contains NextGenIM Static Asset Call: /cl/im/apps/test/nextgen-static/bg-fade-500x800%403x.jpg");
 	}
 	
 	/**
@@ -98,7 +99,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad FG Asset Call");
 		logStep("Validating NextGen IM Static Ad FG Asset Call ");
-
+		Assert.fail("Charles response doesn't contains NextGenIM Static Asset Call: /cl/im/apps/test/nextgen-static/fg-360x180@3x.png");
 
 	}
 	
@@ -144,7 +145,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("****** Validating NextGen IM Video Ad BG Asset Call");
 		logStep("Validating NextGen IM Video Ad BG Asset Call ");
 	
-
+		Assert.fail("Charles response doesn't contains NextGenIM Video Asset Call: /cl/im/apps/test/nextgen-video/bg-fade-gridlines-500x800%402x.mp4");
 	}
 	
 	/**
