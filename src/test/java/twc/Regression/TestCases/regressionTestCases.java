@@ -1,8 +1,9 @@
 package twc.Regression.TestCases;
 
 import java.io.File;
-import org.testng.Assert;
+
 import org.openqa.selenium.internal.Killable;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -51,6 +52,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating NextGen IM Static Ad in test mode");
 		logStep("Validating NextGen IM Static Ad in test mode ");
+		Assert.fail("");
 
 	}
 	
@@ -489,8 +491,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		public void Verify_BreakingNews_Severe1_AdCall() throws Exception {
 			System.out.println("==============================================");			
 			System.out.println("****** Breaking News Severe1 Adcall verification test case Started");
-			logStep("****** Breaking News Severe1 Adcall verification test case Started");	
-			//Assert.fail("video page iu value was not trigred");
+			logStep("****** Breaking News Severe1 Adcall verification test case Started");		
 		
 		}
 	
@@ -504,7 +505,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe1 call ");
-		         //Assert.fail("video page iu value was not trigred");
+		
 
 		}
 		
@@ -517,7 +518,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating pos custom parameter of Breaking News Severe1 call");
 			logStep("Validating pos custom parameter of Breaking News Severe1 call ");
-		//Assert.fail("video page iu value was not trigred");
+		
 
 		}
 		
@@ -528,7 +529,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("****** Breaking News Severe1 Video1 Adcall verification test case Started");
 			logStep("****** Breaking News Severe1 Video1 Adcall verification test case Started");
 		
-		   // Assert.fail("video page iu value was not trigred");
+		
 
 		}
 		
@@ -542,7 +543,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe1 Video1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe1 Video1 call ");
-			//Assert.fail("video page iu value was not trigred");
+			
 
 		}
 		/**
@@ -555,7 +556,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating ref custom parameter of Breaking News Severe1 Video1 call");
 			logStep("Validating ref custom parameter of Breaking News Severe1 Video1 call ");
-		//Assert.fail("video page iu value was not trigred");
+		
 		}
 		
 		
@@ -565,7 +566,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Enable Preconfiguration for Severe2 Breaking News Card");
 			logStep("Enable Preconfiguration for Severe2 Breaking News Card");
-			//Assert.fail("video page iu value was not trigred");
+			
 		}
 		
 		@Test(priority = 376, enabled = true)
@@ -573,7 +574,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		public void Verify_BreakingNews_Severe2_AdCall() throws Exception {
 			System.out.println("==============================================");	
 			System.out.println("****** Breaking News Severe2 Adcall verification test case Started");
-                     // Assert.fail("video page iu value was not trigred");
+
 		}
 
 		/**
@@ -585,7 +586,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 call");
 			logStep("Validating bn custom parameter of Breaking News Severe2 call ");
-		//Assert.fail("video page iu value was not trigred");
+		
 		}
 		
 		/**
@@ -597,7 +598,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating pos custom parameter of Breaking News Severe2 call");
 			logStep("Validating pos custom parameter of Breaking News Severe2 call ");
-			//Assert.fail("video page iu value was not trigred");
+			
 		}
 		
 		
@@ -607,7 +608,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");	
 			System.out.println("****** Breaking News Severe2 Video1 Adcall verification test case Started");
 			logStep("****** Breaking News Severe2 Video1 Adcall verification test case Started");
-      // Assert.fail("video page iu value was not trigred");
+
 		}
 
 		/**
@@ -620,7 +621,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe2 Video1 call ");
-		//Assert.fail("video page iu value was not trigred");
+		
 		}
 		
 		/**
@@ -633,11 +634,20 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating ref custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating ref custom parameter of Breaking News Severe2 Video1 call ");
-//Assert.fail("video page iu value was not trigred");
+
 
 		}
 
-	
+		@Test(priority = 801, enabled = true)
+		@Title("Verify Entry Interstitial Ads of Boat and Beach card")
+		public void Verify_interstitial_ad_BoatandBeach() throws Exception {
+			System.out.println("==============================================");
+			System.out.println(
+					"=========================== Entry Interstitial Ad Verification of Hourly Tab====================");
+
+		
+
+		}
 			
 		@Test(priority = 802, enabled = true)
 		@Title("Verify Exit Interstitial Ads of Daily Tab")
@@ -703,7 +713,43 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 		}
 
+		@Test(priority = 53, enabled = true)
+		@Title("Verify amazon aax Feed2 preload ad call")
+		public void Verify_amazon_aax_preload_feed2_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed2 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed2 preload ad call validation Started");
+			logStep("****** amazon aax feed2 preload ad call validation Started");
+
+
+		}
+
+		@Test(priority = 54, enabled = true)
+		@Title("Verify amazon aax Feed3 preload ad call")
+		public void Verify_amazon_aax_preload_feed3_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed3 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed3 preload ad call validation Started");
+			logStep("****** amazon aax feed3 preload ad call validation Started");
+
+
+
+		}
+
+		@Test(priority = 55, enabled = true)
+		@Title("Verify amazon aax Feed4 preload ad call")
+		public void Verify_amazon_aax_preload_feed4_adcall() throws Exception {
+			System.out.println("==============================================");
+			System.out.println("=========================== amazon aax feed4 preload ad call ====================");
+
+			System.out.println("****** amazon aax feed4 preload ad call validation Started");
+			logStep("****** amazon aax feed4 preload ad call validation Started");
+
 		
+
+		}
 
 		@Test(priority = 57, enabled = true)
 		@Title("Verify amazon aax PreRollVideo preload ad call")
@@ -1835,7 +1881,7 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Radar Nav Tab Test Ad in test mode");
 		logStep("Validating Tapability Of Radar Nav Tab Test Ad in test mode");
-  //Assert.fail("not able to click the ad on the UI");
+Assert.fail("not able to click the ad on the UI");
 		
 		
 	}
@@ -1847,10 +1893,473 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
 		logStep("Validating Tapability Of Hourly Nav Tab Test Ad in test mode");
-		//Assert.fail("not able to click the ad on the UI");
+		Assert.fail("not able to click the ad on the UI");
 	
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+	@Test(priority = 805, enabled = true)
+	@Description("Verify Entry Interstitial Ads of Hourly Details Banner from Planning Card")
+	public void Verify_interstitial_ads_hourlyDetailsBanner_fromPlanningCard() throws Exception {
+		System.out.println("==============================================");
+		System.out.println(
+				"=========================== Entry Interstitial Ad Verification of Hourly Details Banner from Planning Card====================");
+
+		System.out
+				.println("****** Entry Interstitial Ad validation of Hourly Details Banner from Planning Card Started");
+		logStep("Exit Interstitial Ad validation of Hourly Details Banner from Planning Card Started ");
+	
+
+	}
+
+	@Test(priority = 806, enabled = true)
+	@Description("Verify Exit Interstitial Ads of Daily Details Banner from Planning Card")
+	public void Verify_interstitial_ads_dailyDetailsBanner_fromPlanningCard() throws Exception {
+		System.out.println("==============================================");
+		System.out.println(
+				"=========================== Exit Interstitial Ad Verification of Daily Details Banner from Planning Card====================");
+
+		System.out.println("****** Exit Interstitial Ad validation of Daily Details Banner from Planning Card Started");
+		logStep("Exit Interstitial Ad validation of Daily Details Banner from Planning Card Started ");
+
+	}
+
+	@Test(priority = 807, enabled = true)
+	@Description("Verify Exit Interstitial Ads of Daily Card")
+	public void Verify_interstitial_ads_dailyCard() throws Exception {
+		System.out.println("==============================================");
+		System.out.println(
+				"=========================== Exit Interstitial Ad Verification of Daily Card====================");
+
+		System.out.println("****** Exit Interstitial Ad validation of Daily Card Started");
+		logStep("Exit Interstitial Ad validation of Daily Card Started ");
+	
+		
+	}
+
+	
+	
+	@Test(priority = 808, enabled = true)
+	@Description("Verify Exit Interstitial Ads of Map Card")
+	public void Verify_interstitial_ads_mapCard() throws Exception {
+		System.out.println("==============================================");
+		System.out.println(
+				"=========================== Exit Interstitial Ad Verification of Map Card====================");
+
+		System.out.println("****** Exit Interstitial Ad validation of Map Card Started");
+		logStep("Exit Interstitial Ad validation of Map Card Started ");
+		
+	}
+	
+
+
+
+
+	
+
+
+	
+
+	@Test(priority = 923, enabled = true)
+	@Description("Validating WM Flu call Ad sz parameter")
+	public void Validate_WMFlu_Ad_Siize() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating WM Flu call Ad sz parameter in charles");
+		logStep("Validating WM Flu call Ad sz parameter in charles ");
+
+
+
+	}
+
+	@Test(priority = 924, enabled = true)
+	@Description("Validating WM Flu call Response")
+	public void Validate_WMFlu_Call_Response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating WM Flu call response in charles");
+		logStep("Validating WM Flu call response in charles ");
+
+
+
+	}
+
+	
+
+	
+
+	
+
+	@Test(priority = 934, enabled = true)
+	@Description("Validating WM Allergy call Response")
+	public void Validate_WMAllergy_Call_Response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating WM Allergy call response in charles");
+		logStep("Validating WM Allergy call response in charles ");
+
+
+
+	}
+	
+	@Test(priority = 950, enabled = true)
+	@Description("Validating Safety And Preparedness call Response")
+	public void Validate_SafetyAndPreparednessCard_Call_Response() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating SafetyAndPreparednessCard call response in charles");
+		logStep("Validating SafetyAndPreparednessCard call response in charles ");
+
+	
+
+	}
+	
+	
+	/**
+	 * This method validate the 'mr' custom parameter of Homescreen sticky ad when kill and launch the app
+	 * @throws Exception
+	 */
+	@Test(priority = 975, enabled = true)
+	@Description("Verify 'mr' custom parameter of Homescreen sticky ad when kill and launch the app")
+	public void Verify_HomeScreen_Sticky_Ad_mr_Custom_Parameter_When_Kill_And_Launch() throws Exception {
+		System.out.println("==============================================");
+
+	
+						
+		}
+		
+	
+	
+	
+	/**
+	 * This method validate the 'mr' custom parameter of Homescreen sticky ad on interaction With PlanningCard
+	 * @throws Exception
+	 */
+	@Test(priority = 976, enabled = true)
+	@Description("Verify 'mr' custom parameter of Homescreen sticky ad on interaction With PlanningCard")
+	public void Verify_HomeScreen_Sticky_Ad_mr_Custom_Parameter_On_Interaction_With_PlanningCard() throws Exception {
+		System.out.println("==============================================");
+
+		System.out.println("****** Verifying mr custom parameter of Homescreen sticky ad call on interaction With PlanningCard");
+		
+	}
+	
+	
+	/**
+	 * This Script Enable preconfiguration for PreRoll Video Beacon
+	 * @throws Exception
+	 */
+	@Test(priority = 1010, enabled = true)
+	@Description("Enabling Preconfiguration for PreRoll Video Beacon")
+	public void enable_PreConfiguration_for_PreRoll_Video_Beacon() throws Exception {
+	
+	}
+	
+	@Test(priority = 1011, enabled = true)
+	@Description("Verify PreRoll Video Beacon")
+	public void Verify_PreRoll_Video_Beacon() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== PreRoll Video Beacon ====================");
+
+		System.out.println("****** PreRoll Video Beacon validation Started");
+		logStep("****** PreRoll Video Beacon validation Started");
+
+	
+
+	}
+	
+	@Test(priority = 1020, enabled = true)
+	@Description("Enabling Preconfiguration of Map Local to get Severe Insight Card")
+	public void enable_PreConfiguration_of_mapLocal_For_Severe_Insight_Card() throws Exception {
+		
+		
+	}
+	
+	@Test(priority = 1021, enabled = true)
+	@Description("Verify Severe Insight Text On Hourly Nav Tab")
+	public void Verify_Severe_Insight_Text_On_Hourly_Nav_Tab() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Severe Insight Text On Hourly Nav Tab ====================");
+
+		System.out.println("****** Severe Insight Text On Hourly Nav Tab validation Started");
+		logStep("****** Severe Insight Text On Hourly Nav Tab validation Started");
+	
+
+	}
+	
+	@Test(priority = 1022, enabled = true)
+	@Description("Verify Severe Insight Text On Daily Nav Tab")
+	public void Verify_Severe_Insight_Text_On_Daily_Nav_Tab() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Severe Insight Text On Daily Nav Tab ====================");
+
+		System.out.println("****** Severe Insight Text On Daily Nav Tab validation Started");
+		logStep("****** Severe Insight Text On Daily Nav Tab validation Started");
+
+
+	}
+	
+	
+	
+	@Test(priority = 1030, enabled = true)
+	@Description("Enabling Preconfiguration of Map Local for Interstitials Verification during Severe Tornado Warning")
+	public void enable_PreConfiguration_of_mapLocal_For_Interstitials_verification_during_Tornado_Warning() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Enable Preconfiguration of Map Local for Interstitials Verification during severe Tornado Warning");
+		logStep("Enable Preconfiguration of Map Local for Interstitials Verification during severe Tornado Warning");
+	
+	}
+	
+	@Test(priority = 1031, enabled = true)
+	@Description("Verify Interstitial ad call iu during Severe Tornado Warning")
+	public void Verify_Interstitial_AdCall_during_Severe_Tornado_Warning() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("===========================Interstitial Adcall iu====================");
+		
+		System.out.println("****** Interstitial Adcall verification Started during Severe Tornado Warning");
+		logStep("****** Interstitial Adcall verification Started during Severe Tornado Warning");
+		//Utils.verifyPubadCal("Smoke", "Interstitials", false);
+	}
+	
+	@Test(priority = 1035, enabled = true)
+	@Description("Enabling Preconfiguration of Map Local for Interstitials Verification during Heat Advisory")
+	public void enable_PreConfiguration_of_mapLocal_For_Interstitials_verification_during_Heat_Advisory() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Enable Preconfiguration of Map Local for Interstitials Verification during Heat Advisory");
+		logStep("Enable Preconfiguration of Map Local for Interstitials Verification during Heat Advisory");
+		
+	}
+	
+	@Test(priority = 1036, enabled = true)
+	@Description("Verify Interstitial ad call iu during Heat Advisory")
+	public void Verify_Interstitial_AdCall_during_Heat_Advisory() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("===========================Interstitial Adcall iu====================");
+		
+		System.out.println("****** Interstitial Adcall verification Started during Heat Advisory");
+		logStep("****** Interstitial Adcall verification Started during Heat Advisory");
+	//	Utils.verifyPubadCal("Smoke", "Interstitials", true);
+		logStep("****** Interstitial Adcall verification Started during Heat Advisory");
+	}
+	
+	/**
+	 * LogIn to the App
+	 * @throws Exception
+	 */
+	@Test(priority = 1075, enabled = true)
+	@Description("Verify Ads With UPSX LogIn")
+	public void verifyAdsWithUPSXLogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** UPSX LogIn test Started");
+		logStep("****** UPSX LogIn test Started");
+	
+	}
+	
+	/**
+	 * This method verifies Lotame call 
+	 * @throws Exception
+	 */
+	@Test(priority = 1076, enabled = true)
+	@Description("Lotame Call verification")
+	public void Verify_Lotame_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** bcp.crwdcntrl.net Call test case Started");
+		logStep("****** bcp.crwdcntrl.net Call test case Started");
+		//Utils.verifyAPICal("Smoke", "Lotame", true);
+	}
+
+	/**
+	 * This method verifies FACTUAL call
+	 * @throws Exception
+	 */
+	@Test(priority = 1077, enabled = true)
+	@Description("Factual Call verification")
+	public void Verify_LocationWFXTriggers_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** location.wfxtriggers.com Call test case Started");
+		logStep("location.wfxtriggers.com Call test case Started");
+	//	Utils.verifyAPICal("Smoke", "LocationWFX", false);
+	}
+	
+	/**
+	 * This method verifies WFXTriggers call
+	 * @throws Exception
+	 */
+	@Test(priority = 1078, enabled = true)
+	@Description("WFXTrigger Call verification")
+	public void Verify_WFXTriggers_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
+		logStep("****** triggers.wfxtriggers.com Call test case Started");
+	//	Utils.verifyAPICal("Smoke", "WFXTrigger", true);
+	}
+	
+	/**
+	 * This method verifies Amazon call
+	 * @throws Exception
+	 */
+	@Test(priority = 1079, enabled = true)
+	@Description("Amazon aax call verification")
+	public void Verify_Amazon_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** amazon-adsystem.com Call test case Started");
+		logStep("****** amazon-adsystem.com Call test case Started");
+		//Utils.verify_Amazon_aax_call("Smoke", "Amazon", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Initialization API call
+	 * @throws Exception
+	 */
+	@Test(priority = 1080, enabled = true)
+	@Description("Verify Criteo SDK inapp v2 call")
+	public void Verify_Criteo_SDK_inapp_v2_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+		logStep("****** Criteo SDK inapp/v2 call validation Started");
+		//Utils.verifyCriteo_inapp_v2_Call("Smoke", "Criteo", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Bidder API call
+	 * @throws Exception
+	 */
+	@Test(priority = 1081, enabled = true)
+	@Description("Verify Criteo SDK config app call")
+	public void Verify_Criteo_SDK_config_app_Call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK config/app call ====================");
+		System.out.println("****** Criteo SDK config/app call validation Started");
+		logStep("****** Criteo SDK config/app call validation Started");
+		//Utils.verifyCriteo_config_app_Call("Smoke", "Criteo", true);
+	}
+
+	/**
+	 * This method verifies NextGen IM gampad call
+	 * @throws Exception
+	 */
+	@Test(priority = 1082, enabled = true)
+	@Description("Verify Gampad Ad Call")
+	public void Verify_Gampad_call_When_UPSX_LogIn() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Gampad Call verification test case Started");
+		logStep("****** Gampad Call verification test case Started");
+		//Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
+	}
+	
+	/**
+	 * LogOut from the App
+	 * @throws Exception
+	 */
+	@Test(priority = 2000, enabled = true)
+	@Description("Verify Ads With UPSX LogOut")
+	public void verifyAdsWithUPSXLogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** UPSX LogOut test Started");
+		logStep("****** UPSX LogOut test Started");
+	}
+	
+	/**
+	 * This method verifies Lotame call 
+	 * @throws Exception
+	 */
+	@Test(priority = 2001, enabled = true)
+	@Description("Lotame Call verification")
+	public void Verify_Lotame_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** bcp.crwdcntrl.net Call test case Started");
+		logStep("****** bcp.crwdcntrl.net Call test case Started");
+	//	Utils.verifyAPICal("Smoke", "Lotame", true);
+	}
+
+	/**
+	 * This method verifies FACTUAL call
+	 * @throws Exception
+	 */
+	@Test(priority = 2002, enabled = true)
+	@Description("Factual Call verification")
+	public void Verify_LocationWFXTriggers_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** location.wfxtriggers.com Call test case Started");
+		logStep("location.wfxtriggers.com Call test case Started");
+		//Utils.verifyAPICal("Smoke", "LocationWFX", false);
+	}
+	
+	/**
+	 * This method verifies WFXTriggers call
+	 * @throws Exception
+	 */
+	@Test(priority = 2003, enabled = true)
+	@Description("WFXTrigger Call verification")
+	public void Verify_WFXTriggers_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
+		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		//Utils.verifyAPICal("Smoke", "WFXTrigger", true);
+	}
+	
+	/**
+	 * This method verifies Amazon call
+	 * @throws Exception
+	 */
+	@Test(priority = 2004, enabled = true)
+	@Description("Amazon aax call verification")
+	public void Verify_Amazon_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** amazon-adsystem.com Call test case Started");
+		logStep("****** amazon-adsystem.com Call test case Started");
+		//Utils.verify_Amazon_aax_call("Smoke", "Amazon", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Initialization API call
+	 * @throws Exception
+	 */
+	@Test(priority = 2005, enabled = true)
+	@Description("Verify Criteo SDK inapp v2 call")
+	public void Verify_Criteo_SDK_inapp_v2_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+		logStep("****** Criteo SDK inapp/v2 call validation Started");
+		//Utils.verifyCriteo_inapp_v2_Call("Smoke", "Criteo", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Bidder API call
+	 * @throws Exception
+	 */
+	@Test(priority = 2006, enabled = true)
+	@Description("Verify Criteo SDK config app call")
+	public void Verify_Criteo_SDK_config_app_Call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK config/app call ====================");
+		System.out.println("****** Criteo SDK config/app call validation Started");
+		logStep("****** Criteo SDK config/app call validation Started");
+		//Utils.verifyCriteo_config_app_Call("Smoke", "Criteo", true);
+	}
+
+	/**
+	 * This method verifies NextGen IM gampad call
+	 * @throws Exception
+	 */
+	@Test(priority = 2007, enabled = true)
+	@Description("Verify Gampad Ad Call")
+	public void Verify_Gampad_call_When_UPSX_LogOut() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Gampad Call verification test case Started");
+		logStep("****** Gampad Call verification test case Started");
+		//Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
+	}
+
 	
 	
 	
