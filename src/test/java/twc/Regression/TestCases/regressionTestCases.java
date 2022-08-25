@@ -3,6 +3,8 @@ package twc.Regression.TestCases;
 import java.io.File;
 
 import org.openqa.selenium.internal.Killable;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -622,7 +624,10 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating bn custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating bn custom parameter of Breaking News Severe2 Video1 call ");
-		
+			int hourInSecond = 3600;
+			try {
+		        Thread.sleep(1000 * 60 * 60);
+		    } catch (InterruptedException ex) {}
 		}
 		
 		/**
@@ -635,7 +640,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println("==============================================");
 			System.out.println("****** Validating ref custom parameter of Breaking News Severe2 Video1 call");
 			logStep("Validating ref custom parameter of Breaking News Severe2 Video1 call ");
-
+			try {
+		        Thread.sleep(1000 * 60 * 60);
+		    } catch (InterruptedException ex) {}
 
 		}
 
@@ -646,7 +653,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 			System.out.println(
 					"=========================== Entry Interstitial Ad Verification of Hourly Tab====================");
 
-		
+			try {
+		        Thread.sleep(1000 * 60 * 60);
+		    } catch (InterruptedException ex) {}
 
 		}
 			
@@ -659,7 +668,9 @@ public class regressionTestCases extends TwcAndroidBaseTest {
 
 			System.out.println("****** Exit Interstitial Ad validation of Daily Tab Started");
 			logStep("Exit Interstitial Ad validation of Daily Tab Started ");
-		
+			try {
+		        Thread.sleep(1000 * 60 * 60);
+		    } catch (InterruptedException ex) {}
 		}
 
 		@Test(priority = 803, enabled = true)
